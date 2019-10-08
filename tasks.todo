@@ -1,0 +1,21 @@
+Todays' things TODO:
+
+  ✔ Access to MFG_EDI database @bug @done (18-12-17 13:15)
+    (https://bitbucket.org/mfgtech/edi/issues/4/access-to-mfg_edi-database)
+
+  ✔ FormConfig - Dialog close on Enter but key is required to insert in listboxes @bug-ui @done (18-12-17 13:15)
+    (https://bitbucket.org/mfgtech/edi/issues/5/formconfig-dialog-close-on-enter-but-key)
+
+  ☐ Request for x64 @feature
+    (https://bitbucket.org/mfgtech/edi/issues/6/request-for-x64)
+    This is on hold until we have some time to breath. @on_hold @(2019-01-30 18:28)
+
+
+  ✔ EDI - BRP - Phase 2 - 850 file plant error @filebug @done (19-01-30 18:22)
+    (https://bitbucket.org/mfgtech/edi/issues/7/edi-brp-phase-2-850-file-plant-error)
+
+  ✔ EDI - BRP - Phase 2 - 850 file no notifications @bug @done (19-01-30 18:22)
+    (https://bitbucket.org/mfgtech/edi/issues/8/edi-brp-phase-2-850-file-no-notifications)
+
+Other things TODO:
+  ☐ Implement 865 and enable it

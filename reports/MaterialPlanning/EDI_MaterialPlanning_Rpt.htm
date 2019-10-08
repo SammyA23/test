@@ -1,0 +1,1209 @@
+<!-- Copyright © 2003 Exact Software ERP-NA, Inc.-->
+
+
+<HTML><HEAD>
+<SCRIPT LANGUAGE="VBScript" src="JBCommon.vbs"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript" src="JBReport.vbs"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript">
+
+Dim sJobList
+Dim sMatType
+Dim oRS_Final
+Dim oRS_DumpFile
+
+Dim sClass
+Dim sMaterial
+Dim FromDate
+Dim ToDate
+Dim iDateType
+
+Dim MatHold
+Dim MatCount
+Dim iExceptType
+Dim bInclOverage	
+
+Dim sDumpFile
+
+'	Set Defaults
+Call SetReportDefaults
+Set oLoc = CreateObject("jbrpthlp.cls_Localize")
+
+Function LoadReport()
+      
+	'	Read Cookies from Filter
+	sClass =	GetCookieValue("Class")
+	sMaterial = GetCookieValue("Material")
+	
+	iRptType =	cInt(GetCookieValue("RptType"))
+	
+	bRS =		cBool(GetCookieValue("bRS"))
+	bHrd =		cBool(GetCookieValue("bHrd"))
+	bSup =		cBool(GetCookieValue("bSup"))
+	bFG =		cBool(GetCookieValue("bFG"))
+	
+	iExceptType = cInt(GetCookieValue("iExceptType"))
+	bInclOverage = cBool(GetCookieValue("bInclOverage"))
+	bInclHistories = cBool(GetCookieValue("bInclHistories"))
+	
+	iDateType =	cInt(GetCookieValue("optDateType"))
+	ToDate =	GetCookieValue("ToDate")
+	FromDate =	GetCookieValue("FromDate")
+	iOptSortBy = cInt(GetCookieValue("optSortBy"))
+	
+	sDumpFile = GetCookieValue("sDumpFile")
+	
+
+	'	Expire Cookies
+	document.cookie = "Class=;" & sExpCookie
+	document.cookie = "Material=;" & sExpCookie
+	document.cookie = "Job=;" & sExpCookie
+	document.cookie = "Vendor=;" & sExpCookie	
+	
+	document.cookie = "RptType=;" & sExpCookie
+	
+	document.cookie = "bRS=;" & sExpCookie
+	document.cookie = "bHrd=;" & sExpCookie
+	document.cookie = "bS=;" & sExpCookie
+	document.cookie = "bFG=;" & sExpCookie
+	
+	'document.cookie = "bShort=;" & sExpCookie
+	document.cookie = "iExceptType=;" & sExpCookie
+	document.cookie = "bInclOverage=;" & sExpCookie
+	document.cookie = "bInclHistories=;" & sExpCookie
+	
+	document.cookie = "optDateType=;" & sExpCookie
+	document.cookie = "FromDate=;" & sExpCookie
+	document.cookie = "ToDate=;" & sExpCookie
+	
+	document.cookie = "optSortBy=;" & sExpCookie
+	
+	document.cookie = "sDumpFile=;" & sExpCookie
+
+	
+	'	create final dataset
+	Set oRS_Final = CreateObject("ADODB.Recordset")
+	Set oRS_POHist = CreateObject("ADODB.Recordset")
+	Set oRS_JobHist = CreateObject("ADODB.Recordset")
+	Set oRS_DumpFile = CreateObject("ADODB.Recordset")
+	With oRS_Final
+		'	RS Properties	    
+		.CursorType = adOpenDynamic	    
+		.LockType = adLockOptimistic	    
+		.CursorLocation = adUseClient	    
+	    '	Header Data	    
+		.Fields.Append "Material", adVarChar, 30, adFldIsNullable	    
+		.Fields.Append "Class", adVarChar, 10, adFldIsNullable	    
+		.Fields.Append "OnHandQty", adDouble, , adFldIsNullable	    
+		.Fields.Append "OnOrderQty", adDouble, , adFldIsNullable	    
+		.Fields.Append "JobDueToStockQty", adDouble, , adFldIsNullable	    
+		.Fields.Append "AllocatedQty", adDouble, , adFldIsNullable	    
+		.Fields.Append "Description", adVarChar, 30, adFldIsNullable	    
+		.Fields.Append "LocationID", adVarChar, 10, adFldIsNullable	    
+		.Fields.Append "StockedUofM", adVarChar, 4, adFldIsNullable	    
+		.Fields.Append "LeadDays", adInteger, , adFldIsNullable	    
+		.Fields.Append "OrderPoint", adDouble, , adFldIsNullable	    
+		.Fields.Append "ReorderQty", adDouble, , adFldIsNullable	    
+		.Fields.Append "Primary_Vendor", adVarChar, 10, adFldIsNullable
+	    
+	    '	Detail Data	    
+		.Fields.Append "JobSO", adVarChar, 17, adFldIsNullable	    
+		.Fields.Append "Part", adVarChar, 30, adFldIsNullable	    
+		.Fields.Append "SourceType", adVarChar, 7, adFldIsNullable	    
+		.Fields.Append "iSourceType", adInteger, , adFldIsNullable
+	    .Fields.Append "Balance", adDouble, 7, adFldIsNullable
+	    .Fields.Append "ScheduledDate", adDate, , adFldIsNullable
+	    .Fields.Append "JobMinDate", adDate, , adFldIsNullable	    
+		.Fields.Append "ActQty", adDouble, , adFldIsNullable	    
+		.Fields.Append "CustVend", adVarChar, 10, adFldIsNullable
+	    .Fields.Append "sResv", adVarChar, 25, adFldIsNullable	    
+		.Fields.Append "FiltJob", adBoolean, , adFldIsNullable	    
+	    
+		'	Open Recordset
+	    .Open	
+	End With		
+					
+	With oRS_DumpFile
+		'	RS Properties	    
+		.CursorType = adOpenDynamic	    
+		.LockType = adLockOptimistic	    
+		.CursorLocation = adUseClient	    
+		'	Fields
+		.Fields.Append "sMaterial", adVarChar, 30, adFldIsNullable		'0
+		.Fields.Append "sSO", adVarChar, 10, adFldIsNullable
+		.Fields.Append "sPO", adVarChar, 20, adFldIsNullable			'2
+		.Fields.Append "nQtyOld", adDouble, , adFldIsNullable
+		.Fields.Append "nQtyNew", adDouble, , adFldIsNullable			'4
+		.Fields.Append "nQtyDiff", adInteger, , adFldIsNullable
+		.Fields.Append "sRefuseQty", adVarChar, 50, adFldIsNullable		'6
+		.Fields.Append "nQtyDiffValue", adDecimal, , adFldIsNullable
+		.Fields.Append "sDateOld", adVarChar, 30, adFldIsNullable		'8
+		.Fields.Append "sDateNew", adVarChar, 30, adFldIsNullable
+		.Fields.Append "nDateDiff", adInteger, , adFldIsNullable		'10
+		.Fields.Append "sRefuseDate", adVarChar, 50, adFldIsNullable
+		.Fields.Append "nDateDiffValue", adDouble, , adFldIsNullable	'12
+		.Fields.Append "sPlant", adVarChar, 6, adFldIsNullable
+		.Fields.Append "sFileLine", adVarChar, 6, adFldIsNullable		'14
+		.Fields.Append "sSODetailLine", adVarChar, 6, adFldIsNullable
+		.Fields.Append "nSODetail", adInteger, , adFldIsNullable		'16
+		.Fields.Append "nUnitPrice", adDouble, , adFldIsNullable
+		.Fields.Append "sDelOrFore", adVarChar, 3, adFldIsNullable		'18		
+		.Fields.Append "sSOAndLine", adVarChar, 19, adFldIsNullable
+		.Fields.Append "SourceType", adVarChar, 7, adFldIsNullable	    '20
+		.Fields.Append "iSourceType", adInteger, , adFldIsNullable
+
+		.Open
+	End With
+	
+	
+	'	build global criteria
+	If sMaterial = "" Then
+		sMatType = "AND Material.Type IN ("
+		If bRS	Then sMatType = sMatType & "'r',"
+		If bHrd	Then sMatType = sMatType & "'h',"
+		If bSup	Then sMatType = sMatType & "'s',"
+		If bFG	Then sMatType = sMatType & "'f',"
+		sMatType = sMatType & ")"
+		sMatType = Replace (sMatType, ",)",")") & Space(1)
+	Else
+		sMatType = ""
+	End If	   
+
+	'	Fill the Dump File Recordset
+	LoadDumpFile
+	    	
+	'	Get Material_Req Data (1A)
+	LoadMaterialReq
+	
+	'	Get SO_Detail Data	(1B)
+	LoadSODetail
+	
+	'	Get PO_Detail Data (1C)
+	LoadPODetail
+	
+	'	Get Job Data	(1D)
+	LoadJob
+	
+	''Exception Type Legend
+		'' 1 = Any Shortage
+		'' 2 = Any Overage
+		'' 3 = Allocated > On Hand
+		'' 4 = Allocated > On Hand + On Order
+		'' 5 = Reorder Point >= On_Hand - Allocated
+		'' 6 = Reorder Point >= On_Hand + On Order - Allocated
+		'' 0 = No Exceptions
+		
+	
+	'	Get Material Overage Data
+	if bInclOverage And (iExceptType=2 or iExceptType=0 or iExceptType=5 or iExceptType=6)  Then  
+		LoadMatOverage
+	End if
+	
+	'	Process for Shortage Only
+	If iExceptType<>0 Then 
+		ProcessExceptions(iExceptType)
+	End If
+	
+    '	Does recordset have data?
+    If Not DataExists(oRS_Final) Then Exit Function   
+    
+    '	Open Report
+    OpenReport "EDI_MaterialPlanning.rpt"
+	Set Table1 = oRpt.Database.Tables.Item(1)
+	'Set Table2 = oRpt.Database.Tables.Item(2)
+    Set SubTable1 = oRpt.OpenSubreport("MC_MaterialPlanning_JobHistory.rpt").Database.Tables.Item(1)
+    Set SubTable2 = oRpt.OpenSubreport("MC_MaterialPlanning_POHistory.rpt").Database.Tables.Item(1)
+	    
+    '	Assign Data to Report    
+    Table1.SetDataSource oRS_Final, 3
+    
+    'oRS_Final.MoveFirst
+    'do while not oRS_Final.EOF    
+    'MsgBox oRS_Final(0) & vbCrLf & oRS_Final(1) & vbCrLf & oRS_Final(2) & vbCrLf & oRS_Final(3) & vbCrLf & oRS_Final(4) & vbCrLf & oRS_Final(5)
+    'oRS_Final.MoveNext
+    'Loop
+	'Table2.SetDataSource oRS_DumpFile, 3
+    'Get PO History
+    sql = "SELECT Source.Material, " _
+		& "PO_Header.Vendor, " _
+		& "PO_Detail.PO, " _
+		& "PO_Detail.Order_Quantity, " _
+		& "Source.Act_Qty, " _
+		& ocmn.sSqlIif("Source.Inv_Qty>0","Source.Act_Unit_Cost","PO_Detail.Unit_Cost",sDBType) & " as Unit_Cost, " _
+		& "PO_Detail.Purchase_Unit, " _
+		& "PO_Header.Order_Date, " _
+		& "PO_Detail.Due_Date, " _
+		& "Source.Last_Recv_date AS Recv_Date, " _
+		& "PO_Detail.Status " _
+		& "FROM ((PO_Header INNER JOIN PO_Detail ON PO_Header.PO = PO_Detail.PO) INNER JOIN Source ON PO_Detail.PO_Detail = Source.PO_Detail) INNER JOIN Material ON Source.Material = Material.Material " _
+		& "WHERE Source.Act_Qty > 0 " _
+		& "AND PO_Header.PO_Type = 0 " _
+		& "AND PO_Detail.PO_Type = 0 " _
+		& sMatType
+		If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+		If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+		
+    sql = sql & "UNION SELECT Material_Req.Material, " _
+		& "PO_Header.Vendor, " _
+		& "PO_Detail.PO, " _
+		& "PO_Detail.Order_Quantity, " _
+		& "Source.Act_Qty, " _
+		& ocmn.sSqlIif("Source.Inv_Qty>0","Source.Act_Unit_Cost","PO_Detail.Unit_Cost",sDBType) & " as Unit_Cost, " _
+		& "PO_Detail.Purchase_Unit, " _
+		& "PO_Header.Order_Date, " _
+		& "PO_Detail.Due_Date, " _
+		& "Source.Last_Recv_date AS Recv_Date, " _
+		& "PO_Detail.Status " _
+		& "FROM (((PO_Header INNER JOIN PO_Detail ON PO_Header.PO = PO_Detail.PO) INNER JOIN Source ON PO_Detail.PO_Detail = Source.PO_Detail) INNER JOIN Material_Req ON Source.Material_Req = Material_Req.Material_Req) INNER JOIN Material on Material_Req.Material=Material.Material " _
+		& "WHERE Source.Act_Qty >0 " _
+		& "AND PO_Header.PO_Type = 0 " _
+		& "AND PO_Detail.PO_Type = 0 " _
+		& sMatType
+		If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+		If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+				
+	oRS_POHist.Open sql, oConn, adOpenKeySet, adLockOptimistic
+	
+	Set oRS_POHist.ActiveConnection=Nothing
+	
+	If oRS_POHist.RecordCount > 0 then
+		oRS_POHist.Sort="Material, Recv_Date DESC, Due_Date DESC"
+		oRS_POHist.MoveFirst
+		MatHold = oRS_POHist("Material")
+		MatCount=1 
+		Do while not oRS_POHist.EOF 
+			if MatHold = oRS_POHist("Material") And MatCount >4 Then
+				ors_POHist.Delete 
+			Elseif MatHold <> ORS_POHist("Material") then
+				MatHold = oRS_POHist("Material")
+				MatCount=1 
+			Else
+				MatCount = MatCount + 1
+			End if
+			
+			oRS_POHist.MoveNext 	
+		Loop
+	End If
+
+
+	' Get Job History
+	
+	sql = "SELECT Material_Trans.Material, " _
+		& "Job.Job, " _
+		& "Job.Order_Quantity, " _
+		& "Job.Order_Date, " _
+		& "Material_Trans.Material_Trans_Date, " _
+		& "Material_Trans.Quantity, " _ 
+		& "Job.Status, " _
+		& "(Select Min(Delivery.Promised_Date) From Delivery Where Delivery.Job=Job.Top_Lvl_Job and Delivery.Remaining_Quantity>0) as Due_Date " _
+		& "FROM (Job INNER JOIN Material_Trans ON Job.Job = Material_Trans.Job) Inner Join Material on Material_Trans.Material=Material.Material " _ 
+		& "WHERE Material_Trans.Tran_Type='transfer' " _
+		& sMatType
+		If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+		If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+		
+	oRS_JobHist.Open sql, oConn, adOpenKeySet, adLockOptimistic
+	
+	Set oRS_JobHist.ActiveConnection=Nothing
+	
+	If oRS_JobHist.RecordCount > 0 then
+		oRS_JobHist.Sort="Material, Material_Trans_Date DESC"
+		oRS_JobHist.MoveFirst
+		MatHold = oRS_JobHist("Material")
+		MatCount=1 
+		Do while not oRS_JobHist.EOF 
+			if MatHold = oRS_JobHist("Material") And MatCount >4 Then
+				oRS_JobHist.Delete 
+			Elseif MatHold <> oRS_JobHist("Material") then
+				MatHold = oRS_JobHist("Material")
+				MatCount=1 
+			Else
+				MatCount = MatCount + 1
+			End if
+			
+			oRS_JobHist.MoveNext 	
+		Loop
+	End If	
+    
+    SubTable1.SetDataSource oRS_JobHist, 3
+    SubTable2.SetDataSource oRS_POHist, 3
+    '	Set Report Formulas
+    oRpt.FormulaFields.GetItemByName("DateRange").Text	= "'" & SetDateRange(FromDate, ToDate) & "'"
+    Select Case iExceptType
+		Case 1
+			oRpt.FormulaFields.GetItemByName("sExceptType").Text = "'" & oLoc.Translate(cShortageOnly) & "'"
+		Case 2
+			oRpt.FormulaFields.GetItemByName("sExceptType").Text =  "'" & oLoc.Translate(cOveragesOnly) & "'"
+		Case 3
+			oRpt.FormulaFields.GetItemByName("sExceptType").Text = "'" & oLoc.Translate(cAllocOnHand) & "'"
+		Case 4
+			oRpt.FormulaFields.GetItemByName("sExceptType").Text= "'" & oLoc.Translate(cAllocOnHandOnOrder) & "'"
+		Case 5
+			oRpt.FormulaFields.GetItemByName("sExceptType").Text= "'" & oLoc.Translate(cReOrderOnHand) & "'"
+		Case 6
+			oRpt.FormulaFields.GetItemByName("sExceptType").Text= "'" & oLoc.Translate(cReOrderOnHandOnOrder) & "'"			
+		Case 0
+		
+		
+			oRpt.FormulaFields.GetItemByName("sExceptType").Text= ""	
+	End Select
+    'oRpt.FormulaFields.GetItemByName("bShort").Text		= bShort
+    
+    if bInclOverage Then
+		oRpt.FormulaFields.GetItemByName("sIncOverages").Text= "'" & oLoc.Translate(cInclude) & " " & oLoc.Translate(cOverages)  & "'"
+    Else
+		oRpt.FormulaFields.GetItemByName("sIncOverages").Text= ""	
+    End if
+    
+    oRpt.FormulaFields.GetItemByName("bShowHistories").Text =  cBool(bInclHistories)
+    
+    oRpt.FormulaFields.GetItemByName("sClass").Text		= "'" & sClass & "'"
+    oRpt.FormulaFields.GetItemByName("RptType").Text	= iRptType
+    oRpt.FormulaFields.GetItemByName("iSubSort").Text   = iDateType 
+    
+    oRpt.FormulaFields.GetItemByName("sSortType").Text = "'" & iOptSortBy & "'"
+    
+    Select Case iOptSortBy
+		Case 1
+			oRpt.FormulaFields.GetItemByName("sSortName").Text = "'Material'"
+		Case 2
+			oRpt.FormulaFields.GetItemByName("sSortName").Text = "'Class'"
+	End Select
+    
+	'	Localize Report    
+	oLoc.LocalizeReport oRpt, "EDI_MaterialPlanning"
+					
+	'	Preview/Print Report
+	FinishReport
+
+End Function   
+
+Function LoadDumpFile()
+    Set objFSO = CreateObject("Scripting.FileSystemObject")
+	Set objFile = objFSO.OpenTextFile(sDumpFile)
+	Dim RowCounter
+	RowCounter = 0
+
+	Do Until objFile.AtEndOfStream
+    	strFields = objFile.ReadLine
+    	If Not RowCounter = 0 Then
+	        arrFields = Split(strFields, ",")
+    	    oRS_DumpFile.AddNew
+    	    
+    	    For i=LBound(arrFields) To UBound(arrFields) - 1    	    
+        	    If arrFields(i) = empty Then 'Empty
+        	        oRS_DumpFile(i) = " "
+    	            'Alert("PASSED")
+    	        Else
+    	            'MsgBox arrFields(i), vbOk
+    	            oRS_DumpFile(i) = arrFields(i)
+    	        End If  
+    	    Next
+    	    
+    	    oRS_DumpFile(19) = oRS_DumpFile(1) & "-" & oRS_DumpFile(15)
+    	    oRS_DumpFile(20) = "EDI-Req"
+    	    oRS_DumpFile(21) = "3"
+    	    
+    	    
+    	    oRS_DumpFile.Update	
+    	End If
+    	
+    	RowCounter = RowCounter + 1
+	Loop
+
+	'objRecordSet.Close
+'MFG
+End Function
+
+Function LoadMaterialReq
+	If oRS.State = adStateOpen Then oRS.Close
+
+	sql = "SELECT Material.Material, " _
+				& "Material.Class, " _
+				& oCmn.sSqlIfNull("qOnHand.OnHandQty","0","qOnHand.OnHandQty",sDBType) & "AS OnHandQty, " _
+				& "Material.On_Order_Qty, " _
+				& oCmn.sSqlIfNull("Job1.Qty","0","Job1.Qty",sDBType) & "+" & oCmn.sSqlIfNull("Job2.Qty","0","Job2.Qty",sDBType) & "AS JobDueToStock, " _
+				& oCmn.sSqlIfNull("MRDefQty.Qty","0","MRDefQty.Qty",sDBType) & "+" & oCmn.sSQlIfNull("SODDefQty.Qty","0","SODDefQty.Qty",sDBType) & "AS Allocated, " _
+				& "Material.Description, " _
+				& "Material.Location_ID, " _
+				& "Material.Stocked_UofM, " _
+				& "Material.Lead_Days, " _
+				& "Material.Order_Point, " _
+				& "Material.Reorder_Qty, " _
+				& "Material.Primary_Vendor, " _				
+				& "Material_Req.Job, " _
+				& "Job.Part_Number, " _
+				& "'Mat-Req' AS SourceType, " _
+				& "4 AS iSourceType, " _
+				& "Material_Req.Deferred_Qty, " _
+				& oCmn.sSqlIfNull("Material_Req.Sched_End_Date", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "Material_Req.Sched_End_Date", sDBType) & "AS SchedDate, " _
+				& oCmn.sSqlIfNull("JobMin.MinPromDate", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "JobMin.MinPromDate", sDBType) & "AS JobMinDate, " _
+				& "Material_Req.Act_Qty, " _
+				& "Job.Customer as CustVend, " _
+				& oCmn.sSqlIIF("Material_Req.Res_Type = 0", "'From Stock'", oCmn.sSqlIIf("Material_Req.Res_Type = 1", "'PO: ' + Resv.PO + ' LN: ' + Resv.Line", "'Job:' + Material_Req.Res_ID", sDbType), sDBType) & " as sResv, "
+	
+
+		sql = sql & "'False' AS FiltJob "
+	sql = sql & "FROM (Job INNER JOIN ((((SELECT SO_Detail.Material, " _
+											& "Sum(SO_Detail.Deferred_Qty) AS Qty " _
+											& "FROM SO_Detail " _
+											& "GROUP BY SO_Detail.Material) AS SODDefQty " _
+				& "RIGHT JOIN (((SELECT Job.Part_Number, " _
+									& "Sum(" & oCmn.sSqlIIf("Job.Extra_Quantity-Job.FG_Transfer_Qty>=0","Job.Extra_Quantity-Job.FG_Transfer_Qty","0", sDBType) & ") AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", False, sDBType) _
+									& "AND Job.Status In ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job2 " _
+				& "RIGHT JOIN ((SELECT Job.Part_Number, " _
+									& "Sum(Job.In_Production_Quantity) AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", True, sDBType) _
+									& "AND Job.Status IN ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job1  " _
+				& "RIGHT JOIN (Material " _
+				& "LEFT JOIN (SELECT Material_Location.Material, " _
+									& "Sum(Material_Location.On_Hand_Qty) AS OnHandQty " _
+									& "FROM Material_Location " _
+									& "GROUP BY Material_Location.Material) AS qOnHand " _
+				& "ON Material.Material = qOnHand.Material) ON Job1.Part_Number = Material.Material) ON Job2.Part_Number = Material.Material) " _
+				& "LEFT JOIN (SELECT Material_Req.Material, " _
+									& "Sum(Material_Req.Deferred_Qty) AS Qty " _
+									& "FROM Material_Req " _
+									& "WHERE Material_Req.Pick_Buy_Indicator = 'p' " _
+									& "GROUP BY Material_Req.Material) AS MRDefQty " _
+				& "ON Material.Material = MRDefQty.Material) ON SODDefQty.Material = Material.Material) " _
+				& "INNER JOIN Material_Req ON Material.Material = Material_Req.Material) " _
+				& "LEFT JOIN (SELECT TLJob.Job, " _
+									& "Min(Delivery.Promised_Date) AS MinPromDate " _
+									& "FROM (Job INNER JOIN Job AS TLJob ON Job.Top_Lvl_Job = TLJob.Job) " _
+									& "INNER JOIN Delivery ON TLJob.Job = Delivery.Job " _
+									& "WHERE Delivery.Remaining_Quantity>0 " _
+									& "GROUP BY TLJob.Job) AS JobMin " _
+				& "ON Material_Req.Job = JobMin.Job) ON Job.Job = Material_Req.Job) " _
+				& "LEFT JOIN (SELECT S.Source, POD.PO_Detail, POD.PO, POD.Line " _
+									& "FROM Source S " _
+									& "INNER JOIN PO_Detail POD ON S.PO_Detail = POD.PO_Detail " _
+									& "WHERE S.PO_Type = 0) as Resv " _									
+				& "ON Material_Req.Res_ID = " & oCmn.sSQLConvertToSTring("Resv.Source", sDBType) _
+				& " WHERE Material_Req.Pick_Buy_Indicator = 'p' " _
+				& "AND Material_Req.Deferred_Qty > 0 " _
+				& "AND Job.Status IN ('active', 'complete', 'hold', 'pending') " _
+				& "AND " & oCmn.sSqlIfNull("MRDefQty.Qty","0","MRDefQty.Qty",sDBType) & "+" & oCmn.sSQlIfNull("SODDefQty.Qty","0","SODDefQty.Qty",sDBType) & "> 0 " _
+				& sMatType
+
+	If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+	If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+
+	If iDateType = 1 Then
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "JobMin.MinPromDate", "AND", sDBType)
+	Else
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "Material_Req.Sched_End_Date", "AND", sDBType)
+	End If
+				
+	oRS.Open sql, oConn, adOpenStatic, adLockReadOnly
+
+	'	Load final recordset
+	Dim bFound
+	Do Until oRS.EOF
+	    bFound = false
+	    oRS_DumpFile.MoveFirst
+    
+	    Do Until oRS_DumpFile.EOF OR bFound
+	        If oRS_Dumpfile(0) = oRS(0) Then
+	            bFound = true
+	        Else
+	            oRS_Dumpfile.MoveNext
+	        End If
+        
+	    Loop
+    
+	    If bFound Then
+	        oRS_Final.AddNew
+	        For x = 0 to oRS.Fields.Count - 1
+	            oRS_Final(x) = oRS(x)
+	        Next		
+	    End If
+		oRS.MoveNext
+	Loop
+    
+    '	Load final recordset
+'	Do Until oRS.EOF
+'		oRS_Final.AddNew
+'		For x = 0 to oRS.Fields.Count - 1
+'			oRS_Final(x) = oRS(x)
+'		Next		
+'		oRS.MoveNext
+'	Loop
+	oRS.Close
+
+End Function
+
+Function LoadSODetail
+	If oRS.State = adStateOpen Then oRS.Close
+	
+	sql = "SELECT Material.Material, " _
+				& "Material.Class, " _
+				& oCmn.sSqlIfNull("qOnHand.OnHandQty","0","qOnHand.OnHandQty",sDBType) & "AS OnHandQty, " _
+				& "Material.On_Order_Qty, " _
+				& oCmn.sSqlIfNull("Job1.Qty","0","Job1.Qty",sDBType) & "+" & oCmn.sSqlIfNull("Job2.Qty","0","Job2.Qty",sDBType) & "AS JobDueToStock, " _
+				& oCmn.sSqlIfNull("MRDefQty.Qty","0","MRDefQty.Qty",sDBType) & "+" & oCmn.sSQlIfNull("SODDefQty.Qty","0","SODDefQty.Qty",sDBType) & "AS Allocated, " _
+				& "Material.Description, " _
+				& "Material.Location_ID, " _
+				& "Material.Stocked_UofM, " _
+				& "Material.Lead_Days, " _
+				& "Material.Order_Point, " _
+				& "Material.Reorder_Qty, " _
+				& "Material.Primary_Vendor, " _				
+				& "SO_Detail.Sales_Order + '-' + SO_Detail.SO_Line AS SOLine, " _
+				& "SO_Detail.Material, " _
+				& "'SO-Req' AS SourceType, " _
+				& "3 AS iSourceType, " _
+				& "SO_Detail.Deferred_Qty, " _
+				& oCmn.sSqlIfNull("SO_Detail.Promised_Date", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "SO_Detail.Promised_Date", sDBType) & "AS SchedDate, " _
+				& oCmn.sSqlIfNull("SO_Detail.Promised_Date", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "SO_Detail.Promised_Date", sDBType) & "AS JobMinDate, " _
+				& "SO_Detail.Picked_Qty, " _
+				& "SO_Header.Customer as CustVend, " _
+				& oCmn.sSqlIIF("SO_Detail.Res_Type = 0", "'From Stock'", oCmn.sSqlIIf("SO_Detail.Res_Type = 1", "'PO: ' + Resv.PO + ' LN: ' + Resv.Line", "SO_Detail.Res_ID", sDbType), sDBType) & " as sResv, " _
+				& "'False' AS FiltJob " _
+                & ", SO_Detail.SO_Detail AS SODetailID, SO_Header.Customer_PO AS CusPO " _
+				& "FROM ((SELECT SO_Detail.Material, " _
+							& "Sum(SO_Detail.Deferred_Qty) AS Qty " _
+							& "FROM SO_Detail " _
+							& "GROUP BY SO_Detail.Material) AS SODDefQty " _
+				& "RIGHT JOIN (((SELECT Job.Part_Number, " _
+									& "Sum(" & oCmn.sSqlIIf("Job.Extra_Quantity-Job.FG_Transfer_Qty>=0","Job.Extra_Quantity-Job.FG_Transfer_Qty","0", sDBType) & ") AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", False, sDBType) _
+									& "AND Job.Status In ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job2 " _
+				& "RIGHT JOIN ((SELECT Job.Part_Number, " _
+									& "Sum(Job.In_Production_Quantity) AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", True, sDBType) _
+									& "AND Job.Status IN ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job1  " _
+				& "RIGHT JOIN (((SO_Detail INNER JOIN SO_Header on SO_Detail.Sales_Order=SO_Header.Sales_Order) INNER JOIN Material ON SO_Detail.Material = Material.Material) " _
+				& "LEFT JOIN (SELECT Material_Location.Material, " _
+									& "Sum(Material_Location.On_Hand_Qty) AS OnHandQty " _
+									& "FROM Material_Location " _
+									& "GROUP BY Material_Location.Material) AS qOnHand " _
+				& "ON Material.Material = qOnHand.Material) ON Job1.Part_Number = Material.Material) ON Job2.Part_Number = Material.Material) " _
+				& "LEFT JOIN (SELECT Material_Req.Material, " _
+									& "Sum(Material_Req.Deferred_Qty) AS Qty " _
+									& "FROM Material_Req " _
+									& "WHERE Material_Req.Pick_Buy_Indicator = 'p' " _
+									& "GROUP BY Material_Req.Material) AS MRDefQty " _
+				& "ON Material.Material = MRDefQty.Material) ON SODDefQty.Material = Material.Material) " _
+				& "LEFT JOIN (SELECT S.Source, POD.PO_Detail, POD.PO, POD.Line " _
+									& "FROM Source S " _
+									& "INNER JOIN PO_Detail POD ON S.PO_Detail = POD.PO_Detail " _
+									& "WHERE S.PO_Type = 0) AS Resv " _
+				& "ON SO_Detail.Res_ID = " & oCmn.sSQLConvertToString("Resv.Source", sDBType) _
+				& " WHERE SO_Detail.Deferred_Qty>0 " _
+				& "AND " & oCmn.sSqlIfNull("MRDefQty.Qty","0","MRDefQty.Qty",sDBType) & "+" & oCmn.sSQlIfNull("SODDefQty.Qty","0","SODDefQty.Qty",sDBType) & "> 0 " _
+				& sMatType
+				
+	If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+	If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+
+	If iDateType = 1 Then
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "SO_Detail.Promised_Date", "AND", sDBType)
+	Else
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "SO_Detail.Promised_Date", "AND", sDBType)
+	End If
+				
+	oRS.Open sql, oConn, adOpenStatic, adLockReadOnly
+	
+'	Do Until oRS.EOF	   
+'		oRS_Final.AddNew		
+'		For x = 0 to oRS.Fields.Count - 1
+'			oRS_Final(x) = oRS(x)  
+'		Next		
+'		oRS.MoveNext
+'	Loop			
+'	oRS.Close
+
+    oRS_DumpFile.MoveFirst
+    
+    Dim bFoundMatch
+    
+    Do Until oRS_DumpFile.EOF
+        bFoundMatch = false
+        If Not oRS.BOF Then
+            oRS.MoveFirst
+        End If
+        
+        If oRS_DumpFile(16) <> 0 Then
+            Do Until oRS.EOF OR bFoundMatch
+                If oRS("SODetailID") = oRS_DumpFile(16) Then
+                    bFoundMatch = true
+                    oRS_Final.AddNew
+                    
+                    oRS_Final(1) = oRS(1)
+                    oRS_Final(2) = oRS(2)
+                    oRS_Final(3) = oRS(3)
+                    oRS_Final(4) = oRS(4)
+                    oRS_Final(5) = oRS(5)
+                    oRS_Final(6) = oRS(6)
+                    oRS_Final(7) = oRS(7)
+                    oRS_Final(8) = oRS(8)
+                    oRS_Final(9) = oRS(9)
+                    oRS_Final(10) = oRS(10)
+        		    oRS_Final(11) = oRS(11)
+        		    oRS_Final(12) = oRS(12)
+        		    oRS_Final(20) = oRS(20)
+        		    oRS_Final(21) = oRS(21)
+        		    oRS_Final(22) = oRS(22)
+        		    oRS_Final(23) = oRS(23)
+                    
+                    oRS_Final(0) = oRS_DumpFile(0) 
+                    oRS_Final(14) = oRS_DumpFile(0) 
+		        
+    		        If oRS_DumpFile(6) = "" OR oRS_DumpFile(6) = " " Then
+    		            oRS_Final(17) = oRS_DumpFile(4)
+    		        Else
+    		            oRS_Final(17) = oRS_DumpFile(3) 
+    		        End If
+    		            
+    		        if oRS_DumpFile(11) = "" OR oRS_DumpFile(11) = " " Then
+    		            oRS_Final(18) = oRS_DumpFile(9)  
+    		            oRS_Final(19) = oRS_DumpFile(9)
+    		        Else
+    		            oRS_Final(18) = oRS_DumpFile(8)  
+    		            oRS_Final(19) = oRS_DumpFile(8)
+    		        End If  
+    		            
+    		        oRS_Final(13) = oRS_DumpFile(19)  
+    		        oRS_Final(15) = oRS_DumpFile(20)  
+    		        oRS_Final(16) = oRS_DumpFile(21)
+                End If
+                
+                oRS.MoveNext
+            Loop 'oRS
+        Else 'oRS_DumpFile doesn't have a SO_Detail ID....hence this is a new line
+            Do Until oRS.EOF OR bFoundMatch
+                If oRS(0) = oRS_DumpFile(0) AND oRS("CusPO") = oRS_DumpFile(2) Then
+                    bFoundMatch = true
+                    oRS_Final.AddNew
+                    
+                    oRS_Final(1) = oRS(1)
+                    oRS_Final(2) = oRS(2)
+                    oRS_Final(3) = oRS(3)
+                    oRS_Final(4) = oRS(4)
+                    oRS_Final(5) = oRS(5)
+                    oRS_Final(6) = oRS(6)
+                    oRS_Final(7) = oRS(7)
+                    oRS_Final(8) = oRS(8)
+                    oRS_Final(9) = oRS(9)
+                    oRS_Final(10) = oRS(10)
+        		    oRS_Final(11) = oRS(11)
+        		    oRS_Final(12) = oRS(12)
+        		    oRS_Final(20) = oRS(20)
+        		    oRS_Final(21) = oRS(21)
+        		    oRS_Final(22) = oRS(22)
+        		    oRS_Final(23) = oRS(23)
+            
+                    oRS_Final(0) = oRS_DumpFile(0) 
+                    oRS_Final(14) = oRS_DumpFile(0) 
+        		        
+            		If oRS_DumpFile(6) = "" OR oRS_DumpFile(6) = " " Then
+            		    oRS_Final(17) = oRS_DumpFile(4)
+            		Else
+            		    oRS_Final(17) = oRS_DumpFile(3) 
+            		End If
+            		            
+            		If oRS_DumpFile(11) = "" OR oRS_DumpFile(11) = " " Then
+            		    oRS_Final(18) = oRS_DumpFile(9)  
+            		    oRS_Final(19) = oRS_DumpFile(9)
+            		Else
+            		    oRS_Final(18) = oRS_DumpFile(8)  
+            		    oRS_Final(19) = oRS_DumpFile(8)
+            		End If  
+            		            
+            		oRS_Final(13) = oRS_DumpFile(19)  
+            		oRS_Final(15) = oRS_DumpFile(20)  
+        		    oRS_Final(16) = oRS_DumpFile(21)
+                End If
+                oRS.MoveNext
+            Loop
+        End If
+        
+        oRS_DumpFile.MoveNext
+        'alert oRS_DumpFile(0) & " ||| " & oRS_DumpFile(2)
+    Loop
+    
+	oRS.Close
+
+End Function
+
+Function LoadPODetail
+	If oRS.State = adStateOpen Then oRS.Close
+
+	sql = "SELECT Material.Material, " _
+				& "Material.Class, " _
+				& oCmn.sSqlIfNull("qOnHand.OnHandQty","0","qOnHand.OnHandQty",sDBType) & "AS OnHandQty, " _
+				& "Material.On_Order_Qty, " _
+				& oCmn.sSqlIfNull("Job1.Qty","0","Job1.Qty",sDBType) & "+" & oCmn.sSqlIfNull("Job2.Qty","0","Job2.Qty",sDBType) & "AS JobDueToStock, " _
+				& oCmn.sSqlIfNull("MRDefQty.Qty","0","MRDefQty.Qty",sDBType) & "+" & oCmn.sSQlIfNull("SODDefQty.Qty","0","SODDefQty.Qty",sDBType) & "AS Allocated, " _
+				& "Material.Description, " _
+				& "Material.Location_ID, " _
+				& "Material.Stocked_UofM, " _
+				& "Material.Lead_Days, " _
+				& "Material.Order_Point, " _
+				& "Material.Reorder_Qty, " _
+				& "Material.Primary_Vendor, " _				
+				& "PO_Detail.PO + '-' + PO_Detail.Line AS POLine, " _
+				& "Source.Material, " _
+				& "'PO-Due' AS SourceType, " _
+				& "2 AS iSourceType, " _
+				& "(Source.ordered_qty-source.act_qty)*-1 as Balance, " _
+				& oCmn.sSqlIfNull("Source.Due_Date", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "Source.Due_Date", sDBType) & "AS SchedDate, " _
+				& oCmn.sSqlIfNull("Source.Due_Date", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "Source.Due_Date", sDBType) & "AS JobMinDate, " _
+				& "Source.act_qty AS ActQty, " _
+				& "PO_Header.Vendor as CustVend, " _	
+				& "'' AS sResv, " _		
+				& "'False' AS FiltJob " _
+				& "FROM ((SELECT SO_Detail.Material, " _
+							& "Sum(SO_Detail.Deferred_Qty) AS Qty " _
+							& "FROM SO_Detail " _
+							& "GROUP BY SO_Detail.Material) AS SODDefQty " _
+				& "RIGHT JOIN (((SELECT Job.Part_Number, " _
+									& "Sum(" & oCmn.sSqlIIf("Job.Extra_Quantity-Job.FG_Transfer_Qty>=0","Job.Extra_Quantity-Job.FG_Transfer_Qty","0", sDBType) & ") AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", False, sDBType) _
+									& "AND Job.Status In ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job2 " _
+				& "RIGHT JOIN ((SELECT Job.Part_Number, " _
+									& "Sum(Job.In_Production_Quantity) AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", True, sDBType) _
+									& "AND Job.Status IN ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job1  " _
+				& "RIGHT JOIN (Material LEFT JOIN (SELECT Material_Location.Material, " _
+									& "Sum(Material_Location.On_Hand_Qty) AS OnHandQty " _
+									& "FROM Material_Location " _
+									& "GROUP BY Material_Location.Material) AS qOnHand " _
+				& "ON Material.Material = qOnHand.Material) ON Job1.Part_Number = Material.Material) ON Job2.Part_Number = Material.Material) " _
+				& "LEFT JOIN (SELECT Material_Req.Material, " _
+									& "Sum(Material_Req.Deferred_Qty) AS Qty, " _
+									& "Material.Type " _
+									& "FROM Material_Req INNER JOIN Material on Material_Req.Material=Material.Material " _
+									& "WHERE Material_Req.Pick_Buy_Indicator = 'p' " _
+									& "GROUP BY Material_Req.Material, Material.Type) AS MRDefQty " _
+				& "ON Material.Material = MRDefQty.Material) ON SODDefQty.Material = Material.Material) " _
+				& "INNER JOIN ((PO_Detail INNER JOIN PO_Header ON PO_Detail.PO=PO_Header.PO) " _
+				& "INNER JOIN (SELECT * From Source Where Source.Source_Type IN (3,6)) as Source ON PO_Detail.PO_Detail = Source.PO_Detail) ON Material.Material = Source.Material  " _
+				& "WHERE PO_Detail.Status = 'open' " _
+				& "AND Source.PO_Type=0 AND PO_Header.PO_Type=0 " _
+				& "AND Source.Source_Type IN (3,6) " _
+				& "AND Source.Ordered_Qty > Source.Act_Qty " _				
+				& sMatType
+
+	If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+	If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+
+	If iDateType = 1 Then
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "PO_Detail.Due_Date", "AND", sDBType)
+	Else
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "PO_Detail.Due_Date", "AND", sDBType)
+	End If
+				
+	oRS.Open sql, oConn, adOpenDynamic, adLockOptimistic
+	
+	'	load into final recordset
+'	Do Until oRS.EOF
+'		oRS_Final.AddNew
+'		For x = 0 to oRS.Fields.Count-1
+'			oRS_Final(x) = oRS(x)
+'		Next		
+'		oRS.MoveNext
+'	Loop
+	Dim bFound
+	Do Until oRS.EOF
+	    bFound = false
+	    oRS_DumpFile.MoveFirst
+	    
+	    Do Until oRS_DumpFile.EOF OR bFound
+	        If oRS_Dumpfile(0) = oRS(0) Then
+	            bFound = true
+	        Else
+	            oRS_Dumpfile.MoveNext
+	        End If
+	    Loop
+	    
+	    If bFound Then
+	        oRS_Final.AddNew
+	        For x = 0 to oRS.Fields.Count - 1
+	            oRS_Final(x) = oRS(x)
+	        Next		
+	    End If
+		oRS.MoveNext
+	Loop
+	oRS.Close
+
+End Function
+
+Function LoadJob
+	If oRS.State = adStateOpen Then oRS.Close
+
+	sql = "SELECT Material.Material, " _
+				& "Material.Class, " _
+				& oCmn.sSqlIfNull("qOnHand.OnHandQty","0","qOnHand.OnHandQty",sDBType) & "AS OnHandQty, " _
+				& "Material.On_Order_Qty, " _
+				& oCmn.sSqlIfNull("Job1.Qty","0","Job1.Qty",sDBType) & "+" & oCmn.sSqlIfNull("Job2.Qty","0","Job2.Qty",sDBType) & "AS JobDueToStock, " _
+				& oCmn.sSqlIfNull("MRDefQty.Qty","0","MRDefQty.Qty",sDBType) & "+" & oCmn.sSQlIfNull("SODDefQty.Qty","0","SODDefQty.Qty",sDBType) & "AS Allocated, " _
+				& "Material.Description, " _
+				& "Material.Location_ID, " _
+				& "Material.Stocked_UofM, " _
+				& "Material.Lead_Days, " _
+				& "Material.Order_Point, " _
+				& "Material.Reorder_Qty, " _
+				& "Material.Primary_Vendor, " _				
+				& "Job.Job, " _
+				& "Job.Part_Number, " _
+				& "'Job-Due' AS SourceType, " _
+				& "1 AS iSourceType, " _
+				& oCmn.sSQLIIf(oCmn.sSQLTrueFalse("Job.Build_To_Stock", True, sDBType), "Job.In_Production_Quantity * -1", "(Job.Extra_Quantity-Job.FG_Transfer_Qty)*-1", sDBType) & "AS Balance, " _
+				& oCmn.sSQLIfNull("Job.Sched_End", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "Job.Sched_End", sDBType) & "AS Sched_Date, " _
+				& oCmn.sSQLIfNull("JobMin.MinPromDate", oCmn.sSqlAddDateDelim("1/1/2050", sDBType), "JobMin.MinPromDate", sDBType) & "AS MinPromDate, " _
+				& "Job.FG_Transfer_Qty * -1 AS ActQty, " _
+				& "Job.Customer as CustVend, " _	
+				& "'' AS sResv, " _		
+				& "'False' AS FiltJob " _
+				& "FROM (Job LEFT JOIN (SELECT TLJob.Job, " _
+										& "Min(Delivery.Promised_Date) AS MinPromDate " _
+										& "FROM (Job INNER JOIN Job AS TLJob ON Job.Top_Lvl_Job = TLJob.Job) INNER JOIN Delivery ON TLJob.Job = Delivery.Job " _
+										& "WHERE Delivery.Remaining_Quantity>0 " _
+										& "GROUP BY TLJob.Job) AS JobMin " _
+				& "ON Job.Job = JobMin.Job) " _
+				& "INNER JOIN ((SELECT SO_Detail.Material, " _
+									& "Sum(SO_Detail.Deferred_Qty) AS Qty " _
+									& "FROM SO_Detail " _
+									& "GROUP BY SO_Detail.Material) AS SODDefQty " _
+				& "RIGHT JOIN (((SELECT Job.Part_Number, " _
+									& "Sum(" & oCmn.sSqlIIf("Job.Extra_Quantity-Job.FG_Transfer_Qty>=0","Job.Extra_Quantity-Job.FG_Transfer_Qty","0", sDBType) & ") AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", False, sDBType) _
+									& "AND Job.Status In ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job2 " _
+				& "RIGHT JOIN ((SELECT Job.Part_Number, " _
+									& "Sum(Job.In_Production_Quantity) AS Qty " _
+									& "FROM Job " _
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", True, sDBType) _
+									& "AND Job.Status IN ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job1  " _
+				& "RIGHT JOIN (Material " _
+				& "LEFT JOIN (SELECT Material_Location.Material, " _
+									& "Sum(Material_Location.On_Hand_Qty) AS OnHandQty " _
+									& "FROM Material_Location " _
+									& "GROUP BY Material_Location.Material) AS qOnHand " _
+				& "ON Material.Material = qOnHand.Material) ON Job1.Part_Number = Material.Material) ON Job2.Part_Number = Material.Material) " _
+				& "LEFT JOIN (SELECT Material_Req.Material, " _
+									& "Sum(Material_Req.Deferred_Qty) AS Qty " _
+									& "FROM Material_Req " _
+									& "WHERE Material_Req.Pick_Buy_Indicator = 'p' " _
+									& "GROUP BY Material_Req.Material) AS MRDefQty " _
+				& "ON Material.Material = MRDefQty.Material) ON SODDefQty.Material = Material.Material) ON Job.Part_Number = Material.Material " _
+				& "WHERE Job.Status IN ('pending', 'active', 'complete') " _
+				& "AND Job.In_Production_Quantity > 0 " _
+				& sMatType
+
+	If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+	If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+
+	If iDateType = 1 Then
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "JobMin.MinPromDate", "AND", sDBType)
+	Else
+		sql = sql & oCmn.AddDateClause(FromDate, ToDate, "Job.Sched_End", "AND", sDBType)
+	End If
+	
+	sql = "SELECT Q1.* FROM (" & sql & ") AS Q1 WHERE Q1.Balance * -1 > 0"
+	
+	oRS.Open sql, oConn, adOpenStatic, adLockReadOnly
+
+	'	Load final recordset
+'	Do Until oRS.EOF
+'		oRS_Final.AddNew
+'		For x = 0 to oRS.Fields.Count - 1
+'			oRS_Final(x) = oRS(x)
+'		Next		
+'		oRS.MoveNext
+'	Loop
+Dim bFound
+	Do Until oRS.EOF
+	    bFound = false
+	    oRS_DumpFile.MoveFirst
+	    
+	    Do Until oRS_DumpFile.EOF OR bFound
+	        If oRS_Dumpfile(0) = oRS(0) Then
+	            bFound = true
+	        Else
+	            oRS_Dumpfile.MoveNext
+	        End If
+	    Loop
+	    
+	    If bFound Then
+	        oRS_Final.AddNew
+	        For x = 0 to oRS.Fields.Count - 1
+	            oRS_Final(x) = oRS(x)
+	        Next		
+	    End If
+		oRS.MoveNext
+	Loop
+	oRS.Close
+End Function
+
+Function LoadMatOverage
+	If oRS.State = adStateOpen Then oRS.Close
+
+	sql = "SELECT Material.Material, " _
+				& "Material.Class, " _
+				& oCmn.sSqlIfNull("qOnHand.OnHandQty","0","qOnHand.OnHandQty",sDBType) & "AS OnHandQty, " _
+				& "Material.On_Order_Qty, " _
+				& oCmn.sSqlIfNull("Job1.Qty","0","Job1.Qty",sDBType) & "+" & oCmn.sSqlIfNull("Job2.Qty","0","Job2.Qty",sDBType) & "AS JobDueToStock, " _
+				& oCmn.sSqlIfNull("MRDefQty.Qty","0","MRDefQty.Qty",sDBType) & "+" & oCmn.sSQlIfNull("SODDefQty.Qty","0","SODDefQty.Qty",sDBType) & "AS Allocated, " _
+				& "Material.Description, " _
+				& "Material.Location_ID, " _
+				& "Material.Stocked_UofM, " _
+				& "Material.Lead_Days, " _
+				& "Material.Order_Point, " _
+				& "Material.Reorder_Qty, " _
+				& "Material.Primary_Vendor, " _				
+				& "'' as Job, " _
+				& "Material.Material AS Part_Number, " _
+				& "'On-Hand' AS SourceType, " _
+				& "5 AS iSourceType, " _
+				& "0 AS Balance, " _
+				& oCmn.sSqlAddDateDelim("1/1/2050", sDBType) & "AS Sched_Date, " _
+				& oCmn.sSqlAddDateDelim("1/1/2050", sDBType) & "AS MinPromDate, " _
+				& "0 AS ActQty, " _
+				& "'' as CustVend, " _
+				& "'False' AS FiltJob " _
+				& "FROM ((((Material " _
+				& "LEFT JOIN (SELECT Job.Part_Number, " _
+									& "Sum(" & oCmn.sSqlIIf("Job.Extra_Quantity-Job.FG_Transfer_Qty>=0","Job.Extra_Quantity-Job.FG_Transfer_Qty","0", sDBType) & ") AS Qty " _
+									& "FROM Job " _ 
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", False, sDBType) _
+									& "AND Job.Status In ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job2 ON Material.Material = Job2.Part_Number) " _
+				& "LEFT JOIN (SELECT Job.Part_Number, " _
+									& "Sum(Job.In_Production_Quantity) AS Qty " _
+									& "FROM Job " _ 
+									& "WHERE " & oCmn.sSQLTrueFalse("Job.Build_To_Stock", True, sDBType) _
+									& "AND Job.Status IN ('pending','active','complete') " _
+									& "AND Job.In_Production_Quantity > 0 " _
+									& "GROUP BY Job.Part_Number) AS Job1 ON Material.Material = Job1.Part_Number) " _
+				& "LEFT JOIN (SELECT Material_Location.Material, " _
+									& "Sum(Material_Location.On_Hand_Qty) AS OnHandQty " _
+									& "FROM Material_Location GROUP BY Material_Location.Material) AS qOnHand ON Material.Material = qOnHand.Material) " _ 
+				& "LEFT JOIN (SELECT Material_Req.Material, " _ 
+									& "Sum(Material_Req.Deferred_Qty) AS Qty " _
+									& "FROM Material_Req " _
+									& "WHERE Material_Req.Pick_Buy_Indicator = 'p' " _
+									& "GROUP BY Material_Req.Material) AS MRDefQty ON Material.Material = MRDefQty.Material) " _
+				& "LEFT JOIN (SELECT SO_Detail.Material, " _ 
+									& "Sum(SO_Detail.Deferred_Qty) AS Qty " _
+									& "FROM SO_Detail GROUP BY SO_Detail.Material) AS SODDefQty ON Material.Material = SODDefQty.Material " _
+				& "WHERE Material.Material=Material.Material " _
+				& sMatType
+	If iExceptType=2 Then sql = sql & " AND qOnHand.OnHandQty > 0  " 
+	If sClass <> "" Then sql = sql & "AND Material.Class = '" & oCmn.PrepareMaterial(sClass) & "' "
+	If sMaterial <> "" Then sql = sql & "AND Material.Material = '" & oCmn.PrepareMaterial(sMaterial) & "' "
+	
+	oRS.Open sql, oConn, adOpenStatic, adLockReadOnly
+
+	'	Load final recordset
+'	Do Until oRS.EOF
+'		oRS_Final.AddNew
+'		For x = 0 to oRS.Fields.Count - 1
+'			oRS_Final(x) = oRS(x)
+'		Next		
+'		oRS.MoveNext
+'	Loop
+Dim bFound
+	Do Until oRS.EOF
+	    bFound = false
+	    oRS_DumpFile.MoveFirst
+	    
+	    Do Until oRS_DumpFile.EOF OR bFound
+	        If oRS_Dumpfile(0) = oRS(0) Then
+	            bFound = true
+	        Else
+	            oRS_Dumpfile.MoveNext
+	        End If   
+	    Loop
+	    
+	    If bFound Then
+	        oRS_Final.AddNew
+	        For x = 0 to oRS.Fields.Count - 1
+	            oRS_Final(x) = oRS(x)
+	        Next		
+	    End If
+		oRS.MoveNext
+	Loop
+	oRS.Close
+End Function
+
+
+
+Function ProcessExceptions(iExceptType)
+	If oRS_Final.BOF AND oRS_Final.EOF Then Exit Function
+	
+	'	Sort recordset
+	oRS_Final.Sort = "Material, ScheduledDate, JobMinDate, iSourceType, JobSO"
+
+	'	build array of unique materials
+	Dim sMatlArray()
+	Dim sMaterial
+	Dim arrIndex
+	Dim TempReOrderPoint
+	
+	arrIndex = 1
+	
+	sMaterial = oRS_Final("Material")
+	Redim sMatlArray(0)
+	sMatlArray(0) = oRS_Final("Material")
+	
+	Do Until oRS_Final.EOF
+		If sMaterial <> oRS_Final("Material") Then
+			redim preserve sMatlArray(arrIndex)
+			sMatlArray(arrIndex) = oRS_Final("Material")
+			arrIndex = arrIndex + 1
+			sMaterial = oRS_Final("Material")
+		End If
+		oRS_Final.MoveNext
+	Loop
+	oRS_Final.MoveFirst
+
+	''Exception Type Legend
+		'' 1 = Any Shortage
+		'' 2 = Any Overage
+		'' 3 = Allocated > On Hand
+		'' 4 = Allocated > On Hand + On Order
+		'' 5 = Reorder Point >= On_Hand - Allocated
+		'' 6 = Reorder Point >= On_Hand + On Order - Allocated
+	
+	'	process recordset - one material at a time
+	for y = 0 to ubound(sMatlArray)
+		oRS_Final.Filter = "[Material]='" & oCmn.PrepareMaterial(sMatlArray(y)) & "'"
+		oRS_Final.MoveFirst
+		bDelete = True
+		dRemQty = 0
+		do until oRS_Final.EOF
+			Select Case iExceptType
+				Case 1					
+					dRemQty = dRemQty + oRS_Final("Balance")
+					if oRS_Final("OnHandQty") - dRemQty < 0 Then bDelete = False : Exit Do
+				Case 2, 4, 6
+					dRemQty = dRemQty + oRS_Final("Balance")
+				Case 3, 5
+					if oRS_Final("iSourceType") = 3 or oRS_Final("iSourceType") = 4 Then
+						dRemQty = dRemQty + oRS_Final("Balance")
+					end if
+			End Select
+			oRS_Final.MoveNext
+		loop
+		
+		Select Case iExceptType
+			Case 2
+				oRS_Final.MovePrevious 
+				if oRS_Final("OnHandQty") - dRemQty > 0 Then bDelete = False 
+			Case 3, 4
+				oRS_Final.MovePrevious 
+				if oRS_Final("OnHandQty") - dRemQty < 0 Then bDelete = False
+			Case 5, 6
+				oRS_Final.MovePrevious
+				If oRS_Final("OrderPoint") = 0 and Not bInclOverage then 
+					TempReOrderPoint = 0
+				Else
+					TempReOrderPoint = oRs_Final("OrderPoint") + .01
+				End if
+				If oRS_Final("OnHandQty") - dRemQty < TempReOrderPoint Then bDelete = False
+				
+		End Select
+		
+		if bDelete Then
+			oRS_Final.MoveFirst
+			do until oRS_Final.EOF
+				oRS_Final.Delete
+				oRS_Final.MoveNext
+			loop
+		end If
+		oRS_Final.Filter = adFilterNone
+	next
+	if oRS_Final.RecordCount > 0 then oRS_Final.MoveFirst
+End Function  
+
+Function KillObjects()
+	KillRptObjects
+	If IsObject(oRS_Final) Then Set oRS_Final = Nothing
+	If IsObject(oRS_DumpFile) Then Set oRS_DumpFile = Nothing
+	Set oLoc = Nothing
+End Function
+
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=DrillOnGroup>
+ CrViewer1_DrillOnGroup()
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=CloseButtonClicked>
+ CrViewer1_CloseButtonClicked()
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=DrillOnSubreport>
+ CrViewer1_DrillOnSubreport()
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=DownloadFinished>
+ CrViewer1_DownloadFinished()
+</SCRIPT>
+
+<META Name="{82932974-7BC3-4618-A312-94BDC05FB2ED}" CONTENT="Jobboss.Reporting">
+</head>
+
+<BODY bgcolor="#f7f5dd"  onLoad="LoadReport()" OnUnLoad="KillObjects()" bottomMargin=0 leftMargin=0 rightMargin=0 topMargin=0>&nbsp; 
+	<A id=fnPrint onclick = fn_Print href="#" name=fnPrint  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cPrint)</script></FONT></A>&nbsp;&nbsp;
+	<A onclick=fn_PrinterSetup href = "#" id=fnPrinterSetup name=fnPrinterSetup  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cPrinterSetup)</script></FONT></A>&nbsp;&nbsp;
+	<A onclick=fn_Export href = "#" id=fnExport name=fnExport  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cExport)</script></FONT></A>
+<OBJECT id=CrViewer1 
+		style="VISIBILITY: hidden; HEIGHT: 97.5%" 
+		width="100%" 
+		classid=CLSID:2DEF4530-8CE6-41c9-84B6-A54536C90213>
+		<PARAM NAME="lastProp" VALUE="500">
+		<PARAM NAME="_cx" VALUE="30242">
+		<PARAM NAME="_cy" VALUE="23892">
+		<PARAM NAME="DisplayGroupTree" VALUE="0">
+		<PARAM NAME="DisplayToolbar" VALUE="-1">
+		<PARAM NAME="EnableGroupTree" VALUE="-1">
+		<PARAM NAME="EnableNavigationControls" VALUE="-1">
+		<PARAM NAME="EnableStopButton" VALUE="-1">
+		<PARAM NAME="EnablePrintButton" VALUE="0">
+		<PARAM NAME="EnableZoomControl" VALUE="-1">
+		<PARAM NAME="EnableCloseButton" VALUE="-1">
+		<PARAM NAME="EnableProgressControl" VALUE="-1">
+		<PARAM NAME="EnableSearchControl" VALUE="-1">
+		<PARAM NAME="EnableRefreshButton" VALUE="0">
+		<PARAM NAME="EnableDrillDown" VALUE="-1">
+		<PARAM NAME="EnableAnimationControl" VALUE="0">
+		<PARAM NAME="EnableSelectExpertButton" VALUE="-1">
+		<PARAM NAME="EnableToolbar" VALUE="-1">
+		<PARAM NAME="DisplayBorder" VALUE="-1">
+		<PARAM NAME="DisplayTabs" VALUE="-1">
+		<PARAM NAME="DisplayBackgroundEdge" VALUE="-1">
+		<PARAM NAME="SelectionFormula" VALUE="">
+		<PARAM NAME="EnablePopupMenu" VALUE="-1">
+		<PARAM NAME="EnableExportButton" VALUE="0">
+		<PARAM NAME="EnableSearchExpertButton" VALUE="0">
+		<PARAM NAME="EnableHelpButton" VALUE="0">
+		<PARAM NAME="LaunchHTTPHyperlinksInNewBrowser" VALUE="-1">
+</OBJECT>
+</BODY>
+</HTML>

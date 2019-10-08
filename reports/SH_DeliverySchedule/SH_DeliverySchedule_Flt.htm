@@ -1,0 +1,183 @@
+<!-- Copyright © 2003 Exact Software ERP-NA, Inc.-->
+<META Name="{82932974-7BC3-4618-A312-94BDC05FB2ED}" CONTENT="Jobboss.Reporting">
+
+<SCRIPT LANGUAGE="VBScript" src="JBCommon.vbs"></SCRIPT><SCRIPT LANGUAGE="javascript" src="JBFilter.js"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript" src="JBFilter.vbs"></SCRIPT>
+<Script LANGUAGE="VBScript">
+
+Dim rs
+Dim oCom
+Dim rs2
+Dim oComm
+
+SetFilterObjects
+
+Function SetDefaults()  
+	If Not GetFilterOptions Then
+		frmRptFilter.optPromisedDate.checked = true
+		frmRptFilter.chkShippingInstructions.checked = true
+		frmRptFilter.chkHold.checked = true
+	End If
+End Function
+
+Function Validate()
+    'set up the cookie values
+     document.cookie = "Customer="             & oCmn.PrepareMaterial(frmRptFilter.txtCustomer.value)	
+     document.cookie = "ToDate="               & frmRptFilter.txtTo.value
+     document.cookie = "FromDate="             & frmRptFilter.txtFrom.value 
+     document.cookie = "BuildStockJobs="       & frmRptFilter.chkBuildToStockJobs.checked
+     document.cookie = "ShippingInstructions=" & frmRptFilter.chkShippingInstructions.checked 
+     document.cookie = "HoldJobSOs="		   & frmRptFilter.chkHold.checked    
+     
+     for x = 0 to 5
+		if frmRptFilter.OptSort(x).checked then	document.cookie = "optSort=" & (x + 1)
+     next    
+     window.location.href = "SH_DeliverySchedule_Rpt.htm"
+End Function
+
+Function OpenCustomerLookup()
+	Dim CustNum
+	CustNum  = oCmn.PrepareMaterial(frmRptFilter.txtCustomer.value)
+	LoadSingleLookup "Customer_All", CustNum, "", frmRptFilter.txtCustomer, false
+	CustomerChange()
+End Function
+
+Function CustomerChange()
+	if frmRptFilter.txtCustomer.value <> "" then
+		if frmRptFilter.optSort(3).checked or frmRptFilter.optSort(4).checked or frmRptFilter.optSort(5).checked then
+			frmRptFilter.optPromisedDate.checked = true
+		end if
+		frmRptFilter.optSort(3).disabled = true
+		frmRptFilter.optSort(4).disabled = true
+		frmRptFilter.optSort(5).disabled = true
+	else
+		frmRptFilter.optSort(3).disabled = false
+		frmRptFilter.optSort(4).disabled = false
+		frmRptFilter.optSort(5).disabled = false    
+	end if
+End Function
+
+</Script>
+
+<HTML xmlns:IE>
+	<HEAD>
+		<TITLE>Job Control - Shipping</TITLE>
+		<LINK rel="stylesheet" type="text/css" href="Filter.css">
+	    <STYLE>
+		  IE\:Calendar { behavior: url(jb_calendar.htc); position: absolute; z-index: 100; display: none; width : 150; height : 137; border : 1px solid black;}
+		</STYLE>	
+	</HEAD>
+		
+	<BODY onload=SetDefaults() onkeydown=fn_EnterKey() onunload=KillFilterObjects topmargin="0" leftmargin="0">
+		<form name="frmRptFilter"> 			
+			<DIV align=left>
+				<TABLE class="HeaderBackgroundColor" border=0 cellPadding=0 cellSpacing=0 height=90 width="100%" style="HEIGHT: 90px">
+					<TR>
+						<TD align=left height=65 rowSpan=2 vAlign=center width="24%">
+							<A href="VBScript:Validate" ><IMG id=IMG1 height=54 src="images/JBR_RunBlu.gif" width=41 border=0 ></A>
+						</TD>
+						<TD align=middle height=39 vAlign=bottom width="38%"></TD>
+						<TD align=right height=65 rowSpan=2 width="38%"><IMG height=70 src="images/keyboard.gif" width=302 border=0></TD>
+					</TR>
+					<TR>
+						<TD align=middle height=26 vAlign=top Class="HeaderFont" width="38%"><script language = vbscript>document.write oLoc.TranslateTitle("SH_DeliverySchedule")</script></TD>
+					</TR>
+					<TR>
+						<TD align=middle height=30 vAlign=top colspan = 3>  </TD>
+					</TR>
+				</TABLE>
+			</DIV>
+			<DIV align=left>&nbsp;</DIV>
+			<DIV align=center>
+<CENTER>
+				<table id="tblRptFilter" border=0 style="WIDTH: 364px; HEIGHT: 196px">
+  
+  <TR>
+    <TD colSpan=2>
+      <P align=left class=BoldFont><SCRIPT language=vbscript>document.write oLoc.Translate(cSelect)</SCRIPT></P>
+      </TD></TR>
+  <TR>
+    <TD>
+      <P align=right><SCRIPT language=vbscript>document.write oLoc.Translate(cCustomer)</SCRIPT></P></TD>
+    <TD><INPUT class=NonRequiredField id=txtCustomer
+        
+       onchange=CustomerChange() onblur   
+      =CustomerChange() style="WIDTH: 131px; HEIGHT: 22px" 
+      size=21 name=txtCustomer><INPUT id=btnCustomerLookup style="LEFT: 117px; BACKGROUND-IMAGE: url(Images\Lookup.gif); WIDTH: 20px; CURSOR: hand; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none;  BORDER-LEFT-STYLE: none; TOP: 1px; HEIGHT: 19px; BACKGROUND-COLOR: #f7f5dd; BORDER-BOTTOM-STYLE: none" onclick  =OpenCustomerLookup() type=button width="20"  border=0 height="19" name=btnInvLookup></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <P align=left class=BoldFont><SCRIPT language=vbscript>document.write oLoc.Translate(cPromisedDateRange)</SCRIPT></P></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><SCRIPT language=vbscript>document.write oLoc.Translate(cFrom)</SCRIPT></P></TD>
+    <TD><INPUT class=NonRequiredField id=txtFrom 
+      onblur=ValidateDate() ondblclick=ShowCalendar(calFrom) style="WIDTH: 90px" 
+      onfocus=SetControlName(txtFromDate) onchange=FormatDateMedium(txtFromDate) 
+      size=5 name=txtFromDate>
+    <IE:Calendar id="calFrom" style="DISPLAY: none" ondblclick="ReturnDate calFrom,txtFromDate"></IE:Calendar></TD></TR> 
+  <TR>
+    <TD>
+      <P align=right><SCRIPT language=vbscript>document.write oLoc.Translate(cTo)</SCRIPT></P></TD>
+    <TD><INPUT class=NonRequiredField id=txtTo 
+      onblur=ValidateDate() ondblclick=ShowCalendar(calTo) style="WIDTH: 90px" 
+      onfocus=SetControlName(txtToDate) onchange=FormatDateMedium(txtToDate) 
+      size=5 name=txtToDate>
+    <IE:Calendar id="calTo" style="DISPLAY: none" ondblclick="ReturnDate calTo,txtToDate"></IE:Calendar></TD></TR> 
+  <TR>
+    <TD colSpan=2>
+      <P align=left class=BoldFont><SCRIPT language=vbscript>document.write oLoc.Translate(cInclude)</SCRIPT></P></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=chkBuildToStockJobs type=checkbox name=chkBuildToStockJobs></P></TD>
+    <TD><SCRIPT language=vbscript>document.write oLoc.Translate(cBuildToStockJobs)</SCRIPT></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=chkShippingInstructions type=checkbox name=checkbox2></P></TD>
+    <TD><SCRIPT language=vbscript>document.write oLoc.Translate(cShippingInstructions)</SCRIPT></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=chkHold type=checkbox name=chkHold></P></TD>
+    <TD> <SCRIPT language=vbscript>document.write oLoc.Translate(cIncHoldJobsSOs)</SCRIPT></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <P align=left class=BoldFont><SCRIPT language=vbscript>document.write oLoc.Translate(cSortBy)</SCRIPT></P></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=optPromisedDate type=radio name=OptSort></P></TD>
+    <TD><SCRIPT language=vbscript>document.write oLoc.Translate(cPromisedDate)</SCRIPT></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=optTargetShipDate type=radio name=OptSort></P></TD>
+    <TD><SCRIPT language=vbscript>document.write oLoc.Translate(cTargetShipDate)</SCRIPT></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=optJobSalesOrder type=radio name=OptSort></P></TD>
+    <TD>
+      <SCRIPT 
+language=vbscript>document.write oLoc.Translate(cJObSalesOrder)</SCRIPT>
+      &nbsp;</TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=optCustomerPromisedDate type=radio 
+      name=OptSort></P></TD>
+    <TD><SCRIPT language=vbscript>document.write oLoc.Translate(cCustomerPromDate)</SCRIPT></TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=optCustomerShipDate type=radio 
+    name=OptSort></P></TD>
+    <TD>
+      <SCRIPT language=vbscript>document.write oLoc.Translate(cCustomerShipDate)</SCRIPT>
+      &nbsp;</TD></TR>
+  <TR>
+    <TD>
+      <P align=right><INPUT id=optCustomerJobSO type=radio 
+      name=OptSort></P></TD>
+    <TD><SCRIPT language=vbscript>document.write oLoc.Translate(cCustomerJobSO)</SCRIPT></TD></TR></TD></TR> 
+				</table></CENTER>
+<CENTER>&nbsp;</CENTER>
+<CENTER><A href="VBScript:Validate" ><IMG id=IMG1 height=54 src="images/JBR_RunYel.gif" width=41 border=0 ></A></CENTER>
+			</DIV>
+<CENTER>
+		</form>&nbsp;</CENTER>
+	<script language="javascript">fn_SetKeyTrap()</script></BODY>
+</HTML>

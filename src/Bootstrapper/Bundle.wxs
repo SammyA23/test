@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<Bundle Name="EDI" Version="7.11.1" Manufacturer="MFG Technologies" UpgradeCode="{4CFBD13F-F17E-418D-98F2-816940DE77B2}">
+    <!--BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" >
+      <bal:WixStandardBootstrapperApplication LogoFile="Logo.png" />
+    </BootstrapperApplicationRef-->
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
+      <bal:WixStandardBootstrapperApplication
+        LicenseUrl=""
+        LogoFile="..\..\build\img\MFG.jpg"
+        xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" />
+    </BootstrapperApplicationRef>
+    <util:RegistrySearch Root="HKLM" Key="SOFTWARE\Microsoft\Net Framework Setup\NDP\v4\Full" Value="Version" Variable="Net4FullVersion" />
+    <util:RegistrySearch Root="HKLM" Key="SOFTWARE\Microsoft\Net Framework Setup\NDP\v4\Full" Value="Version" Variable="Net4x64FullVersion" Win64="yes" />
+
+		<Chain>
+			<!-- TODO: Define the list of chained packages. -->
+		  <PackageGroupRef Id="NetFx471Redist"/>
+      <MsiPackage Id="MainPackage" SourceFile="..\Setup-EDI\bin\Release\EDI.msi" Vital="yes" />
+		</Chain>
+	</Bundle>
+</Wix>

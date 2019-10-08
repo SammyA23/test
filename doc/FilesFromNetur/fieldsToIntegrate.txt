@@ -1,0 +1,6 @@
+C->Part Number
+D->Plant de livraison
+E-># PO de Pratt
+F->Ligne de detail
+J->Qty
+K->Date de livraison

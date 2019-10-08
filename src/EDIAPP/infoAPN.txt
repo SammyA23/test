@@ -1,0 +1,28 @@
+[ENGINE]
+PRATT
+[DBSERVER]
+W8DEV\SQLEXPRESS
+[DB]
+TRAINING
+[SO_Creation]
+ON
+[SO_Creation_Status]
+Hold
+[execution]
+simple
+[Template]
+C:\Users\Dominic\Documents\dev\EDI - VS2013\data\neturforecast.xml
+[Client]
+APN
+[Quantite]
+Trop gros changement
+Trop de pertes
+Valeur monétaire trop basse
+Quantité partiellement envoyé
+[Date]
+Trop Vite
+Trop Lent
+Délai trop court
+Valeur monétaire trop fluctuente
+[filetype]
+forecast

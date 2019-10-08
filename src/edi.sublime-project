@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": ".",
+            "folder_exclude_patterns": [ "packages", "obj", "bin", ".vs",
+                "Bootstrapper", "ipch", "Debug", "Release" ],
+            "file_exclude_patterns": ["*.sublime-workspace"]
+
+        }
+    ],
+	"solution_file": "./EDI.sln"
+}

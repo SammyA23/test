@@ -1,0 +1,20 @@
+sMaterial	String	30	
+sSO	String	10	
+sPO	String	20	
+nQtyOld	Number		
+nQtyNew	Number		
+nQtyDiff	Number		
+sRefuseQty	String	50	
+nQtyDiffValue	Number		
+sDateOld	String	30	
+sDateNew	String	30	
+nDateDiff	Number		
+sRefuseDate	String	50	
+nDateDiffValue	Number		
+sPlant	String	6	
+sFileLine	String	6	
+sSODetailLine	String	6	
+nSODetail	Number		
+sSOAndLine	String	19	
+SourceType	String	7	HHHHHHX
+iSourceType	Number		1

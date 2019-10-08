@@ -1,0 +1,308 @@
+<!-- Copyright © 2003 Exact Software ERP-NA, Inc.-->
+
+
+<HTML><HEAD>
+<SCRIPT LANGUAGE="VBScript" src="JBCommon.vbs"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript" src="JBReport.vbs"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript">
+
+Dim oRS_Final
+Dim oRS_StatsFile	
+
+Dim sStatsFile
+
+'	Set Defaults
+Call SetReportDefaults
+Set oLoc = CreateObject("jbrpthlp.cls_Localize")
+
+Function LoadReport()
+ 	sStatsFile = GetCookieValue("sStatsFile")
+	
+	'Expire cookies
+	document.cookie = "sStatsFile=;" & sExpCookie
+
+	
+	'	create final dataset
+	Set oRS_Final = CreateObject("ADODB.Recordset")
+	Set oRS_StatsFile = CreateObject("ADODB.Recordset")
+	With oRS_Final
+		'	RS Properties	    
+		.CursorType = adOpenDynamic	    
+		.LockType = adLockOptimistic	    
+		.CursorLocation = adUseClient	    
+		
+        .Fields.Append "DaysFromTodayOld", adInteger, , adFldIsNullable
+        .Fields.Append "DaysFromTodayNew", adInteger, , adFldIsNullable
+        .Fields.Append "OldQty", adInteger, , adFldIsNullable
+        .Fields.Append "DiffQty", adInteger, , adFldIsNullable
+        .Fields.Append "IsRefusedNewDate", adBoolean, , adFldIsNullable
+        .Fields.Append "IsRefusedNewQty", adBoolean, , adFldIsNullable
+        .Fields.Append "UnitCost", adDouble, , adFldIsNullable
+        .Fields.Append "OldDateWeek", adInteger,  adFldIsNullable
+        .Fields.Append "NewDateWeek", adInteger,  adFldIsNullable
+        .Fields.Append "ActiveWeek", adInteger,  adFldIsNullable
+
+	    
+		'	Open Recordset
+	    .Open	
+	End With		
+					
+	With oRS_StatsFile
+		'	RS Properties	    
+		.CursorType = adOpenDynamic	    
+		.LockType = adLockOptimistic	    
+		.CursorLocation = adUseClient	    
+		'	Fields
+		.Fields.Append "sMaterial", adVarChar, 30, adFldIsNullable      '0
+		.Fields.Append "sSO", adVarChar, 10, adFldIsNullable
+		.Fields.Append "sPO", adVarChar, 20, adFldIsNullable            '2
+		.Fields.Append "nQtyOld", adDouble, , adFldIsNullable
+		.Fields.Append "nQtyNew", adDouble, , adFldIsNullable           '4
+		.Fields.Append "nQtyDiff", adInteger, , adFldIsNullable
+		.Fields.Append "sRefuseQty", adVarChar, 50, adFldIsNullable     '6
+		.Fields.Append "nQtyDiffValue", adDecimal, , adFldIsNullable
+		.Fields.Append "sDateOld", adVarChar, 30, adFldIsNullable       '8
+		.Fields.Append "sDateNew", adVarChar, 30, adFldIsNullable
+		.Fields.Append "nDateDiff", adInteger, , adFldIsNullable        '10
+		.Fields.Append "sRefuseDate", adVarChar, 50, adFldIsNullable
+		.Fields.Append "nDateDiffValue", adDouble, , adFldIsNullable    '12
+		.Fields.Append "sPlant", adVarChar, 6, adFldIsNullable
+		.Fields.Append "sFileLine", adVarChar, 6, adFldIsNullable       '14
+		.Fields.Append "sSODetailLine", adVarChar, 6, adFldIsNullable
+		.Fields.Append "nSODetail", adInteger, , adFldIsNullable        '16
+		.Fields.Append "nUnitPrice", adDouble, , adFldIsNullable
+		.Fields.Append "sDelOrFore", adVarChar, 3, adFldIsNullable		'18
+
+		.Open
+	End With   
+
+	'	Fill the Dump File Recordset
+	LoadStatsFile
+	    	
+	'	Go through file and prepare the data for the report
+	ProcessData
+	
+    '	Does recordset have data?
+    If Not DataExists(oRS_Final) Then Exit Function   
+    
+    '	Open Report
+    OpenReport "EDI_Statistics.rpt"
+	Set Table1 = oRpt.Database.Tables.Item(1)
+	    
+    '	Assign Data to Report    
+    Table1.SetDataSource oRS_Final, 3
+     
+	'	Localize Report    
+	oLoc.LocalizeReport oRpt, "EDI_Statistics"
+					
+	'	Preview/Print Report
+	FinishReport
+
+End Function   
+
+Function LoadStatsFile()
+    Set objFSO = CreateObject("Scripting.FileSystemObject")
+	Set objFile = objFSO.OpenTextFile(sStatsFile)
+	Dim RowCounter
+	RowCounter = 0
+	
+	Do Until objFile.AtEndOfStream
+    	strFields = objFile.ReadLine
+	    
+	    If Not RowCounter = 0 Then
+	        arrFields = Split(strFields, ",")
+    	    oRS_StatsFile.AddNew
+    	
+    	    For i=LBound(arrFields) To UBound(arrFields)    	     
+    	        If arrFields(i) = empty Then 'Empty
+    	            oRS_StatsFile(i) = " "
+    	            'Alert("PASSED")
+    	        Else
+    	            'MsgBox arrFields(i), vbOk
+    	            oRS_StatsFile(i) = arrFields(i)
+    	        End If  
+    	    Next
+    	
+    	    oRS_StatsFile.Update
+    	End If
+    	
+    	RowCounter = RowCounter + 1
+	Loop
+
+	'objRecordSet.Close
+'MFG
+End Function
+
+Function ProcessData
+    oRS_StatsFile.MoveFirst
+    Dim arrLengthRequired
+    arrLengthRequired = oRS_StatsFile.Fields.Count - 1
+    
+    Dim currentLine()
+    ReDim currentLine(arrLengthRequired) 
+    
+    Dim arrForReport(10)
+    
+    Dim currentDate
+    currentDate = Date()
+    
+	Do Until oRS_StatsFile.EOF
+	    For x = 0 to oRS_StatsFile.Fields.Count - 1
+	        currentLine(x) = oRS_StatsFile(x)
+	    Next
+	    
+	    'Deal with the currentLine
+	    '--------------------------
+	    'Where new qtys and dates refused or accepted
+	    'Qty
+	    If currentLine(6) = "" OR currentLine(6) = " " Then
+	        arrForReport(5) = false
+	    Else
+	        arrForReport(5) = true
+	    End If
+	    
+	    'Date
+	    If currentLine(11) = "" OR currentLine(11) = " " Then
+	        arrForReport(4) = false
+	    Else
+	        arrForReport(4) = true
+	    End If
+	    
+	    
+	    'Get dates and days difference from today
+	    'Old
+	    arrOldDate = Split(currentLine(8), " ")
+	    
+	    Dim OldDateDiff
+	    OldDateDiff = DateDiff("d", currentDate, arrOldDate(0))
+	    arrForReport(0) = OldDateDiff
+	    
+	    'New
+	    arrNewDate = Split(currentLine(9), " ")
+	    Dim NewDateDiff
+	    NewDateDiff = DateDiff("d", currentDate, arrNewDate(0))
+	    arrForReport(1) = NewDateDiff
+	    
+	    'Get qtys and diff qtys
+	    arrForReport(2) = currentLine(3)
+	    arrForReport(3) = currentLine(5)
+	    
+	    'Unit Cost
+	    Dim QtyDiffValue
+	    Dim Price
+	    QtyDiffValue = currentLine(7)
+	        
+	    If arrForReport(5) Then 'If new qty is refused
+	        Price = arrForReport(2)
+	    Else
+	        Price = arrForReport(2) + arrForReport(3)
+	    End If
+	    'MsgBox "QtyDiffValue= " & QtyDiffValue & vbCrLf & "Price= " & Price, vbOk
+	    Dim UnitCost
+'	    UnitCost = Cdbl(QtyDiffValue) / Cdbl(Price)
+        UnitCost = currentLine(17)
+        
+        'MsgBox currentLine(17), vbOk
+	    'MsgBox "QtyDiffValue= " & QtyDiffValue & vbCrLf & "Price= " & Price & vbCrLf & "Unit Cost = " & UnitCost, vbOk
+'	    If UnitCost < 0 Then 
+'	        UnitCost = UnitCost * -1
+'	    End If
+	    'MsgBox UnitCost, vbOk
+	    arrForReport(6) = UnitCost
+	    
+	    'Active Week  
+	    Dim activeWeek
+	    activeWeek = arrForReport(0) \ 7
+	    arrForReport(7) = activeWeek
+	    activeWeek = arrForReport(1) \ 7
+	    arrForReport(8) = activeWeek
+	    
+	    If arrForReport(4) = true Then 'If new date is refused
+	        'Calculate using olddaysfromtoday
+	        activeWeek = arrForReport(7)
+	    End If
+	    
+	    arrForReport(9) = activeWeek
+	    
+	    If activeWeek > 0 And activeWeek < 16 Then
+	        oRS_Final.AddNew
+	        
+	        For i=LBound(arrForReport) To UBound(arrForReport) - 1	        
+	            oRS_Final(i) = arrForReport(i)
+	        Next
+	    
+	        oRS_Final.Update
+	    End If
+	    	    
+	    		
+		oRS_StatsFile.MoveNext
+	Loop
+	oRS_StatsFile.Close
+
+End Function
+
+Function KillObjects()
+	KillRptObjects
+	If IsObject(oRS_Final) Then Set oRS_Final = Nothing
+	If IsObject(oRS_StatsFile) Then Set oRS_StatsFile = Nothing
+	Set oLoc = Nothing
+End Function
+
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=DrillOnGroup>
+ CrViewer1_DrillOnGroup()
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=CloseButtonClicked>
+ CrViewer1_CloseButtonClicked()
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=DrillOnSubreport>
+ CrViewer1_DrillOnSubreport()
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=DownloadFinished>
+ CrViewer1_DownloadFinished()
+</SCRIPT>
+
+<META Name="{82932974-7BC3-4618-A312-94BDC05FB2ED}" CONTENT="Jobboss.Reporting">
+</head>
+
+<BODY bgcolor="#f7f5dd"  onLoad="LoadReport()" OnUnLoad="KillObjects()" bottomMargin=0 leftMargin=0 rightMargin=0 topMargin=0>&nbsp; 
+	<A id=fnPrint onclick = fn_Print href="#" name=fnPrint  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cPrint)</script></FONT></A>&nbsp;&nbsp;
+	<A onclick=fn_PrinterSetup href = "#" id=fnPrinterSetup name=fnPrinterSetup  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cPrinterSetup)</script></FONT></A>&nbsp;&nbsp;
+	<A onclick=fn_Export href = "#" id=fnExport name=fnExport  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cExport)</script></FONT></A>
+<OBJECT id=CrViewer1 
+		style="VISIBILITY: hidden; HEIGHT: 97.5%" 
+		width="100%" 
+		classid=CLSID:2DEF4530-8CE6-41c9-84B6-A54536C90213>
+		<PARAM NAME="lastProp" VALUE="500">
+		<PARAM NAME="_cx" VALUE="30242">
+		<PARAM NAME="_cy" VALUE="23892">
+		<PARAM NAME="DisplayGroupTree" VALUE="0">
+		<PARAM NAME="DisplayToolbar" VALUE="-1">
+		<PARAM NAME="EnableGroupTree" VALUE="-1">
+		<PARAM NAME="EnableNavigationControls" VALUE="-1">
+		<PARAM NAME="EnableStopButton" VALUE="-1">
+		<PARAM NAME="EnablePrintButton" VALUE="0">
+		<PARAM NAME="EnableZoomControl" VALUE="-1">
+		<PARAM NAME="EnableCloseButton" VALUE="-1">
+		<PARAM NAME="EnableProgressControl" VALUE="-1">
+		<PARAM NAME="EnableSearchControl" VALUE="-1">
+		<PARAM NAME="EnableRefreshButton" VALUE="0">
+		<PARAM NAME="EnableDrillDown" VALUE="-1">
+		<PARAM NAME="EnableAnimationControl" VALUE="0">
+		<PARAM NAME="EnableSelectExpertButton" VALUE="-1">
+		<PARAM NAME="EnableToolbar" VALUE="-1">
+		<PARAM NAME="DisplayBorder" VALUE="-1">
+		<PARAM NAME="DisplayTabs" VALUE="-1">
+		<PARAM NAME="DisplayBackgroundEdge" VALUE="-1">
+		<PARAM NAME="SelectionFormula" VALUE="">
+		<PARAM NAME="EnablePopupMenu" VALUE="-1">
+		<PARAM NAME="EnableExportButton" VALUE="0">
+		<PARAM NAME="EnableSearchExpertButton" VALUE="0">
+		<PARAM NAME="EnableHelpButton" VALUE="0">
+		<PARAM NAME="LaunchHTTPHyperlinksInNewBrowser" VALUE="-1">
+</OBJECT>
+</BODY>
+</HTML>

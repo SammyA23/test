@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<file>
+	<column id="A" name="PO#" jbtablename="SO_Header" jbfieldname="Customer_PO" />
+	<column id="F" name="Part Number + Rev" jbtablename="SO_Detail" jbfieldname="Part_Number" />
+	<column id="G" name="Date de livraison" jbtablename="SO_Detail" jbfieldname="Promised_Date" />
+	<column id="H" name="Qty" jbtablename="SO_Detail" jbfieldname="Order_Qty" />
+</file>

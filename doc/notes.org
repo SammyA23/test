@@ -1,0 +1,54 @@
+#+TITLE: Development notes for project EDI
+#+DESCRIPTION: All developer notes of the EDI project. This is for developer eyes only and meant to be able to keep train of thought and sanity over the course of development.
+#+CATEGORIES: development
+#+OPTIONS: toc:nil
+
+* Notes [5/5]-[100%]
+  ** CSV library
+    - [X] Compare the CCsvReader constructors....the one using our DataTable^ dtFilesAndInfos is
+      somehow messing the combination and we end up with 2 lines instead of 821
+      :PROPERTIES:
+      :File:     CSV.cpp -> CSV.cs
+      :Line:     25
+      :END:
+      <2017-04-26 Wed 22:21>The constructor only calls the ReadAndMergeFiles method which should 
+      operate the same regardless of which constructor calls it. I need to investigate what this one 
+      does that actually screws up the reading process.
+
+      <2017-04-26 Wed 22:24>Both methods iterate through their parameter's collection ...one is array
+      the other is a DataTable. In the iteration they both call the ReadFile method with the relevant
+      parameters. I see nothing wrong here. The issue must be located in the ReadFile method or in the
+      method that returns the information to EDI.
+
+      <2017-04-26 Wed 22:30>What the constructors do here is create the CCsvReader object for the
+      actual engine which then uses it to get the rows from the reader through the Read method. I
+      think this is where we need look. I'll first make sure that the ReadFile method does insert all
+      821 rows as we expect.
+    
+      <2017-04-29 Sat 20:15>The problem was in how we refreshed the template for each file as we weren't
+      initializing the template correctly. We have since rewrote the file reading and standardized the
+      reading process so that lines are taken from the file and have the template instantly applied 
+      instead of the old read, store and apply the template when asked by EDI through the reading 
+      mechanism. Bugs in the library ....actually typos on our part got quite hard to debug and we 
+      rewrote the library in C# as the debugger is much more efficiend and useful there than in C++/CLI
+      with the Visual Studio and .Net toolset. We will be able in the future to develop this using
+      rider which is another good news.
+    
+      <2017-04-29 Sat 20:52>More tests were ran. The library has been switched to Release and retested
+      again in EDI and Engine_Bombardier. We can now move forward.
+
+  ** EDI Engine Bombardier
+    - [X] Update the merge with JobBOSS data.
+      :PROPERTIES:
+      :METHOD:   MergeJbWithCurrentPartAndPo
+      :END:      
+      <2017-05-03 Wed 09:16>The request from BRP and Nutech goes like this. We must now support 
+      both file types simultaneously. 862 is like the Pratt delivery file and 830 like the Forecast 
+      file. Which means that once we colled the rows for a specific Part and PO combination we must 
+      separate them in 830 and 862 rows, take all the 862 rows, remove the overlapping rows from 
+      the 830 rows and apply the remaining ones. At this point we use the rows that we have to merge
+      with JobBOSS.
+    - [X] Single 862 file crashes the application on Read()
+    - [X] Must be able to execute on 830 files only
+    - [X] Must be able to execute on 862 files only
+

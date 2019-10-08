@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<file worksheet="Header">
+    <column id="C" name="PO#" jbtablename="SO_Header" jbfieldname="Customer_PO" />
+    <column id="G" name="Part Number" jbtablename="SO_Detail" jbfieldname="Part_Number" />
+    <column id="D" name="Ligne de detail" jbtablename="SO_Detail" jbfieldname="Line" />
+    <column id="B" name="Date de livraison" jbtablename="SO_Detail" jbfieldname="Promised_Date" />
+    <column id="E" name="Qty" jbtablename="SO_Detail" jbfieldname="Order_Qty" />
+    <column id="H" name="Commentaire de livraison" jbtablename="Delivery" jbfieldname="Comment" />
+</file>

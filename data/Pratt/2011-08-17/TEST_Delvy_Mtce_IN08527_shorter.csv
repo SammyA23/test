@@ -1,0 +1,20 @@
+Material Number,Plant,Doc Number,Item,Consign,Sched Line,Sched Quantity,Outstand Qty,Msg/ASN/Ship,Stat. Date,Delv. Date,Confirmed,Resch. Date,Ship To,Confirmation Comment,Buyer Email
+3009652 ,0022,5500046750,00010,K,0030, 50.000 , 50.000 ,Not Auth - ASN,2012/05/10,2012/05/10,YES, , ,too far ,vikramsingh.punchum@accenture.com
+3009652 ,0022,5500046750,00010,K,0031, 50.000 , 50.000 ,Not Auth - ASN,2013/01/31,2013/01/31,YES, , ,too far ,vikramsingh.punchum@accenture.com
+3010607 ,0017,5500045598,00010,K,0016, 25.000 , 25.000 ,<== Ship ,2011/07/15,2011/07/22,YES,2011/06/29, ,11827 ,vikramsingh.punchum@accenture.com
+3010607 ,0017,5500045598,00010,K,0018, 25.000 , 25.000 ,Not Auth - ASN,2011/09/29,2011/09/29,YES, , ,11827 ,vikramsingh.punchum@accenture.com
+3011351 ,0001,4501621398,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2011/10/20,2011/10/20,YES, , ,11248 ,vikramsingh.punchum@accenture.com
+3014049 ,0001,4501465481,00010,K,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/08/09,2011/08/09,YES, , ,10204 ,vikramsingh.punchum@accenture.com
+3015565 ,0001,4501547549,00010,K,0001, 5.000 , 5.000 ,Not Auth - ASN,2012/01/25,2012/01/25,YES, , ,11205 ,vikramsingh.punchum@accenture.com
+3016263 ,0001,4501578160,00010, ,0001, 36.000 , 36.000 ,Not Auth - ASN,2011/10/25,2011/10/25,YES,2011/09/26, ,11249 ,vikramsingh.punchum@accenture.com
+3021398 ,0001,4501476903,00010, ,0001, 10.000 , 10.000 ,Not Authorized,2011/09/19,2011/09/19,YES, , ,10845 ,Michel.Barras@pwc.ca
+3021833 ,0001,4501617890,00010, ,0001, 58.000 , 58.000 ,Not Auth - ASN,2011/12/01,2011/12/01,YES,2011/11/30, ,12184 ,Michel.Barras@pwc.ca
+3023592 ,0001,4501476768,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10881 hold dwg change ,Michel.Barras@pwc.ca
+3027904 ,0001,5500048035,00010, ,0011, 5.000 , 5.000 ,Not Auth - ASN,2011/09/28, ,NO , , , ,vikramsingh.punchum@accenture.com
+3029320 ,0017,5500053563,00010,K,0001, 7.000 , 7.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES,2011/07/28, ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,5500047417,00010,K,0006, 5.000 , 5.000 ,<== Ship ,2011/08/02,2011/08/02,YES, , ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,5500047417,00010,K,0007, 5.000 , 5.000 ,Not Auth - ASN,2011/08/14,2011/08/14,YES,2011/09/20, ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,5500047417,00010,K,0008, 5.000 , 5.000 ,Not Auth - ASN,2011/10/20, ,NO , , , ,vikramsingh.punchum@accenture.com
+3029320 ,0032,9999999999,00010,K,0006, 5.000 , 5.000 ,<== Ship ,2011/08/02,2011/08/02,YES, , ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,9999999999,00010,K,0007, 5.000 , 5.000 ,Not Auth - ASN,2011/08/14,2011/08/14,YES,2011/09/20, ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,9999999999,00010,K,0008, 5.000 , 5.000 ,Not Auth - ASN,2011/10/20, ,NO , , , ,vikramsingh.punchum@accenture.com

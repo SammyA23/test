@@ -1,0 +1,28 @@
+[ENGINE]
+PRATT
+[DBSERVER]
+W10DEV\SQLEXPRESS
+[DB]
+TRAINING
+[SO_Creation]
+ON
+[SO_Creation_Status]
+Hold
+[execution]
+simple
+[Template]
+C:\Users\Dominic\Documents\dev\EDI - VS2013\doc\Pratt_USA\1_original_request_files\mesotecforecast.xml
+[Client]
+Pratt
+[Quantite]
+Trop gros changement
+Trop de pertes
+Valeur monétaire trop basse
+Quantité partiellement envoyé
+[Date]
+Trop Vite
+Trop Lent
+Délai trop court
+Valeur monétaire trop fluctuente
+[filetype]
+forecast

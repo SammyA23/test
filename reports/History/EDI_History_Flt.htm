@@ -1,0 +1,137 @@
+<!-- Copyright © 2003 Exact Software ERP-NA, Inc.-->
+	
+<HTML xmlns:IE>
+	<HEAD> 
+<SCRIPT LANGUAGE="VBScript" src="JBCommon.vbs"></SCRIPT><SCRIPT LANGUAGE="javascript" src="JBFilter.js"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript" src="JBFilter.vbs"></SCRIPT>
+<Script LANGUAGE="VBScript">
+
+SetFilterObjects
+Dim sLocalName
+
+Function SetDefaults() 
+End Function
+
+Function Validate()
+	If(validateValue(frmRptFilter.DumpFile)) Then
+		document.cookie = "sStatsFile=" & frmRptFilter.DumpFile.value
+	End If
+	
+	If(frmRptFilter.DataFrequency.Value = 0) Then
+		Alert "Veuillez choisir une fréquence pour les données et graphiques."
+		Exit Function
+	Else
+		document.cookie = "nDataFrequency=" & frmRptFilter.DataFrequency.Value
+	End If
+	
+	document.cookie = "ToDate="     & frmRptFilter.txtTo.value 
+	document.cookie = "FromDate="   & frmRptFilter.txtFrom.value
+    
+    window.location.href="EDI_History_Rpt.htm"		     
+End Function 
+
+Function ReturnDateLocal(obj, txt)
+	Set oRetDate = CreateObject("jbrpthlp.cls_Common")
+	document.frmRptFilter.item(sLocalName).value =  oRetDate.FormatMediumDateFromPicker(obj.month, obj.day, obj.year)
+	obj.style.display = "none"
+	document.frmRptFilter.item(sLocalName).focus()
+	Set oRetDate = Nothing
+End Function
+
+Function SetControlNameLocal(obj)
+	sCtlName = obj.Name
+	sLocalName = obj.Name
+End Function
+
+</Script> 
+
+    <META Name="{82932974-7BC3-4618-A312-94BDC05FB2ED}" CONTENT="Jobboss.Reporting">
+    <TITLE>Job Control - Material Control</TITLE>
+	<LINK rel="stylesheet" type="text/css" href="Filter.css">
+	<STYLE>
+	    IE\:Calendar { behavior: url(jb_calendar.htc); position: absolute; z-index: 100; display: none; width : 150; height : 137; border : 1px solid black;}
+	</STYLE>	
+	</HEAD>
+		
+	<BODY onload=SetDefaults() onkeydown=fn_EnterKey() onunload=KillFilterObjects topmargin="0" leftmargin="0">
+		<form name="frmRptFilter"> 			
+			<DIV align=left>
+				<TABLE class="HeaderBackgroundColor" border=0 cellPadding=0 cellSpacing=0 height=90 width="100%" style="HEIGHT: 90px">
+					<TR>
+						<TD align=left height=65 rowSpan=2 vAlign=middle width="24%">
+							<A href=VBScript:Validate><IMG id=IMG1 height=54 src="images/JBR_RunBlu.gif" width=41 border=0 ></A>
+						</TD>
+						<TD align=center height=39 vAlign=bottom width="38%"></TD>
+						<TD align=right height=65 rowSpan=2 width="38%"><IMG height=70 src="images/keyboard.gif" width=302 border=0></TD>
+					</TR>
+					<TR>
+					    <TD Class="HeaderFont" align=center height=26 
+					        vAlign=top width="38%"><script language=vbscript>document.write "Historique de l'application EDI"</script></TD>
+					</TR>
+					<TR>
+						<TD align=center height=30 vAlign=top colspan = 3>  </TD>
+					</TR>
+				</TABLE>
+			</DIV>
+			<DIV align=left>&nbsp;</DIV>
+			<DIV align=center>
+			    <CENTER>
+			    <table id="tblRptFilter" border=0 style="WIDTH: 300px"  >
+				<!-- OPTIONS -->
+				<TR>
+					<TD colSpan=2 class=BoldFont>
+						<P align=left>Options</P>
+					</TD>
+				</TR>
+				<TR> 
+					<TD align=right><P>Groupement des données: </P>
+					</TD>
+					<TD align=left>
+						<select name="DataFrequency">
+							<option value="0" selected>(Veuillez choisir:)</option>
+							<option value="1">Par Jour</option>
+							<option value="2">Par Semaine</option>
+							<option value="3">Par Mois</option>
+						</select>
+					</TD>
+				</TR>
+				<!-- DATES SELECTION -->
+				<TR>
+					<TD colSpan=2 class=BoldFont>
+						<P align=left>Dates</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<P align=right><FONT size=2><script language=vbscript>document.write oLoc.Translate(cFrom)</script></FONT></P>
+					</TD>
+					<TD><INPUT id=txtFrom name=txtFrom class="NonRequiredField"	type=text onblur=ValidateDate() onchange=FormatDateMedium(txtFrom) 
+						ondblclick=ShowCalendar(calFrom) onfocus=SetControlNameLocal(txtFrom) style="LEFT: 4px; WIDTH: 90px; TOP: 2px">
+							<IE:Calendar id="calFrom" style="DISPLAY: none" ondblclick="ReturnDateLocal calFrom, txtFrom"></IE:Calendar>
+					</TD>
+				</TR> 
+				<TR>
+					<TD>
+						<P align=right><FONT size=2><script language=vbscript>document.write oLoc.Translate(cTo)</script></FONT></P>
+					</TD>
+					<TD>
+						<INPUT id=txtTo name=txtTo class="NonRequiredField" type=text onblur=ValidateDate() onchange=FormatDateMedium(txtTo) 
+							ondblclick=ShowCalendar(calFrom) onfocus=SetControlNameLocal(txtTo) style="LEFT: 4px; WIDTH: 90px; TOP: 2px">
+							<IE:Calendar id="calTo" style="DISPLAY: none" ondblclick="ReturnDateLocal calFrom, txtTo"></IE:Calendar>
+					</TD>
+				</TR> 
+			    <!-- EDI DUMP FILE -->
+			        <TR>
+			            <TD class=BoldFont>Fichier Historique de l'application EDI</TD>
+			        </TR>
+			        <TR> 
+			            <TD colSpan=3><input type="file" name="DumpFile" size="80" value="C:\"></TD>
+			        </TR>
+			    </table>
+			    </CENTER>
+			    <CENTER>&nbsp;</CENTER>
+			    <CENTER><A href=VBScript:Validate><IMG id="IMG2" height="54" src="images/JBR_RunYel.gif" width="41" border="0"></A></CENTER>
+			</DIV>
+		</form>
+	<script language="javascript">fn_SetKeyTrap()</script></BODY>
+</HTML>

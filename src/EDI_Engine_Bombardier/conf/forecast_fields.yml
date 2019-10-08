@@ -1,0 +1,29 @@
+row:
+    - id : AE
+      name : Part Number
+      jbtablename : SO_Detail
+      jbfieldname : Part_Number
+    - id : AC
+      name : Plan de livraison
+      jbtablename : SO_Detail
+      jbfieldname : Ship_To
+    - id : AI
+      name : PO#
+      jbtablename : SO_Header
+      jbfieldname : Customer_PO
+    - id : AJ
+      name : Ligne de detail
+      jbtablename : SO_Detail
+      jbfieldname : Line
+    - id : BB
+      name : Quantité
+      jbtablename : SO_Detail
+      jbfieldname : Order_Qty
+    - id : BE
+      name : Date de livraison
+      jbtablename : SO_Detail
+      jbfieldname : Promised_Date
+    - id : BO
+      name : Qté cumulée
+      jbtablename : 
+      jbfieldname : 

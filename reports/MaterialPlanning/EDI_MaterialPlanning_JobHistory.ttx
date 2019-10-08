@@ -1,0 +1,9 @@
+Material	String	30	HHHHHHHHHXHHHHHHHHHXHHHHHHHHHX
+Job	String	10	HHHHHHHHHX
+Customer	String	10	HHHHHHHHHX
+Order_Quantity	Number	88,888,888.88
+Order_Date	DateTime	12/31/02
+Due_Date	DateTime	12/31/02
+Material_Trans_Date	DateTime	12/31/02
+Quantity	Number	88,888,888.88
+Status	String	10	HHHHHHHHHX

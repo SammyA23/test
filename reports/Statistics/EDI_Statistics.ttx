@@ -1,0 +1,10 @@
+DaysFromTodayOld	Number		5
+DaysFromTodayNew	Number		-2
+OldQty	Number		400
+DiffQty	Number		-100
+IsRefusedNewDate	Boolean		true
+IsRefusedNewQty	Boolean		false
+UnitCost	Number		22.50
+OldDateWeek	Number		3
+NewDateWeek	Number		2
+ActiveWeek	Number		3

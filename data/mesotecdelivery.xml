@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<file>
+  <column id="A" name="Part Number" jbtablename="SO_Detail" jbfieldname="Part_Number" />
+  <column id="B" name="Plant de livraison" jbtablename="SO_Detail" jbfieldname="Ship_To" />
+  <column id="C" name="#PO de Pratt" jbtablename="SO_Header" jbfieldname="Customer_PO" />
+  <column id="D" name="Ligne de detail" jbtablename="SO_Detail" jbfieldname="Line" />
+  <column id="H" name="Qty" jbtablename="SO_Detail" jbfieldname="Order_Qty" />
+  <column id="J" name="Date de livraison" jbtablename="SO_Detail" jbfieldname="Promised_Date" />
+  <column id="O" name="Commentaires" jbtablename="N/A" jbfieldname="N/A" />
+</file>

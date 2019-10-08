@@ -1,0 +1,459 @@
+Material Number,Plant,Doc Number,Item,Consign,Sched Line,Sched Quantity,Outstand Qty,Msg/ASN/Ship,Stat. Date,Delv. Date,Confirmed,Resch. Date,Ship To,Confirmation Comment,Buyer Email
+Add charge - Genitest ,0001,4501542996,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2011/09/15,2011/09/15,N/A, , , ,vikramsingh.punchum@accenture.com
+Add charge to submit SSON ,0001,4501477855,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/18,2011/05/18,N/A, , , ,Michel.Barras@pwc.ca
+Additional charge ,0001,4501578081,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/30,2011/05/30,N/A, , , ,Michel.Barras@pwc.ca
+Additional charge ,0001,4501599338,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/20,2011/07/20,N/A, , , ,vikramsingh.punchum@accenture.com
+Charges min batch size 3021398 ,0001,4501476903,00060, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/03,2010/12/03,N/A, , , ,Michel.Barras@pwc.ca
+Charges min batch size 3024258 ,0001,4501476904,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/03,2010/12/03,N/A, , , ,Michel.Barras@pwc.ca
+Charges min batch size 3104472-01 ,0001,4501476913,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/17,2010/12/17,N/A, , , ,Michel.Barras@pwc.ca
+Charges min batch size 3119625-01 ,0001,4501476635,00090, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/15,2011/06/15,N/A, , , ,Michel.Barras@pwc.ca
+Charges min batch size 31B5485-01 ,0001,4501477743,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/04,2011/05/04,N/A, , , ,Michel.Barras@pwc.ca
+Charges min batch size 35C1868-01 ,0001,4501477835,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/17,2011/05/17,N/A, , , ,Michel.Barras@pwc.ca
+Charges min batch size 3901931-01 ,0001,4501476867,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/18,2011/07/18,N/A, , , ,Michel.Barras@pwc.ca
+EXPEDITE FEE 30P3138-01 NETUR ,0102,4501620334,00030, ,0001, 1.000 , 1.000 ,Not Authorized,2011/08/21,2011/08/21,N/A, , , ,Michel.Barras@pwc.ca
+EXPEDITING FEE 30L2142-01 COVER BREATHER,0102,4501567066,00090, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/20,2011/06/20,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Lathe fixture LF # 1 ,0001,4501486166,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/02/08,2011/02/08,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Lathe fixture LF # 2 ,0001,4501486166,00060, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/02/08,2011/02/08,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3021398 ,0001,4501476903,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/03,2010/12/03,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3021398 ,0001,4501476903,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/03,2010/12/03,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3021398 ,0001,4501476903,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/03,2010/12/03,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3021398 ,0001,4501476903,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/03,2010/12/03,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3024258 ,0001,4501476904,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/03,2010/12/03,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3044660-01 ,0001,4501476764,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/30,2011/12/23,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3044660-01 ,0001,4501476764,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/30,2011/12/23,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3072836-01 ,0001,4501477855,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/25,2011/05/25,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3072836-01 ,0001,4501477855,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/25,2011/05/25,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3100377-02 ,0001,4501477829,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/01/14,2011/01/14,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3100377-02 ,0001,4501477829,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/01/14,2011/01/14,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3104472-01 ,0001,4501476913,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/17,2010/12/17,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3104472-01 ,0001,4501476913,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2010/12/17,2010/12/17,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3105010-02 ,0001,4501477803,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/20,2011/07/20,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3105010-02 ,0001,4501477803,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/20,2011/07/20,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3106475-01 ,0001,4501476839,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/30,2011/12/23,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3106475-01 ,0001,4501476839,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/30,2011/12/23,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3109384-01 ,0001,4501477845,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/06,2011/07/06,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3109384-01 ,0001,4501477845,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/06,2011/07/06,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3119625-01 ,0001,4501476635,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/15,2011/06/15,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3119625-01 ,0001,4501476635,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/15,2011/06/15,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3119625-01 ,0001,4501476635,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/15,2011/06/15,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3119625-01 ,0001,4501476635,00060, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/15,2011/06/15,N/A, , , ,Michel.Barras@pwc.ca
+Tooling Charges 3119625-01 ,0001,4501476635,00080, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/15,2011/06/15,N/A, , , ,Michel.Barras@pwc.ca
+add: charge fro min lot size ,0001,4501615408,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2011/09/22,2011/09/22,N/A, , , ,vikramsingh.punchum@accenture.com
+tooling Charges 3104911-01 ,0001,4501477722,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/20,2011/05/20,N/A, , , ,Michel.Barras@pwc.ca
+tooling Charges 3104911-01 ,0001,4501477722,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/20,2011/05/20,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 3119626-01 ,0001,4501476635,00070, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/06/15,2011/06/15,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 31B5485-01 ,0001,4501477743,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/04,2011/05/04,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 35C1868-01 ,0001,4501477835,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/17,2011/05/17,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 35C1868-01 ,0001,4501477835,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/17,2011/05/17,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 35C3862-01 ,0001,4501477891,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/04/04,2011/04/04,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 35C3862-01 ,0001,4501477891,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/04/04,2011/04/04,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 35C3862-01 ,0001,4501477891,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/04/04,2011/04/04,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 3901666-01 ,0001,4501478736,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/03/18,2011/03/18,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 3901666-01 ,0001,4501478736,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/03/18,2011/03/18,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 3901667-01 ,0001,4501478739,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/03/18,2011/03/18,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 3901931-01 ,0001,4501476867,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/18,2011/07/18,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 3901931-01 ,0001,4501476867,00040, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/18,2011/07/18,N/A, , , ,Michel.Barras@pwc.ca
+3009652 ,0022,5500046750,00010,K,0030, 50.000 , 50.000 ,Not Auth - ASN,2012/05/10,2012/05/10,YES, , ,too far ,vikramsingh.punchum@accenture.com
+3009652 ,0022,5500046750,00010,K,0031, 50.000 , 50.000 ,Not Auth - ASN,2013/01/31,2013/01/31,YES, , ,too far ,vikramsingh.punchum@accenture.com
+3010607 ,0017,5500045598,00010,K,0016, 25.000 , 25.000 ,<== Ship ,2011/07/15,2011/07/22,YES,2011/06/29, ,11827 ,vikramsingh.punchum@accenture.com
+3010607 ,0017,5500045598,00010,K,0018, 25.000 , 25.000 ,Not Auth - ASN,2011/09/29,2011/09/29,YES, , ,11827 ,vikramsingh.punchum@accenture.com
+3011351 ,0001,4501621398,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2011/10/20,2011/10/20,YES, , ,11248 ,vikramsingh.punchum@accenture.com
+3014049 ,0001,4501465481,00010,K,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/08/09,2011/08/09,YES, , ,10204 ,vikramsingh.punchum@accenture.com
+3015565 ,0001,4501547549,00010,K,0001, 5.000 , 5.000 ,Not Auth - ASN,2012/01/25,2012/01/25,YES, , ,11205 ,vikramsingh.punchum@accenture.com
+3016263 ,0001,4501578160,00010, ,0001, 36.000 , 36.000 ,Not Auth - ASN,2011/10/25,2011/10/25,YES,2011/09/26, ,11249 ,vikramsingh.punchum@accenture.com
+3021398 ,0001,4501476903,00010, ,0001, 10.000 , 10.000 ,Not Authorized,2011/09/19,2011/09/19,YES, , ,10845 ,Michel.Barras@pwc.ca
+3021833 ,0001,4501617890,00010, ,0001, 58.000 , 58.000 ,Not Auth - ASN,2011/12/01,2011/12/01,YES,2011/11/30, ,12184 ,Michel.Barras@pwc.ca
+3023592 ,0001,4501476768,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10881 hold dwg change ,Michel.Barras@pwc.ca
+3027904 ,0001,5500048035,00010, ,0011, 5.000 , 5.000 ,Not Auth - ASN,2011/09/28, ,NO , , , ,vikramsingh.punchum@accenture.com
+3029320 ,0017,5500053563,00010,K,0001, 7.000 , 7.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES,2011/07/28, ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,5500047417,00010,K,0006, 5.000 , 5.000 ,<== Ship ,2011/08/02,2011/08/02,YES, , ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,5500047417,00010,K,0007, 5.000 , 5.000 ,Not Auth - ASN,2011/08/14,2011/08/14,YES,2011/09/20, ,11196 ,vikramsingh.punchum@accenture.com
+3029320 ,0032,5500047417,00010,K,0008, 5.000 , 5.000 ,Not Auth - ASN,2011/10/20, ,NO , , , ,vikramsingh.punchum@accenture.com
+3031014 ,0001,5500016289,00030,K,0260, 75.000 , 75.000 ,Not Auth - ASN,2011/08/15,2011/08/18,YES,2011/07/21, ,11199 ,vikramsingh.punchum@accenture.com
+3031026 ,0001,4501456275,00010, ,0003, 2.000 , 2.000 ,Not Auth - ASN,2011/10/26,2011/10/26,YES,2011/11/24, ,10857 rework ,vikramsingh.punchum@accenture.com
+3031026 ,0032,4501584446,00010, ,0001, 96.000 , 96.000 ,Not Auth - ASN,2011/09/02,2011/09/02,YES,2011/08/26, ,11201 ,vikramsingh.punchum@accenture.com
+3031026 ,0032,4501617238,00010, ,0001, 190.000 , 190.000 ,Not Auth - ASN,2011/10/22,2011/10/22,YES, , ,11202 ,vikramsingh.punchum@accenture.com
+3034950 ,0001,5500027963,00010,K,0014, 9.000 , 9.000 ,Not Auth - ASN,2011/11/15,2011/11/15,YES,2012/06/14, ,10217 ,vikramsingh.punchum@accenture.com
+3034950 ,0017,5500045578,00010,K,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/08/01,2011/08/05,YES,2011/08/01, ,10217 ,vikramsingh.punchum@accenture.com
+3034950 ,0017,5500045578,00010,K,0002, 35.000 , 35.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES,2011/09/09, ,10217 ,vikramsingh.punchum@accenture.com
+3041705-01 ,0001,5500019155,00010,K,0265, 45.000 , 45.000 ,Not Auth - ASN,2011/09/22, ,NO ,2011/09/12, , ,vikramsingh.punchum@accenture.com
+3043561-01 ,0001,5500025611,00020,K,0033, 6.000 , 6.000 ,Not Auth - ASN,2011/11/30,2011/11/30,YES,2012/01/23, ,11207 ,vikramsingh.punchum@accenture.com
+3043872-01 ,0022,4501574795,00010, ,0003, 2.000 , 2.000 ,Not Auth - ASN,2011/10/11,2011/10/11,YES, , ,11208/rework cptech ,vikramsingh.punchum@accenture.com
+3043933-01 ,0001,5500019154,00010,K,0202, 46.000 , 46.000 ,Not Auth - ASN,2011/09/02,2011/09/02,YES, , ,11212 ,vikramsingh.punchum@accenture.com
+3044466-01 ,0001,5500025132,00020,K,0157, 48.000 , 48.000 ,Not Auth - ASN,2011/08/24,2011/08/24,YES, , ,STOCK ,vikramsingh.punchum@accenture.com
+3044659-01 ,0001,4501476647,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10877 hold dwg change ,Michel.Barras@pwc.ca
+3044659-01 ,0001,4501476647,00020, ,0001, 50.000 , 50.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10877 hold dwg change ,Michel.Barras@pwc.ca
+3044660-01 ,0001,4501476764,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10882 hold dwg change ,Michel.Barras@pwc.ca
+3044660-01 ,0001,4501476764,00020, ,0001, 10.000 , 10.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10882 hold dwg change ,Michel.Barras@pwc.ca
+3046169-01 ,0001,4501624035,00010,K,0002, 20.000 , 20.000 ,Not Auth - ASN,2011/09/19,2011/09/19,YES,2011/10/21, ,stock old revision ,vikramsingh.punchum@accenture.com
+3046284-01 ,0001,4501442556,00010, ,0001, 36.000 , 36.000 ,Not Auth - ASN,2011/08/08,2011/08/08,YES,2011/06/27, ,80923 ,vikramsingh.punchum@accenture.com
+3046287-01 ,0001,4501609597,00010,K,0002, 40.000 , 40.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES, , ,11218 old revision ,vikramsingh.punchum@accenture.com
+3046287-01 ,0001,4501609597,00010,K,0003, 35.000 , 35.000 ,Not Auth - ASN,2011/10/25,2011/10/25,YES, , ,11218 old revision ,vikramsingh.punchum@accenture.com
+3046555-01 ,0001,5500016648,00010,K,0142, 60.000 , 60.000 ,Not Auth - ASN,2011/08/11,2011/08/11,YES, , ,11236/24 stock ,vikramsingh.punchum@accenture.com
+3046892-01 ,0001,4501617259,00010, ,0001, 37.000 , 37.000 ,Not Auth - ASN,2011/10/13,2011/10/13,YES, , ,11265 ,vikramsingh.punchum@accenture.com
+3046896-01 ,0001,5500016417,00010,K,0204, 34.000 , 34.000 ,Not Auth - ASN,2011/08/01,2011/08/01,YES, , ,LV* ,vikramsingh.punchum@accenture.com
+3047134-01 ,0001,5500019673,00010,K,0435, 35.000 , 35.000 ,Not Auth - ASN,2011/09/20,2011/09/20,YES, , ,11238 ,vikramsingh.punchum@accenture.com
+3047138-01 ,0001,5500016301,00010,K,0310, 33.000 , 33.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,11240 ,vikramsingh.punchum@accenture.com
+3047139-01 ,0001,5500016653,00020, ,0205, 21.000 , 21.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES,2011/09/13, ,11221 ,vikramsingh.punchum@accenture.com
+3047182-01 ,0001,5500016644,00010,K,0686, 35.000 , 35.000 ,Not Auth - ASN,2011/08/17,2011/08/17,YES, , ,11223 ,vikramsingh.punchum@accenture.com
+3048179-01 ,0001,5500047080,00010,K,0075, 9.000 , 9.000 ,Not Auth - ASN,2011/08/08,2011/08/08,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3048179-01 ,0001,5500047080,00010,K,0079, 2.000 , 2.000 ,Not Auth - ASN,2011/08/31,2011/08/31,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3048179-01 ,0001,5500047080,00010,K,0080, 2.000 , 2.000 ,Not Auth - ASN,2011/09/02,2011/09/02,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3048179-01 ,0001,5500047080,00010,K,0081, 2.000 , 2.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3048306-01 ,0001,4501553371,00010, ,0002, 7.000 , 7.000 ,Not Auth - ASN,2011/08/04,2011/08/04,YES, , ,11241 ,vikramsingh.punchum@accenture.com
+3048306-01 ,0001,4501595552,00010, ,0001, 33.000 , 33.000 ,Not Auth - ASN,2011/08/17,2011/08/17,YES, , ,11241 ,vikramsingh.punchum@accenture.com
+3049499-01 ,0001,4501615397,00010, ,0002, 5.000 , 5.000 ,Not Auth - ASN,2011/11/24,2011/11/24,YES, , ,STOCK ,vikramsingh.punchum@accenture.com
+3050134-01 ,0001,4501569682,00010, ,0001, 50.000 , 50.000 ,<== Ship ,2011/07/22,2011/07/22,YES, , ,LV* ,vikramsingh.punchum@accenture.com
+3050134-01 ,0001,4501593658,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/09/16,2011/09/16,YES, , ,11232 ,vikramsingh.punchum@accenture.com
+3050134-01 ,0001,4501612380,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/11/03,2011/11/03,YES, , ,11620 ,vikramsingh.punchum@accenture.com
+3050209-01 ,0001,5500019674,00010,K,0206, 50.000 , 50.000 ,Not Auth - ASN,2011/09/21, ,NO , , ,17 STOCK ,vikramsingh.punchum@accenture.com
+3050276-01 ,0001,4501627440,00010,K,0001, 11.000 , 11.000 ,Not Auth - ASN,2011/10/19,2011/10/19,YES, , ,11242 ,vikramsingh.punchum@accenture.com
+3050682-01 ,0001,4501612994,00010,K,0002, 18.000 , 18.000 ,<== Ship ,2011/07/20,2011/07/22,YES, , ,11244 old revision ,vikramsingh.punchum@accenture.com
+3050682-01 ,0001,4501612994,00010,K,0003, 18.000 , 18.000 ,Not Auth - ASN,2011/08/17,2011/08/17,YES, , ,11244 old revision ,vikramsingh.punchum@accenture.com
+3050682-01 ,0001,4501612994,00010,K,0004, 18.000 , 18.000 ,Not Auth - ASN,2011/09/22,2011/09/22,YES, , ,11244 old revision ,vikramsingh.punchum@accenture.com
+3050682-01 ,0001,4501612994,00010,K,0005, 20.000 , 20.000 ,Not Auth - ASN,2011/10/20,2011/10/20,YES, , ,11244 old revision ,vikramsingh.punchum@accenture.com
+3052530-01 ,0001,4501627602,00010, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES, , ,11230 ,vikramsingh.punchum@accenture.com
+3052534-01 ,0001,5500052629,00010, ,0004, 14.000 , 14.000 ,Not Auth - ASN,2011/08/17,2011/08/17,YES, , ,11861 ,vikramsingh.punchum@accenture.com
+3052534-01 ,0001,5500052629,00010, ,0003, 20.000 , 20.000 ,Not Auth - ASN,2011/10/05,2011/10/05,YES, , ,11898 ,vikramsingh.punchum@accenture.com
+3052572-01 ,0001,5500052734,00010, ,0001, 45.000 , 45.000 ,Not Auth - ASN,2011/08/22,2011/08/22,YES,2011/07/08, ,11245 pull refusé remettre 22 aout ,vikramsingh.punchum@accenture.com
+3052579-01 ,0001,4501628564,00010, ,0001, 15.000 , 15.000 ,Not Authorized,2011/10/07, ,NO , , ,new to plan ,Michel.Barras@pwc.ca
+3053159-01 ,0001,5500019158,00010,K,0204, 50.000 , 50.000 ,Not Auth - ASN,2011/08/03,2011/08/03,YES, , ,11246 ,vikramsingh.punchum@accenture.com
+3053604-01 ,0001,5500019161,00010,K,0115, 57.000 , 57.000 ,Not Auth - ASN,2011/08/19,2011/08/19,YES, , ,11274 ,vikramsingh.punchum@accenture.com
+3054467-01 ,0001,4501615408,00010, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2011/09/22,2011/09/22,YES,2011/10/27, ,stock ,vikramsingh.punchum@accenture.com
+3054546-01 ,0001,5500016467,00010,K,0475, 17.000 , 17.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3054546-01 ,0001,5500016467,00010,K,0476, 52.000 , 52.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES, , ,11279 ,vikramsingh.punchum@accenture.com
+3054549-01 ,0001,5500019676,00010,K,0063, 10.000 , 10.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES, , ,11283 ,vikramsingh.punchum@accenture.com
+3054550-01 ,0001,4501566914,00010,K,0002, 30.000 , 30.000 ,Not Auth - ASN,2011/09/15,2011/09/15,YES,2011/11/17, ,stock ,vikramsingh.punchum@accenture.com
+3054552-01 ,0001,5500016697,00010,K,0103, 9.000 , 9.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3055412-01 ,0001,4501602065,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/09/02,2011/09/02,YES, , ,11289 ,vikramsingh.punchum@accenture.com
+3055412-01 ,0001,4501629912,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/11/23, ,NO , , , ,vikramsingh.punchum@accenture.com
+3055413-01 ,0001,5500019677,00010,K,0274, 4.000 , 4.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3056928-01 ,0001,4501507249,00010, ,0003, 4.000 , 4.000 ,Not Auth - ASN,2011/08/15,2011/08/18,YES, , ,11290 ,vikramsingh.punchum@accenture.com
+3056928-01 ,0001,4501507249,00010, ,0004, 6.000 , 6.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,11290 ,vikramsingh.punchum@accenture.com
+3056928-01 ,0001,4501539531,00010, ,0004, 14.000 , 14.000 ,Not Auth - ASN,2011/08/05,2011/08/05,YES, , , ,vikramsingh.punchum@accenture.com
+3056928-01 ,0001,4501539531,00010, ,0003, 8.000 , 8.000 ,Not Auth - ASN,2011/09/01,2011/09/06,YES, , ,11825 ,vikramsingh.punchum@accenture.com
+3056928-01 ,0001,4501539531,00010, ,0002, 28.000 , 28.000 ,Not Auth - ASN,2011/09/20,2011/09/20,YES, , ,11825 ,vikramsingh.punchum@accenture.com
+3057567-01 ,0001,5500029227,00010,K,0117, 57.000 , 57.000 ,Not Auth - ASN,2011/08/23,2011/08/23,YES, , ,11292 ,vikramsingh.punchum@accenture.com
+3058916-01 ,0001,5500035752,00010,K,0045, 10.000 , 10.000 ,Not Auth - ASN,2011/09/22,2011/09/22,YES, , ,11297 ,Nathalie.Provost@pwc.ca
+3059345-01 ,0001,4501608337,00010, ,0001, 36.000 , 36.000 ,Not Auth - ASN,2011/10/05,2011/10/05,YES, , ,10717/11300 ,vikramsingh.punchum@accenture.com
+3059686-01 ,0001,4501612255,00010,K,0001, 2.000 , 2.000 ,Not Auth - ASN,2011/10/27,2011/10/27,YES, , ,12050 ,vikramsingh.punchum@accenture.com
+3059692-01 ,0001,4501569695,00010, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2011/08/26,2011/08/26,YES,2012/01/05, ,11301 ,vikramsingh.punchum@accenture.com
+3059780-01 ,0001,5500037245,00010, ,0303, 10.000 , 10.000 ,Not Auth - ASN,2011/08/11,2011/08/11,YES,2011/04/15, ,11305 ,vikramsingh.punchum@accenture.com
+3059780-01 ,0001,5500037245,00010, ,0304, 8.000 , 8.000 ,Not Auth - ASN,2011/08/22, ,NO ,2011/07/13, , ,vikramsingh.punchum@accenture.com
+3059780-01 ,0001,5500037245,00010, ,0305, 8.000 , 8.000 ,Not Auth - ASN,2011/08/22, ,NO ,2011/07/18, , ,vikramsingh.punchum@accenture.com
+3059780-01 ,0001,5500037245,00010, ,0306, 8.000 , 8.000 ,Not Auth - ASN,2011/08/22, ,NO ,2011/07/18, , ,vikramsingh.punchum@accenture.com
+3059780-01 ,0001,5500037245,00010, ,0307, 8.000 , 8.000 ,Not Auth - ASN,2011/08/22, ,NO ,2011/07/18, , ,vikramsingh.punchum@accenture.com
+3059780-01 ,0001,5500037245,00010, ,0308, 8.000 , 8.000 ,Not Auth - ASN,2011/08/22, ,NO ,2011/08/10, , ,vikramsingh.punchum@accenture.com
+3070056-01 ,0001,5500028304,00010,K,0040, 5.000 , 5.000 ,Not Auth - ASN,2011/11/30,2011/11/30,YES, , ,11307 ,vikramsingh.punchum@accenture.com
+3070124-01 ,0032,4501544986,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES,2011/09/21, ,11309 ,vikramsingh.punchum@accenture.com
+3070124-01 ,0032,4501630954,00010, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2012/01/16, ,NO , , , ,vikramsingh.punchum@accenture.com
+3070492-01 ,0001,5500052633,00010, ,0002, 12.000 , 12.000 ,Not Auth - ASN,2011/08/24,2011/08/24,YES, , ,11311/9 stock ,vikramsingh.punchum@accenture.com
+3070625-01 ,0001,4501524413,00010, ,0002, 14.000 , 14.000 ,Not Auth - ASN,2011/08/24,2011/08/24,YES, , ,11032/2 stock ,vikramsingh.punchum@accenture.com
+3070625-01 ,0001,4501524413,00010, ,0001, 12.000 , 12.000 ,Not Auth - ASN,2011/09/23,2011/09/23,YES, , ,11032 ,vikramsingh.punchum@accenture.com
+3070625-01 ,0001,4501569702,00010, ,0001, 13.000 , 13.000 ,Not Auth - ASN,2011/10/21,2011/10/21,YES, , ,11313 ,vikramsingh.punchum@accenture.com
+3070625-01 ,0001,4501569702,00010, ,0002, 13.000 , 13.000 ,Not Auth - ASN,2011/11/07,2011/11/07,YES,2011/11/22, ,11313 ,vikramsingh.punchum@accenture.com
+3070625-01 ,0001,4501600642,00010, ,0001, 13.000 , 13.000 ,Not Auth - ASN,2011/12/01,2011/12/01,YES, , ,11313 ,vikramsingh.punchum@accenture.com
+3070625-01 ,0001,4501631032,00010, ,0001, 13.000 , 13.000 ,Not Auth - ASN,2012/02/28, ,NO , , , ,vikramsingh.punchum@accenture.com
+3070625-01 ,0001,4501631032,00010, ,0002, 13.000 , 13.000 ,Not Auth - ASN,2012/04/11, ,NO , , , ,vikramsingh.punchum@accenture.com
+3070695-01 ,0001,4501560964,00010, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,10279/11314 ,vikramsingh.punchum@accenture.com
+3070739-01 ,0001,4501544805,00010, ,0002, 13.000 , 13.000 ,Not Auth - ASN,2011/08/24,2011/08/24,YES, , ,10635 ,vikramsingh.punchum@accenture.com
+3070739-01 ,0001,4501605619,00010, ,0001, 13.000 , 13.000 ,Not Auth - ASN,2011/09/30,2011/09/30,YES, , ,11316 ,vikramsingh.punchum@accenture.com
+3070739-01 ,0001,4501605619,00010, ,0002, 13.000 , 13.000 ,Not Auth - ASN,2011/10/27,2011/10/27,YES, , ,11316 ,vikramsingh.punchum@accenture.com
+3070739-01 ,0001,4501625264,00010, ,0001, 13.000 , 13.000 ,Not Auth - ASN,2011/11/30,2011/11/30,YES, , ,11977 ,vikramsingh.punchum@accenture.com
+3070867-01 ,0001,4501552891,00010, ,0001, 5.000 , 5.000 ,Auth-ASN N/A ,2011/05/20,2011/08/22,YES, , ,11716 ,Michel.Barras@pwc.ca
+3070868-01 ,0001,4501552892,00010, ,0001, 5.000 , 5.000 ,Auth-ASN N/A ,2011/05/27,2011/08/19,YES, , ,11715 ,Michel.Barras@pwc.ca
+3071055-01 ,0001,5500037002,00010,K,0089, 15.000 , 15.000 ,Not Auth - ASN,2011/08/25, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3071417-02 ,0001,4501604006,00010, ,0001, 49.000 , 49.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES,2011/09/14, ,stock ,vikramsingh.punchum@accenture.com
+3071417-02 ,0001,4501604006,00010, ,0002, 11.000 , 11.000 ,Not Auth - ASN,2011/11/15,2011/11/15,YES,2011/11/07, ,11321 ,vikramsingh.punchum@accenture.com
+3071419-01 ,0001,5500035931,00010,K,0250, 10.000 , 10.000 ,Not Auth - ASN,2011/08/31,2011/08/31,YES, , ,11323 ,vikramsingh.punchum@accenture.com
+3071419-01 ,0001,5500035931,00010,K,0251, 10.000 , 10.000 ,Not Auth - ASN,2011/09/07,2011/09/07,YES, , ,11323 ,vikramsingh.punchum@accenture.com
+3071419-01 ,0001,5500035931,00010,K,0252, 10.000 , 10.000 ,Not Auth - ASN,2011/09/14,2011/09/14,YES, , ,11323 ,vikramsingh.punchum@accenture.com
+3071419-01 ,0001,5500035931,00010,K,0253, 11.000 , 11.000 ,Not Auth - ASN,2011/09/19,2011/09/19,YES, , ,11323 ,vikramsingh.punchum@accenture.com
+3071419-01 ,0032,5500042891,00010,K,0120, 30.000 , 30.000 ,Not Auth - ASN,2011/08/09,2011/08/09,YES, , ,11323 ,vikramsingh.punchum@accenture.com
+3071930-01 ,0001,5500037286,00010, ,0055, 45.000 , 45.000 ,<== Ship ,2011/07/28,2011/07/28,YES,2011/08/22, ,11325 ,vikramsingh.punchum@accenture.com
+3072836-01 ,0001,4501477855,00010, ,0003, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/24,2011/08/31,YES, , ,1 sson cstg 11yw01715 ,Michel.Barras@pwc.ca
+3072836-01 ,0001,4501477855,00010, ,0004, 2.000 , 2.000 ,Auth-ASN N/A ,2011/07/24,2011/08/31,YES, , ,2 sson11YW01722 ,Michel.Barras@pwc.ca
+3072939-01 ,0001,5500044828,00010, ,0382, 5.000 , 5.000 ,Not Auth - ASN,2011/08/10,2011/08/10,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3072939-01 ,0001,5500044828,00010, ,0383, 5.000 , 5.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3072939-01 ,0001,5500044828,00010, ,0384, 5.000 , 5.000 ,Not Auth - ASN,2011/08/26,2011/08/26,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3072939-01 ,0001,5500044828,00010, ,0385, 5.000 , 5.000 ,Not Auth - ASN,2011/09/14,2011/09/14,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3072939-01 ,0001,5500044828,00010, ,0386, 7.000 , 7.000 ,Not Auth - ASN,2011/09/20,2011/09/20,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3072939-01 ,0001,5500044828,00010, ,0387, 5.000 , 5.000 ,Not Auth - ASN,2011/09/22, ,NO , , , ,vikramsingh.punchum@accenture.com
+3072939-01 ,0017,5500052303,00010, ,0004, 33.000 , 33.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3072939-01 ,0017,5500052303,00010, ,0006, 11.000 , 11.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3072939-01 ,0017,5500052303,00010, ,0005, 45.000 , 45.000 ,Not Auth - ASN,2011/09/29,2011/09/29,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3074098-01 ,0001,4501533926,00010, ,0003, 17.000 , 17.000 ,Not Auth - ASN,2011/12/15,2011/12/15,YES, , ,11331/1 stock ,vikramsingh.punchum@accenture.com
+3075464-01 ,0001,4501551734,00010, ,0001, 6.000 , 6.000 ,<== Ship ,2011/07/04,2011/07/29,YES,2011/06/10, ,11714 ,Michel.Barras@pwc.ca
+3075464-01 ,0001,4501551734,00020, ,0001, 6.000 , 6.000 ,Not Auth - ASN,2011/08/31,2011/08/31,YES,2011/06/10, ,11714 ,Michel.Barras@pwc.ca
+3075523-01 ,0032,4501584963,00010, ,0001, 21.000 , 21.000 ,Not Auth - ASN,2011/10/17,2011/10/17,YES,2011/10/13, ,hold à la demande de pwc ,Michel.Barras@pwc.ca
+3075523-01 ,0032,4501629780,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/11/19, ,NO , , , ,vikramsingh.punchum@accenture.com
+3075542-01 ,0017,4501554722,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/10/28,2011/10/28,YES, , ,11166 ,Michel.Barras@pwc.ca
+3075586-01 ,0001,4501602042,00010, ,0001, 6.000 , 6.000 ,<== Ship ,2011/07/25,2011/07/25,YES,2011/06/10, ,11542 ,Michel.Barras@pwc.ca
+3075700-01 ,0001,4501472354,00010, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2011/10/19,2011/10/19,YES, , ,stock ,Michel.Barras@pwc.ca
+3075701-01 ,0001,4501576743,00010, ,0001, 18.000 , 18.000 ,Not Auth - ASN,2011/12/23,2011/12/23,YES, , ,11530 HOLD À LA DEMANDE DE PWC ,Michel.Barras@pwc.ca
+3075716-01 ,0001,4501551913,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/10/19,2011/10/19,YES, , ,11689 delai 91 jours; mettre 2 mai ,Michel.Barras@pwc.ca
+3076203-01 ,0001,4501628295,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/10/19,2011/10/19,YES, , ,11597 ,vikramsingh.punchum@accenture.com
+3076204-01 ,0001,4501629521,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/10/19,2011/10/19,YES, , ,11802 ,vikramsingh.punchum@accenture.com
+3076206-01 ,0001,4501629553,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2011/10/24,2011/10/24,YES,2011/10/19, ,11803 ,vikramsingh.punchum@accenture.com
+3076411-01 ,0001,4501585663,00010, ,0001, 6.000 , 6.000 ,Not Auth - ASN,2011/10/11,2011/10/11,YES, , ,12090 ,Michel.Barras@pwc.ca
+3076419-01 ,0001,4501572123,00010, ,0001, 6.000 , 6.000 ,Not Auth - ASN,2011/10/14,2011/10/14,YES, , ,11782 ,Michel.Barras@pwc.ca
+3076492-01 ,0001,4501576229,00010, ,0001, 17.000 , 17.000 ,Not Auth - ASN,2011/09/30,2011/09/30,YES, , ,11810 ,Michel.Barras@pwc.ca
+3076492-01 ,0001,4501576229,00010, ,0002, 21.000 , 21.000 ,Not Auth - ASN,2011/11/07,2011/11/07,YES, , ,11810 ,Michel.Barras@pwc.ca
+3076530-01 ,0102,4501582026,00020, ,0002, 1.000 , 1.000 ,Auth-ASN N/A ,2011/07/15,2011/07/15,N/A,2011/05/17, ,11810 ,Michel.Barras@pwc.ca
+3076543-01 ,0102,4501568369,00020, ,0001, 8.000 , 8.000 ,Not Authorized,2011/12/23,2011/12/23,N/A,2011/04/01, ,11810 ,Michel.Barras@pwc.ca
+3076544-01 ,0102,4501568380,00030, ,0001, 8.000 , 8.000 ,Not Authorized,2011/12/23,2011/12/23,N/A,2011/07/05, ,11810 ,Michel.Barras@pwc.ca
+3076694-01 ,0001,4501562955,00010, ,0001, 6.000 , 6.000 ,Not Auth - ASN,2011/10/19,2011/10/19,YES, , ,11748 ,Michel.Barras@pwc.ca
+30B2905-01 ,0001,4501479103,00010, ,0002, 35.000 , 35.000 ,Not Auth - ASN,2011/10/05,2011/10/05,YES,2011/11/08, ,stock ,vikramsingh.punchum@accenture.com
+30B3646-01 ,0001,4501526278,00010, ,0002, 14.000 , 14.000 ,Not Auth - ASN,2011/12/23,2011/12/23,YES, , ,11170 ,Michel.Barras@pwc.ca
+30B3845-01 ,0022,4501630977,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2011/10/14, ,NO , , , ,vikramsingh.punchum@accenture.com
+30B4704-01 ,0001,4501542996,00010,K,0001, 27.000 , 27.000 ,Not Auth - ASN,2011/09/15,2011/09/15,YES,2012/03/21, ,10289 ,vikramsingh.punchum@accenture.com
+30B4704-01 ,0001,4501542996,00010,K,0002, 23.000 , 23.000 ,Not Auth - ASN,2012/10/03,2012/10/03,YES, , ,to plan ,vikramsingh.punchum@accenture.com
+30C1710-01 ,0022,5500045025,00010,K,0009, 20.000 , 20.000 ,Not Auth - ASN,2011/08/22,2011/08/22,YES, , ,11338 ,vikramsingh.punchum@accenture.com
+30C1846-01 ,0001,5500022559,00020,K,0021, 10.000 , 10.000 ,Not Auth - ASN,2011/10/11,2011/10/11,YES, , ,11340 ,vikramsingh.punchum@accenture.com
+30C1919-01 ,0022,5500042113,00010,K,0036, 30.000 , 30.000 ,Not Auth - ASN,2011/09/02,2011/09/06,NO ,2011/08/29, ,11342 pull refusé; mettre 12 sept ,vikramsingh.punchum@accenture.com
+30C1920-01 ,0022,5500042117,00010,K,0059, 30.000 , 30.000 ,Not Auth - ASN,2011/09/05,2011/09/05,YES,2011/08/29, ,11344 pull refusé svp mettre 5 sept ,vikramsingh.punchum@accenture.com
+30C1920-01 ,0022,5500042117,00010,K,0060, 30.000 , 30.000 ,Not Auth - ASN,2011/10/28,2011/10/28,YES, , ,11980 ,vikramsingh.punchum@accenture.com
+30C3956-01 ,0022,4501622874,00010, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2011/09/23,2011/09/23,YES, , ,11345 ,vikramsingh.punchum@accenture.com
+30C4163-01 ,0001,4501576905,00010, ,0001, 14.000 , 14.000 ,Auth-ASN N/A ,2011/06/22,2011/08/24,YES, , ,11811 ,Michel.Barras@pwc.ca
+30C4337-01 ,0001,4501561541,00010, ,0001, 45.000 , 45.000 ,Not Auth - ASN,2011/08/31,2011/08/31,YES,2011/06/09, ,11348 ,vikramsingh.punchum@accenture.com
+30C4337-01 ,0022,4501533956,00010, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2011/08/31,2011/08/31,YES,2011/10/04, ,11157 REWORK ,vikramsingh.punchum@accenture.com
+30C4987-01 ,0001,4501486166,00030, ,0001, 5.000 , 5.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,sc* scrap ,Michel.Barras@pwc.ca
+30C6218-01 ,0001,4501631288,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2011/11/04, ,NO ,2011/10/27, , ,Michel.Barras@pwc.ca
+30C6218-01 ,0001,4501631288,00010, ,0002, 5.000 , 5.000 ,Not Auth - ASN,2011/12/16, ,NO ,2012/03/14, , ,Michel.Barras@pwc.ca
+30C6257-01 ,0001,4501614059,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/10/21,2011/10/21,YES, , ,12173 ,Michel.Barras@pwc.ca
+30C6257-01 ,0102,4501537281,00060, ,0001, 2.000 , 2.000 ,Not Authorized,2011/12/31,2011/12/31,N/A,2011/05/25, ,12173 ,Michel.Barras@pwc.ca
+30C6257-01 ,0102,4501598027,00010, ,0002, 1.000 , 1.000 ,Not Authorized,2011/12/23,2011/12/23,N/A,2011/05/25, ,12173 ,Michel.Barras@pwc.ca
+30J1672-01 ,0001,5500053574,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES,2011/08/23, ,12150 ,vikramsingh.punchum@accenture.com
+30J1672-01 ,0001,5500053574,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2012/01/13,2012/01/13,YES, , ,12155 ,vikramsingh.punchum@accenture.com
+30J1750-01 ,0001,5500052305,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/10/05,2011/10/05,YES, , ,11697 ,vikramsingh.punchum@accenture.com
+30J2785-01 ,0001,5500052664,00020, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,stock ,vikramsingh.punchum@accenture.com
+30J2785-01 ,0001,5500052664,00020, ,0004, 10.000 , 10.000 ,Not Auth - ASN,2011/09/21,2011/09/21,YES, , ,stock ,vikramsingh.punchum@accenture.com
+30J2785-01 ,0001,5500052664,00020, ,0003, 10.000 , 10.000 ,Not Auth - ASN,2011/10/26,2011/10/26,YES, , ,9 stock ,vikramsingh.punchum@accenture.com
+30J3520-01 ,0017,4501551904,00010, ,0002, 50.000 , 50.000 ,<== Ship ,2011/07/28,2011/08/15,YES,2011/07/28, ,11545/12 Stock ,Michel.Barras@pwc.ca
+30J3556CL01 ,0001,4501610913,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES,2011/06/03, ,12162 ,Michel.Barras@pwc.ca
+30J3556CL02 ,0001,4501610913,00020, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/08/29,2011/08/30,YES,2011/06/03, ,12163 ,Michel.Barras@pwc.ca
+30J3556CL03 ,0001,4501610913,00030, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES,2011/06/03, ,12164 ,Michel.Barras@pwc.ca
+30J3556CL03 ,0001,4501610913,00030, ,0002, 50.000 , 50.000 ,Not Auth - ASN,2011/09/30,2011/09/30,YES,2011/09/28, ,12176 ,Michel.Barras@pwc.ca
+30J3556CL04 ,0001,4501610913,00040, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES,2011/06/03, ,12165 ,Michel.Barras@pwc.ca
+30J3556CL05 ,0001,4501610913,00050, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/08/29,2011/08/29,YES,2011/06/03, ,12166 ,Michel.Barras@pwc.ca
+30L0882-01 ,0001,4501579048,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/09/22,2011/09/22,YES, , ,11360/10 stock ,Michel.Barras@pwc.ca
+30L1707-01 ,0001,4501551894,00010, ,0002, 13.000 , 13.000 ,Not Auth - ASN,2011/08/11,2011/08/11,YES, , ,11524 ,Michel.Barras@pwc.ca
+30L1707-01 ,0001,4501560949,00010, ,0002, 15.000 , 15.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,11524 ,Michel.Barras@pwc.ca
+30L1707-01 ,0001,4501631009,00010, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2011/11/14, ,NO , , , ,vikramsingh.punchum@accenture.com
+30L1707-01 ,0001,4501631009,00010, ,0002, 15.000 , 15.000 ,Not Auth - ASN,2012/01/23, ,NO , , , ,vikramsingh.punchum@accenture.com
+30L1724-01 ,0001,4501578926,00010,K,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/09/23,2011/09/23,YES, , ,11534 ,Michel.Barras@pwc.ca
+30L1761-01 ,0001,4501580513,00010, ,0002, 15.000 , 15.000 ,Not Auth - ASN,2011/09/01,2011/09/01,YES,2011/07/19, ,stock ,Michel.Barras@pwc.ca
+30L2123-01 ,0001,4501612409,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/09/28,2011/09/28,YES,2011/07/21, ,12178 ,Michel.Barras@pwc.ca
+30L2123-01 ,0001,4501612409,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2011/12/08,2011/12/08,YES, , ,12179 ,Michel.Barras@pwc.ca
+30L2142-01 ,0102,4501567066,00120, ,0001, 5.000 , 5.000 ,Not Authorized,2011/09/07,2011/09/07,N/A, , ,12179 ,Michel.Barras@pwc.ca
+30P0210-01 ,0001,5500048904,00010,K,0005, 16.000 , 16.000 ,Not Auth - ASN,2011/11/08,2011/11/08,YES, , ,10581 ,vikramsingh.punchum@accenture.com
+30P0349-01 ,0001,5500031887,00010,K,0327, 50.000 , 50.000 ,Not Auth - ASN,2011/09/26,2011/09/26,YES,2011/09/07, ,11363 ,vikramsingh.punchum@accenture.com
+30P0379-01 ,0001,4501615966,00010,K,0004, 20.000 , 20.000 ,Not Auth - ASN,2011/09/03,2011/09/03,YES, , ,STOCK ,vikramsingh.punchum@accenture.com
+30P0379-01 ,0001,4501615966,00010,K,0005, 20.000 , 20.000 ,Not Auth - ASN,2011/09/29,2011/09/29,YES, , ,STOCK 16 PCES ,vikramsingh.punchum@accenture.com
+30P0379-01 ,0001,4501630999,00010,K,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/10/25, ,NO ,2011/10/24, , ,vikramsingh.punchum@accenture.com
+30P0380-01 ,0001,5500029250,00010,K,0119, 30.000 , 30.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,29 stock ,vikramsingh.punchum@accenture.com
+30P0573-01 ,0001,5500030446,00010,K,0148, 20.000 , 20.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,stock ,vikramsingh.punchum@accenture.com
+30P0573-01 ,0001,5500030446,00010,K,0149, 20.000 , 20.000 ,Not Auth - ASN,2011/10/26,2011/10/26,YES, , ,10390 ,vikramsingh.punchum@accenture.com
+30P0589-01 ,0022,4501519024,00010, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,1 sson + 1 evaluation 10651 ,vikramsingh.punchum@accenture.com
+30P0589-01 ,0022,4501603386,00010, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2011/09/29,2011/09/29,YES, , ,11367 ,vikramsingh.punchum@accenture.com
+30P0619-01 ,0022,5500046992,00010, ,0011, 10.000 , 10.000 ,Not Auth - ASN,2011/08/26,2011/08/26,YES, , ,10726 ,vikramsingh.punchum@accenture.com
+30P0619-01 ,0022,5500046992,00010, ,0012, 20.000 , 20.000 ,Not Auth - ASN,2011/09/20, ,NO , , , ,vikramsingh.punchum@accenture.com
+30P0824-01 ,0001,4501591789,00010, ,0001, 38.000 , 38.000 ,Not Auth - ASN,2011/10/13,2011/10/13,YES,2011/07/07, ,11611 ,vikramsingh.punchum@accenture.com
+30P0841-01 ,0022,4501577297,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/09/06,2011/09/06,YES, , ,10727/33 stock +36 non assy ,vikramsingh.punchum@accenture.com
+30P0841-01 ,0022,4501622959,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/11/07,2011/11/07,YES, , ,11372 ,vikramsingh.punchum@accenture.com
+30P1118-01 ,0022,5500042116,00010,K,0025, 30.000 , 30.000 ,Not Auth - ASN,2011/09/16,2011/09/16,YES, , ,11373 ,vikramsingh.punchum@accenture.com
+30P1368-01 ,0022,5500042118,00010,K,0031, 25.000 , 25.000 ,Not Auth - ASN,2011/08/26,2011/08/26,YES, , ,11569 ,vikramsingh.punchum@accenture.com
+30P1549-01 ,0001,5500030663,00020, ,0065, 20.000 , 20.000 ,Not Auth - ASN,2011/09/01,2011/09/01,YES,2011/08/25, ,11379 ,vikramsingh.punchum@accenture.com
+30P1718-01 ,0022,5500042119,00010, ,0065, 30.000 , 30.000 ,Not Auth - ASN,2011/09/07,2011/09/07,YES, , ,stock ,vikramsingh.punchum@accenture.com
+30P2158-01 ,0022,5500046758,00010,K,0008, 25.000 , 25.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,stock ,vikramsingh.punchum@accenture.com
+30P2239-01 ,0001,5500052129,00010,K,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/08/22,2011/08/22,YES,2011/07/14, ,11384; 2 stock ,vikramsingh.punchum@accenture.com
+30P2239-01 ,0001,5500052129,00010,K,0002, 25.000 , 25.000 ,Not Auth - ASN,2011/09/20,2011/09/20,YES, , ,11384 ,vikramsingh.punchum@accenture.com
+30P2240-01 ,0022,5500042120,00010,K,0026, 25.000 , 25.000 ,Not Auth - ASN,2011/09/19,2011/09/19,YES,2011/09/12, ,11386 ,vikramsingh.punchum@accenture.com
+30P2433-01 ,0022,4501574825,00010, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,11554 ,vikramsingh.punchum@accenture.com
+30P2433-01 ,0022,4501574825,00010, ,0003, 20.000 , 20.000 ,Not Auth - ASN,2011/09/20,2011/09/20,YES, , ,11800 ,vikramsingh.punchum@accenture.com
+30P2433-01 ,0022,4501574825,00010, ,0004, 25.000 , 25.000 ,Not Auth - ASN,2011/11/11, ,NO , , , ,vikramsingh.punchum@accenture.com
+30P2540-01 ,0022,5500046968,00010, ,0133, 25.000 , 25.000 ,Not Auth - ASN,2011/08/23,2011/08/23,YES, , ,stock ,vikramsingh.punchum@accenture.com
+30P3138-01 ,0102,4501620334,00010, ,0001, 6.000 , 6.000 ,Not Authorized,2011/08/21,2011/08/21,N/A, , ,stock ,Michel.Barras@pwc.ca
+30P3138-01 ,0102,4501620334,00020, ,0001, 10.000 , 10.000 ,Not Authorized,2011/08/21,2011/08/21,N/A, , ,stock ,Michel.Barras@pwc.ca
+3100377-02 ,0001,4501477829,00010, ,0002, 1.000 , 1.000 ,Not Authorized,2011/12/22,2011/12/22,YES, , ,sc* scrap ,Michel.Barras@pwc.ca
+3100377-02 ,0001,4501576887,00010, ,0001, 25.000 , 25.000 ,Auth-ASN N/A ,2011/06/22,2011/07/25,YES, , ,11815 ,Michel.Barras@pwc.ca
+3100377-02 ,0001,4501576887,00020, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,12232 ,Michel.Barras@pwc.ca
+3100470-01 ,0001,4501507288,00010, ,0002, 1.000 , 1.000 ,<== Ship ,2011/07/28, ,NO , , ,LV* ,vikramsingh.punchum@accenture.com
+3100470-01 ,0001,4501507288,00010, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2011/12/21,2011/12/21,YES,2011/11/16, ,SC* sson 10YW00602 REJECT ,vikramsingh.punchum@accenture.com
+3100470-01 ,0001,4501569711,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/08/05,2011/08/05,YES,2011/08/25, ,11392 ,vikramsingh.punchum@accenture.com
+3100470-01 ,0032,4501576758,00010, ,0001, 25.000 , 25.000 ,<== Ship ,2011/07/27,2011/07/27,YES, , ,11391 ,vikramsingh.punchum@accenture.com
+3100651-01 ,0001,5500021572,00010,K,0094, 15.000 , 15.000 ,Not Auth - ASN,2011/08/10,2011/08/10,YES,2011/06/30, ,10941 ,vikramsingh.punchum@accenture.com
+3100651-01 ,0001,5500021572,00010,K,0095, 25.000 , 25.000 ,Not Auth - ASN,2011/08/22,2011/08/22,YES, , ,10941 ,vikramsingh.punchum@accenture.com
+3101305-01 ,0001,4501544785,00010,K,0002, 5.000 , 5.000 ,Not Auth - ASN,2011/09/13,2011/09/13,YES,2011/10/13, ,stock ,vikramsingh.punchum@accenture.com
+3101750-02 ,0001,4501463226,00020, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2012/02/27,2012/02/27,YES,2012/12/13, ,hold à la demande de pwc ,vikramsingh.punchum@accenture.com
+3101750-02 ,0001,4501463226,00020, ,0002, 8.000 , 8.000 ,Not Auth - ASN,2012/02/27,2012/02/27,YES, , ,hold à la demande de pwc ,vikramsingh.punchum@accenture.com
+3101750-02 ,0001,4501463226,00020, ,0003, 10.000 , 10.000 ,Not Auth - ASN,2012/02/27,2012/02/27,YES, , ,hold à la demande de pwc ,vikramsingh.punchum@accenture.com
+3101774-01 ,0001,4501442045,00010, ,0003, 18.000 , 18.000 ,Not Auth - ASN,2014/02/19,2014/02/19,YES, , ,80789 hold by Nathalie ,vikramsingh.punchum@accenture.com
+3103195-01 ,0001,4501586477,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,11571 ,vikramsingh.punchum@accenture.com
+3103195-02 ,0001,4501524495,00010, ,0003, 7.000 , 7.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,10672/rework ,vikramsingh.punchum@accenture.com
+3103195-02 ,0001,4501524495,00010, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2011/09/13,2011/09/13,YES, , ,10672/rework ,vikramsingh.punchum@accenture.com
+3103195-02 ,0001,4501575168,00010, ,0001, 37.000 , 37.000 ,Not Auth - ASN,2011/10/03,2011/10/03,YES,2011/09/20, ,11398 ,vikramsingh.punchum@accenture.com
+3103195-02 ,0001,4501575168,00010, ,0002, 23.000 , 23.000 ,Not Auth - ASN,2011/10/26,2011/11/23,YES,2011/10/26, ,11700 put at the same time as the othe ,vikramsingh.punchum@accenture.com
+3103195-02 ,0001,4501608350,00010, ,0001, 60.000 , 60.000 ,Not Auth - ASN,2011/11/23,2011/11/23,YES, , ,11700 ,vikramsingh.punchum@accenture.com
+3103648-01 ,0001,4501591831,00010, ,0001, 325.000 , 325.000 ,Not Auth - ASN,2011/12/12,2011/12/12,YES, , ,11401 ,vikramsingh.punchum@accenture.com
+3103648-01 ,0032,4501564490,00010, ,0001, 300.000 , 300.000 ,<== Ship ,2011/07/25,2011/08/05,YES,2011/08/03, ,10348 ,vikramsingh.punchum@accenture.com
+3104234-01 ,0001,5500021573,00010,K,0105, 24.000 , 24.000 ,Not Auth - ASN,2011/08/22,2011/08/22,YES,2011/07/12, ,11404 pull refusé mettre 22-08 ,vikramsingh.punchum@accenture.com
+3104617-01 ,0001,4501504234,00010, ,0004, 5.000 , 5.000 ,Not Auth - ASN,2011/08/23,2011/08/23,YES,2011/11/03, ,11409/1 stock ,vikramsingh.punchum@accenture.com
+3104617-01 ,0001,4501575204,00010, ,0001, 60.000 , 60.000 ,Not Auth - ASN,2011/08/16,2011/08/18,YES,2011/08/12, ,11409 ,vikramsingh.punchum@accenture.com
+3104617-01 ,0001,4501616299,00010, ,0001, 60.000 , 60.000 ,Not Auth - ASN,2011/11/08,2011/11/08,YES, , ,11605 ,vikramsingh.punchum@accenture.com
+3105010-02 ,0001,4501477803,00010, ,0001, 25.000 , 25.000 ,Auth-ASN N/A ,2011/07/20,2011/08/05,YES, , ,10924 dwg recu 20-04l; mettre date 20-07,Michel.Barras@pwc.ca
+3105010-02 ,0001,4501477803,00020, ,0001, 25.000 , 25.000 ,Auth-ASN N/A ,2011/07/20,2011/08/05,YES, , ,10924 dwg recu 20-04l; mettre date 20-07,Michel.Barras@pwc.ca
+3105010-02 ,0001,4501477803,00020, ,0002, 90.000 , 90.000 ,Auth-ASN N/A ,2011/07/20,2011/08/05,YES, , ,10924 dwg recu 20-04l; mettre date 20-07,Michel.Barras@pwc.ca
+3106041-02 ,0001,4501616077,00010, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2011/09/21,2011/09/21,YES,2010/12/01, ,12196 ,vikramsingh.punchum@accenture.com
+3106367-01 ,0001,4501533913,00010, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2011/09/07,2011/09/07,YES, , ,10675 2 SSON CSTG DEFECT 11YW01643 ,vikramsingh.punchum@accenture.com
+3106367-01 ,0001,4501617243,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/10/17,2011/10/17,YES, , ,11410 13 sem delai; mettre 28-09 ,vikramsingh.punchum@accenture.com
+3106475-01 ,0001,4501476839,00010, ,0001, 25.000 , 25.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10840 HOLD DWG CHANGE ,Michel.Barras@pwc.ca
+3106475-01 ,0001,4501476839,00020, ,0001, 50.000 , 50.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10840 HOLD DWG CHANGE ,Michel.Barras@pwc.ca
+3106560-01 ,0032,5500042907,00010,K,0073, 75.000 , 75.000 ,182017794 ,2011/07/21,2011/07/21,YES, , ,LV* ,vikramsingh.punchum@accenture.com
+3106848-01 ,0001,5500016171,00010,K,0539, 11.000 , 11.000 ,Not Auth - ASN,2011/08/19,2011/08/19,YES, , ,11160 ,vikramsingh.punchum@accenture.com
+3106848-01 ,0001,5500016171,00010,K,0551, 60.000 , 60.000 ,Not Auth - ASN,2011/08/31,2011/08/31,YES, , ,11160 ,vikramsingh.punchum@accenture.com
+3106897-01 ,0001,4501433191,00010, ,0002, 43.000 , 43.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES,2012/12/06, ,41 STOCK ,vikramsingh.punchum@accenture.com
+3107150-01 ,0001,4501570898,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,11414 ,vikramsingh.punchum@accenture.com
+3107914-01 ,0001,4501477882,00020, ,0004, 2.000 , 2.000 ,Not Authorized,2011/08/14,2011/08/14,YES, , ,sc* scrap ,Michel.Barras@pwc.ca
+3109308-01 ,0001,5500016174,00010,K,0546, 60.000 , 60.000 ,Not Auth - ASN,2011/09/21, ,NO , , , ,vikramsingh.punchum@accenture.com
+3109384-01 ,0001,4501477845,00010, ,0001, 5.000 , 5.000 ,Auth-ASN N/A ,2011/07/06,2011/08/02,YES, , ,10974 dwg recvd 20-04; mettre 6 juillet ,Michel.Barras@pwc.ca
+3109439-01 ,0001,5500016173,00010,K,0204, 12.000 , 12.000 ,Not Auth - ASN,2011/09/14,2011/09/14,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3109439-01 ,0032,5500042921,00010,K,0042, 12.000 , 12.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3109439-01 ,0032,5500042921,00010,K,0043, 14.000 , 14.000 ,Not Auth - ASN,2011/09/08,2011/09/08,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3109496-01 ,0001,4501415961,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2012/04/04,2012/04/04,YES,2013/10/08, ,10391 ,vikramsingh.punchum@accenture.com
+3112877-01 ,0001,5500032892,00010,K,0178, 50.000 , 50.000 ,Not Auth - ASN,2011/09/16,2011/09/16,YES, , ,11422 ,vikramsingh.punchum@accenture.com
+3112930-01 ,0032,5500042924,00010, ,0017, 10.000 , 10.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3113385-01 ,0001,5500019040,00010,K,0105, 14.000 , 14.000 ,Not Auth - ASN,2011/08/19,2011/08/19,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3113385-01 ,0001,5500019040,00010,K,0106, 14.000 , 14.000 ,Not Auth - ASN,2011/09/16,2011/09/16,YES, , ,stock ,vikramsingh.punchum@accenture.com
+3113771-01 ,0017,5500045579,00020,K,0012, 13.000 , 13.000 ,Not Auth - ASN,2011/10/06,2011/10/06,YES, , ,11428 ,vikramsingh.punchum@accenture.com
+3114324-01 ,0001,4501576825,00010, ,0002, 48.000 , 48.000 ,<== Ship ,2011/07/26,2011/07/30,YES, , ,11431-1 ,vikramsingh.punchum@accenture.com
+3114324-01 ,0001,4501623014,00010, ,0001, 72.000 , 72.000 ,Not Auth - ASN,2011/10/03,2011/10/03,YES, , ,11432 ,vikramsingh.punchum@accenture.com
+3114529-01 ,0001,4501477809,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10921 hold dwg change ,Michel.Barras@pwc.ca
+3114529-01 ,0001,4501477809,00020, ,0001, 20.000 , 20.000 ,Not Authorized,2011/12/23,2011/12/23,YES, , ,10921 hold dwg change ,Michel.Barras@pwc.ca
+3115278-01 ,0001,4501543628,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/08/04,2011/08/04,YES, , ,11433 ,vikramsingh.punchum@accenture.com
+3115278-01 ,0001,4501602708,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/10/14,2011/10/14,YES,2011/11/03, ,11434 ,vikramsingh.punchum@accenture.com
+3116525-01 ,0001,4501541073,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2011/11/22,2011/11/22,YES,2012/10/25, ,11100 ,vikramsingh.punchum@accenture.com
+3116525-01 ,0001,4501541073,00010, ,0002, 5.000 , 5.000 ,Not Auth - ASN,2012/01/22,2012/01/22,YES,2013/05/29, ,11100 mettre 22 jan 2012 ,vikramsingh.punchum@accenture.com
+3117577-01 ,0001,5500043477,00010, ,0064, 30.000 , 30.000 ,Not Auth - ASN,2011/09/08,2011/09/08,YES,2011/09/06, ,11941 ,vikramsingh.punchum@accenture.com
+3118466-01 ,0032,5500049880,00010,K,0004, 25.000 , 25.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES, , ,11437 ,vikramsingh.punchum@accenture.com
+3118726-01 ,0001,4501617233,00010, ,0001, 72.000 , 72.000 ,Not Auth - ASN,2011/09/28,2011/09/28,YES,2011/09/07, ,11439 delai 13 sem; mettre 28-09 ,vikramsingh.punchum@accenture.com
+3119128-01 ,0001,5500052739,00010, ,0002, 8.000 , 8.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES,2011/08/04, ,12153 ,vikramsingh.punchum@accenture.com
+3119625-01 ,0001,4501476635,00010, ,0001, 25.000 , 25.000 ,Auth-ASN N/A ,2011/06/15,2011/07/29,YES, , ,10838 changement dwg recu 23 mars ,Michel.Barras@pwc.ca
+3119625-01 ,0001,4501476635,00020, ,0001, 50.000 , 50.000 ,Auth-ASN N/A ,2011/06/15,2011/07/29,YES, , ,10838 changement dwg recu 23 mars ,Michel.Barras@pwc.ca
+3120469-01 ,0032,4501608399,00010, ,0001, 81.000 , 81.000 ,Not Auth - ASN,2011/09/01,2011/09/01,YES,2011/09/29, ,11441 ,vikramsingh.punchum@accenture.com
+3121393-01 ,0001,4501591442,00010, ,0001, 3.000 , 3.000 ,Not Auth - ASN,2011/09/21,2011/09/21,YES, , ,11444 ,vikramsingh.punchum@accenture.com
+3121396-01 ,0001,4501623729,00010, ,0001, 4.000 , 4.000 ,Not Authorized,2011/09/14,2011/09/14,YES, , ,12206 ,Michel.Barras@pwc.ca
+3122503-01 ,0001,5500027991,00010,K,0113, 15.000 , 15.000 ,Not Auth - ASN,2011/09/14,2011/09/14,YES,2011/10/03, ,11705 ,vikramsingh.punchum@accenture.com
+3123092-01 ,0022,5500019168,00030,K,0019, 22.000 , 22.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,11446 ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0287, 29.000 , 29.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES,2011/08/16, ,10689 pull refusé mettre 25-04l ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0302, 60.000 , 60.000 ,Not Auth - ASN,2011/09/30,2011/09/30,YES, , ,11448 ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0313, 60.000 , 60.000 ,Not Auth - ASN,2012/06/21, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0312, 60.000 , 60.000 ,Not Auth - ASN,2012/08/30, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0311, 60.000 , 60.000 ,Not Auth - ASN,2012/12/03, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0310, 60.000 , 60.000 ,Not Auth - ASN,2013/02/28, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0309, 60.000 , 60.000 ,Not Auth - ASN,2013/05/29, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0308, 60.000 , 60.000 ,Not Auth - ASN,2013/08/28, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0307, 60.000 , 60.000 ,Not Auth - ASN,2013/11/20, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B2808-01 ,0001,5500019041,00020, ,0306, 60.000 , 60.000 ,Not Auth - ASN,2014/02/26, ,NO , , , ,vikramsingh.punchum@accenture.com
+31B3670-01 ,0001,5500023368,00010,K,0217, 6.000 , 6.000 ,Not Auth - ASN,2011/08/10,2011/08/10,YES,2011/09/21, ,stock ,vikramsingh.punchum@accenture.com
+31B5485-01 ,0001,4501477743,00010, ,0001, 8.000 , 8.000 ,Not Authorized,2011/12/30,2011/12/30,YES, , ,10927 hold ppv ,Michel.Barras@pwc.ca
+31B5485-01 ,0001,4501477743,00020, ,0001, 14.000 , 14.000 ,Auth-ASN N/A ,2011/05/31,2011/09/30,YES, , ,10927 hold ppv ,Michel.Barras@pwc.ca
+31J1501-01 ,0001,4501628578,00010, ,0001, 50.000 , 50.000 ,Not Authorized,2011/10/21, ,NO , , ,new to plan ,Michel.Barras@pwc.ca
+32C0119 ,0102,4501601989,00010, ,0001, 8.000 , 8.000 ,Not Authorized,2011/08/10,2011/08/17,N/A,2011/05/27, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0119 ,0102,4501601989,00020, ,0001, 5.000 , 5.000 ,Not Authorized,2011/08/10,2011/08/17,N/A,2011/06/28, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0204 ,0102,4501610316,00010, ,0001, 10.000 , 10.000 ,Auth-ASN N/A ,2011/07/25,2011/07/25,N/A,2011/07/19, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0241 ,0102,4501600896,00010, ,0001, 8.000 , 8.000 ,Auth-ASN N/A ,2011/07/07,2011/08/10,N/A,2011/06/28, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0241 ,0102,4501608372,00010, ,0001, 5.000 , 5.000 ,Auth-ASN N/A ,2011/07/27,2011/08/10,N/A,2011/07/27, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0357 ,0102,4501609366,00010, ,0001, 6.000 , 6.000 ,Not Authorized,2011/09/07,2011/09/07,N/A, , ,new to plan ,Nancy.Burnet@pwc.ca
+32C0392 ,0102,4501593044,00010, ,0001, 3.000 , 3.000 ,Auth-ASN N/A ,2011/07/05,2011/08/10,N/A,2011/05/27, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0392 ,0102,4501593044,00020, ,0001, 3.000 , 3.000 ,Auth-ASN N/A ,2011/07/05,2011/08/10,N/A,2011/05/27, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0392 ,0102,4501609665,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/08/10,2011/08/10,N/A,2011/07/19, ,new to plan ,Nancy.Burnet@pwc.ca
+32C0409 ,0102,4501608106,00010, ,0001, 13.000 , 13.000 ,Not Authorized,2011/08/14,2011/08/14,N/A,2011/06/28, ,new to plan ,Nancy.Burnet@pwc.ca
+35C1868-01 ,0001,4501477835,00010, ,0001, 5.000 , 5.000 ,Auth-ASN N/A ,2011/06/15,2011/09/30,YES, , ,LV* HOLD PPV ,Michel.Barras@pwc.ca
+35C1868-01 ,0001,4501477835,00020, ,0001, 25.000 , 25.000 ,Auth-ASN N/A ,2011/06/15,2011/09/30,YES, , ,20 STOCK HOLD PPV ,Michel.Barras@pwc.ca
+35C3345-01 ,0001,4501477842,00020, ,0001, 51.000 , 51.000 ,Auth-ASN N/A ,2011/06/15,2011/09/30,YES, , ,48 STOCK HOLD PPV ,Michel.Barras@pwc.ca
+35C3902-01 ,0001,4501478729,00010, ,0001, 5.000 , 5.000 ,Auth-ASN N/A ,2011/06/15,2011/09/30,YES, , ,10896 HOLD PPV ,Michel.Barras@pwc.ca
+35C3902-01 ,0001,4501478729,00020, ,0001, 7.000 , 7.000 ,Auth-ASN N/A ,2011/06/15,2011/09/30,YES, , ,10896 HOLD PPV ,Michel.Barras@pwc.ca
+35C4563-01 ,0001,5500044753,00010, ,0022, 100.000 , 100.000 ,Not Auth - ASN,2011/10/27,2011/10/27,YES, , ,10356 ,vikramsingh.punchum@accenture.com
+35C5372-01 ,0001,4501628519,00010, ,0001, 10.000 , 10.000 ,Not Authorized,2011/09/30,2011/11/07,YES, , ,new to plan ,Michel.Barras@pwc.ca
+35C5596-01 ,0001,4501586922,00010, ,0003, 8.000 , 8.000 ,Not Auth - ASN,2013/09/25,2013/09/25,YES, , ,10693 ,vikramsingh.punchum@accenture.com
+35C5596-01 ,0022,4501372192,00020, ,0003, 3.000 , 3.000 ,Not Auth - ASN,2012/01/19,2012/01/19,YES, , ,sc* 90684 3 sson reject ,vikramsingh.punchum@accenture.com
+35C5647-01 ,0001,4501551433,00010, ,0001, 67.000 , 67.000 ,Not Auth - ASN,2011/10/13,2011/10/13,YES,2012/06/22, ,11717-R ,vikramsingh.punchum@accenture.com
+35C5691-01 ,0001,4501580497,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2011/12/15,2011/12/15,YES, , ,10867/11626 ,Michel.Barras@pwc.ca
+35C5797-01 ,0001,4501523685,00010,K,0001, 30.000 , 30.000 ,Not Auth - ASN,2011/11/21, ,NO ,2011/10/20, ,12189 ,vikramsingh.punchum@accenture.com
+35C5797-01 ,0001,4501523685,00010,K,0002, 30.000 , 30.000 ,Not Auth - ASN,2012/01/07,2012/01/07,YES,2012/02/23, ,12189 ,vikramsingh.punchum@accenture.com
+35C5797-01 ,0017,4501619366,00010,K,0001, 30.000 , 30.000 ,Not Auth - ASN,2011/08/12,2011/08/15,YES,2011/07/20, ,11115 ,vikramsingh.punchum@accenture.com
+3900972-01 ,0001,5500052523,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2012/01/05,2012/01/05,YES, , ,11455 ,vikramsingh.punchum@accenture.com
+3901068-01 ,0001,4501622998,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2011/11/07,2011/11/07,YES,2011/10/24, ,12003 ,vikramsingh.punchum@accenture.com
+3901153-01 ,0001,5500048128,00010, ,0007, 9.000 , 9.000 ,Not Auth - ASN,2011/08/25,2011/08/25,YES, , ,11457 ,vikramsingh.punchum@accenture.com
+3901155-01 ,0001,4501606454,00010, ,0001, 4.000 , 4.000 ,Not Auth - ASN,2011/09/21,2011/09/21,YES,2011/09/19, ,11458 ,vikramsingh.punchum@accenture.com
+3901155-01 ,0001,4501606454,00010, ,0002, 5.000 , 5.000 ,Not Auth - ASN,2011/09/21,2011/09/21,YES,2011/10/24, ,11458 ,vikramsingh.punchum@accenture.com
+3901155-01 ,0001,4501629903,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2011/11/28, ,NO , , , ,vikramsingh.punchum@accenture.com
+3901679-01 ,0001,5500044472,00020,K,0007, 5.000 , 5.000 ,Not Auth - ASN,2011/09/19,2011/09/19,YES, , ,11462 ,vikramsingh.punchum@accenture.com
+3901863-01 ,0001,5500043455,00010, ,0030, 9.000 , 9.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,11463 ,vikramsingh.punchum@accenture.com
+3901863-01 ,0001,5500043455,00010, ,0033, 9.000 , 9.000 ,Not Auth - ASN,2011/11/16,2011/11/16,YES, , ,11707 ,vikramsingh.punchum@accenture.com
+3901863-01 ,0001,5500043455,00010, ,0046, 9.000 , 9.000 ,Not Auth - ASN,2012/02/01,2012/02/01,YES, , ,11796 ,vikramsingh.punchum@accenture.com
+3901863-01 ,0001,5500043455,00010, ,0045, 9.000 , 9.000 ,Not Auth - ASN,2012/04/18,2012/04/18,YES, , ,11796 ,vikramsingh.punchum@accenture.com
+3901931-01 ,0001,4501476867,00020, ,0001, 7.000 , 7.000 ,Not Authorized,2012/06/22,2012/06/22,YES, , ,to plan ,Michel.Barras@pwc.ca
+3901953-01 ,0001,5500045037,00010, ,0032, 8.000 , 8.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,11464 ,vikramsingh.punchum@accenture.com
+3901953-01 ,0001,5500045037,00010, ,0031, 10.000 , 10.000 ,Not Auth - ASN,2011/10/18,2011/10/18,YES, , ,11464 ,vikramsingh.punchum@accenture.com
+3901985-01 ,0001,4501582332,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2011/08/23,2011/08/23,YES,2011/08/18, ,11624 ,vikramsingh.punchum@accenture.com
+3901985-01 ,0001,4501600051,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2011/09/19,2011/09/19,YES, , ,11663 ,vikramsingh.punchum@accenture.com
+3901985-01 ,0001,4501600051,00010, ,0002, 9.000 , 9.000 ,Not Auth - ASN,2011/10/26,2011/10/26,YES,2011/09/28, ,11664 ,vikramsingh.punchum@accenture.com
+3901985-01 ,0001,4501621419,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2011/11/07,2011/11/07,YES, , ,11665 ,vikramsingh.punchum@accenture.com
+3901985-01 ,0001,4501621419,00010, ,0002, 9.000 , 9.000 ,Not Auth - ASN,2011/12/08,2011/12/08,YES, , ,12009 ,vikramsingh.punchum@accenture.com
+3902019-01 ,0001,5500047274,00010, ,0005, 9.000 , 9.000 ,Not Auth - ASN,2011/09/19,2011/09/19,YES, , ,11466 ,vikramsingh.punchum@accenture.com
+3902124-01 ,0001,4501565202,00010, ,0003, 4.000 , 4.000 ,Not Auth - ASN,2011/08/18,2011/08/18,YES, , ,11467 ,vikramsingh.punchum@accenture.com
+3902124-01 ,0001,4501612360,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/09/21,2011/09/21,YES, , ,11468 ,vikramsingh.punchum@accenture.com
+3902223-01 ,0001,4501593678,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2011/08/23,2011/08/30,YES,2011/08/23, ,11045/11708 ,vikramsingh.punchum@accenture.com
+3902361-01 ,0001,4501593681,00010, ,0001, 8.000 , 8.000 ,Not Auth - ASN,2011/08/23,2011/08/23,YES, , ,11470 ,vikramsingh.punchum@accenture.com
+3902618-01 ,0001,4501602057,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2011/09/19,2011/09/19,YES, , ,11473 ,vikramsingh.punchum@accenture.com
+3902618-01 ,0001,4501602057,00010, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2011/11/24,2011/11/24,YES, , ,11779 ,vikramsingh.punchum@accenture.com
+3902865-01 ,0001,4501600963,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,12072 ,Michel.Barras@pwc.ca
+3902867-01 ,0001,4501600922,00010, ,0001, 26.000 , 26.000 ,Not Auth - ASN,2011/09/09,2011/09/09,YES, , ,12073 ,Michel.Barras@pwc.ca
+3902868-01 ,0001,4501601901,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/08/22,2011/08/22,YES, , ,12093 ,Michel.Barras@pwc.ca
+3902868-01 ,0001,4501601901,00020, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/09/01,2011/09/01,YES,2011/11/24, ,12093 ,Michel.Barras@pwc.ca
+3902868-01 ,0001,4501618796,00010, ,0001, 22.000 , 22.000 ,<== Ship ,2011/06/29,2011/07/29,YES,2011/07/21, ,12085 ,Michel.Barras@pwc.ca
+3902868-01 ,0001,4501618796,00020, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2011/09/01,2011/09/01,YES,2012/04/26, ,12093 ,Michel.Barras@pwc.ca
+3902871-01 ,0001,4501597161,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/09/23,2011/09/23,YES,2011/09/01, ,12059 ,Michel.Barras@pwc.ca
+3902875-01 ,0001,4501600958,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2011/09/09,2011/09/16,YES,2011/09/01, ,12074 ,Michel.Barras@pwc.ca
+3902876-01 ,0001,4501600949,00010, ,0001, 26.000 , 26.000 ,Not Auth - ASN,2011/09/01,2011/09/02,YES, , ,12075 ,Michel.Barras@pwc.ca
+3910805-01 ,0017,5500045580,00010,K,0018, 50.000 , 50.000 ,Not Auth - ASN,2011/08/11,2011/08/11,YES, , ,11950 ,vikramsingh.punchum@accenture.com
+3910805-01 ,0017,5500045580,00010,K,0019, 50.000 , 50.000 ,Not Auth - ASN,2011/11/29,2011/11/29,YES, , ,12211 ,vikramsingh.punchum@accenture.com
+3911126-01 ,0001,5500052306,00010, ,0002, 11.000 , 11.000 ,Not Auth - ASN,2011/09/01,2011/09/01,YES,2012/04/04, ,stock ,vikramsingh.punchum@accenture.com
+3912132-01 ,0001,5500044768,00010,K,0005, 8.000 , 8.000 ,Not Auth - ASN,2011/12/13,2011/12/13,YES,2012/03/09, ,11480 ,vikramsingh.punchum@accenture.com
+F7XC712641011 ,0001,5500037231,00010, ,0054, 3.000 , 3.000 ,<== Ship ,2011/07/27,2011/07/27,YES, , ,11486 ,vikramsingh.punchum@accenture.com
+F7XC712641011 ,0001,5500037231,00010, ,0052, 12.000 , 12.000 ,Not Auth - ASN,2011/08/09,2011/08/09,YES, , ,11486 ,vikramsingh.punchum@accenture.com
+F7XC712641011 ,0001,5500037231,00010, ,0053, 12.000 , 12.000 ,Not Auth - ASN,2011/08/30,2011/08/30,YES,2011/08/29, ,11486 ,vikramsingh.punchum@accenture.com
+F7XC712641011 ,0001,5500037231,00010, ,0055, 12.000 , 12.000 ,Not Auth - ASN,2011/09/21, ,NO , , , ,vikramsingh.punchum@accenture.com
+MD3060557 ,0001,5500019684,00020, ,0437, 10.000 , 10.000 ,Not Auth - ASN,2011/08/12,2011/08/12,YES, , ,stock ,vikramsingh.punchum@accenture.com
+MD3060557 ,0001,5500019684,00020, ,0438, 10.000 , 10.000 ,Not Auth - ASN,2011/09/12,2011/09/12,YES, , ,11488 ,vikramsingh.punchum@accenture.com
+MD3060557 ,0001,5500019684,00020, ,0439, 10.000 , 10.000 ,Not Auth - ASN,2011/09/27,2011/09/27,YES, , ,11488 ,vikramsingh.punchum@accenture.com
+MD3060558 ,0001,5500019685,00030, ,0392, 10.000 , 10.000 ,Not Auth - ASN,2011/08/12,2011/08/12,YES, , ,stock ,vikramsingh.punchum@accenture.com
+MD3060558 ,0001,5500019685,00030, ,0393, 10.000 , 10.000 ,Not Auth - ASN,2011/08/23,2011/08/23,YES,2011/09/12, ,stock ,vikramsingh.punchum@accenture.com
+MD3060558 ,0001,5500019685,00030, ,0394, 10.000 , 10.000 ,Not Auth - ASN,2011/09/01,2011/09/01,YES,2011/09/27, ,stock ,vikramsingh.punchum@accenture.com
+MD3061226 ,0001,5500026858,00040, ,0069, 57.000 , 57.000 ,Not Auth - ASN,2011/08/09,2011/08/09,YES, , ,11490 ,vikramsingh.punchum@accenture.com
+MD3061542 ,0001,4501521693,00010, ,0001, 8.000 , 8.000 ,Not Auth - ASN,2011/12/30,2011/12/30,YES,2012/03/01, ,11060 ,vikramsingh.punchum@accenture.com
+MD3062133 ,0001,5500023260,00030, ,0105, 60.000 , 60.000 ,Not Auth - ASN,2011/09/14,2011/09/14,YES, , ,11493/6 stock ,vikramsingh.punchum@accenture.com
+MD3062338 ,0001,5500023258,00040, ,0113, 59.000 , 59.000 ,Not Auth - ASN,2011/08/03,2011/08/03,YES,2011/08/02, ,11035 pull refusé mettre 4 juillet ,vikramsingh.punchum@accenture.com
+MD3062338 ,0001,5500023258,00040, ,0118, 59.000 , 59.000 ,Not Auth - ASN,2011/09/26, ,NO , , , ,vikramsingh.punchum@accenture.com
+MD3062596 ,0001,4501576190,00010, ,0001, 136.000 , 136.000 ,Not Auth - ASN,2011/08/04,2011/08/04,YES,2011/08/02, ,11499 ,vikramsingh.punchum@accenture.com
+MD3062596 ,0001,4501610330,00010, ,0001, 194.000 , 194.000 ,Not Auth - ASN,2011/09/14,2011/09/14,YES,2011/10/05, ,11500 ,vikramsingh.punchum@accenture.com
+MD3065961 ,0001,5500045034,00010,K,0143, 525.000 , 525.000 ,Not Auth - ASN,2011/09/13,2011/09/13,YES,2011/08/29, ,11558 ,vikramsingh.punchum@accenture.com
+MD3066177 ,0001,4501610253,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2011/10/11,2011/10/11,YES, , ,11610 ,vikramsingh.punchum@accenture.com
+MD3066478 ,0001,5500050334,00010, ,0007, 150.000 , 150.000 ,Not Auth - ASN,2011/09/16,2011/09/16,YES, , ,STOCK ,Michel.Barras@pwc.ca
+MD3066478 ,0001,5500050334,00010, ,0009, 150.000 , 150.000 ,Not Auth - ASN,2011/11/03,2011/11/03,YES, , ,12018 ,Michel.Barras@pwc.ca
+MD3066481 ,0001,4501492595,00020, ,0001, 300.000 , 300.000 ,Not Auth - ASN,2011/08/15,2011/08/22,YES,2011/08/17, ,11667 ,Michel.Barras@pwc.ca
+ST3283-10 ,0001,4501617229,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/09/12,2011/09/12,YES,2011/06/21, ,11537 ,vikramsingh.punchum@accenture.com
+ST3436-09 ,0001,0000571838,00030,K,0040, 33.000 , 33.000 ,Not Auth - ASN,2011/10/06,2011/10/06,YES,2011/09/08, ,11504 ,vikramsingh.punchum@accenture.com
+ST3586-18 ,0001,5500016419,00010,K,0072, 36.000 , 36.000 ,Not Auth - ASN,2011/08/17,2011/08/17,YES, , ,11505 ,vikramsingh.punchum@accenture.com
+ST3586-19 ,0001,5500045047,00010, ,0006, 35.000 , 35.000 ,Not Auth - ASN,2011/09/22,2011/09/22,YES, , ,11507 ,vikramsingh.punchum@accenture.com
+ST3586-24 ,0001,5500016699,00010,K,0299, 32.000 , 32.000 ,Not Auth - ASN,2011/09/21, ,NO , , , ,vikramsingh.punchum@accenture.com
+ST3603-28 ,0001,5500034618,00010,K,0032, 18.000 , 18.000 ,Not Auth - ASN,2011/08/24,2011/08/24,YES, , ,11515 ,vikramsingh.punchum@accenture.com
+ST3691-01 ,0001,5500030664,00010,K,0070, 26.000 , 26.000 ,Not Auth - ASN,2011/08/26,2011/08/26,YES, , ,11517 ,vikramsingh.punchum@accenture.com
+ST6104-01 ,0001,5500052655,00010, ,0002, 28.000 , 28.000 ,Not Auth - ASN,2011/10/04,2011/10/04,YES,2011/09/19, ,12034 ,vikramsingh.punchum@accenture.com
+ST6108-01 ,0001,4501593671,00010, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2011/10/11,2011/10/11,YES, , ,10763 ,vikramsingh.punchum@accenture.com
+ST6111-01 ,0001,5500034616,00010,K,0850, 159.000 , 159.000 ,Not Auth - ASN,2011/09/26, ,NO , , , ,vikramsingh.punchum@accenture.com
+ST6222-01 ,0001,5500046917,00010, ,0004, 15.000 , 15.000 ,Not Auth - ASN,2011/08/17,2011/08/17,YES, , ,11048 ,vikramsingh.punchum@accenture.com
+ST6240-11 ,0001,4501578165,00010, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2011/08/24,2011/08/24,YES, , ,11821 ,Michel.Barras@pwc.ca
+ST6476-01 ,0102,4501591676,00010, ,0002, 19.000 , 19.000 ,Auth-ASN N/A ,2011/07/28,2011/07/28,N/A,2011/05/17, ,11821 ,Michel.Barras@pwc.ca

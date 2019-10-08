@@ -1,0 +1,28 @@
+[ENGINE]
+PRATT
+[DBSERVER]
+SQL01
+[DB]
+PRODUCTIONSQL
+[SO_Creation]
+ON
+[SO_Creation_Status]
+Hold
+[execution]
+SIMPLE
+[Template]
+C:\Program Files (x86)\MFG\EDI_SIMPLE_PWC\forecast.xml
+[Client]
+PWC
+[Quantite]
+Trop gros changement
+Trop de pertes
+Valeur monétaire trop basse
+Quantité partiellement envoyé
+[Date]
+Trop Vite
+Trop Lent
+Délai trop court
+Valeur monétaire trop fluctuente
+[filetype]
+forecast

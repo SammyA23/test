@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" 
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"
+     >
+  <Product Id="*" Name="EDI" Language="1033" Version="7.11.1" Manufacturer="MFG Technologies" UpgradeCode="{268EC439-4151-4D30-999E-CFAE1D7895E8}">
+    <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="ProductFeature" Title="EDI Installation" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="BinComponents" />
+      <!--<ComponentGroupRef Id="Templates" />-->
+      <ComponentGroupRef Id="Images" />
+      <!--<ComponentGroupRef Id="Configuration" />-->
+      <ComponentRef Id="ProgramMenuCompanyDirComponent" />
+      <ComponentRef Id="ProgramMenuProgramDirComponent" />
+    </Feature>
+    <Feature Id="VCRedist" Title="Visual C++ Runtime" AllowAdvertise="no" Display="hidden" Level="1">
+      <MergeRef Id="VCRedist110"/>
+      <MergeRef Id="VCRedist120"/>
+    </Feature>
+
+    <Icon Id="JBWheel.ico" SourceFile="..\..\build\img\JBWheel.ico"/>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="MFG" Name="MFG">
+          <Directory Id="INSTALLFOLDER" Name="EDI">
+            <Directory Id="BIN" Name="lib" />
+            <Directory Id="IMAGES" Name="img" />
+            <Merge Id="VCRedist110" SourceFile="..\EDIAPP\lib\Microsoft_VC110_CRT_x86.msm" DiskId="1" Language="0" />
+            <Merge Id="VCRedist120" SourceFile="..\EDIAPP\lib\Microsoft_VC120_CRT_x86.msm" DiskId="1" Language="0" />
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id ="ProgramMenuCompanyDir" Name="MFG Technologies">
+          <Directory Id="ProgramMenuProgramDir" Name="EDI">
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Component Id="ProgramMenuCompanyDirComponent" Directory='ProgramMenuCompanyDir'>
+      <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Name='InstallVersion'
+                     Value="[ProductVersion]" Type="string" />
+      <RemoveFolder Id="RemoveProgramMenuCompanyDir" On="uninstall" />
+    </Component>
+
+    <Component Id="ProgramMenuProgramDirComponent" Directory='ProgramMenuProgramDir'>
+      <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Name='InstallFolder'
+                     Value='[INSTALLFOLDER]' Type="string" />
+      <RemoveFolder Id="RemoveProgramMenuProgramDir" On="uninstall" />
+    </Component>
+    </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <Component Id="ProductComponent" Guid="{7DEA9A8F-759F-4C5C-A580-40D28B0E392F}">
+        <!-- TODO: Insert files, registry keys, and other resources here. -->
+        <File Id="EDIAPP.exe" Source="..\EDIAPP\bin\Release\EDIAPP.exe">
+          <Shortcut Id="startmenuEDI" Directory="ProgramMenuProgramDir" Name="MFG EDI" WorkingDirectory='INSTALLFOLDER' Icon="JBWheel.ico" IconIndex="0" Advertise="yes" />
+        </File>
+        <File Id="DbUpMigrations.exe" Source="..\DbUpMigrations\bin\Release\DbUpMigrations.exe" />
+        <File Id="dbup_core.dll" Source="..\DbUpMigrations\bin\Release\dbup-core.dll" />
+        <File Id="dbup_sqlserver.dll" Source="..\DbUpMigrations\bin\Release\dbup-sqlserver.dll" />
+        <File Id="EDI_Engine_Base.dll" Source="..\EDIAPP\bin\Release\EDI_Engine_Base.dll" />
+        <File Id="EDI_Engine_Bombardier.dll" Source="..\EDIAPP\bin\Release\EDI_Engine_Bombardier.dll" />
+        <File Id="EDI_Engine_Generic.dll" Source="..\EDIAPP\bin\Release\EDI_Engine_Generic.dll" />
+        <File Id="EDI_Engine_Pratt.dll" Source="..\EDIAPP\bin\Release\EDI_Engine_Pratt_CS.dll" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="BinComponents" Directory="INSTALLFOLDER">
+      <Component Id="BinComponent" Guid="{339CF7D0-AED8-480F-9ECB-3524809C4648}">
+        <File Id="CFileTemplate.dll" Source="..\EDIAPP\lib\MFG_File_Template.dll" />
+        <File Id="MfgConnection.dll" Source="..\EDIAPP\lib\MfgConnection.dll" />
+        <File Id="CSV.dll" Source="..\EDIAPP\lib\CSV.dll" />
+        <File Id="csXLS.dll" Source="..\EDIAPP\lib\csXLS.dll" />
+      </Component>
+    </ComponentGroup>
+    <!--<ComponentGroup Id="Configuration" Directory="INSTALLFOLDER">
+      <Component Id="Conf" Guid="{37E1F51B-9C30-4452-A4F7-75F3E2ED4C3D}">
+        <File Id="info.txt" Source="..\EDI\info.txt" />
+      </Component>
+    </ComponentGroup>-->
+    <ComponentGroup Id="Images" Directory="IMAGES">
+      <Component Id="Image" Guid="{17FEF66B-22F3-4972-AB1D-10B1E4D87500}">
+        <File Id="JBWheel.ico" Source="..\..\build\img\JBWheel.ico" />
+        <File Id="bookmark.ico" Source="..\..\build\img\bookmark.ico" />
+        <File Id="bookmarkGoTo.ico" Source="..\..\build\img\bookmarkGoTo.ico" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

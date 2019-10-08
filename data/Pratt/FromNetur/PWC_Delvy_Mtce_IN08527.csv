@@ -1,0 +1,355 @@
+Material Number,Plant,Doc Number,Item,Consign,Sched Line,Sched Quantity,Outstand Qty,Msg/ASN/Ship,Stat. Date,Delv. Date,Confirmed,Resch. Date,Ship To,Confirmation Comment,Buyer Email
+Add charge for: Casting defect, PWC Lia ,0001,4501160196,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/05/15,2009/05/15,N/A, , , ,Nathalie.Provost@pwc.ca
+Add charge for: Expedite Fee ,0001,4501296981,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/06/30,2009/06/30,N/A, , , ,Nathalie.Provost@pwc.ca
+Add charge for: Material scrap at vendor,0001,4501284856,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/03/27,2009/03/27,N/A, , , ,Nathalie.Provost@pwc.ca
+Add charge for: Set-Up ,0001,4501296981,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/02,2009/07/02,N/A, , , ,Nathalie.Provost@pwc.ca
+Add charge for: Tax issue ,0032,4501242297,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/03/06,2009/03/06,N/A, , , ,Nathalie.Provost@pwc.ca
+Repair Cost for PN 3070739-01 ,0001,4501287609,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/04/30,2009/04/30,N/A, , , ,Nathalie.Provost@pwc.ca
+fixture charge ,0001,4501313131,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2009/09/30,2009/09/30,N/A, , , ,Denise.Silva@pwc.ca
+3009652 ,0001,5500016170,00010,K,0938, 7.000 , 7.000 ,Not Auth - ASN,2009/08/14, ,NO , , ,90036 ,Nathalie.Provost@pwc.ca
+3009652 ,0001,5500016170,00010,K,0937, 16.000 , 16.000 ,Not Auth - ASN,2009/08/24, ,NO , , ,90036 ,Nathalie.Provost@pwc.ca
+3009652 ,0001,5500016170,00010,K,1931, 9.000 , 9.000 ,Not Auth - ASN,2009/09/04, ,NO , , ,90036 ,Nathalie.Provost@pwc.ca
+3009652 ,0032,5500042978,00010,K,0035, 14.000 , 14.000 ,<== Ship ,2009/07/13,2009/07/17,YES,2009/07/11, ,90036 ,Nathalie.Provost@pwc.ca
+3009652 ,0032,5500042978,00010,K,0036, 21.000 , 21.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,90036 ,Nathalie.Provost@pwc.ca
+3009652 ,0032,5500042978,00010,K,0037, 12.000 , 12.000 ,Not Auth - ASN,2009/08/18, ,NO , , ,90036 ,Nathalie.Provost@pwc.ca
+3009652 ,0032,5500042978,00010,K,0038, 11.000 , 11.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,90036 ,Nathalie.Provost@pwc.ca
+3009652 ,0032,5500042978,00010,K,0039, 17.000 , 17.000 ,Not Auth - ASN,2009/09/12, ,NO , , , ,Nathalie.Provost@pwc.ca
+3010607 ,0017,5500020789,00010,K,0064, 14.000 , 14.000 ,Not Auth - ASN,2009/08/28, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3010607 ,0017,5500020789,00010,K,0065, 14.000 , 14.000 ,Not Auth - ASN,2009/11/27, ,NO , , ,81113 ,Nathalie.Provost@pwc.ca
+3011351 ,0001,4501312557,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2009/08/27, ,NO ,2009/08/20, ,90037 ,Nathalie.Provost@pwc.ca
+3014263 ,0001,5500016646,00010,K,0280, 9.000 , 9.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3015565 ,0001,5500029474,00020,K,0028, 4.000 , 4.000 ,Not Auth - ASN,2009/07/23, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3016263 ,0001,4501312665,00010, ,0001, 24.000 , 24.000 ,Not Auth - ASN,2009/10/08, ,NO , , ,81025 ,Nathalie.Provost@pwc.ca
+3019360 ,0001,4501049144,00010, ,0003, 2.000 , 2.000 ,Not Auth - ASN,2010/05/04, ,NO ,2010/10/04, ,sc* scrap ,Nathalie.Provost@pwc.ca
+3019360 ,0001,4501313715,00010, ,0001, 100.000 , 100.000 ,Not Auth - ASN,2010/03/02, ,NO ,2010/03/29, ,90053 ,Nathalie.Provost@pwc.ca
+3019591 ,0001,4501116411,00010, ,0002, 1.000 , 1.000 ,Not Auth - ASN,2009/09/28, ,NO , , ,1 rework assy 70748 ,Nathalie.Provost@pwc.ca
+3022875 ,0001,5500016167,00010,K,0150, 10.000 , 10.000 ,Not Auth - ASN,2009/08/19, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3022875 ,0001,5500016167,00010,K,0152, 10.000 , 10.000 ,Not Auth - ASN,2009/09/25, ,NO , , ,90039 ,Nathalie.Provost@pwc.ca
+3022875 ,0001,5500016167,00010,K,0151, 10.000 , 10.000 ,Not Auth - ASN,2009/10/15, ,NO , , ,90039 ,Nathalie.Provost@pwc.ca
+3022875 ,0017,5500019024,00010,K,0092, 17.000 , 17.000 ,Not Auth - ASN,2009/07/24, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3022875 ,0017,5500019024,00010,K,0093, 10.000 , 10.000 ,Not Auth - ASN,2009/08/28, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3022875 ,0017,5500019024,00010,K,0094, 19.000 , 19.000 ,Not Auth - ASN,2009/09/29, ,NO , , ,90039 ,Nathalie.Provost@pwc.ca
+3023442 ,0001,5500016175,00010,K,0877, 2.000 , 2.000 ,Not Auth - ASN,2009/09/14, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3023442 ,0032,5500042835,00010,K,0012, 10.000 , 10.000 ,181466869 ,2009/07/17,2009/07/17,YES, , ,LV* ,Nathalie.Provost@pwc.ca
+3023442 ,0032,5500042835,00010,K,0013, 10.000 , 10.000 ,Not Auth - ASN,2009/08/17, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3023442 ,0032,5500042835,00010,K,0014, 10.000 , 10.000 ,Not Auth - ASN,2009/09/06, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3027904 ,0001,4501244552,00020, ,0001, 4.000 , 4.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,81115 ,Nathalie.Provost@pwc.ca
+3027904 ,0001,4501244552,00020, ,0002, 6.000 , 6.000 ,Not Auth - ASN,2009/11/23, ,NO , , ,81115 ,Nathalie.Provost@pwc.ca
+3031013 ,0001,5500016168,00020,K,0113, 9.000 , 9.000 ,Not Auth - ASN,2009/08/10, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3031013 ,0001,5500016168,00020,K,0114, 8.000 , 8.000 ,Not Auth - ASN,2009/08/13, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3031013 ,0001,5500016168,00020,K,0115, 13.000 , 13.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3031013 ,0001,5500016168,00020,K,0116, 13.000 , 13.000 ,Not Auth - ASN,2009/09/04, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3031014 ,0001,5500016289,00030,K,0248, 11.000 , 11.000 ,Not Auth - ASN,2009/09/09, ,NO , , , ,Nathalie.Provost@pwc.ca
+3031014 ,0032,5500042865,00010,K,0008, 11.000 , 11.000 ,181465770 ,2009/07/14,2009/07/14,YES, , ,LV* ,Nathalie.Provost@pwc.ca
+3031014 ,0032,5500042865,00010,K,0009, 11.000 , 11.000 ,Not Auth - ASN,2009/08/31, ,NO , , ,9 STOCK ,Nathalie.Provost@pwc.ca
+3031026 ,0001,4501278495,00010, ,0001, 95.000 , 95.000 ,<== Ship ,2009/07/08,2009/07/15,YES,2009/07/08, ,90044 ,Nathalie.Provost@pwc.ca
+3031026 ,0032,4501259782,00010, ,0002, 27.000 , 27.000 ,181466203 ,2009/07/15,2009/07/15,YES, , ,LV* ,Nathalie.Provost@pwc.ca
+3031026 ,0032,4501259782,00010, ,0005, 69.000 , 69.000 ,Not Auth - ASN,2009/08/10, ,NO , , ,90044 ,Nathalie.Provost@pwc.ca
+3031026 ,0032,4501320055,00010, ,0001, 89.000 , 89.000 ,Not Auth - ASN,2009/10/01, ,NO , , ,90054 ,Nathalie.Provost@pwc.ca
+3036046P10 ,0017,4501320445,00010, ,0001, 35.000 , 35.000 ,Not Auth - ASN,2009/08/31, ,NO ,2009/07/09, ,90421 ,Nathalie.Provost@pwc.ca
+3041705-01 ,0001,5500019155,00010,K,0180, 25.000 , 25.000 ,Not Auth - ASN,2009/09/18, ,NO ,2009/10/16, ,stock ,Nathalie.Provost@pwc.ca
+3043561-01 ,0001,5500025611,00020,K,0028, 5.000 , 5.000 ,Not Auth - ASN,2009/07/17, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3043561-01 ,0001,5500025611,00020,K,0029, 5.000 , 5.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,90358 ,Nathalie.Provost@pwc.ca
+3043872-01 ,0001,4501319216,00010, ,0001, 24.000 , 24.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,90287 ,Nathalie.Provost@pwc.ca
+3043933-01 ,0001,5500019154,00010,K,0141, 6.000 , 6.000 ,Not Auth - ASN,2009/08/24, ,NO , , ,90208 ,Nathalie.Provost@pwc.ca
+3043933-01 ,0001,5500019154,00010,K,0142, 8.000 , 8.000 ,Not Auth - ASN,2009/09/08, ,NO , , , ,Nathalie.Provost@pwc.ca
+3044422-01 ,0001,5500029643,00010,K,0048, 25.000 , 25.000 ,Not Auth - ASN,2009/09/09, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3044466-01 ,0001,5500025132,00020,K,0111, 15.000 , 15.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3045858-01 ,0001,4501302559,00010,K,0002, 3.000 , 3.000 ,Not Auth - ASN,2009/09/22, ,NO , , ,90328 ,Nathalie.Provost@pwc.ca
+3046169-01 ,0001,5500027965,00010,K,0097, 8.000 , 8.000 ,Not Auth - ASN,2009/08/24, ,NO ,2009/08/19, , ,Nathalie.Provost@pwc.ca
+3046287-01 ,0001,5500019038,00010,K,0157, 20.000 , 20.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,90049 ,Nathalie.Provost@pwc.ca
+3046287-01 ,0001,5500019038,00010,K,0178, 27.000 , 27.000 ,Not Auth - ASN,2009/09/30, ,NO , , , ,Nathalie.Provost@pwc.ca
+3046555-01 ,0001,5500016648,00010,K,0098, 30.000 , 30.000 ,Not Auth - ASN,2009/07/20, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3046555-01 ,0001,5500016648,00010,K,0110, 46.000 , 46.000 ,Not Auth - ASN,2009/09/16, ,NO , , , ,Nathalie.Provost@pwc.ca
+3046892-01 ,0001,4501297019,00010, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2009/07/16, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3046896-01 ,0001,5500016417,00010,K,0129, 9.000 , 9.000 ,Not Auth - ASN,2009/09/08, ,NO , , , ,Nathalie.Provost@pwc.ca
+3046896-01 ,0001,5500016417,00010,K,0130, 13.000 , 13.000 ,Not Auth - ASN,2009/09/30, ,NO , , , ,Nathalie.Provost@pwc.ca
+3047134-01 ,0001,5500019673,00010,K,0261, 8.000 , 8.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3047134-01 ,0001,5500019673,00010,K,0262, 8.000 , 8.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3047134-01 ,0001,5500019673,00010,K,0301, 8.000 , 8.000 ,Not Auth - ASN,2009/09/24, ,NO , , , ,Nathalie.Provost@pwc.ca
+3047134-01 ,0001,5500019673,00010,K,0300, 8.000 , 8.000 ,Not Auth - ASN,2009/10/14, ,NO , , , ,Nathalie.Provost@pwc.ca
+3047138-01 ,0001,5500016301,00010,K,0272, 10.000 , 10.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3047139-01 ,0001,5500016653,00020, ,0105, 10.000 , 10.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3047182-01 ,0001,5500016644,00010,K,0602, 5.000 , 5.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,90060 ,Nathalie.Provost@pwc.ca
+3047182-01 ,0001,5500016644,00010,K,0603, 4.000 , 4.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,90060 ,Nathalie.Provost@pwc.ca
+3047703-01 ,0001,5500016304,00010,K,0276, 15.000 , 15.000 ,Not Auth - ASN,2009/07/24, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3048179-01 ,0001,4501315951,00010,K,0001, 28.000 , 28.000 ,Not Auth - ASN,2009/10/01, ,NO , , ,90310 ,Nathalie.Provost@pwc.ca
+3048306-01 ,0001,4501312569,00010, ,0001, 12.000 , 12.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3048306-01 ,0001,4501312569,00010, ,0002, 12.000 , 12.000 ,Not Auth - ASN,2009/09/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3050134-01 ,0001,4501286867,00010, ,0001, 20.000 , 20.000 ,<== Ship ,2009/07/15,2009/07/21,YES,2009/07/15, ,90064 ,Nathalie.Provost@pwc.ca
+3050134-01 ,0001,4501305550,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2009/08/31, ,NO , , ,90291 ,Nathalie.Provost@pwc.ca
+3050134-01 ,0001,4501311747,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2009/11/02, ,NO , , ,90291 ,Nathalie.Provost@pwc.ca
+3050134-01 ,0001,4501311747,00010, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2010/01/19, ,NO , , ,90344 ,Nathalie.Provost@pwc.ca
+3050209-01 ,0001,5500019674,00010,K,0148, 6.000 , 6.000 ,Not Auth - ASN,2009/07/22, ,NO ,2009/07/21, ,LV* 12 PARTS ,Nathalie.Provost@pwc.ca
+3050209-01 ,0001,5500019674,00010,K,0149, 9.000 , 9.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,90272 ,Nathalie.Provost@pwc.ca
+3050209-01 ,0001,5500019674,00010,K,0150, 18.000 , 18.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,90272 ,Nathalie.Provost@pwc.ca
+3050276-01 ,0001,5500025329,00010,K,0047, 5.000 , 5.000 ,Not Auth - ASN,2009/08/18, ,NO ,2009/07/22, ,90067 ,Nathalie.Provost@pwc.ca
+3050276-01 ,0001,5500025329,00010,K,0048, 3.000 , 3.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,90067 ,Nathalie.Provost@pwc.ca
+3050682-01 ,0001,5500019156,00010,K,0079, 6.000 , 6.000 ,Not Auth - ASN,2009/08/21, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3050682-01 ,0001,5500019156,00010,K,0080, 10.000 , 10.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3053159-01 ,0001,5500019158,00010,K,0135, 15.000 , 15.000 ,Not Auth - ASN,2009/08/14, ,NO , , ,90071 ,Nathalie.Provost@pwc.ca
+3053604-01 ,0001,5500019161,00010,K,0087, 9.000 , 9.000 ,Not Auth - ASN,2009/08/12, ,NO ,2009/07/23, ,90072 ,Nathalie.Provost@pwc.ca
+3053604-01 ,0001,5500019161,00010,K,0088, 12.000 , 12.000 ,Not Auth - ASN,2009/08/28, ,NO , , ,90072 ,Nathalie.Provost@pwc.ca
+3054545-01 ,0001,5500016416,00010,K,0310, 9.000 , 9.000 ,Not Auth - ASN,2009/08/17, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3054545-01 ,0001,5500016416,00010,K,0311, 9.000 , 9.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,90074 ,Nathalie.Provost@pwc.ca
+3054545-01 ,0001,5500016416,00010,K,0312, 11.000 , 11.000 ,Not Auth - ASN,2009/09/09, ,NO , , , ,Nathalie.Provost@pwc.ca
+3054546-01 ,0001,5500016467,00010,K,0363, 9.000 , 9.000 ,Not Auth - ASN,2009/08/13, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3054546-01 ,0001,5500016467,00010,K,0365, 9.000 , 9.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3054546-01 ,0001,5500016467,00010,K,0366, 9.000 , 9.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3054546-01 ,0001,5500016467,00010,K,0364, 9.000 , 9.000 ,Not Auth - ASN,2009/09/01, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3054546-01 ,0001,5500016467,00010,K,0367, 9.000 , 9.000 ,Not Auth - ASN,2009/09/09, ,NO , , , ,Nathalie.Provost@pwc.ca
+3054552-01 ,0001,5500016697,00010,K,0071, 9.000 , 9.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3054552-01 ,0001,5500016697,00010,K,0072, 12.000 , 12.000 ,Not Auth - ASN,2009/09/01, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3054979-01 ,0001,5500022406,00010,K,0172, 6.000 , 6.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3054979-01 ,0001,5500022406,00010,K,0173, 6.000 , 6.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3054979-01 ,0001,5500022406,00010,K,0174, 3.000 , 3.000 ,Not Auth - ASN,2009/08/31, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3054979-01 ,0001,5500022406,00010,K,0175, 6.000 , 6.000 ,Not Auth - ASN,2009/09/10, ,NO , , , ,Nathalie.Provost@pwc.ca
+3055239-01 ,0001,4501222973,00010, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2009/07/22, ,NO ,2009/07/07, ,1RWK 90078 ,Nathalie.Provost@pwc.ca
+3055239-01 ,0001,4501222973,00010, ,0004, 1.000 , 1.000 ,Not Auth - ASN,2009/07/22, ,NO ,2009/07/21, ,SSON CASTING DEFECT ,Nathalie.Provost@pwc.ca
+3055239-01 ,0001,4501305067,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,90078 ,Nathalie.Provost@pwc.ca
+3055239-01 ,0001,4501312678,00010, ,0001, 6.000 , 6.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,90078 ,Nathalie.Provost@pwc.ca
+3055412-01 ,0001,4501314871,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/09/04, ,NO , , ,90243 ,Nathalie.Provost@pwc.ca
+3055413-01 ,0001,5500019677,00010,K,0257, 2.000 , 2.000 ,Not Auth - ASN,2009/10/23, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3055413-01 ,0001,5500019677,00010,K,0262, 4.000 , 4.000 ,Not Auth - ASN,2009/11/19, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3056928-01 ,0001,4501263596,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/08/25, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3056928-01 ,0001,4501263596,00010, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3056928-01 ,0001,4501263596,00010, ,0003, 10.000 , 10.000 ,Not Auth - ASN,2009/10/20, ,NO , , ,80660 ,Nathalie.Provost@pwc.ca
+3056928-01 ,0001,4501292684,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/12/10, ,NO , , ,80660 ,Nathalie.Provost@pwc.ca
+3057567-01 ,0001,5500029227,00010,K,0066, 11.000 , 11.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3058377-01 ,0001,5500026869,00010,K,0060, 3.000 , 3.000 ,Not Auth - ASN,2009/08/14, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3058377-01 ,0001,5500026869,00010,K,0061, 3.000 , 3.000 ,Not Auth - ASN,2009/08/31, ,NO ,2009/08/14, , ,Nathalie.Provost@pwc.ca
+3059135-01 ,0001,5500026861,00010,K,0045, 2.000 , 2.000 ,Not Auth - ASN,2009/07/21, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3059135-01 ,0001,5500026861,00010,K,0044, 2.000 , 2.000 ,Not Auth - ASN,2009/07/23, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3059135-01 ,0001,5500026861,00010,K,0046, 5.000 , 5.000 ,Not Auth - ASN,2009/07/24, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3059345-01 ,0001,4501309153,00010, ,0001, 13.000 , 13.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,81049 ,Nathalie.Provost@pwc.ca
+3059692-01 ,0001,4501302245,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/07/23, ,NO , , ,90081 ,Nathalie.Provost@pwc.ca
+3059694-01 ,0001,5500026865,00020,K,0027, 3.000 , 3.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3059694-01 ,0001,5500026865,00020,K,0028, 3.000 , 3.000 ,Not Auth - ASN,2009/08/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3059780-01 ,0001,5500037245,00010, ,0201, 40.000 , 40.000 ,Not Auth - ASN,2009/07/24, ,NO ,2009/06/01, ,90273 ,Nathalie.Provost@pwc.ca
+3059859-01 ,0001,5500026864,00010,K,0154, 15.000 , 15.000 ,Not Auth - ASN,2009/09/22, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3070056-01 ,0001,5500028304,00010,K,0025, 5.000 , 5.000 ,Not Auth - ASN,2009/07/24, ,NO , , ,80952 ,Nathalie.Provost@pwc.ca
+3070093-01 ,0001,4501259790,00010, ,0001, 10.000 , 10.000 ,<== Ship ,2009/07/07,2009/07/14,YES,2009/07/07, ,80953 ,Nathalie.Provost@pwc.ca
+3070093-01 ,0001,4501313710,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/09/16, ,NO , , ,90293 ,Nathalie.Provost@pwc.ca
+3070625-01 ,0001,4501248649,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2010/01/06, ,NO , , ,80657 ,Nathalie.Provost@pwc.ca
+3070739-01 ,0001,4501302622,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/12/09, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3071417-02 ,0001,4501286875,00010, ,0001, 67.000 , 67.000 ,Not Auth - ASN,2009/08/14, ,NO ,2009/07/22, ,90085 ,Nathalie.Provost@pwc.ca
+3071417-02 ,0001,4501312581,00010, ,0001, 60.000 , 60.000 ,Not Auth - ASN,2009/08/23, ,NO , , ,90085 ,Nathalie.Provost@pwc.ca
+3071417-02 ,0001,4501312581,00010, ,0002, 60.000 , 60.000 ,Not Auth - ASN,2009/09/20, ,NO , , ,90294 ,Nathalie.Provost@pwc.ca
+3071419-01 ,0032,5500042891,00010,K,0004, 15.000 , 15.000 ,Not Auth - ASN,2009/09/23, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3071420-01 ,0001,4501312599,00010, ,0001, 8.000 , 8.000 ,Not Auth - ASN,2009/09/14, ,NO , , ,80955 ,Nathalie.Provost@pwc.ca
+3071930-01 ,0001,5500037286,00010, ,0029, 150.000 , 150.000 ,Not Auth - ASN,2009/07/17, ,NO ,2009/06/23, ,90086 ,Nathalie.Provost@pwc.ca
+3071930-01 ,0001,5500037286,00010, ,0032, 100.000 , 100.000 ,Not Auth - ASN,2009/09/11, ,NO ,2009/08/25, ,90295 ,Nathalie.Provost@pwc.ca
+3072621-01 ,0001,4501288592,00010, ,0001, 54.000 , 54.000 ,Not Auth - ASN,2009/08/28, ,NO ,2009/08/21, ,90256 ,Denise.Silva@pwc.ca
+3072621-01 ,0001,4501288592,00010, ,0002, 26.000 , 26.000 ,Not Auth - ASN,2009/09/11, ,NO ,2009/08/28, ,90256 ,Denise.Silva@pwc.ca
+3072621-01 ,0001,4501288592,00010, ,0003, 120.000 , 120.000 ,Not Auth - ASN,2009/09/29, ,NO ,2009/09/29, ,90256 ,Denise.Silva@pwc.ca
+3072939-01 ,0001,4501280566,00020, ,0003, 25.000 , 25.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,90274 ,Nathalie.Provost@pwc.ca
+3072939-01 ,0001,4501302614,00020, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2009/10/19, ,NO , , ,90296 ,Nathalie.Provost@pwc.ca
+3072939-01 ,0017,4501302614,00010, ,0002, 44.000 , 44.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,90274 ,Nathalie.Provost@pwc.ca
+3072939-01 ,0017,4501316040,00010, ,0001, 100.000 , 100.000 ,Not Auth - ASN,2009/09/25, ,NO , , ,90274 ,Nathalie.Provost@pwc.ca
+3074098-01 ,0001,4501062324,00010, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2009/09/17, ,NO , , ,90088 ,Denise.Silva@pwc.ca
+3074098-01 ,0001,4501315436,00010, ,0001, 10.000 , 10.000 ,Not Authorized,2009/10/14, ,NO , , ,90088 ,Denise.Silva@pwc.ca
+3074335-01 ,0102,4501298487,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/17,2009/07/23,N/A,2009/03/31, ,90088 ,Denise.Silva@pwc.ca
+3074335-01 ,0102,4501298487,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/23,2009/07/23,N/A,2009/09/30, ,90088 ,Denise.Silva@pwc.ca
+3074335-01 ,0102,4501298487,00030, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/17,2009/07/23,N/A,2009/07/02, ,90088 ,Denise.Silva@pwc.ca
+3074335-01 ,0102,4501298487,00040, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/17,2009/07/23,N/A,2009/07/03, ,90088 ,Denise.Silva@pwc.ca
+3074335-01 ,0102,4501298487,00050, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/17,2009/07/23,N/A,2009/07/22, ,90088 ,Denise.Silva@pwc.ca
+3074822-01 ,0102,4501309623,00010, ,0001, 3.000 , 3.000 ,Not Authorized,2009/07/17,2009/07/17,N/A,2009/07/02, ,90088 ,Denise.Silva@pwc.ca
+3074822-01 ,0102,4501309623,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/17,2009/07/17,N/A,2009/07/03, ,90088 ,Denise.Silva@pwc.ca
+3074822-01 ,0102,4501309623,00030, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/17,2009/07/17,N/A, , ,90088 ,Denise.Silva@pwc.ca
+3075567-01 ,0001,4501319797,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2009/09/04, ,NO ,2009/10/14, ,90420 ,Denise.Silva@pwc.ca
+30B2905-01 ,0001,4501222977,00010, ,0002, 35.000 , 35.000 ,Not Auth - ASN,2010/05/18, ,NO ,2010/06/14, ,stock ,Nathalie.Provost@pwc.ca
+30B2905-01 ,0001,4501222977,00010, ,0001, 35.000 , 35.000 ,Not Auth - ASN,2010/06/10, ,NO ,2010/10/14, ,stock ,Nathalie.Provost@pwc.ca
+30B3845-01 ,0001,4501245282,00010, ,0001, 39.000 , 39.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,80957 ,Nathalie.Provost@pwc.ca
+30B3845-01 ,0022,4501253900,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2009/10/08, ,NO , , ,80768 ,Nathalie.Provost@pwc.ca
+30B4704-01 ,0017,5500027553,00010,K,0027, 11.000 , 11.000 ,Not Auth - ASN,2010/01/28, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30B4704-01 ,0017,5500027553,00010,K,0031, 11.000 , 11.000 ,Not Auth - ASN,2010/04/29, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30B5645-01 ,0022,5500042114,00010,K,0007, 2.000 , 2.000 ,Not Auth - ASN,2009/10/08, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30B6833-01 ,0001,4501221637,00010, ,0002, 8.000 , 8.000 ,Not Auth - ASN,2009/11/26, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30B6833-01 ,0022,4501221637,00020, ,0004, 6.000 , 6.000 ,Not Auth - ASN,2009/10/15, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30B6833-01 ,0022,4501221637,00020, ,0006, 8.000 , 8.000 ,Not Auth - ASN,2010/01/18, ,NO ,2010/04/19, ,STOCK ,Nathalie.Provost@pwc.ca
+30B6833-01 ,0022,4501221637,00020, ,0005, 12.000 , 12.000 ,Not Auth - ASN,2010/03/16, ,NO ,2010/06/21, ,STOCK ,Nathalie.Provost@pwc.ca
+30C1570-01 ,0001,4501222977,00050, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2010/02/26, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30C1710-01 ,0022,4501246378,00010,K,0002, 3.000 , 3.000 ,Not Auth - ASN,2009/10/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30C1710-01 ,0022,4501246378,00010,K,0004, 11.000 , 11.000 ,Not Auth - ASN,2009/11/10, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30C1710-01 ,0022,4501246378,00010,K,0003, 14.000 , 14.000 ,Not Auth - ASN,2010/01/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30C1846-01 ,0001,5500022559,00010,K,0819, 12.000 , 12.000 ,Not Auth - ASN,2009/10/28, ,NO ,2009/11/26, ,80770 ,Nathalie.Provost@pwc.ca
+30C1920-01 ,0022,5500042117,00010,K,0005, 6.000 , 6.000 ,Not Auth - ASN,2009/09/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30C4337-01 ,0022,4501246393,00010, ,0002, 19.000 , 19.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30C4785-01 ,0001,5500030392,00010,K,0051, 10.000 , 10.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30C5300-01 ,0001,5500029686,00010,K,0191, 15.000 , 15.000 ,Not Auth - ASN,2009/10/06, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30C5348-01 ,0022,5500042115,00010, ,0005, 20.000 , 20.000 ,Not Auth - ASN,2009/09/14, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30J1750-01 ,0001,4501196913,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2009/09/23, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30J1750-01 ,0001,4501196913,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2009/12/17, ,NO ,2010/05/25, ,23 stock ,Nathalie.Provost@pwc.ca
+30P0349-01 ,0001,5500031887,00010,K,0164, 12.000 , 12.000 ,Not Auth - ASN,2010/02/12, ,NO ,2010/02/10, ,81117 ,Nathalie.Provost@pwc.ca
+30P0349-01 ,0001,5500031887,00010,K,0255, 12.000 , 12.000 ,Not Auth - ASN,2010/05/21, ,NO ,2010/05/20, ,81117 ,Nathalie.Provost@pwc.ca
+30P0349-01 ,0001,5500031887,00010,K,0146, 6.000 , 6.000 ,Not Auth - ASN,2010/08/13, ,NO ,2010/07/12, ,81117 ,Nathalie.Provost@pwc.ca
+30P0380-01 ,0001,5500029250,00010,K,0089, 31.000 , 31.000 ,Not Auth - ASN,2010/03/19, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P0573-01 ,0001,5500030446,00010,K,0088, 15.000 , 15.000 ,Not Auth - ASN,2010/02/16, ,NO ,2010/07/06, ,STOCK ,Nathalie.Provost@pwc.ca
+30P0589-01 ,0022,4501264063,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/12/02, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P0589-01 ,0022,4501271554,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2010/01/26, ,NO ,2010/03/17, ,stock ,Nathalie.Provost@pwc.ca
+30P0619-01 ,0001,5500037122,00030, ,0014, 15.000 , 15.000 ,Not Auth - ASN,2009/12/04, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P0841-01 ,0022,4501263632,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2010/02/04, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P0841-01 ,0022,4501263632,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2010/05/12, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P0841-01 ,0022,4501263632,00010, ,0003, 24.000 , 24.000 ,Not Auth - ASN,2010/08/12, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P1118-01 ,0022,5500042116,00010,K,0007, 7.000 , 7.000 ,Not Auth - ASN,2009/12/01, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P1311-01 ,0001,5500034617,00010,K,0039, 6.000 , 6.000 ,Not Auth - ASN,2009/09/08, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P1368-01 ,0022,5500042118,00010,K,0007, 4.000 , 4.000 ,Not Auth - ASN,2009/09/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P1368-01 ,0022,5500042118,00010,K,0005, 4.000 , 4.000 ,Not Auth - ASN,2009/12/07, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P1368-01 ,0022,5500042118,00010,K,0006, 4.000 , 4.000 ,Not Auth - ASN,2010/01/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P1718-01 ,0022,5500042119,00010, ,0012, 5.000 , 5.000 ,Not Auth - ASN,2010/01/19, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+30P1718-01 ,0022,5500042119,00010, ,0010, 5.000 , 5.000 ,Not Auth - ASN,2010/01/30, ,NO ,2010/02/18, ,STOCK ,Nathalie.Provost@pwc.ca
+30P2239-01 ,0001,4501320178,00010,K,0001, 25.000 , 25.000 ,Not Auth - ASN,2009/09/04, ,NO ,2009/06/18, ,to plan ,Nathalie.Provost@pwc.ca
+30P2240-01 ,0022,5500042120,00010,K,0002, 7.000 , 7.000 ,Not Auth - ASN,2009/08/18, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P2240-01 ,0022,5500042120,00010,K,0003, 18.000 , 18.000 ,Not Auth - ASN,2010/01/05, ,NO ,2010/01/20, , ,Nathalie.Provost@pwc.ca
+30P2263-01 ,0001,4501221645,00010, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2010/07/06, ,NO , , ,81064 ,Nathalie.Provost@pwc.ca
+30P2540-01 ,0022,4501246108,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/09/03, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P2540-01 ,0022,4501246108,00010, ,0003, 10.000 , 10.000 ,Not Auth - ASN,2010/01/19, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P2540-01 ,0022,4501246108,00010, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2010/04/20, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+30P2540-01 ,0022,4501246108,00010, ,0004, 20.000 , 20.000 ,Not Auth - ASN,2010/07/05, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3100470-01 ,0032,4501297029,00020, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2009/12/19, ,NO , , ,90128 ,Nathalie.Provost@pwc.ca
+3101305-01 ,0001,4501305068,00010,K,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,90131 ,Nathalie.Provost@pwc.ca
+3101305-01 ,0001,4501305068,00010,K,0002, 5.000 , 5.000 ,Not Auth - ASN,2010/02/15, ,NO ,2010/06/15, ,90131 ,Nathalie.Provost@pwc.ca
+3102974-01 ,0001,5500022561,00010,K,0043, 6.000 , 6.000 ,Not Auth - ASN,2009/10/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3102974-01 ,0001,5500022561,00010,K,0044, 6.000 , 6.000 ,Not Auth - ASN,2009/11/09, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3103195-01 ,0001,4501252549,00020, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/08/28, ,NO ,2009/07/20, ,90134 ,Nathalie.Provost@pwc.ca
+3103195-01 ,0001,4501252549,00020, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2010/04/19, ,NO , , ,90134 ,Nathalie.Provost@pwc.ca
+3103195-02 ,0001,4501251653,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2009/07/17, ,NO , , ,90018 ,Nathalie.Provost@pwc.ca
+3103195-02 ,0001,4501251653,00010, ,0003, 20.000 , 20.000 ,Not Auth - ASN,2009/10/21, ,NO , , ,90018 ,Nathalie.Provost@pwc.ca
+3103195-02 ,0001,4501251653,00010, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2009/11/17, ,NO , , ,90018 ,Nathalie.Provost@pwc.ca
+3103648-01 ,0032,4501259803,00010, ,0001, 99.000 , 99.000 ,181466829 ,2009/07/17,2009/07/17,YES, , ,LV* ,Nathalie.Provost@pwc.ca
+3103648-01 ,0032,4501259803,00010, ,0002, 201.000 , 201.000 ,Not Auth - ASN,2009/10/06, ,NO , , ,90201 ,Nathalie.Provost@pwc.ca
+3104427-01 ,0017,4501292664,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2009/10/19, ,NO , , ,90277 ,Nathalie.Provost@pwc.ca
+3104617-01 ,0001,4501289418,00010, ,0001, 75.000 , 75.000 ,Not Auth - ASN,2009/07/17, ,NO , , ,90137 / QTY DE 73 ,Nathalie.Provost@pwc.ca
+3106560-01 ,0032,5500042907,00010,K,0025, 22.000 , 22.000 ,181466870 ,2009/07/17,2009/07/17,YES, , ,LV* ,Nathalie.Provost@pwc.ca
+3106560-01 ,0032,5500042907,00010,K,0026, 20.000 , 20.000 ,Not Auth - ASN,2009/09/10, ,NO , , , ,Nathalie.Provost@pwc.ca
+3106848-01 ,0001,5500016171,00010,K,0453, 10.000 , 10.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3106848-01 ,0001,5500016171,00010,K,0435, 10.000 , 10.000 ,Not Auth - ASN,2009/08/28, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3106848-01 ,0001,5500016171,00010,K,0454, 10.000 , 10.000 ,Not Auth - ASN,2009/10/07, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3107150-01 ,0001,4501268048,00010, ,0001, 12.000 , 12.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3107467-01 ,0001,4501056199,00010, ,0002, 1.000 , 1.000 ,Not Authorized,2009/10/05, ,NO , , ,SC* SCRAP ,Nathalie.Provost@pwc.ca
+3108398-01 ,0001,4501239790,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2010/06/17, ,NO , , ,90392 price change ,Nathalie.Provost@pwc.ca
+3109308-01 ,0001,5500016174,00010,K,0436, 10.000 , 10.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3109308-01 ,0001,5500016174,00010,K,0437, 10.000 , 10.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3109308-01 ,0001,5500016174,00010,K,0438, 10.000 , 10.000 ,Not Auth - ASN,2009/09/29, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3109439-01 ,0032,5500042921,00010,K,0010, 12.000 , 12.000 ,Not Auth - ASN,2009/08/31, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3109718-03 ,0001,4501270873,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/11/05, ,NO , , ,90146 ,Nathalie.Provost@pwc.ca
+3109718-03 ,0001,4501294812,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2010/01/28, ,NO , , ,90146 ,Nathalie.Provost@pwc.ca
+3109718-04 ,0001,4501294818,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/07/22,2009/07/24,YES,2009/07/22, ,90214 ,Nathalie.Provost@pwc.ca
+3109718-04 ,0001,4501319142,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2011/05/27, ,NO , , ,to plan ,Nathalie.Provost@pwc.ca
+3109718-05 ,0001,4501289440,00010, ,0002, 60.000 , 60.000 ,Not Auth - ASN,2009/07/22, ,NO ,2009/08/25, ,stock ,Nathalie.Provost@pwc.ca
+3109718-05 ,0001,4501289440,00010, ,0003, 87.000 , 87.000 ,Not Auth - ASN,2009/09/23, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3109718-05 ,0001,4501319130,00010, ,0001, 60.000 , 60.000 ,Not Auth - ASN,2009/10/23, ,NO , , ,90300 ,Nathalie.Provost@pwc.ca
+3109718-05 ,0001,4501319130,00010, ,0002, 60.000 , 60.000 ,Not Auth - ASN,2009/11/24, ,NO , , ,90300 ,Nathalie.Provost@pwc.ca
+3109718-07 ,0001,4501245139,00010, ,0001, 90.000 , 90.000 ,Not Auth - ASN,2009/10/12, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3111950-01 ,0001,4501302255,00010,K,0001, 15.000 , 15.000 ,Not Auth - ASN,2009/08/24, ,NO ,2009/09/18, ,90152 ,Nathalie.Provost@pwc.ca
+3111992-01 ,0001,4501312652,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/07/24, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3112877-01 ,0001,5500032892,00010,K,0070, 14.000 , 14.000 ,Not Auth - ASN,2009/07/20, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3112877-01 ,0001,5500032892,00010,K,0158, 14.000 , 14.000 ,Not Auth - ASN,2009/08/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3113385-01 ,0001,5500019040,00010,K,0078, 14.000 , 14.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3113771-01 ,0017,5500019027,00010,K,0073, 4.000 , 4.000 ,Not Auth - ASN,2009/07/23, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3113771-01 ,0017,5500019027,00010,K,0074, 4.000 , 4.000 ,Not Auth - ASN,2009/08/13, ,NO , , ,90325 ,Nathalie.Provost@pwc.ca
+3113771-01 ,0017,5500019027,00010,K,0075, 4.000 , 4.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,90325 ,Nathalie.Provost@pwc.ca
+3113771-01 ,0017,5500019027,00010,K,0076, 4.000 , 4.000 ,Not Auth - ASN,2009/09/17, ,NO , , ,90325 ,Nathalie.Provost@pwc.ca
+3113771-01 ,0017,5500019027,00010,K,0077, 4.000 , 4.000 ,Not Auth - ASN,2009/10/08, ,NO , , , ,Nathalie.Provost@pwc.ca
+3114280-01 ,0001,5500016421,00010,K,0089, 5.000 , 5.000 ,Not Auth - ASN,2009/08/19, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3114280-01 ,0001,5500016421,00010,K,0090, 10.000 , 10.000 ,Not Auth - ASN,2009/08/31, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3114324-01 ,0001,4501305611,00010, ,0001, 72.000 , 72.000 ,Not Auth - ASN,2009/09/14, ,NO , , ,90156 ,Nathalie.Provost@pwc.ca
+3115278-01 ,0001,4501264078,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,90202 ,Nathalie.Provost@pwc.ca
+3115278-01 ,0001,4501305075,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/11/20, ,NO , , ,90301 ,Nathalie.Provost@pwc.ca
+3115992-01 ,0001,5500030347,00010,K,0088, 11.000 , 11.000 ,Not Auth - ASN,2009/08/24, ,NO , , ,90157 ,Nathalie.Provost@pwc.ca
+3115992-01 ,0001,5500030347,00010,K,0089, 5.000 , 5.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,90157 ,Nathalie.Provost@pwc.ca
+3116525-01 ,0001,4501278571,00010, ,0001, 12.000 , 12.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3117577-01 ,0001,5500043477,00010, ,0022, 30.000 , 30.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,26 stock ,Nathalie.Provost@pwc.ca
+3118466-01 ,0001,5500016169,00020,K,0046, 8.000 , 8.000 ,Not Auth - ASN,2009/09/17, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3120469-01 ,0032,4501319203,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/09/11, ,NO ,2009/09/02, ,90161 ,Nathalie.Provost@pwc.ca
+3122503-01 ,0001,5500027991,00010,K,0068, 18.000 , 18.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3123092-01 ,0001,5500019168,00020,K,0052, 8.000 , 8.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3123430-01 ,0001,5500031367,00010,K,0044, 4.000 , 4.000 ,Not Auth - ASN,2009/07/16, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3123430-01 ,0001,5500031367,00010,K,0045, 2.000 , 2.000 ,Not Auth - ASN,2009/08/24, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3123430-01 ,0001,5500031367,00010,K,0046, 2.000 , 2.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+31B1489-01 ,0001,5500023265,00010,K,0755, 23.000 , 23.000 ,Not Auth - ASN,2010/01/14, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+31B2808-01 ,0001,5500019041,00020, ,0019, 63.000 , 63.000 ,Not Auth - ASN,2010/01/22, ,NO ,2010/03/10, ,STOCK ,Nathalie.Provost@pwc.ca
+31B3670-01 ,0001,5500023368,00010,K,0195, 12.000 , 12.000 ,Not Auth - ASN,2010/01/18, ,NO ,2010/04/21, ,81084 ,Nathalie.Provost@pwc.ca
+31J1460-01 ,0001,4501222977,00040, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2009/12/17, ,NO ,2010/03/17, ,STOCK ,Nathalie.Provost@pwc.ca
+31J1460-01 ,0001,4501222977,00040, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2009/12/17, ,NO ,2010/06/23, ,STOCK ,Nathalie.Provost@pwc.ca
+31J2215-01 ,0001,5500019170,00010,K,0215, 25.000 , 25.000 ,Not Auth - ASN,2009/07/22, ,NO ,2009/12/02, ,stock ,Nathalie.Provost@pwc.ca
+31J2234-01 ,0001,5500023313,00010,K,0067, 100.000 , 100.000 ,Not Auth - ASN,2009/08/26, ,NO , , ,81085 ,Nathalie.Provost@pwc.ca
+35C4563-01 ,0001,4501301878,00010, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/09/09, ,NO ,2009/07/20, ,90175 ,Nathalie.Provost@pwc.ca
+35C4563-01 ,0001,4501301878,00010, ,0003, 25.000 , 25.000 ,Not Auth - ASN,2009/10/05, ,NO , , , ,Nathalie.Provost@pwc.ca
+35C4563-01 ,0001,4501301878,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2009/11/29, ,NO , , ,90175 ,Nathalie.Provost@pwc.ca
+35C4563-01 ,0001,4501306938,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2010/01/15, ,NO , , ,90399 ,Nathalie.Provost@pwc.ca
+35C5114-01 ,0001,4501286995,00010, ,0002, 33.000 , 33.000 ,Not Auth - ASN,2009/07/20, ,NO ,2009/05/21, ,90176 ,Nathalie.Provost@pwc.ca
+35C5114-01 ,0001,4501286995,00010, ,0003, 30.000 , 30.000 ,Not Auth - ASN,2009/07/23, ,NO ,2009/07/09, ,90176 ,Nathalie.Provost@pwc.ca
+35C5114-01 ,0001,4501309154,00010, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2009/09/08, ,NO ,2009/08/20, ,90356 ,Nathalie.Provost@pwc.ca
+35C5114-01 ,0001,4501309154,00010, ,0002, 30.000 , 30.000 ,Not Auth - ASN,2009/09/21, ,NO , , ,90356 ,Nathalie.Provost@pwc.ca
+35C5549-01 ,0001,4501250213,00010, ,0006, 1.000 , 1.000 ,<== Ship ,2009/07/13,2009/07/23,YES,2009/07/16, ,81089 / rwk ,Nathalie.Provost@pwc.ca
+35C5549-01 ,0001,4501280199,00010, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2009/07/17,2009/07/23,YES,2009/07/17, ,90197 ,Nathalie.Provost@pwc.ca
+35C5549-01 ,0001,4501280199,00010, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2009/08/13, ,NO , , ,90197 ,Nathalie.Provost@pwc.ca
+35C5549-01 ,0001,4501297042,00010, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2009/09/09, ,NO , , ,90276 ,Nathalie.Provost@pwc.ca
+35C5549-01 ,0001,4501297042,00010, ,0002, 48.000 , 48.000 ,Not Auth - ASN,2009/10/07, ,NO , , ,90276 ,Nathalie.Provost@pwc.ca
+35C5647-01 ,0001,4501312660,00010, ,0001, 100.000 , 100.000 ,Not Auth - ASN,2009/09/04, ,NO ,2009/05/28, ,90347 ,Nathalie.Provost@pwc.ca
+35C5647-01 ,0001,4501314882,00010, ,0001, 99.000 , 99.000 ,Not Auth - ASN,2009/09/11, ,NO ,2009/08/24, ,90351 ,Nathalie.Provost@pwc.ca
+3900972-01 ,0001,4501320182,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/09/09, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3901068-01 ,0001,4501320460,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/09/22, ,NO , , ,90178 ,Nathalie.Provost@pwc.ca
+3901068-01 ,0001,4501320460,00010, ,0002, 5.000 , 5.000 ,Not Auth - ASN,2009/11/23, ,NO , , ,90178 ,Nathalie.Provost@pwc.ca
+3901153-01 ,0001,4501301886,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/08/20, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+3901155-01 ,0001,4501305552,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3901476-01 ,0001,4501320184,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/09/09, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3901476-01 ,0001,4501320184,00010, ,0002, 5.000 , 5.000 ,Not Auth - ASN,2009/11/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3901679-01 ,0001,4501289433,00010, ,0003, 3.000 , 3.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3901679-01 ,0001,4501289433,00010, ,0002, 4.000 , 4.000 ,Not Auth - ASN,2009/09/10, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3901863-01 ,0001,5500043455,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/07/20, ,NO ,2009/07/13, ,80721 ,Nathalie.Provost@pwc.ca
+3901863-01 ,0001,5500043455,00010, ,0003, 2.000 , 2.000 ,Not Auth - ASN,2009/10/01, ,NO , , ,80721 ,Nathalie.Provost@pwc.ca
+3901863-01 ,0001,5500043455,00010, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2009/10/22, ,NO , , ,80721 ,Nathalie.Provost@pwc.ca
+3901863-01 ,0001,5500043455,00010, ,0004, 2.000 , 2.000 ,Not Auth - ASN,2009/11/23, ,NO , , ,80721 ,Nathalie.Provost@pwc.ca
+3901863-01 ,0001,5500043455,00010, ,0005, 2.000 , 2.000 ,Not Auth - ASN,2009/12/10, ,NO , , ,to plan ,Nathalie.Provost@pwc.ca
+3901863-01 ,0001,5500043455,00010, ,0006, 2.000 , 2.000 ,Not Auth - ASN,2010/01/04, ,NO , , ,to plan ,Nathalie.Provost@pwc.ca
+3901953-01 ,0001,4501301918,00010, ,0002, 7.000 , 7.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,6 stock ,Nathalie.Provost@pwc.ca
+3901985-01 ,0001,4501287009,00010, ,0002, 6.000 , 6.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3902019-01 ,0001,4501264891,00010, ,0003, 6.000 , 6.000 ,Not Auth - ASN,2009/08/12, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+3902124-01 ,0001,4501310166,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/08/19, ,NO , , ,90340 ,Nathalie.Provost@pwc.ca
+3902223-01 ,0001,4501314878,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/09/10, ,NO , , ,81095 ,Nathalie.Provost@pwc.ca
+3902618-01 ,0001,4501202304,00010, ,0002, 1.000 , 1.000 ,Not Auth - ASN,2009/09/28, ,NO , , ,80818 / SSON ,Nathalie.Provost@pwc.ca
+3902618-01 ,0001,4501302346,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2009/07/17, ,NO ,2009/07/13, ,90182 ,Nathalie.Provost@pwc.ca
+3910805-01 ,0017,5500019028,00010,K,0083, 12.000 , 12.000 ,Not Auth - ASN,2009/07/24, ,NO ,2009/08/28, ,90184 ,Nathalie.Provost@pwc.ca
+3910805-01 ,0017,5500019028,00010,K,0084, 12.000 , 12.000 ,Not Auth - ASN,2009/09/29, ,NO , , ,90184 ,Nathalie.Provost@pwc.ca
+F7XC712641011 ,0001,5500037231,00010, ,0033, 12.000 , 12.000 ,Not Auth - ASN,2009/12/11, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+MD3060557 ,0001,5500019684,00020, ,0303, 10.000 , 10.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060557 ,0001,5500019684,00020, ,0305, 10.000 , 10.000 ,Not Auth - ASN,2009/08/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060557 ,0001,5500019684,00020, ,0350, 10.000 , 10.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060557 ,0001,5500019684,00020, ,0349, 10.000 , 10.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060557 ,0001,5500019684,00020, ,0348, 10.000 , 10.000 ,Not Auth - ASN,2009/09/17, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060557 ,0001,5500019684,00020, ,0347, 10.000 , 10.000 ,Not Auth - ASN,2009/09/24, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060557 ,0001,5500019684,00020, ,0346, 10.000 , 10.000 ,Not Auth - ASN,2009/10/07, ,NO , , ,80725 ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0258, 10.000 , 10.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0259, 10.000 , 10.000 ,Not Auth - ASN,2009/07/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0261, 10.000 , 10.000 ,Not Auth - ASN,2009/08/14, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0262, 10.000 , 10.000 ,Not Auth - ASN,2009/08/27, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0307, 10.000 , 10.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0306, 10.000 , 10.000 ,Not Auth - ASN,2009/09/17, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0305, 10.000 , 10.000 ,Not Auth - ASN,2009/09/24, ,NO , , ,80727 ,Nathalie.Provost@pwc.ca
+MD3060558 ,0001,5500019685,00030, ,0304, 10.000 , 10.000 ,Not Auth - ASN,2009/10/07, ,NO , , ,80727 ,Nathalie.Provost@pwc.ca
+MD3061226 ,0001,5500026858,00040, ,0042, 25.000 , 25.000 ,Not Auth - ASN,2009/08/17, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3061681 ,0001,5500019687,00010,K,1555, 110.000 , 110.000 ,Not Auth - ASN,2009/10/08, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3061681 ,0001,5500019687,00010,K,1553, 104.000 , 104.000 ,Not Auth - ASN,2009/10/30, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3061681 ,0001,5500019687,00010,K,1550, 88.000 , 88.000 ,Not Auth - ASN,2009/11/19, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3062041 ,0001,5500034363,00010,K,0152, 37.000 , 37.000 ,Not Auth - ASN,2010/01/13, ,NO ,2010/08/24, ,STOCK ,Nathalie.Provost@pwc.ca
+MD3062133 ,0001,5500023260,00030, ,0062, 5.000 , 5.000 ,Not Auth - ASN,2009/09/23, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3062338 ,0001,5500023258,00040, ,0068, 6.000 , 6.000 ,Not Auth - ASN,2009/07/16, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3062338 ,0001,5500023258,00040, ,0069, 6.000 , 6.000 ,Not Auth - ASN,2009/09/01, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3062338 ,0001,5500023258,00040, ,0070, 6.000 , 6.000 ,Not Auth - ASN,2009/09/22, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3062351 ,0001,5500019692,00010,K,0338, 8.000 , 8.000 ,Not Auth - ASN,2009/10/28, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+MD3062351 ,0001,5500019692,00010,K,0336, 18.000 , 18.000 ,Not Auth - ASN,2009/11/11, ,NO ,2009/11/26, ,stock ,Nathalie.Provost@pwc.ca
+MD3062351 ,0001,5500019692,00010,K,0337, 8.000 , 8.000 ,Not Auth - ASN,2009/12/14, ,NO , , ,STOCK ,Nathalie.Provost@pwc.ca
+MD3062596 ,0001,4501297047,00010, ,0002, 1.000 , 1.000 ,Not Auth - ASN,2009/09/18, ,NO , , ,sson casting defect ,Nathalie.Provost@pwc.ca
+MD3062596 ,0001,4501320464,00010, ,0001, 135.000 , 135.000 ,Not Auth - ASN,2009/10/08, ,NO ,2009/09/18, ,90188 ,Nathalie.Provost@pwc.ca
+ST3436-09 ,0001,0000571838,00030,K,0014, 12.000 , 12.000 ,Not Auth - ASN,2009/09/10, ,NO ,2009/08/18, ,stock ,Nathalie.Provost@pwc.ca
+ST3436-09 ,0001,0000571838,00030,K,0015, 12.000 , 12.000 ,Not Auth - ASN,2009/09/23, ,NO , , , ,Nathalie.Provost@pwc.ca
+ST3586-18 ,0001,5500016419,00010,K,0040, 13.000 , 13.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+ST3586-19 ,0001,4501302266,00010, ,0001, 18.000 , 18.000 ,Not Auth - ASN,2009/07/16, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+ST3586-24 ,0001,5500016699,00010,K,0154, 7.000 , 7.000 ,Not Auth - ASN,2009/08/11, ,NO , , ,stock ,Nathalie.Provost@pwc.ca
+ST3586-24 ,0001,5500016699,00010,K,0155, 11.000 , 11.000 ,Not Auth - ASN,2009/09/02, ,NO , , ,90275 ,Nathalie.Provost@pwc.ca
+ST3588-02 ,0001,4501310096,00010, ,0001, 35.000 , 35.000 ,Not Auth - ASN,2010/01/05, ,NO ,2009/07/16, ,90336 ,Nathalie.Provost@pwc.ca
+ST3588-09 ,0001,5500027995,00010,K,0039, 23.000 , 23.000 ,Not Auth - ASN,2009/09/08, ,NO ,2009/09/04, , ,Nathalie.Provost@pwc.ca
+ST6108-01 ,0001,4501222977,00030, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2010/01/27, ,NO ,2011/02/02, ,STOCK ,Nathalie.Provost@pwc.ca
+ST6111-01 ,0001,5500034616,00010,K,0510, 13.000 , 13.000 ,Not Auth - ASN,2009/09/28, ,NO , , ,stock ,Nathalie.Provost@pwc.ca

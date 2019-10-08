@@ -1,0 +1,16 @@
+sJobSO	String	20	HHHHHHHHHXHHHHHHHHHX
+sCustomer	String	10	HHHHHHHHHX
+sPart	String	30	HHHHHHHHHXHHHHHHHHHXHHHHHHHHHX
+sRev	String	8	HHHHHHHX
+sDescription	String	30	HHHHHHHHHXHHHHHHHHHXHHHHHHHHHX
+sCustomerPO	String	20	HHHHHHHHHXHHHHHHHHHX
+sPOLine	String	6	HHHHHX
+nRemainingQuantity	Number	88,888,889
+dtPromisedDate	DateTime	12/31/02
+Delivery	Number	88,888,889
+LeadDays	Number	88,888,889
+sOrderUnit	String	4	HHHX
+sIndicator	String	1	X
+dtShipDate	DateTime	12/31/02
+sStatus	String	10	HHHHHHHHHX
+Comment	Memo	COMMENT MEMO TEXT

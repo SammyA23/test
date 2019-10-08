@@ -1,0 +1,11 @@
+Material Number,Plant,Doc Number,Item,Consign,Sched Line,Sched Quantity,Outstand Qty,Msg/ASN/Ship,Stat. Date,Delv. Date,Confirmed,Resch. Date,Ship To,Confirmation Comment,Buyer Email
+Add charge to submit SSON ,0001,4501477855,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/05/18,2011/05/18,N/A, , , ,Michel.Barras@pwc.ca
+tooling charges 3901667-01 ,0001,4501478739,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2011/03/18,2011/03/18,N/A, , , ,Michel.Barras@pwc.ca
+3009652 ,0032,5500042978,00010,K,0226, 150.000 , 150.000 ,Not Auth - ASN,2011/09/23,2011/09/23,YES, , ,11691 ,vikramsingh.punchum@accenture.com
+3010607 ,0017,5500045598,00010,K,0018, 25.000 , 25.000 ,Not Auth - ASN,2011/09/29,2011/09/29,YES, , ,21 stock/balance rwk 11827 ,vikramsingh.punchum@accenture.com
+3011351 ,0001,4501621398,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2011/10/20,2011/10/20,YES,2011/11/21, ,11248 ,vikramsingh.punchum@accenture.com
+3014049 ,0001,4501465481,00010,K,0003, 1.000 , 1.000 ,Not Auth - ASN,2011/09/15,2011/09/15,YES,2012/01/05, ,rework cptech ,vikramsingh.punchum@accenture.com
+3015565 ,0001,4501547549,00010,K,0001, 5.000 , 5.000 ,Not Auth - ASN,2012/01/25,2012/01/25,YES, , ,11205 ,vikramsingh.punchum@accenture.com
+3016263 ,0001,4501578160,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2011/10/25,2011/10/25,YES,2011/09/26, ,11249 ,vikramsingh.punchum@accenture.com
+3018129 ,0001,5500034364,00010,K,0060, 39.000 , 39.000 ,Not Auth - ASN,2011/09/26,2011/09/26,YES, , ,11186 ,vikramsingh.punchum@accenture.com
+3018526 ,0001,4501640893,00010, ,0001, 1.000 , 1.000 ,Not Auth - ASN,2011/12/07,2011/12/07,YES, , ,pas recu po ,vikramsingh.punchum@accenture.com

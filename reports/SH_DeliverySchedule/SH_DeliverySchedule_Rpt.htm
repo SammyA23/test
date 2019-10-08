@@ -1,0 +1,257 @@
+<!-- Copyright © 2003 Exact Software ERP-NA, Inc.-->
+<META Name="{82932974-7BC3-4618-A312-94BDC05FB2ED}" CONTENT="Jobboss.Reporting">
+
+<HTML><HEAD>
+<SCRIPT LANGUAGE="VBScript" src="JBCommon.vbs"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript" src="JBReport.vbs"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript">
+
+Dim oRS_Calendar
+
+'	Set Defaults
+Call SetReportDefaults
+
+Function LoadReport()
+
+	'	Read Cookies from Filter ***
+	Customer = GetCookieValue("Customer")
+	ToDate = GetCookieValue("ToDate")
+	FromDate = GetCookieValue("FromDate")
+	BuildStockJobs = cBool(GetCookieValue("BuildStockJobs"))
+	ShippingInstructions = cBool(GetCookieValue("ShippingInstructions"))
+	SortBy = cInt(GetCookieValue("optSort"))
+	HoldJobSOs = cBool(GetCookieValue("HoldJobSOs"))
+
+	'	Expire Cookies ***
+	document.cookie = "Customer=;" & sExpCookie
+	document.cookie = "ToDate=;" & sExpCookie
+	document.cookie = "FromDate=;" & sExpCookie
+	document.cookie = "BuildStockJobs=;" & sExpCookie
+	document.cookie = "ShippingInstructions=;" & sExpCookie
+	document.cookie = "optSort=;" & sExpCookie
+	document.cookie = "HoldJobSOs=;" & sExpCookie
+	
+	'	Retrieve Data
+    sql = " SELECT Q1.sJobSO, " _
+                & "Q1.sCustomer, " _
+                & "Q1.sPart, " _
+                & "Q1.sRev, " _
+                & "Q1.sDescription, " _
+                & "Q1.sCustomerPO, " _
+                & "Q1.sPOLine, " _
+                & "Q1.nRemainingQuantity, " _
+                & "Q1.dtPromisedDate, " _
+                & "Q1.Delivery, " _
+                & "Q1.Lead_Days AS LeadDays, " _
+                & "Q1.sIndicator, " _
+                & "Q1.sOrderUnit, " _
+                & "Q1.sStatus, "
+                
+    If sDBType = "ACCESS" Then
+        sql = sql & " CDATE(1/1/11) AS dtShipDate, "
+    Else
+        sql = sql & " Cast('' As DateTime) AS dtShipDate, "
+    End If
+    
+    sql = sql & "Delivery.Comment " _
+                & "FROM ("
+   
+   '    Job sql
+    sql = sql & "SELECT Job.Job AS sJobSO, " _
+                    & "Job.Customer AS sCustomer, " _
+                    & "Job.Part_Number AS sPart, " _
+                    & "Job.Rev AS sRev, " _
+                    & "Job.Description AS sDescription, " _
+                    & "Job.Customer_PO AS sCustomerPO, " _
+                    & "Job.Customer_PO_LN AS sPOLine, " _
+                    & "Delivery.Remaining_Quantity AS nRemainingQuantity, " _
+                    & "Delivery.Promised_Date AS dtPromisedDate, " _
+                    & "Delivery.Delivery, " _
+                    & "Job.Lead_Days, " _
+                    & "Job.Order_Unit AS sOrderUnit, " _
+                    & "Job.Status AS sStatus, "
+                    
+    If sDBType = "ACCESS" Then
+        sql = sql & "IIf (Not IsNull(Delivery.SO_Detail) ,'*','') AS sIndicator "
+    Else
+        sql = sql & "CASE WHEN Delivery.SO_Detail Is Not Null THEN '*' ELSE '' END AS sIndicator "
+    End If
+    
+    sql = sql & "FROM Job INNER JOIN Delivery ON Job.Job = Delivery.Job "
+    If HoldJobSOs Then
+		sql = sql & "WHERE Job.Status IN ('Active', 'Hold', 'Complete') " 
+	Else
+		sql = sql & "WHERE Job.Status IN ('Active', 'Complete') "
+	End If
+	
+	sql = sql & "AND delivery.remaining_quantity > 0 " _
+                    & "AND Job.Assembly_level = 0 " _
+                    & "AND Job.Type in ('Regular','Assembly') "
+                        
+    If Not Customer = "" Then sql = sql & "AND job.customer = '" & Customer & "' "
+    
+    If Not BuildStockJobs Then
+        If UCase(sDBType) = "ACCESS" Then
+            sql = sql & " AND NOT Job.Build_To_Stock "
+        Else
+            sql = sql & " AND Job.Build_To_Stock = 0 "
+        End If
+    End If
+    
+    sql = sql & oCmn.AddDateClause(FromDate, ToDate, "Delivery.Promised_Date", "And", sDBType)
+    
+    sql = sql & " UNION "
+    
+    '   SO sql
+    sql = sql & "SELECT SO_Detail.Sales_Order + ' - ' + SO_Detail.SO_Line AS sJobSO, " _
+                        & "SO_Header.Customer AS sCustomer, " _
+                        & "SO_Detail.Material AS sPart, " _
+                        & "SO_Detail.Rev AS sRev, " _
+                        & oCmn.sSQLIfNotNull("Material.Material","Material.Description", "SO_Detail.Description", sDBType) & " AS sDescription, " _
+                        & "SO_Header.Customer_PO AS sCustomerPO, " _
+                        & "SO_Detail.SO_Line AS sPOLine, " _
+                        & "Delivery.Remaining_Quantity AS nRemainingQuantity, " _
+                        & "Delivery.Promised_Date AS dtPromisedDate, " _
+                        & "Delivery.Delivery," _
+                        & "Customer.Ship_Lead_Days AS Lead_Days, " _
+                        & "SO_Detail.Stock_UofM AS sOrderUnit, " _
+                        & "SO_Detail.Status AS sStatus, " _
+                        & " '' AS sIndicator " _
+                        & "FROM (SO_Header LEFT JOIN Customer ON SO_Header.Customer = Customer.Customer) " _
+                        & "INNER JOIN (Material RIGHT JOIN (SO_Detail INNER JOIN Delivery ON " _
+                        & "SO_Detail.SO_Detail = Delivery.SO_Detail) ON Material.Material = " _
+                        & "SO_Detail.Material) ON SO_Header.Sales_Order = SO_Detail.Sales_Order "
+    If HoldJobSOs Then
+		sql = sql & "WHERE SO_Detail.Status IN ('Open', 'Backorder', 'Shipped', 'Hold') "
+	Else
+		sql = sql & "WHERE SO_Detail.Status IN ('Open', 'Backorder', 'Shipped') "
+	End If
+	sql = sql & "AND Delivery.Remaining_Quantity > 0 " _
+				& "AND Delivery.Job Is Null "
+                        
+    If Not Customer = "" Then sql = sql & " AND SO_Header.Customer = '" & Customer & "'"
+    
+    sql = sql & oCmn.AddDateClause(FromDate, ToDate, "Delivery.Promised_Date", "And", sDBType)
+    
+    sql = sql & ") AS Q1 INNER JOIN Delivery ON Q1.Delivery = Delivery.Delivery "
+        					  
+		alert sql
+    oRS.Open sql, oConn, adOpenDynamic, adLockPessimistic
+    
+        '	Does recordset have data?
+    If Not DataExists(oRS) Then Exit Function
+
+    Set oRS.ActiveConnection = Nothing
+    Set oRS = oCmn.CopyRS(oRS)
+    
+    '	set ship date
+    Do Until oRS.EOF
+		oRS.Update "dtShipDate", oCmn.SubtractLeadDays(oRS("dtPromisedDate"), oRS("LeadDays"))
+		oRS.MoveNext
+	Loop
+   
+	'	set sort
+    Select Case SortBy
+        Case 1
+            Sort1 = "{DeliverySchedule_ttx.dtPromisedDate}"
+            Sort2 = "{DeliverySchedule_ttx.sCustomer}" 
+            Sort3 = "{DeliverySchedule_ttx.sJobSO}" 
+        Case 2
+            Sort1 = "{DeliverySchedule_ttx.dtShipDate}"
+            Sort2 = "{DeliverySchedule_ttx.sCustomer}" 
+            Sort3 = "{DeliverySchedule_ttx.sJobSO}"            
+        Case 3
+            oRS.Sort = "sJobSO, dtPromisedDate"
+            Sort1 = "{DeliverySchedule_ttx.sJobSO}"
+            Sort2 = "{DeliverySchedule_ttx.dtPromisedDate}" 
+            Sort3 = ""           
+        Case 4
+            Sort1 = "{DeliverySchedule_ttx.sCustomer}"
+            Sort2 = "{DeliverySchedule_ttx.dtPromisedDate}" 
+            Sort3 = "{DeliverySchedule_ttx.sJobSO}"                  
+        Case 5
+            Sort1 = "{DeliverySchedule_ttx.sCustomer}"
+            Sort2 = "{DeliverySchedule_ttx.dtShipDate}" 
+            Sort3 = "{DeliverySchedule_ttx.sJobSO}"                
+        Case 6
+            Sort1 = "{DeliverySchedule_ttx.sCustomer}"
+            Sort2 = "{DeliverySchedule_ttx.sJobSO}" 
+            Sort3 = "{DeliverySchedule_ttx.dtPromisedDate}"               
+    End Select    
+
+    '	Open Report
+    OpenReport "SH_DeliverySchedule.rpt"
+    oRpt.Database.Tables.Item(1).SetDataSource oRS, 3
+    
+    '	Set Report Formulas
+    Set oFormulaFields = oRpt.FormulaFields
+    For i = 1 To oFormulaFields.Count
+        Set FirstFormula = oFormulaFields.Item(i)
+        If UCase(FirstFormula.Name) = "{@SORTOPT}" Then FirstFormula.Text = cInt(SortBy)
+        If UCase(FirstFormula.Name) = "{@DATERANGE}" Then FirstFormula.Text = "'" & SetDateRange(FromDate, ToDate) & "'"
+        If UCase(FirstFormula.Name) = "{@SHOWCOMMENTS}" Then FirstFormula.Text = ShippingInstructions
+        If UCase(FirstFormula.Name) = "{@SORT1}" Then FirstFormula.Text = Sort1 
+        If UCase(FirstFormula.Name) = "{@SORT2}" Then FirstFormula.Text = Sort2
+        If UCase(FirstFormula.Name) = "{@SORT3}" Then FirstFormula.Text = Sort3                
+    Next
+    
+	'	Localize Report    
+	oLoc.LocalizeReport oRpt, "SH_DeliverySchedule"
+					
+	'	Preview/Print Report
+	FinishReport
+	
+End Function
+
+Function KillObjects()
+	KillRptObjects
+	Set oRS_Calendar = Nothing
+End Function
+
+</SCRIPT>
+<SCRIPT LANGUAGE=javascript FOR=CrViewer1 EVENT=DownloadFinished>
+ CrViewer1_DownloadFinished()
+</SCRIPT>
+</head>
+
+<BODY bgcolor="#f7f5dd"  onLoad="LoadReport()" OnUnLoad="KillObjects()" bottomMargin=0 leftMargin=0 rightMargin=0 topMargin=0>&nbsp; 
+	<A id=fnPrint onclick = fn_Print href="#" name=fnPrint  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cPrint)</script></FONT></A>&nbsp;&nbsp;
+	<A onclick=fn_PrinterSetup href = "#" id=fnPrinterSetup name=fnPrinterSetup  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cPrinterSetup)</script></FONT></A>&nbsp;&nbsp;
+	<A onclick=fn_Export href = "#" id=fnExport name=fnExport  style="VISIBILITY: hidden"><FONT face=Arial size=2 color=blue>
+	<script language = vbscript>document.write oLoc.Translate(cExport)</script></FONT></A>
+<OBJECT id=CrViewer1 
+		style="VISIBILITY: hidden; HEIGHT: 97.5%" 
+		width="100%" 
+		classid=CLSID:2DEF4530-8CE6-41c9-84B6-A54536C90213>
+		<PARAM NAME="lastProp" VALUE="500">
+		<PARAM NAME="_cx" VALUE="30242">
+		<PARAM NAME="_cy" VALUE="23892">
+		<PARAM NAME="DisplayGroupTree" VALUE="0">
+		<PARAM NAME="DisplayToolbar" VALUE="-1">
+		<PARAM NAME="EnableGroupTree" VALUE="-1">
+		<PARAM NAME="EnableNavigationControls" VALUE="-1">
+		<PARAM NAME="EnableStopButton" VALUE="-1">
+		<PARAM NAME="EnablePrintButton" VALUE="0">
+		<PARAM NAME="EnableZoomControl" VALUE="-1">
+		<PARAM NAME="EnableCloseButton" VALUE="-1">
+		<PARAM NAME="EnableProgressControl" VALUE="-1">
+		<PARAM NAME="EnableSearchControl" VALUE="-1">
+		<PARAM NAME="EnableRefreshButton" VALUE="0">
+		<PARAM NAME="EnableDrillDown" VALUE="0">
+		<PARAM NAME="EnableAnimationControl" VALUE="0">
+		<PARAM NAME="EnableSelectExpertButton" VALUE="-1">
+		<PARAM NAME="EnableToolbar" VALUE="-1">
+		<PARAM NAME="DisplayBorder" VALUE="-1">
+		<PARAM NAME="DisplayTabs" VALUE="-1">
+		<PARAM NAME="DisplayBackgroundEdge" VALUE="-1">
+		<PARAM NAME="SelectionFormula" VALUE="">
+		<PARAM NAME="EnablePopupMenu" VALUE="-1">
+		<PARAM NAME="EnableExportButton" VALUE="0">
+		<PARAM NAME="EnableSearchExpertButton" VALUE="0">
+		<PARAM NAME="EnableHelpButton" VALUE="0">
+		<PARAM NAME="LaunchHTTPHyperlinksInNewBrowser" VALUE="-1">
+</OBJECT>
+</BODY>
+</HTML>

@@ -1,0 +1,357 @@
+Material Number,Plant,Doc Number,Item,Consign,Sched Line,Sched Quantity,Outstand Qty,Msg/ASN/Ship,Stat. Date,Delv. Date,Confirmed,Resch. Date,Ship To,Confirmation Comment,Buyer Email
+ADD CHARGES FOR CUTTING MATERIAL ,0001,4501146156,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/01/09,2009/01/09,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Cost of machining 30P1353-01 3 QNs ,0001,4501321416,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/15,2009/07/15,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Cost of machining 30P2364-01 QN200512842,0001,4501321416,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/15,2009/07/15,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+NRE 30J3380-01 ELBOW-AGB SUMP, XFER TUB ,0102,4501249117,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/03/30,2009/03/30,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+NRE 30J3384-01 SUMP ASSY-ACCSS GBX ,0102,4501249121,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/03/30,2009/03/30,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+NRE 31j2864-01 ,0001,4501146151,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/10/01,2008/10/01,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+NRE FOR 30C5410-01 ,0102,4501195565,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/02/28,2009/02/28,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+NRE PN 3107250-01 ,0001,4501293788,00030, ,0001, 1.000 , 1.000 ,Not Authorized,2009/10/14,2009/10/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Outillage ,0001,4501196494,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/02/01,2009/02/01,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+PROGRAMMING FOR 3073844-01 ,0102,4501195467,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/04/01,2009/04/01,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+REWORK COST - EC 3071981-01 ,0001,4500877990,00020, ,0001, 10.000 , 10.000 ,Authorized ,2006/10/27,2006/10/27,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Repair Charge of 3071981-01 ,0001,3500006848,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Repair Charges 3071981-01 ,0001,3500006136,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2007/11/02,2007/11/20,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Rework from CL05 to CL10 ,0001,4501322226,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/24,2009/07/24,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Rework from CL06 to CL10 ,0001,4501287456,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/05/15,2009/05/15,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+TLG 30J3380-01 ELBOW-AGB SUMP, XFER TUB ,0102,4501249117,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/03/30,2009/03/30,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+TLG 30J3384-01 SUMP ASSY-ACCSS GBX ,0102,4501249121,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/03/30,2009/03/30,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+TOOL new PN 3107250-01 ,0001,4501293788,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2009/10/14,2009/10/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+TOOLING FOR 3073844-01 ,0102,4501195467,00060, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/04/01,2009/04/01,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+TOOLING FOR 30C5410-01 ,0102,4501195565,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/02/28,2009/02/28,N/A, , ,tooling ,Christine.Meunier@pwc.ca
+Tooling 31J2864-01 ,0001,4501146151,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/10/01,2008/10/01,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3020184 ,0001,4501115189,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3023479 ,0001,4501116233,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3028855 ,0001,4501116359,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3045072-01 ,0001,4501115090,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3101207-03 ,0001,4501116261,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3102135-03 ,0001,4501115867,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/13,2008/03/13,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3105735-01 ,0001,4501116216,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3111913-01 ,0001,4501115223,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3119124-01 ,0001,4501115134,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 3120987-01 ,0001,4501115028,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Tooling for 31B1445-01 ,0001,4501116400,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+Upgrade cost for 30P1213-01 ,0001,3500007077,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/31,2008/03/31,N/A, , ,tooling ,Isabelle.Tardif@pwc.ca
+06X3073844-01 ,0102,4501242522,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/04/20,2009/08/07,N/A,2009/04/27, ,tooling ,Isabelle.Tardif@pwc.ca
+06X3073844-01 ,0102,4501242522,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/04/20,2009/08/07,N/A,2009/04/27, ,tooling ,Isabelle.Tardif@pwc.ca
+3020184 ,0001,4501115189,00040, ,0002, 22.000 , 22.000 ,Not Auth - ASN,2010/02/11,2010/02/11,YES, , ,mg; 24 en inv ,Isabelle.Tardif@pwc.ca
+3020184 ,0001,4501115189,00050, ,0005, 10.000 , 10.000 ,Not Auth - ASN,2009/10/22,2009/10/22,YES, , ,mg. wip ; 6 + 2 ,Isabelle.Tardif@pwc.ca
+3020184 ,0001,4501229163,00010, ,0001, 45.000 , 45.000 ,Not Authorized,2010/07/16,2010/07/16,YES, , ,mag. 0 casting achetés ,Isabelle.Tardif@pwc.ca
+3023479 ,0001,4501116233,00040, ,0001, 12.000 , 12.000 ,Not Auth - ASN,2009/10/30,2009/10/30,YES, , ,mg; 25 en inv. ,Isabelle.Tardif@pwc.ca
+3023479 ,0001,4501116233,00040, ,0002, 12.000 , 12.000 ,Not Auth - ASN,2010/11/09,2010/11/09,YES, , ,mg; ok inv ,Isabelle.Tardif@pwc.ca
+3023479 ,0001,4501116233,00040, ,0003, 12.000 , 12.000 ,Not Auth - ASN,2011/01/14,2011/01/14,YES, , ,mg; 30 castings ,Isabelle.Tardif@pwc.ca
+3023479 ,0001,4501116233,00040, ,0004, 19.000 , 19.000 ,Not Auth - ASN,2011/05/12,2011/05/12,YES, , ,mg; castings ok ,Isabelle.Tardif@pwc.ca
+3028855 ,0001,4501116359,00010, ,0001, 5.000 , 5.000 ,Auth-ASN N/A ,2009/05/15,2009/09/25,YES, , ,5 SCRAPPED; on recommence ,Isabelle.Tardif@pwc.ca
+3028855 ,0001,4501116359,00010, ,0002, 95.000 , 95.000 ,Auth-ASN N/A ,2009/06/19,2009/11/27,YES, , ,attend subst. to plan ,Isabelle.Tardif@pwc.ca
+3038165CL1 ,0001,4501170302,00010,K,0001, 15.000 , 15.000 ,Not Auth - ASN,2009/10/27,2009/10/27,YES, , ,15 en stock ,Isabelle.Tardif@pwc.ca
+3038165CL1 ,0001,4501170302,00010,K,0002, 11.000 , 11.000 ,Not Auth - ASN,2009/11/12,2009/11/12,YES, , ,11 en stock ,Isabelle.Tardif@pwc.ca
+3038165CL1 ,0001,4501170302,00010,K,0005, 466.000 , 466.000 ,Not Auth - ASN,2009/11/26,2009/11/26,YES, , ,466 en stock ,Isabelle.Tardif@pwc.ca
+3038165CL1 ,0001,4501170302,00010,K,0003, 9.000 , 9.000 ,Not Auth - ASN,2011/07/13,2011/07/13,YES, , ,9 en stock ,Isabelle.Tardif@pwc.ca
+3038165CL1 ,0001,4501170302,00010,K,0004, 15.000 , 15.000 ,Not Auth - ASN,2011/07/13,2011/07/13,YES, , ,15 en stock ,Isabelle.Tardif@pwc.ca
+3038165CL4 ,0001,4501085242,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2012/08/29,2012/08/29,YES, , ,9 en stock ,Isabelle.Tardif@pwc.ca
+3038165CL4 ,0001,4501170380,00010, ,0001, 110.000 , 110.000 ,Not Auth - ASN,2013/02/26,2013/02/26,YES, , ,110 en stock ,Isabelle.Tardif@pwc.ca
+3039172 ,0001,4501122003,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts. mat. 5 ,Isabelle.Tardif@pwc.ca
+3039172 ,0001,4501122003,00020, ,0001, 100.000 , 100.000 ,Not Authorized,2011/01/01,2011/01/01,YES, , ,c.p. 0 casting ,Isabelle.Tardif@pwc.ca
+3041474 ,0001,4501122014,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts. mat. 5 ,Isabelle.Tardif@pwc.ca
+3041474 ,0001,4501122014,00020, ,0001, 10.000 , 10.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,c.p.; 0 casting ,Isabelle.Tardif@pwc.ca
+3041474 ,0001,4501183780,00010, ,0001, 40.000 , 40.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,c.p.; 0 casting ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00040, ,0004, 5.000 , 5.000 ,181467272 ,2009/07/09,2009/07/09,YES, , ,LV* ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00040, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2009/10/14,2009/10/14,YES,2009/10/14, ,MG; 5 inv; 6 hold ; wip 30657 ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00040, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2009/11/13,2009/11/13,YES, , ,mg; wip 30657 et 58 ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00040, ,0003, 10.000 , 10.000 ,Not Auth - ASN,2010/01/04,2010/01/04,YES, , ,mg; wip 30658 ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00050, ,0001, 20.000 , 20.000 ,Not Auth - ASN,2010/01/19,2010/01/19,YES, , ,mg; 20 cast ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00050, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2010/02/23,2010/02/23,YES, , ,mg; 20 cast ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00050, ,0003, 20.000 , 20.000 ,Not Auth - ASN,2010/03/31,2010/03/31,YES, , ,mg; 20 cast ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115090,00050, ,0004, 25.000 , 25.000 ,Not Auth - ASN,2010/04/30,2010/04/30,YES, , ,mg; 25 cast ,Isabelle.Tardif@pwc.ca
+3045072-01 ,0001,4501115095,00030, ,0001, 24.000 , 24.000 ,Not Auth - ASN,2010/06/15,2010/06/15,YES, , ,aucun casting acheté ,Isabelle.Tardif@pwc.ca
+3047045-01 ,0001,4501146131,00040, ,0001, 15.000 , 15.000 ,Auth-ASN N/A ,2009/06/16,2010/01/08,NO , , ,AL 3 inv subs. SSON 134692008-029 ,Isabelle.Tardif@pwc.ca
+3047045-01 ,0001,4501146131,00040, ,0002, 15.000 , 15.000 ,Auth-ASN N/A ,2009/06/16,2010/01/08,NO , , ,Al ; subst. wip 18 + 20 ,Isabelle.Tardif@pwc.ca
+3049083-01 ,0001,4501116371,00040, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2009/10/26,2009/10/26,YES, , ,mg; 15 inv ,Isabelle.Tardif@pwc.ca
+3049083-01 ,0001,4501116371,00040, ,0002, 10.000 , 10.000 ,Not Auth - ASN,2009/11/27,2009/11/27,YES, , ,mg; 10 castings ,Isabelle.Tardif@pwc.ca
+3049083-01 ,0001,4501116371,00050, ,0001, 30.000 , 30.000 ,Not Auth - ASN,2010/01/06,2010/01/06,YES, , ,mg; casting livrés 9 août de pwc ,Isabelle.Tardif@pwc.ca
+3054756-01 ,0001,4501121926,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts. mat. 5 ,Isabelle.Tardif@pwc.ca
+3054756-01 ,0001,4501121926,00020, ,0001, 10.000 , 10.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts; 10 casting ,Isabelle.Tardif@pwc.ca
+3054756-01 ,0001,4501183773,00010, ,0001, 30.000 , 30.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,c.p.; 0 casting ,Isabelle.Tardif@pwc.ca
+3054756-02 ,0001,4501121951,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts. mat. 5 ,Isabelle.Tardif@pwc.ca
+3054756-02 ,0001,4501121951,00020, ,0001, 30.000 , 30.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts; 0 casting ,Isabelle.Tardif@pwc.ca
+3054756-02 ,0001,4501183769,00010, ,0001, 125.000 , 125.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,c.p.; 0 casting ,Isabelle.Tardif@pwc.ca
+3054768-01 ,0001,4501121971,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts. mat. 5 ,Isabelle.Tardif@pwc.ca
+3054768-01 ,0001,4501121971,00020, ,0001, 20.000 , 20.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,critical parts; 0 casting ,Isabelle.Tardif@pwc.ca
+3054768-01 ,0001,4501183767,00010, ,0001, 60.000 , 60.000 ,Not Authorized,2011/01/05,2011/01/05,YES, , ,c.p.; 0 casting ,Isabelle.Tardif@pwc.ca
+3058346CL11 ,0001,5500026492,00010,K,0077, 1.000 , 1.000 ,Not Auth - ASN,2010/04/28,2010/04/28,YES, , ,à produire ,Isabelle.Tardif@pwc.ca
+3058346CL13 ,0001,5500026500,00010,K,0075, 1.000 , 1.000 ,Not Auth - ASN,2010/02/23,2010/02/23,YES, , ,à produire ,Isabelle.Tardif@pwc.ca
+3058346CL13 ,0001,5500026500,00010,K,0076, 1.000 , 1.000 ,Not Auth - ASN,2010/04/28,2010/04/28,YES, , ,à produire ,Isabelle.Tardif@pwc.ca
+3058346CL15 ,0001,5500026502,00020,K,0001, 2.000 , 2.000 ,Not Auth - ASN,2009/07/21,2009/07/21,YES,2009/07/07, ,wip ,Isabelle.Tardif@pwc.ca
+3058346CL15 ,0001,5500026502,00020,K,0002, 2.000 , 2.000 ,Not Auth - ASN,2009/07/21,2009/07/21,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3058346CL15 ,0001,5500026502,00020,K,0003, 1.000 , 1.000 ,Not Auth - ASN,2009/07/24,2009/07/24,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3058346CL15 ,0001,5500026502,00020,K,0004, 2.000 , 2.000 ,Not Auth - ASN,2009/08/13,2009/08/13,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3058346CL15 ,0001,5500026502,00020,K,0005, 1.000 , 1.000 ,Not Auth - ASN,2009/08/20,2009/08/20,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3058346CL15 ,0001,5500026502,00020,K,0007, 4.000 , 4.000 ,Not Auth - ASN,2009/09/14,2009/09/14,YES, , , ,Isabelle.Tardif@pwc.ca
+3058346CL15 ,0001,5500026502,00020,K,0006, 1.000 , 1.000 ,Not Auth - ASN,2009/09/15,2009/09/15,YES,2009/08/24, ,wip ,Isabelle.Tardif@pwc.ca
+3058346CL16 ,0001,5500026503,00010,K,0029, 1.000 , 1.000 ,Not Auth - ASN,2011/12/21,2011/12/21,YES, , ,à produire ,Isabelle.Tardif@pwc.ca
+3058347CL04 ,0001,5500038285,00010,K,0006, 1.000 , 1.000 ,Not Auth - ASN,2009/09/10,2009/09/10,YES, , ,à produire ,Isabelle.Tardif@pwc.ca
+3058347CL06 ,0001,5500038287,00010,K,0009, 1.000 , 1.000 ,Not Auth - ASN,2009/10/01,2009/10/01,YES, , ,à produire ,Isabelle.Tardif@pwc.ca
+3058347CL06 ,0001,5500038287,00010,K,0010, 2.000 , 2.000 ,Not Auth - ASN,2009/11/06,2009/11/06,YES, , ,à produire ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0064, 1.000 , 1.000 ,<== Ship ,2009/07/16,2009/07/16,YES,2009/07/02, ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0065, 5.000 , 5.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES,2009/07/09, ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0066, 4.000 , 4.000 ,Not Auth - ASN,2009/08/17,2009/08/17,YES,2009/07/23, ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0068, 4.000 , 4.000 ,Not Auth - ASN,2009/08/17,2009/08/17,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0067, 1.000 , 1.000 ,Not Auth - ASN,2009/08/21,2009/08/21,YES,2009/08/17, ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0069, 4.000 , 4.000 ,Not Auth - ASN,2009/08/27,2009/08/27,YES,2009/08/17, ,à produire ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0070, 2.000 , 2.000 ,Not Auth - ASN,2009/09/04,2009/09/04,YES,2009/08/27, , ,Isabelle.Tardif@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0071, 1.000 , 1.000 ,Not Auth - ASN,2009/09/10,2009/09/10,YES, , , ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0169, 3.000 , 3.000 ,<== Ship ,2009/07/14,2009/07/14,YES,2009/07/02, ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0172, 2.000 , 2.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES,2009/07/14, ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0174, 2.000 , 2.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0170, 1.000 , 1.000 ,Not Auth - ASN,2009/08/06,2009/08/06,YES,2009/07/22, ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0175, 1.000 , 1.000 ,Not Auth - ASN,2009/08/12,2009/08/12,YES,2009/07/23, ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0176, 1.000 , 1.000 ,Not Auth - ASN,2009/08/19,2009/08/19,YES,2009/07/23, ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0177, 2.000 , 2.000 ,Not Auth - ASN,2009/08/24,2009/08/24,YES,2009/07/24, ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0178, 3.000 , 3.000 ,Not Auth - ASN,2009/08/27,2009/08/27,YES,2009/08/20, ,wip ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0179, 2.000 , 2.000 ,Not Auth - ASN,2009/09/04,2009/09/04,YES,2009/08/27, , ,Isabelle.Tardif@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0180, 2.000 , 2.000 ,Not Auth - ASN,2009/09/04,2009/09/04,YES, , , ,Isabelle.Tardif@pwc.ca
+3058347CL09 ,0001,5500038319,00010,K,0080, 3.000 , 3.000 ,Not Auth - ASN,2009/08/28,2009/08/28,YES,2009/07/02, ,à produire ,Isabelle.Tardif@pwc.ca
+3058347CL10 ,0001,4501322226,00010, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2009/07/24,2009/07/24,YES,2009/06/26, ,RWK attend instruction et PO ,Isabelle.Tardif@pwc.ca
+3058347CL11 ,0001,4501171060,00010,K,0002, 1.000 , 1.000 ,Not Auth - ASN,2013/07/29,2013/07/29,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0070, 4.000 , 4.000 ,Not Auth - ASN,2009/08/31,2009/08/31,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0069, 1.000 , 1.000 ,Not Auth - ASN,2009/09/10,2009/09/10,YES,2009/09/10, ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0072, 1.000 , 1.000 ,Not Auth - ASN,2009/09/29,2009/09/29,YES,2009/09/29, ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0075, 3.000 , 3.000 ,Not Auth - ASN,2009/10/01,2009/10/01,YES,2009/10/01, ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0071, 1.000 , 1.000 ,Not Auth - ASN,2009/10/05,2009/10/05,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0034, 1.000 , 1.000 ,<== Ship ,2009/07/14,2009/07/14,YES,2009/08/27, ,1 inv ,Isabelle.Tardif@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0038, 1.000 , 1.000 ,Not Auth - ASN,2009/09/17,2009/09/17,YES,2009/09/17, ,1 inv ,Isabelle.Tardif@pwc.ca
+3071252-01 ,0001,3500005527,00050,K,0003, 4.000 , 4.000 ,Not Auth - ASN,2009/11/05,2009/11/05,YES,2009/11/05, ,pas d'info pour toutes ,Isabelle.Tardif@pwc.ca
+3071252-01 ,0001,5500042619,00010,K,0003, 1.000 , 1.000 ,<== Ship ,2009/07/10,2009/07/15,YES, , ,*) wip cleanliness ,Isabelle.Tardif@pwc.ca
+3071252-01 ,0001,5500042619,00010,K,0004, 2.000 , 2.000 ,<== Ship ,2009/07/10,2009/07/15,YES, , ,*) wip 30065 cleanliness ,Isabelle.Tardif@pwc.ca
+3071252-01 ,0001,5500042619,00010,K,0005, 1.000 , 1.000 ,Not Auth - ASN,2009/09/23,2009/09/23,YES,2009/09/23, ,sson ,Isabelle.Tardif@pwc.ca
+3071252-01 ,0001,5500042619,00010,K,0006, 1.000 , 1.000 ,Not Auth - ASN,2009/09/23,2009/09/23,YES,2009/09/23, ,wip ,Isabelle.Tardif@pwc.ca
+3071550-01 ,0001,4501268730,00010, ,0002, 3.000 , 3.000 ,Not Auth - ASN,2009/09/17,2009/09/17,YES, , ,3 inv ,Isabelle.Tardif@pwc.ca
+3071550-01 ,0001,4501268730,00010, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2009/11/11,2009/11/11,YES, , ,en inventaire ancien SSON ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0299, 1.000 , 1.000 ,<== Ship ,2009/07/16,2009/07/16,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0300, 3.000 , 3.000 ,<== Ship ,2009/07/16,2009/07/16,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0301, 4.000 , 4.000 ,Not Auth - ASN,2009/07/20,2009/07/20,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0305, 4.000 , 4.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0303, 2.000 , 2.000 ,Not Auth - ASN,2009/07/23,2009/07/23,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0304, 2.000 , 2.000 ,Not Auth - ASN,2009/08/13,2009/08/13,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0306, 1.000 , 1.000 ,Not Auth - ASN,2009/08/14,2009/08/14,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0307, 4.000 , 4.000 ,Not Auth - ASN,2009/08/21,2009/08/21,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0308, 2.000 , 2.000 ,Not Auth - ASN,2009/09/01,2009/09/01,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0309, 5.000 , 5.000 ,Not Auth - ASN,2009/09/03,2009/09/03,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,3500006136,00010, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2012/08/23,2012/08/23,YES, , ,15; en attente de directives ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,3500006136,00030, ,0001, 3.000 , 3.000 ,Not Auth - ASN,2012/10/24,2012/10/24,YES, , ,2 sur 5 livrés; 02X3071981-01 ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,3500006848,00010, ,0001, 2.000 , 2.000 ,<== Ship ,2009/07/16,2009/07/16,YES, , ,2 rework; attend Daniel Rhéaume ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,3500008436,00010, ,0001, 1.000 , 1.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES, , ,1 rework; pas de po ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,3500008622,00010, ,0001, 1.000 , 1.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES, , ,1 rework pas de po ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,3500008660,00010, ,0001, 1.000 , 1.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES, , ,1 rework pas de po ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,4501106433,00010, ,0006, 5.000 , 5.000 ,Not Auth - ASN,2009/12/31,2009/12/31,YES,2009/12/09, ,LV* 5 LIVRÉES LE 11 JUILLET ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,4501172447,00010, ,0001, 1.000 , 1.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES, , , directives ? ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,4501246147,00010, ,0001, 1.000 , 1.000 ,Not Auth - ASN,2009/07/22,2009/07/22,YES, , ,nouvelle commande ? ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,4501277822,00010, ,0005, 2.000 , 2.000 ,Not Auth - ASN,2009/09/30,2009/09/30,YES,2009/09/30, ,wip nouvelles pièces ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,4501308091,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2009/08/11,2009/08/11,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,4501308091,00010, ,0002, 25.000 , 25.000 ,Not Auth - ASN,2009/10/01,2009/10/01,YES, , ,to plan ,Isabelle.Tardif@pwc.ca
+3071981-01 ,0001,4501308091,00010, ,0003, 35.000 , 35.000 ,Not Auth - ASN,2009/10/25,2009/11/20,NO ,2009/11/02, ,to plan ,Isabelle.Tardif@pwc.ca
+3072019-01 ,0001,4501164908,00010, ,0001, 48.000 , 48.000 ,Not Auth - ASN,2009/11/06,2009/11/06,YES,2009/10/23, ,48 inv ,Isabelle.Tardif@pwc.ca
+3072614-01 ,0001,4501323816,00010, ,0001, 267.000 , 267.000 ,Not Auth - ASN,2009/11/02,2009/11/02,YES,2009/07/17, , ,Christine.Meunier@pwc.ca
+3072614-01 ,0001,4501323816,00010, ,0002, 45.000 , 45.000 ,Not Auth - ASN,2009/11/11,2009/11/11,YES, , , ,Christine.Meunier@pwc.ca
+3072614-01 ,0102,4501275293,00020, ,0001, 30.000 , 21.000 ,Auth-ASN N/A ,2009/06/13,2009/06/17,N/A,2009/02/04, , ,Christine.Meunier@pwc.ca
+3072614-01 ,0102,4501275293,00030, ,0001, 30.000 , 30.000 ,Auth-ASN N/A ,2009/07/13,2009/07/13,N/A,2009/03/04, , ,Christine.Meunier@pwc.ca
+3072614-01 ,0102,4501275293,00040, ,0001, 30.000 , 30.000 ,Not Authorized,2009/08/13,2009/08/13,N/A,2009/04/07, , ,Christine.Meunier@pwc.ca
+3072615-01 ,0102,4501202188,00030, ,0001, 20.000 , 2.000 ,Auth-ASN N/A ,2009/06/09,2009/06/09,N/A,2008/11/28, , ,Christine.Meunier@pwc.ca
+3073844-01 ,0102,4501195467,00070, ,0001, 1.000 , 1.000 ,Not Authorized,2009/10/02,2009/10/02,N/A,2009/06/30, , ,Christine.Meunier@pwc.ca
+3073844-01 ,0102,4501195467,00080, ,0001, 1.000 , 1.000 ,Not Authorized,2009/09/17,2009/10/02,N/A,2009/04/27, , ,Christine.Meunier@pwc.ca
+3073844-01 ,0102,4501195467,00090, ,0001, 1.000 , 1.000 ,Not Authorized,2009/09/17,2009/10/02,N/A,2009/06/26, , ,Christine.Meunier@pwc.ca
+3073844-01 ,0102,4501296654,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2009/10/02,2009/10/02,N/A,2009/07/03, , ,Christine.Meunier@pwc.ca
+3073844-01 ,0102,4501296654,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2009/10/02,2009/10/02,N/A,2009/07/22, , ,Christine.Meunier@pwc.ca
+3073855-01 ,0102,4501294822,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/03,2009/07/14,N/A,2009/07/03, , ,Christine.Meunier@pwc.ca
+3073855-01 ,0102,4501294822,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2009/07/22,2009/07/22,N/A, , , ,Christine.Meunier@pwc.ca
+3073855-01 ,0102,4501299718,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/06/16,2009/07/14,N/A,2009/04/01, , ,Christine.Meunier@pwc.ca
+3074718-01 ,0001,4501289436,00010, ,0002, 4.000 , 4.000 ,Not Auth - ASN,2009/07/23,2009/07/23,YES, , ,inv ,Christine.Meunier@pwc.ca
+3074718-01 ,0001,4501289436,00010, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2009/08/10,2009/08/10,YES, , ,inv + WIP split ,Christine.Meunier@pwc.ca
+3074718-01 ,0001,4501307425,00010, ,0001, 8.000 , 8.000 ,Not Auth - ASN,2009/08/17,2009/08/17,YES,2009/08/13, ,8 castings ,Christine.Meunier@pwc.ca
+30C4721-01 ,0022,5500042049,00010,K,0018, 2.000 , 2.000 ,Not Auth - ASN,2009/09/09,2009/09/09,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30C4721-01 ,0022,5500042049,00010,K,0019, 5.000 , 5.000 ,Not Auth - ASN,2009/09/10,2009/09/10,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30C4721-01 ,0022,5500042049,00010,K,0020, 5.000 , 5.000 ,Not Auth - ASN,2009/10/06,2009/10/06,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30C4721-01 ,0022,5500042049,00010,K,0021, 4.000 , 4.000 ,Not Auth - ASN,2009/10/13,2009/10/13,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30C5136-01 ,0022,4501239853,00010, ,0002, 6.000 , 6.000 ,Not Auth - ASN,2010/01/05,2010/01/05,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30C5136-01 ,0022,4501239853,00010, ,0003, 10.000 , 10.000 ,Not Auth - ASN,2010/02/22,2010/02/22,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30C5417-01 ,0001,4501038520,00020, ,0008, 7.000 , 7.000 ,Not Auth - ASN,2010/08/06,2010/08/06,YES,2010/06/22, ,FEUILLE DE REBUT fait; MATL PWC ,Christine.Meunier@pwc.ca
+30C5417-01 ,0001,4501038520,00020, ,0012, 1.000 , 1.000 ,Not Auth - ASN,2010/09/08,2010/09/08,YES,2010/08/10, ,1 sur feuille de rebut; multus ,Christine.Meunier@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0011, 4.000 , 4.000 ,Not Auth - ASN,2009/09/09,2009/09/09,YES, , ,inv ,Christine.Meunier@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0013, 3.000 , 3.000 ,Not Auth - ASN,2009/10/06,2009/10/06,YES, , ,inv ,Christine.Meunier@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0014, 5.000 , 5.000 ,Not Auth - ASN,2009/10/14,2009/10/14,YES, , ,inv ,Christine.Meunier@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0020, 3.000 , 3.000 ,Not Auth - ASN,2009/11/26,2009/11/26,YES, , ,inv ,Christine.Meunier@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0015, 5.000 , 5.000 ,Not Auth - ASN,2009/12/04,2009/12/04,YES, , ,inv ,Christine.Meunier@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0016, 40.000 , 40.000 ,Not Auth - ASN,2010/01/07,2010/01/07,YES, , ,manque 21 ; wip 60 ,Christine.Meunier@pwc.ca
+30J3380-01 ,0102,4501249117,00050, ,0001, 20.000 , 1.000 ,Auth-ASN N/A ,2009/05/12,2009/07/03,N/A,2009/05/13, ,manque 21 ; wip 60 ,Christine.Meunier@pwc.ca
+30J3380-01 ,0102,4501249117,00060, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/06/03,2009/07/03,N/A,2009/05/13, ,manque 21 ; wip 60 ,Christine.Meunier@pwc.ca
+30J3384-01 ,0102,4501249121,00010, ,0001, 10.000 , 10.000 ,Auth-ASN N/A ,2009/03/25,2009/10/30,N/A,2009/03/25, ,manque 21 ; wip 60 ,Christine.Meunier@pwc.ca
+30J3384-01 ,0102,4501249121,00040, ,0001, 20.000 , 20.000 ,Auth-ASN N/A ,2009/04/22,2009/10/30,N/A,2009/04/22, ,manque 21 ; wip 60 ,Christine.Meunier@pwc.ca
+30J3384-01 ,0102,4501249121,00050, ,0001, 20.000 , 20.000 ,Auth-ASN N/A ,2009/05/12,2009/10/30,N/A,2009/05/13, ,manque 21 ; wip 60 ,Christine.Meunier@pwc.ca
+30J3384-01 ,0102,4501249121,00060, ,0001, 11.000 , 11.000 ,Auth-ASN N/A ,2009/06/03,2009/10/30,N/A,2009/06/03, ,manque 21 ; wip 60 ,Christine.Meunier@pwc.ca
+30L0923-01 ,0001,4501228592,00010, ,0001, 2.000 , 2.000 ,Not Authorized,2010/03/25,2010/03/25,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0006, 1.000 , 1.000 ,Not Auth - ASN,2010/02/12,2010/02/12,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0007, 1.000 , 1.000 ,Not Auth - ASN,2010/04/12,2010/04/12,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0015, 1.000 , 1.000 ,Not Auth - ASN,2010/04/19,2010/04/19,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0008, 1.000 , 1.000 ,Not Auth - ASN,2010/04/26,2010/04/26,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0009, 1.000 , 1.000 ,Not Auth - ASN,2010/04/29,2010/04/29,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0010, 1.000 , 1.000 ,Not Auth - ASN,2010/05/10,2010/05/10,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0011, 1.000 , 1.000 ,Not Auth - ASN,2010/05/10,2010/05/10,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0012, 1.000 , 1.000 ,Not Auth - ASN,2010/05/26,2010/05/26,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0013, 1.000 , 1.000 ,Not Auth - ASN,2010/06/02,2010/06/02,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0923-01 ,0001,4501228592,00020, ,0014, 9.000 , 9.000 ,Not Auth - ASN,2010/06/10,2010/06/10,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0925-01 ,0001,4501228626,00010, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2010/04/12,2010/04/12,YES,2010/03/25, ,wip ,Isabelle.Tardif@pwc.ca
+30L0925-01 ,0001,4501228626,00020, ,0007, 2.000 , 2.000 ,Not Auth - ASN,2010/04/26,2010/04/26,YES,2010/04/12, ,wip ,Isabelle.Tardif@pwc.ca
+30L0925-01 ,0001,4501228626,00020, ,0015, 1.000 , 1.000 ,Not Auth - ASN,2010/04/29,2010/04/29,YES,2010/04/26, ,wip ,Isabelle.Tardif@pwc.ca
+30L0925-01 ,0001,4501228626,00020, ,0009, 4.000 , 4.000 ,Not Auth - ASN,2010/05/10,2010/05/10,YES,2010/05/03, ,wip ,Isabelle.Tardif@pwc.ca
+30L0925-01 ,0001,4501228626,00020, ,0013, 11.000 , 11.000 ,Not Auth - ASN,2010/06/03,2010/06/03,YES,2010/06/02, ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0005, 3.000 , 3.000 ,Not Auth - ASN,2010/01/28,2010/01/28,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2010/04/01,2010/04/01,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0004, 1.000 , 1.000 ,Not Auth - ASN,2010/04/12,2010/04/12,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0006, 1.000 , 1.000 ,Not Auth - ASN,2010/04/19,2010/04/19,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0007, 1.000 , 1.000 ,Not Auth - ASN,2010/04/26,2010/04/26,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0008, 1.000 , 1.000 ,Not Auth - ASN,2010/04/29,2010/04/29,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0009, 1.000 , 1.000 ,Not Auth - ASN,2010/05/10,2010/05/10,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0010, 1.000 , 1.000 ,Not Auth - ASN,2010/05/10,2010/05/10,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0011, 1.000 , 1.000 ,Not Auth - ASN,2010/05/26,2010/05/26,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0012, 1.000 , 1.000 ,Not Auth - ASN,2010/06/02,2010/06/02,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0013, 1.000 , 1.000 ,Not Auth - ASN,2010/06/10,2010/06/10,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L0938-01 ,0001,4501228625,00020, ,0014, 10.000 , 10.000 ,Not Auth - ASN,2010/06/14,2010/06/14,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00010, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2010/03/25,2010/03/25,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0003, 2.000 , 2.000 ,Not Auth - ASN,2010/01/28,2010/01/28,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0005, 2.000 , 2.000 ,Not Auth - ASN,2010/04/12,2010/04/12,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0007, 1.000 , 1.000 ,Not Auth - ASN,2010/04/26,2010/04/26,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0008, 1.000 , 1.000 ,Not Auth - ASN,2010/04/29,2010/04/29,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0009, 1.000 , 1.000 ,Not Auth - ASN,2010/05/10,2010/05/10,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0010, 1.000 , 1.000 ,Not Auth - ASN,2010/05/10,2010/05/10,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0011, 1.000 , 1.000 ,Not Auth - ASN,2010/05/26,2010/05/26,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30L1011-01 ,0001,4501228612,00020, ,0012, 12.000 , 12.000 ,Not Auth - ASN,2010/06/02,2010/06/02,YES, , ,wip S1.0 ,Isabelle.Tardif@pwc.ca
+30L1073-01 ,0001,4501228596,00010, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2010/03/25,2010/03/25,YES, , ,inv ,Christine.Meunier@pwc.ca
+30L1073-01 ,0001,4501228596,00020, ,0005, 2.000 , 2.000 ,Not Auth - ASN,2010/01/28,2010/01/28,YES, , ,inv ,Christine.Meunier@pwc.ca
+30L1073-01 ,0001,4501228596,00020, ,0006, 2.000 , 2.000 ,Not Auth - ASN,2010/04/12,2010/04/12,YES, , ,inv ,Christine.Meunier@pwc.ca
+30L1073-01 ,0001,4501228596,00020, ,0008, 4.000 , 4.000 ,Not Auth - ASN,2010/04/26,2010/04/26,YES, , ,inv ,Christine.Meunier@pwc.ca
+30L1073-01 ,0001,4501228596,00020, ,0013, 14.000 , 14.000 ,Not Auth - ASN,2010/05/26,2010/05/26,YES, , ,wip S1.0 ,Christine.Meunier@pwc.ca
+30P1003-01 ,0001,4501001351,00010, ,0003, 1.000 , 1.000 ,Not Auth - ASN,2009/12/17,2009/12/17,YES,2011/04/25, ,SSON 134692008-018 ,Isabelle.Tardif@pwc.ca
+30P1003-01 ,0001,4501239988,00010, ,0003, 2.000 , 2.000 ,Not Auth - ASN,2009/08/20,2009/08/20,YES,2010/06/07, ,*) wip 30117 splits ,Isabelle.Tardif@pwc.ca
+30P1003-01 ,0001,4501259682,00010, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2009/08/20,2009/08/20,YES,2010/06/07, ,*) 32 castings ,Isabelle.Tardif@pwc.ca
+30P1003-01 ,0001,4501281393,00010, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2009/09/20,2009/09/20,YES,2010/12/21, ,*) 32 castings ,Isabelle.Tardif@pwc.ca
+30P1013-01 ,0022,4501269146,00010, ,0001, 48.000 , 48.000 ,Not Auth - ASN,2010/02/16,2010/02/16,YES, , ,48 inv ,Isabelle.Tardif@pwc.ca
+30P1015-01 ,0022,4501235573,00010, ,0001, 3.000 , 3.000 ,Not Auth - ASN,2010/04/19,2010/04/19,YES, , ,1 inv ,Isabelle.Tardif@pwc.ca
+30P1015-01 ,0022,4501277206,00010, ,0001, 48.000 , 48.000 ,Not Auth - ASN,2010/04/23,2010/04/23,YES, , ,48 wip ,Isabelle.Tardif@pwc.ca
+30P1336-01 ,0001,4501188538,00010, ,0003, 3.000 , 3.000 ,Not Auth - ASN,2009/09/20,2009/09/20,YES,2011/09/21, ,*) 3 SSON ,Isabelle.Tardif@pwc.ca
+30P1336-01 ,0001,4501259682,00020, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2009/08/20,2009/08/20,YES,2011/03/17, ,*) 32 castings wip ,Isabelle.Tardif@pwc.ca
+30P1336-01 ,0001,4501259728,00010, ,0001, 21.000 , 21.000 ,Not Auth - ASN,2009/07/23,2009/07/23,YES,2010/12/13, ,*) inv ,Isabelle.Tardif@pwc.ca
+30P1336-01 ,0001,4501259728,00010, ,0002, 6.000 , 6.000 ,Not Auth - ASN,2009/09/20,2009/09/20,YES,2011/09/21, ,*) wip ,Isabelle.Tardif@pwc.ca
+30P1336-01 ,0001,4501281393,00020, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2009/09/20,2009/09/20,YES,2011/10/31, ,*) 32 castings ,Isabelle.Tardif@pwc.ca
+30P1353-01 ,0001,4501245418,00010, ,0002, 1.000 , 1.000 ,Not Auth - ASN,2010/08/13,2010/08/13,YES,2011/04/29, ,SSON 134692009-008 ok wip ,Isabelle.Tardif@pwc.ca
+30P1353-01 ,0001,4501281402,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2009/08/10,2009/08/10,YES,2010/11/08, ,*) 40 wip ,Isabelle.Tardif@pwc.ca
+30P1361-01 ,0001,4501165376,00020, ,0003, 3.000 , 3.000 ,Not Auth - ASN,2009/10/22,2009/10/22,YES,2011/01/12, ,SSON ,Isabelle.Tardif@pwc.ca
+30P1361-01 ,0001,4501165376,00040, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2009/08/10,2009/08/10,YES,2010/06/28, ,*) QN 200516478 ; 30707 ,Isabelle.Tardif@pwc.ca
+30P1361-01 ,0001,4501255264,00010, ,0003, 2.000 , 2.000 ,<== Ship ,2009/07/15,2009/07/15,YES,2010/06/23, ,1 pour OPT ; l'autre insp. ,Isabelle.Tardif@pwc.ca
+30P1361-01 ,0001,4501281404,00010, ,0001, 12.000 , 12.000 ,Not Auth - ASN,2009/08/26,2009/08/26,YES,2010/07/06, ,*) wip ,Isabelle.Tardif@pwc.ca
+30P1361-01 ,0001,4501281404,00010, ,0002, 16.000 , 16.000 ,Not Auth - ASN,2009/09/25,2009/09/25,YES,2010/09/20, ,*) wip ,Isabelle.Tardif@pwc.ca
+30P1361-01 ,0001,4501281404,00010, ,0003, 20.000 , 20.000 ,Not Auth - ASN,2009/10/23,2009/10/23,YES,2011/01/24, ,*) wip ,Isabelle.Tardif@pwc.ca
+30P1427-01 ,0022,4501269168,00010, ,0001, 46.000 , 46.000 ,Not Auth - ASN,2010/02/15,2010/02/15,YES, , ,46 castings ,Isabelle.Tardif@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0275, 6.000 , 6.000 ,Not Auth - ASN,2010/02/16,2010/02/16,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0278, 6.000 , 6.000 ,Not Auth - ASN,2010/03/19,2010/03/19,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30P1516-01 ,0022,4501277232,00010, ,0001, 48.000 , 48.000 ,Not Auth - ASN,2010/04/19,2010/04/19,YES, , ,48 castings ,Isabelle.Tardif@pwc.ca
+30P1944-01 ,0001,5500038850,00010,K,0046, 1.000 , 1.000 ,Not Auth - ASN,2010/02/16,2010/02/16,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+30P2364-01 ,0001,4501001309,00010, ,0004, 1.000 , 1.000 ,Not Auth - ASN,2010/06/04,2010/06/04,YES,2012/03/28, ,sson REJETÉ ,Isabelle.Tardif@pwc.ca
+30P2364-01 ,0001,3500008437,00010, ,0001, 1.000 , 1.000 ,Not Auth - ASN,2009/08/21,2009/08/21,YES,2010/01/07, ,QN 200515711; 30706 ,Isabelle.Tardif@pwc.ca
+30P2364-01 ,0022,4501235582,00020, ,0002, 4.000 , 4.000 ,Not Auth - ASN,2010/03/28,2010/03/28,YES,2010/03/25, ,2 sous SSON 29638S1.0 ,Isabelle.Tardif@pwc.ca
+30P2364-01 ,0022,4501259592,00010, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2010/05/05,2010/05/05,YES,2010/04/30, ,4 wip 30038S1.0 ,Isabelle.Tardif@pwc.ca
+3101207-03 ,0001,4501116261,00010, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2009/02/15,2009/07/15,YES, , ,mag. 2 wip dont 1 scrap et 1 SSON ,Isabelle.Tardif@pwc.ca
+3101207-03 ,0001,4501133613,00010, ,0001, 10.000 , 10.000 ,Auth-ASN N/A ,2009/06/19,2010/07/15,NO , , ,mag. 10 castings achetés ,Isabelle.Tardif@pwc.ca
+3102135-03 ,0001,4501115867,00010, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2008/11/27,2009/07/15,YES, , , jamais livré peinture ,Isabelle.Tardif@pwc.ca
+3102135-03 ,0001,4501115867,00010, ,0004, 2.000 , 2.000 ,Auth-ASN N/A ,2008/11/27,2009/07/15,YES, , ,mg; wip ,Isabelle.Tardif@pwc.ca
+3102135-03 ,0001,4501115867,00010, ,0002, 15.000 , 15.000 ,Auth-ASN N/A ,2009/06/19,2010/02/10,NO , , ,mag wip substantiation ,Isabelle.Tardif@pwc.ca
+3102135-03 ,0001,4501115867,00010, ,0003, 20.000 , 20.000 ,Auth-ASN N/A ,2009/06/19,2010/04/11,NO , , ,mag 20 castings ,Isabelle.Tardif@pwc.ca
+3102135-03 ,0001,4501115867,00020, ,0001, 40.000 , 40.000 ,Not Authorized,2010/07/14,2010/07/14,YES, , ,mag. 40 casting en main ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0001, 12.000 , 12.000 ,Not Auth - ASN,2009/12/02,2009/12/02,YES, , ,11 inv + 4 wip ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0008, 8.000 , 8.000 ,Not Auth - ASN,2010/01/04,2010/01/04,YES, , , ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0002, 20.000 , 20.000 ,Not Auth - ASN,2010/01/14,2010/01/14,YES, , ,planned 30746 ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0003, 20.000 , 20.000 ,Not Auth - ASN,2010/02/17,2010/02/17,YES, , ,planned 30749 ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0004, 20.000 , 20.000 ,Not Auth - ASN,2010/03/17,2010/03/17,YES, , ,planned 30748 ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0006, 20.000 , 20.000 ,Not Auth - ASN,2010/04/15,2010/04/15,YES, , ,casting ok ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0005, 20.000 , 20.000 ,Not Auth - ASN,2010/05/21,2010/05/21,YES,2010/05/21, ,casting ok ,Isabelle.Tardif@pwc.ca
+3105735-01 ,0001,4501116216,00050, ,0007, 20.000 , 20.000 ,Not Auth - ASN,2010/06/23,2010/06/23,YES,2010/06/23, ,casting ok ,Isabelle.Tardif@pwc.ca
+3105983-02 ,0001,4501287486,00010, ,0002, 14.000 , 14.000 ,Not Auth - ASN,2010/03/10,2010/03/10,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3107250-01 ,0001,4501293788,00010, ,0002, 1.000 , 1.000 ,Not Authorized,2009/12/31,2009/12/31,YES, , ,wip gamme split ,Isabelle.Tardif@pwc.ca
+3107909-01 ,0001,4501290413,00010, ,0001, 10.000 , 10.000 ,<== Ship ,2009/07/14,2009/07/14,YES,2009/07/06, ,wip ,Isabelle.Tardif@pwc.ca
+3107909-01 ,0001,4501290413,00020, ,0001, 1.000 , 1.000 ,<== Ship ,2009/07/14,2009/07/14,YES,2010/01/11, ,inv QN ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2009/08/20,2009/08/20,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0004, 4.000 , 4.000 ,Not Auth - ASN,2009/09/18,2009/09/18,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0006, 4.000 , 4.000 ,Not Auth - ASN,2009/10/14,2009/10/14,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0005, 2.000 , 2.000 ,Not Auth - ASN,2009/10/20,2009/10/20,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0008, 2.000 , 2.000 ,Not Auth - ASN,2009/11/26,2009/11/26,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0009, 2.000 , 2.000 ,Not Auth - ASN,2010/01/05,2010/01/05,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0010, 2.000 , 2.000 ,Not Auth - ASN,2010/01/05,2010/01/05,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0011, 2.000 , 2.000 ,Not Auth - ASN,2010/01/27,2010/01/27,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0012, 4.000 , 4.000 ,Not Auth - ASN,2010/02/24,2010/02/24,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3110870-01 ,0001,4501286493,00020, ,0013, 2.000 , 2.000 ,Not Auth - ASN,2010/03/24,2010/03/24,YES, , ,inv = réduire po de 1 ,Isabelle.Tardif@pwc.ca
+3111913-01 ,0001,4501115223,00010, ,0002, 14.000 , 14.000 ,Auth-ASN N/A ,2008/10/02,2009/09/25,YES, , ,MG wip attente substantiation ,Isabelle.Tardif@pwc.ca
+3111913-01 ,0001,4501115223,00010, ,0003, 10.000 , 10.000 ,Auth-ASN N/A ,2008/10/02,2009/09/25,YES, , ,mag 10 wip on hold ,Isabelle.Tardif@pwc.ca
+3111913-01 ,0001,4501115223,00020, ,0001, 85.000 , 85.000 ,Auth-ASN N/A ,2008/11/15,2009/09/25,YES, , ,mag. 85 wip on hold ,Isabelle.Tardif@pwc.ca
+3111913-01 ,0001,4501115223,00040, ,0001, 2.000 , 2.000 ,Not Auth - ASN,2009/09/09,2009/09/09,YES,2009/11/02, ,rwk chez TNM ,Isabelle.Tardif@pwc.ca
+3111913-01 ,0001,4501314821,00020, ,0001, 50.000 , 50.000 ,Not Auth - ASN,2009/08/15,2009/08/15,YES,2009/07/22, ,50 castings à débuter ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0005, 5.000 , 5.000 ,Not Auth - ASN,2009/08/27,2009/08/27,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0006, 18.000 , 18.000 ,Not Auth - ASN,2009/09/02,2009/09/02,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0007, 12.000 , 12.000 ,Not Auth - ASN,2009/10/07, ,NO ,2009/10/01, ,wip ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0009, 12.000 , 12.000 ,Not Auth - ASN,2009/10/21,2009/10/21,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0010, 10.000 , 10.000 ,Not Auth - ASN,2009/11/11,2009/11/11,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0011, 9.000 , 9.000 ,Not Auth - ASN,2009/11/25,2009/11/25,YES, , , ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0012, 17.000 , 17.000 ,Not Auth - ASN,2009/12/09,2009/12/09,YES, , , ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0013, 8.000 , 8.000 ,Not Auth - ASN,2010/01/20,2010/01/20,YES, , , ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0014, 9.000 , 9.000 ,Not Auth - ASN,2010/02/03,2010/02/03,YES, , , ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0015, 14.000 , 14.000 ,Not Auth - ASN,2010/02/17,2010/02/17,YES, , , ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0016, 11.000 , 11.000 ,Not Auth - ASN,2010/03/17,2010/03/17,YES, , , ,Isabelle.Tardif@pwc.ca
+3113636-01 ,0001,4501286408,00020, ,0017, 7.000 , 7.000 ,Not Auth - ASN,2010/03/30,2010/03/30,YES, , , ,Isabelle.Tardif@pwc.ca
+3114916-01 ,0001,4501061778,00010, ,0005, 1.000 , 1.000 ,Not Auth - ASN,2010/09/14,2010/09/14,YES, , ,SSON 134692008-008 ,Isabelle.Tardif@pwc.ca
+3114916-01 ,0001,4501145640,00010, ,0002, 1.000 , 1.000 ,Not Auth - ASN,2010/09/14,2010/09/14,YES, , ,sson # 134692008-021 ,Isabelle.Tardif@pwc.ca
+3114916-01 ,0001,4501145640,00010, ,0004, 1.000 , 1.000 ,Not Auth - ASN,2010/09/14,2010/09/14,YES,2010/10/15, , sson # 134692008-023 ,Isabelle.Tardif@pwc.ca
+3119124-01 ,0001,4501133599,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2009/07/24,2009/09/25,YES, , ,mag. 31 cast. achetés plan now ,Isabelle.Tardif@pwc.ca
+3120281-01 ,0001,4501146141,00020, ,0001, 12.000 , 12.000 ,Auth-ASN N/A ,2009/06/26,2009/12/18,YES, , ,3 inv; substantiation; wip ,Isabelle.Tardif@pwc.ca
+3120987-01 ,0001,4501115028,00010, ,0002, 10.000 , 10.000 ,Auth-ASN N/A ,2009/06/19,2009/11/14,NO , , ,mg wip en substantiation + 5 inv ,Isabelle.Tardif@pwc.ca
+3120987-01 ,0001,4501115028,00020, ,0001, 85.000 , 85.000 ,Auth-ASN N/A ,2009/06/16,2009/11/14,NO , , ,mag. 85 casting en main ,Isabelle.Tardif@pwc.ca
+3120987-01 ,0001,4501115034,00010, ,0001, 48.000 , 48.000 ,Auth-ASN N/A ,2009/03/01,2009/10/01,YES, , ,mag. 0 casting ; à acheter ,Isabelle.Tardif@pwc.ca
+3121590-01 ,0001,4501146144,00050, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2010/05/26,2010/05/26,YES, , ,14 inv ,Isabelle.Tardif@pwc.ca
+31B1445-01 ,0001,4501116400,00040, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2010/02/17,2010/02/17,YES, , ,mg; inv livrable ,Isabelle.Tardif@pwc.ca
+31B1445-01 ,0001,4501116400,00040, ,0002, 11.000 , 11.000 ,Not Auth - ASN,2011/07/07,2011/07/07,YES, , ,mg; 11 to plan ,Isabelle.Tardif@pwc.ca
+31B1445-01 ,0001,4501116400,00050, ,0001, 52.000 , 52.000 ,Not Auth - ASN,2010/07/12,2010/07/12,YES, , ,mg; 52 castings ,Isabelle.Tardif@pwc.ca
+31J2864-01 ,0001,4501146151,00010, ,0002, 45.000 , 45.000 ,Auth-ASN N/A ,2009/06/16,2010/06/18,YES, , ,12 inv + 36 wip attente substantiation ,Isabelle.Tardif@pwc.ca
+3902113-01 ,0001,4501306529,00010, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/09/22,2009/09/22,YES, , ,inconel à acheter ,Isabelle.Tardif@pwc.ca
+3902113-01 ,0001,4501306529,00020, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2009/11/23,2009/11/23,YES, , ,inconel à acheter ,Isabelle.Tardif@pwc.ca
+3902113-01 ,0001,4501306529,00030, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2010/01/12,2010/01/12,YES, , ,inconel à acheter ,Isabelle.Tardif@pwc.ca
+3902113-01 ,0001,4501306529,00040, ,0001, 5.000 , 5.000 ,Not Auth - ASN,2010/03/04,2010/03/04,YES, , ,inconel à acheter ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501146156,00020, ,0001, 4.000 , 4.000 ,Auth-ASN N/A ,2008/11/19,2009/07/22,YES, , , ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501146156,00050, ,0001, 1.000 , 1.000 ,Not Authorized,2009/12/31,2009/12/31,YES, , ,w01 scrap ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501146156,00060, ,0001, 1.000 , 1.000 ,Not Authorized,2009/12/31,2009/12/31,YES, , ,w03 scrap ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501146156,00070, ,0001, 2.000 , 2.000 ,Not Authorized,2009/08/10,2009/08/10,YES, , ,2 retours ; 30724/25 ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501181442,00010, ,0002, 6.000 , 6.000 ,Auth-ASN N/A ,2009/05/01,2009/07/15,NO , , ,2 inv => SSON + 6 wip ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501190451,00010, ,0001, 3.000 , 3.000 ,<== Ship ,2009/06/16,2009/07/15,NO , , ,6 scrap ; 5 sson ; 1 wip ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501190451,00010, ,0002, 2.000 , 2.000 ,Not Auth - ASN,2009/10/05,2009/10/05,YES, , , ,Isabelle.Tardif@pwc.ca
+3910025-01 ,0001,4501217746,00010, ,0001, 10.000 , 10.000 ,Not Authorized,2009/10/10,2009/10/10,YES,2009/10/29, ,matériel reçu 12 unités ,Isabelle.Tardif@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0462, 8.000 , 8.000 ,Not Auth - ASN,2009/07/23,2009/07/23,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0465, 8.000 , 8.000 ,Not Auth - ASN,2009/08/25,2009/08/25,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0469, 16.000 , 16.000 ,Not Auth - ASN,2009/09/17,2009/09/17,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0472, 8.000 , 8.000 ,Not Auth - ASN,2009/10/28,2009/10/28,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0473, 8.000 , 8.000 ,Not Auth - ASN,2009/11/11,2009/11/11,YES, , ,wip ,Isabelle.Tardif@pwc.ca
+PF65612 ,0100,4501312036,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/02, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC30458 ,0100,4501312235,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/03, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC50801 ,0100,4501312216,00010, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2009/07/17, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC52478 ,0100,4501323613,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/08/10, ,NO , , ,tooling ,Johanne.Legault@pwc.ca
+PWC56895 ,0100,4501319121,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/23, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC59095 ,0100,4501324673,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/21, ,NO , , ,tooling ,Johanne.Legault@pwc.ca
+PWC66886-3 ,0100,4501321826,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/24, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC69485 ,0100,4501310632,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/13, ,NO , , ,tooling ,Claudia.Settels@pwc.ca
+PWC71809 ,0100,4501310515,00010, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2009/06/22, ,NO , , ,tooling ,Claudia.Settels@pwc.ca
+PWC71886 ,0100,4501312036,00030, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2009/06/26, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC85708 ,0100,4501319379,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/08/10, ,NO , , ,tooling ,Claudia.Settels@pwc.ca
+PWC85714 ,0100,4501316459,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/13, ,NO , , ,tooling ,Claudia.Settels@pwc.ca
+ST6121-01 ,0001,4500872825,00010,K,0010, 92.000 , 92.000 ,Not Auth - ASN,2011/05/05,2011/05/05,YES,2011/03/01, ,1157 en stock ,Isabelle.Tardif@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0002, 49.000 , 49.000 ,Not Auth - ASN,2011/06/07,2011/06/07,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0001, 36.000 , 36.000 ,Not Auth - ASN,2011/08/08,2011/08/08,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0003, 36.000 , 36.000 ,Not Auth - ASN,2011/08/08,2011/08/08,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0004, 36.000 , 36.000 ,Not Auth - ASN,2011/09/07,2011/09/07,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0005, 36.000 , 36.000 ,Not Auth - ASN,2011/09/07,2011/09/07,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0006, 36.000 , 36.000 ,Not Auth - ASN,2011/11/08,2011/11/08,YES, , ,inv ,Isabelle.Tardif@pwc.ca
+USPWC71910 ,0100,4501314857,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2009/07/02, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<file characterToIgnore='"'>
+  <column id="AJ" name="Part Number" jbtablename="SO_Detail" jbfieldname="Part_Number" />
+  <column id="AV" name="Plant de livraison" jbtablename="SO_Detail" jbfieldname="Ship_To" />
+  <column id="AN" name="#PO de Pratt" jbtablename="SO_Header" jbfieldname="Customer_PO" />
+  <column id="AO" name="Ligne de detail" jbtablename="SO_Detail" jbfieldname="Line" />
+  <column id="AY" name="Qty" jbtablename="SO_Detail" jbfieldname="Order_Qty" />
+  <column id="BB" name="Date de livraison" jbtablename="SO_Detail" jbfieldname="Promised_Date" />
+  <column id="BO" name="Qté cumulée" jbtablename="" jbfieldname="" />
+  <column id="AF" name="Plant Code" jbtablename="SO_Detail" jbfieldname="Customer" />
+</file>

@@ -1,0 +1,13 @@
+DateOfChange	Date		2008/05/26
+PullQty	Number		5
+PushQty	Number		0
+DiffQty	Number		5
+PullQtyValue	Currency		500
+PushQtyValue	Currency		0
+DiffQtyValue	Currency		500
+PullDate	Number		0
+PushDate	Number		3
+DiffDate	Number		-3
+PullDateValue	Currency		0
+PushDateValue	Currency		700
+DiffDateValue	Currency		-700

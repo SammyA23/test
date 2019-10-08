@@ -1,0 +1,44 @@
+columns {
+    column {
+        id:"AE",
+        name:"Part Number",
+        jbtablename:"SO_Detail",
+        jbfieldname:"Part_Number",
+    }
+    column {
+        id:"AC",
+        name:"Plant de livraison",
+        jbtablename:"SO_Detail",
+        jbfieldname:"Ship_To",
+    }
+    column {
+        id:"AI",
+        name:"PO#",
+        jbtablename:"SO_Header",
+        jbfieldname:"Customer_PO",
+    }
+    column {
+        id:"AJ",
+        name:"Ligne de detail",
+        jbtablename:"SO_Detail",
+        jbfieldname:"Line",
+    }
+    column {
+        id:"BB",
+        name:"Qty",
+        jbtablename:"SO_Detail",
+        jbfieldname:"Order_Qty",
+    }
+    column {
+        id:"BE",
+        name:"Date de livraison",
+        jbtablename:"SO_Detail",
+        jbfieldname:"Promised_Date",
+    }
+    column {
+        id:"BO",
+        name:"Qté cumulée",
+        jbtablename:"",
+        jbfieldname:"",
+    }
+}

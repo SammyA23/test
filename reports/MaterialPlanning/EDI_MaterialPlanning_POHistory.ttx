@@ -1,0 +1,11 @@
+Material	String	30	HHHHHHHHHXHHHHHHHHHXHHHHHHHHHX
+PO	String	10	HHHHHHHHHX
+Vendor	String	10	HHHHHHHHHX
+Order_Quantity	Number	88,888,888.88
+Order_Date	DateTime	12/31/02
+Due_Date	DateTime	12/31/02
+Recv_Date	DateTime	12/31/02
+Act_Qty	Number	88,888,888.88
+Unit_Cost	Currency	88,888,888.88
+Purchase_Unit	String	6	HHHHHX
+Status	String	10	HHHHHHHHHX

@@ -1,0 +1,24 @@
+Material	String	30	HHHHHHHHHXHHHHHHHHHXHHHHHHHHHX
+Class	String	10	HHHHXHHHHX
+OnHandQty	Number	88,888,888.88
+OnOrderQty	Number	88,888,888.88
+JobDueToStockQty	Number	88,888,888.88
+AllocatedQty	Number	88,888,888.88
+Description	String	30	HHHHHHHHHXHHHHHHHHHXHHHHHHHHHX
+LocationID	String	10	HHHHHHHHHX
+StockedUofM	String	4	HHHX
+LeadDays	Number	88,888,888
+OrderPoint	Number	88,888,888.88
+ReorderQty	Number	88,888,888.88
+Primary_Vendor	String	10
+JobSO	String	17	HHHHHHHHHXHHHHHHX	
+Part	String	30	HHHHHHHHHXHHHHHHHHHXHHHHHHHHHX
+SourceType	String	7	HHHHHHX
+iSourceType	Number	1
+Balance	Number	88,888,888.88
+ScheduledDate	DateTime	12/31/02
+JobMinDate	DateTime	12/31/02
+ActQty	Number	88,888,888.88
+CustVend	String	10	HHHHHHHHHX
+sResv	String	25	HHHHHHHHHXHHHHHHHHHXHHHHX
+FiltJob	Boolean	True

@@ -1,0 +1,69 @@
+<!-- Copyright © 2003 Exact Software ERP-NA, Inc.-->
+	
+<HTML xmlns:IE>
+	<HEAD> 
+<SCRIPT LANGUAGE="VBScript" src="JBCommon.vbs"></SCRIPT><SCRIPT LANGUAGE="javascript" src="JBFilter.js"></SCRIPT>
+<SCRIPT LANGUAGE="VBScript" src="JBFilter.vbs"></SCRIPT>
+<Script LANGUAGE="VBScript">
+
+SetFilterObjects
+Dim sLocalName
+
+Function SetDefaults() 
+End Function
+
+Function Validate()
+    document.cookie = "sStatsFile=" & frmRptFilter.DumpFile.value
+    
+    window.location.href="EDI_Statistics_Rpt.htm"		     
+End Function
+
+</Script> 
+
+    <META Name="{82932974-7BC3-4618-A312-94BDC05FB2ED}" CONTENT="Jobboss.Reporting">
+    <TITLE>Job Control - Material Control</TITLE>
+	<LINK rel="stylesheet" type="text/css" href="Filter.css">
+	<STYLE>
+	    IE\:Calendar { behavior: url(jb_calendar.htc); position: absolute; z-index: 100; display: none; width : 150; height : 137; border : 1px solid black;}
+	</STYLE>	
+	</HEAD>
+		
+	<BODY onload=SetDefaults() onkeydown=fn_EnterKey() onunload=KillFilterObjects topmargin="0" leftmargin="0">
+		<form name="frmRptFilter"> 			
+			<DIV align=left>
+				<TABLE class="HeaderBackgroundColor" border=0 cellPadding=0 cellSpacing=0 height=90 width="100%" style="HEIGHT: 90px">
+					<TR>
+						<TD align=left height=65 rowSpan=2 vAlign=middle width="24%">
+							<A href=VBScript:Validate><IMG id=IMG1 height=54 src="images/JBR_RunBlu.gif" width=41 border=0 ></A>
+						</TD>
+						<TD align=center height=39 vAlign=bottom width="38%"></TD>
+						<TD align=right height=65 rowSpan=2 width="38%"><IMG height=70 src="images/keyboard.gif" width=302 border=0></TD>
+					</TR>
+					<TR>
+					    <TD Class="HeaderFont" align=center height=26 
+					        vAlign=top width="38%"><script language=vbscript>document.write "EDI Statistics"</script></TD>
+					</TR>
+					<TR>
+						<TD align=center height=30 vAlign=top colspan = 3>  </TD>
+					</TR>
+				</TABLE>
+			</DIV>
+			<DIV align=left>&nbsp;</DIV>
+			<DIV align=center>
+			    <CENTER>
+			    <table id="tblRptFilter" border=0 style="WIDTH: 300px"  >
+			    <!-- EDI DUMP FILE -->
+			        <TR>
+			            <TD class=BoldFont>Fichier EDI</TD>
+			        </TR>
+			        <TR> 
+			            <TD colSpan=3><input type="file" name="DumpFile" size="80"></TD>
+			        </TR>
+			    </table>
+			    </CENTER>
+			    <CENTER>&nbsp;</CENTER>
+			    <CENTER><A href=VBScript:Validate><IMG id="IMG2" height="54" src="images/JBR_RunYel.gif" width="41" border="0"></A></CENTER>
+			</DIV>
+		</form>
+	<script language="javascript">fn_SetKeyTrap()</script></BODY>
+</HTML>

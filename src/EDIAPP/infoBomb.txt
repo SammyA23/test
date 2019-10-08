@@ -1,0 +1,43 @@
+[ENGINE]
+BOMBARDIER
+[DBSERVER]
+W10DEV\SQLEXPRESS
+[DB]
+PRODUCTION
+[SO_Creation]
+ON
+[SO_Creation_Status]
+Hold
+[execution]
+simple
+[Template]
+C:\Users\Dominic\Documents\dev\EDI - VS2013\src\EDI_Engine_Bombardier\src\conf\830_fields.xml
+C:\Users\Dominic\Documents\dev\EDI - VS2013\src\EDI_Engine_Bombardier\src\conf\862_fields.xml
+[Client]
+0001 BOMB.CAD
+0004 BOMB.CAD
+0007 BRPMEX.CAD
+0010 BRPECO.CAD
+0011 BRPECO.CAD
+0020 BRPQUERETA
+0021 BRPQUERETA
+0100 BRPFIN.CAD
+0110 BRPFIN.CAD
+[Quantite]
+Trop gros changement
+Trop de pertes
+Valeur monétaire trop basse
+Quantité partiellement envoyé
+[Date]
+Trop Vite
+Trop Lent
+Délai trop court
+Valeur monétaire trop fluctuente
+[filetype]
+830
+862
+850
+860
+[extras]
+BRP850
+BRP860

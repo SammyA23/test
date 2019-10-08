@@ -1,0 +1,356 @@
+Material Number,Plant,Doc Number,Item,Consign,Sched Line,Sched Quantity,Outstand Qty,Msg/ASN/Ship,Stat. Date,Delv. Date,Confirmed,Resch. Date,Ship To,Confirmation Comment,Buyer Email
+CANCELLATION CHARGE FOR 30P2592-01 ,0102,4500972847,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/26,2008/03/26,N/A, , , ,Audrey.Rousseau@pwc.ca
+CHARGE FOR BURNISHING OF MD3065445 ,0102,4501042130,00460, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/02/15,2008/02/15,N/A, , , ,Audrey.Rousseau@pwc.ca
+NRE 3074718-01 TUBE-AIR,CABIN BLEED ,0102,4501119817,00030, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/15,2008/05/15,N/A, , , ,Audrey.Rousseau@pwc.ca
+NRE 30J3253-01 & 3074183-01 FUEL PAD ,0102,4501105167,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2008/04/19,2008/04/19,N/A, , , ,Audrey.Rousseau@pwc.ca
+NRE FOR 30C5605-01 ,0102,4501092845,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/15,2008/03/15,N/A, , , ,Audrey.Rousseau@pwc.ca
+NRE FOR 30L0112-01 ,0102,4500802801,00070, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2006/06/06,2008/10/03,N/A, , , ,Marc-Andre.Savaria@pwc.ca
+NRE FOR ESK28373 ,0102,4501058121,00090, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/15,2008/05/15,N/A, , , ,Audrey.Rousseau@pwc.ca
+NRE FOR PN 3072614-01 ,0102,4501109008,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/04,2008/05/04,N/A, , , ,Audrey.Rousseau@pwc.ca
+NRE FOR PN 3072615-01 ,0102,4501109006,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/04,2008/05/04,N/A, , , ,Audrey.Rousseau@pwc.ca
+NRE FOR PN 3074404-01 ,0102,4501109001,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/09,2008/05/09,N/A, , , ,Audrey.Rousseau@pwc.ca
+PREMIUM FOR 01X3074183-01 ,0102,4501105167,00050, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/04/02,2008/04/04,N/A, , , ,Audrey.Rousseau@pwc.ca
+PREMIUM FOR 01X30J3253-01 ,0102,4501105177,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/04/02,2008/04/04,N/A, , , ,Audrey.Rousseau@pwc.ca
+PROGRAMMING FOR TSD-117741 ,0102,4500916266,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2007/05/04,2007/05/04,N/A, , , ,Marc-Andre.Savaria@pwc.ca
+REWORK COST - EC 3071981-01 ,0001,4500877990,00020, ,0001, 10.000 , 10.000 ,Authorized ,2006/10/27,2006/10/27,N/A, , , ,Allison.Novosad@pwc.ca
+Repair Charge of 3071981-01 ,0001,3500006848,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , , ,Allison.Novosad@pwc.ca
+Repair Charges 3071981-01 ,0001,3500006136,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2007/11/02,2007/11/20,N/A, , , ,Allison.Novosad@pwc.ca
+Rework Charge 3040572CL3-CL9 ,0001,4501002107,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2007/07/20,2007/07/20,N/A, , , ,Allison.Novosad@pwc.ca
+SET-UP CHARGES FOR TSD-117741 ,0102,4500916266,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2007/05/04,2007/05/04,N/A, , , ,Marc-Andre.Savaria@pwc.ca
+TLN'G 30J3253-01 & 3074183-01 FUEL PAD ,0102,4501105167,00030, ,0001, 1.000 , 1.000 ,Not Authorized,2008/04/19,2008/04/19,N/A, , , ,Audrey.Rousseau@pwc.ca
+TOOLING FOR 30C5605-01 ,0102,4501092845,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/15,2008/03/15,N/A, , , ,Audrey.Rousseau@pwc.ca
+TOOLING FOR 30L0112-01 ,0102,4500802801,00060, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2006/06/06,2008/10/03,N/A, , , ,Marc-Andre.Savaria@pwc.ca
+TOOLING FOR 3902113-01 AT MESOTEC ,0102,4500747043,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2006/05/15,2006/05/15,N/A, , , ,Audrey.Rousseau@pwc.ca
+TOOLING FOR ESK28373 ,0102,4501058121,00080, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/15,2008/05/15,N/A, , , ,Audrey.Rousseau@pwc.ca
+Tooling for 3020184 ,0001,4501115189,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3023479 ,0001,4501116233,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3028855 ,0001,4501116359,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3045072-01 ,0001,4501115090,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3049083-01 ,0001,4501116371,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3101207-03 ,0001,4501116261,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3102135-03 ,0001,4501115867,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/13,2008/03/13,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3105735-01 ,0001,4501116216,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3111913-01 ,0001,4501115223,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3119124-01 ,0001,4501115134,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 3120987-01 ,0001,4501115028,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/12,2008/03/12,N/A, , , ,Allison.Novosad@pwc.ca
+Tooling for 31B1445-01 ,0001,4501116400,00030, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/14,2008/03/14,N/A, , , ,Allison.Novosad@pwc.ca
+Upgrade cost for 30P1213-01 ,0001,3500007077,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/31,2008/03/31,N/A, , , ,Allison.Novosad@pwc.ca
+01X30J3253-01 ,0102,4501105177,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/28,2008/04/15,N/A,2008/03/28, , ,Audrey.Rousseau@pwc.ca
+3020184 ,0001,4501115189,00010, ,0001, 38.000 , 38.000 ,Not Authorized,2008/07/22,2008/08/19,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3020184 ,0001,4501115189,00020, ,0001, 50.000 , 50.000 ,Not Authorized,2008/09/20,2008/09/20,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3020184 ,0001,4501115853,00010, ,0001, 100.000 , 100.000 ,Not Authorized,2008/11/10,2008/11/10,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3023479 ,0001,4501116233,00010, ,0001, 30.000 , 30.000 ,Not Authorized,2008/08/10,2008/11/19,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3023479 ,0001,4501116233,00020, ,0001, 30.000 , 30.000 ,Not Authorized,2008/09/10,2008/11/30,NO , , ,magnésium ,Allison.Novosad@pwc.ca
+3028855 ,0001,4501116359,00010, ,0001, 50.000 , 50.000 ,Not Authorized,2008/11/11,2008/11/11,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3028855 ,0001,4501116359,00010, ,0002, 50.000 , 50.000 ,Not Authorized,2008/12/30,2008/12/30,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3038165CL1 ,0001,5500038841,00010,K,0009, 11.000 , 11.000 ,Not Auth - ASN,2008/06/19,2008/06/19,YES, , ,516 en stock ,Allison.Novosad@pwc.ca
+3038165CL1 ,0001,5500038841,00010,K,0010, 15.000 , 15.000 ,Not Auth - ASN,2008/06/19,2008/06/19,YES, , , ,Allison.Novosad@pwc.ca
+3038165CL1 ,0001,5500038841,00010,K,0012, 9.000 , 9.000 ,Not Auth - ASN,2008/07/14,2008/07/14,YES, , , ,Allison.Novosad@pwc.ca
+3038165CL1 ,0001,5500038841,00010,K,0011, 15.000 , 15.000 ,Not Auth - ASN,2008/07/22,2008/07/22,YES, , , ,Allison.Novosad@pwc.ca
+3038165CL4 ,0001,4501085242,00010, ,0001, 9.000 , 9.000 ,Not Auth - ASN,2008/10/29,2008/10/29,YES, , ,119 en stock ,Allison.Novosad@pwc.ca
+3038165CL5 ,0001,5500021534,00010,K,0077, 78.000 , 78.000 ,Not Auth - ASN,2008/05/08,2008/05/08,YES, , ,1243 en stock ,Allison.Novosad@pwc.ca
+3038165CL5 ,0001,5500021534,00010,K,0079, 237.000 , 237.000 ,Not Auth - ASN,2008/05/27,2008/05/27,YES, , , ,Allison.Novosad@pwc.ca
+3039172 ,0001,4501122003,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/09/03,2008/09/03,YES, , ,critical parts. mat. 5 ,Allison.Novosad@pwc.ca
+3039172 ,0001,4501122003,00020, ,0001, 100.000 , 100.000 ,Not Authorized,2008/10/30,2008/10/30,YES, , ,critical parts. ,Allison.Novosad@pwc.ca
+3040572CL4 ,0001,5500021535,00010,K,0103, 1.000 , 1.000 ,Not Auth - ASN,2008/06/10,2008/06/10,YES, , , ,Allison.Novosad@pwc.ca
+3040572CL7 ,0001,5500021538,00010,K,0258, 1.000 , 1.000 ,Not Auth - ASN,2009/01/30,2009/01/30,YES, , , ,Allison.Novosad@pwc.ca
+3040572CL7 ,0001,5500021538,00010,K,0261, 1.000 , 1.000 ,Not Auth - ASN,2009/01/30,2009/01/30,YES, , , ,Allison.Novosad@pwc.ca
+3040572CL7 ,0001,5500021538,00010,K,0262, 1.000 , 1.000 ,Not Auth - ASN,2009/03/02,2009/03/02,YES,2009/03/02, , ,Allison.Novosad@pwc.ca
+3040572CL7 ,0001,5500021538,00010,K,0263, 2.000 , 2.000 ,Not Auth - ASN,2009/03/10,2009/03/10,YES,2009/03/10, , ,Allison.Novosad@pwc.ca
+3040572CL7 ,0001,5500021538,00010,K,0264, 2.000 , 2.000 ,Not Auth - ASN,2009/04/02,2009/04/02,YES,2009/04/02, , ,Allison.Novosad@pwc.ca
+3041474 ,0001,4501122014,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/09/03,2008/09/03,YES, , ,critical parts. mat. 5 ,Allison.Novosad@pwc.ca
+3041474 ,0001,4501122014,00020, ,0001, 10.000 , 10.000 ,Not Authorized,2008/10/30,2008/10/30,YES, , ,critical parts. ,Allison.Novosad@pwc.ca
+3045072-01 ,0001,4501115090,00010, ,0001, 60.000 , 60.000 ,Not Authorized,2008/10/02,2008/10/02,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3045072-01 ,0001,4501115090,00020, ,0001, 85.000 , 85.000 ,Not Authorized,2008/09/10,2008/12/01,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3045072-01 ,0001,4501115095,00010, ,0001, 24.000 , 24.000 ,Not Authorized,2008/12/01,2008/12/01,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3049083-01 ,0001,4501116371,00010, ,0001, 30.000 , 30.000 ,Not Authorized,2008/09/02,2008/10/02,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3049083-01 ,0001,4501116371,00020, ,0001, 30.000 , 30.000 ,Not Authorized,2008/10/30,2008/10/30,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3054756-01 ,0001,4501121926,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/09/03,2008/09/03,YES, , ,critical parts. mat. 5 ,Allison.Novosad@pwc.ca
+3054756-01 ,0001,4501121926,00020, ,0001, 10.000 , 10.000 ,Not Authorized,2008/09/30,2008/09/30,YES, , ,critical parts. ,Allison.Novosad@pwc.ca
+3054756-02 ,0001,4501121951,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/09/03,2008/09/03,YES, , ,critical parts. mat. 5 ,Allison.Novosad@pwc.ca
+3054756-02 ,0001,4501121951,00020, ,0001, 30.000 , 30.000 ,Not Authorized,2008/10/30,2008/10/30,YES, , ,critical parts ,Allison.Novosad@pwc.ca
+3054768-01 ,0001,4501121971,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/09/03,2008/09/03,YES, , ,critical parts. mat. 5 ,Allison.Novosad@pwc.ca
+3054768-01 ,0001,4501121971,00020, ,0001, 20.000 , 20.000 ,Not Authorized,2008/10/30,2008/10/30,YES, , ,critical parts ,Allison.Novosad@pwc.ca
+3058346CL11 ,0001,5500026492,00010,K,0076, 1.000 , 1.000 ,Not Auth - ASN,2008/07/09,2008/07/09,YES,2008/07/09, ,1 en stock ,Allison.Novosad@pwc.ca
+3058346CL11 ,0001,5500026492,00010,K,0037, 1.000 , 1.000 ,Not Auth - ASN,2008/10/07,2008/10/07,YES, , , ,Allison.Novosad@pwc.ca
+3058346CL11 ,0001,5500026492,00010,K,0077, 1.000 , 1.000 ,Not Auth - ASN,2008/10/07,2008/10/07,YES,2008/10/07, , ,Allison.Novosad@pwc.ca
+3058346CL13 ,0001,5500026500,00010,K,0075, 1.000 , 1.000 ,Not Auth - ASN,2008/10/07,2008/10/07,YES,2008/10/07, , ,Allison.Novosad@pwc.ca
+3058346CL13 ,0001,5500026500,00010,K,0076, 1.000 , 1.000 ,Not Auth - ASN,2008/12/19,2008/12/19,YES,2008/12/19, , ,Allison.Novosad@pwc.ca
+3058346CL15 ,0001,5500026502,00010,K,0185, 1.000 , 1.000 ,Not Auth - ASN,2008/06/02,2008/06/02,YES,2008/06/02, ,1 en stock ,Allison.Novosad@pwc.ca
+3058346CL15 ,0001,5500026502,00010,K,0187, 1.000 , 1.000 ,Not Auth - ASN,2008/06/10,2008/06/10,YES,2008/06/10, ,1 en stock ,Allison.Novosad@pwc.ca
+3058346CL15 ,0001,5500026502,00010,K,0188, 1.000 , 1.000 ,Not Auth - ASN,2008/06/23,2008/06/23,YES,2008/06/23, ,1 en stock ,Allison.Novosad@pwc.ca
+3058346CL15 ,0001,5500026502,00010,K,0189, 1.000 , 1.000 ,Not Auth - ASN,2008/07/09,2008/07/09,YES,2008/07/09, , ,Allison.Novosad@pwc.ca
+3058346CL15 ,0001,5500026502,00010,K,0190, 1.000 , 1.000 ,Not Auth - ASN,2008/07/17,2008/07/17,YES,2008/07/17, , ,Allison.Novosad@pwc.ca
+3058347CL04 ,0001,4500915430,00010,K,0007, 1.000 , 1.000 ,Not Auth - ASN,2008/07/29,2008/07/29,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL05 ,0001,4500915434,00010,K,0011, 2.000 , 2.000 ,Not Auth - ASN,2008/04/28,2008/04/28,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL05 ,0001,4500915434,00010,K,0012, 2.000 , 2.000 ,Not Auth - ASN,2008/05/28,2008/05/28,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL06 ,0001,4500915443,00010,K,0021, 2.000 , 2.000 ,Not Auth - ASN,2008/04/22,2008/04/22,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL06 ,0001,4500915443,00010,K,0007, 7.000 , 7.000 ,Not Auth - ASN,2008/05/20,2008/05/20,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL06 ,0001,4500915443,00010,K,0015, 3.000 , 3.000 ,Not Auth - ASN,2008/10/14,2008/10/14,YES,2008/10/14, , ,Allison.Novosad@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0015, 3.000 , 3.000 ,Not Auth - ASN,2008/04/22,2008/04/22,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0013, 5.000 , 5.000 ,Not Auth - ASN,2008/04/28,2008/04/28,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0016, 3.000 , 3.000 ,Not Auth - ASN,2008/06/02,2008/06/02,YES,2008/06/02, , ,Allison.Novosad@pwc.ca
+3058347CL07 ,0001,5500038288,00010,K,0012, 3.000 , 3.000 ,Not Auth - ASN,2008/06/19,2008/06/19,YES,2008/06/19, , ,Allison.Novosad@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0045, 7.000 , 7.000 ,Not Auth - ASN,2008/05/06,2008/05/06,YES, , ,7 en stock ,Allison.Novosad@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0048, 11.000 , 11.000 ,Not Auth - ASN,2008/05/21,2008/05/21,YES, , ,5 en stock sur 11 ,Allison.Novosad@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0051, 5.000 , 5.000 ,Not Auth - ASN,2008/07/04,2008/07/04,YES,2008/07/04, , ,Allison.Novosad@pwc.ca
+3058347CL08 ,0001,5500038289,00010,K,0049, 3.000 , 3.000 ,Not Auth - ASN,2008/07/18,2008/07/18,YES,2008/07/18, , ,Allison.Novosad@pwc.ca
+3058347CL09 ,0001,5500038319,00010,K,0020, 1.000 , 1.000 ,Not Auth - ASN,2008/06/11,2008/06/11,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL09 ,0001,5500038319,00010,K,0019, 1.000 , 1.000 ,Not Auth - ASN,2008/06/26,2008/06/26,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL09 ,0001,5500038319,00010,K,0021, 1.000 , 1.000 ,Not Auth - ASN,2008/07/18,2008/07/18,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL10 ,0001,4501106394,00010,K,0001, 1.000 , 1.000 ,Not Auth - ASN,2008/04/28,2008/04/28,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL12 ,0001,4501086746,00010,K,0001, 2.000 , 2.000 ,Not Auth - ASN,2008/07/29,2008/07/29,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL13 ,0001,5500039397,00010,K,0001, 1.000 , 1.000 ,Not Auth - ASN,2008/04/28,2008/04/28,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL14 ,0001,5500038810,00010,K,0005, 1.000 , 1.000 ,Not Auth - ASN,2008/06/26,2008/06/26,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0035, 3.000 , 3.000 ,Not Auth - ASN,2008/05/06,2008/05/06,YES, , ,3 en stock ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0040, 4.000 , 4.000 ,Not Auth - ASN,2008/05/14,2008/05/14,YES, , ,4 en stock ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0043, 3.000 , 3.000 ,Not Auth - ASN,2008/05/21,2008/05/21,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0042, 1.000 , 1.000 ,Not Auth - ASN,2008/06/12,2008/06/12,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0046, 1.000 , 1.000 ,Not Auth - ASN,2008/06/12,2008/06/12,YES,2008/06/12, , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0054, 4.000 , 4.000 ,Not Auth - ASN,2008/06/16,2008/06/16,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0060, 1.000 , 1.000 ,Not Auth - ASN,2008/06/18,2008/06/18,YES,2008/06/18, , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0044, 3.000 , 3.000 ,Not Auth - ASN,2008/07/02,2008/07/02,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0041, 2.000 , 2.000 ,Not Auth - ASN,2008/07/10,2008/07/10,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0045, 2.000 , 2.000 ,Not Auth - ASN,2008/07/15,2008/07/15,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0047, 4.000 , 4.000 ,Not Auth - ASN,2008/07/21,2008/07/21,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0055, 2.000 , 2.000 ,Not Auth - ASN,2008/08/07,2008/08/07,YES,2008/08/07, , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0056, 2.000 , 2.000 ,Not Auth - ASN,2008/08/07,2008/08/07,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0057, 1.000 , 1.000 ,Not Auth - ASN,2008/08/13,2008/08/13,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0052, 2.000 , 2.000 ,Not Auth - ASN,2008/08/14,2008/08/14,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL15 ,0001,5500038774,00010,K,0053, 2.000 , 2.000 ,Not Auth - ASN,2008/08/14,2008/08/14,YES,2008/08/14, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0028, 1.000 , 1.000 ,Not Auth - ASN,2008/06/04,2008/06/04,YES,2008/06/04, ,1 en stock ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0027, 1.000 , 1.000 ,Not Auth - ASN,2008/06/19,2008/06/19,YES,2008/06/19, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0029, 1.000 , 1.000 ,Not Auth - ASN,2008/07/04,2008/07/04,YES,2008/07/04, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0030, 1.000 , 1.000 ,Not Auth - ASN,2008/07/17,2008/07/17,YES,2008/07/17, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0031, 1.000 , 1.000 ,Not Auth - ASN,2008/07/31,2008/07/31,YES,2008/07/31, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0032, 1.000 , 1.000 ,Not Auth - ASN,2008/08/08,2008/08/08,YES,2008/08/08, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0033, 1.000 , 1.000 ,Not Auth - ASN,2008/08/25,2008/08/25,YES,2008/08/25, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0034, 1.000 , 1.000 ,Not Auth - ASN,2008/09/05,2008/09/05,YES,2008/09/05, , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0035, 1.000 , 1.000 ,Not Auth - ASN,2008/09/12,2008/09/12,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0038, 1.000 , 1.000 ,Not Auth - ASN,2008/09/16,2008/09/16,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0036, 1.000 , 1.000 ,Not Auth - ASN,2008/10/02,2008/10/02,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0039, 1.000 , 1.000 ,Not Auth - ASN,2008/10/10,2008/10/10,YES, , , ,Allison.Novosad@pwc.ca
+3058347CL16 ,0001,5500038777,00010,K,0037, 1.000 , 1.000 ,Not Auth - ASN,2008/11/06,2008/11/06,YES,2008/11/06, , ,Allison.Novosad@pwc.ca
+3058347CL17 ,0001,5500038455,00010,K,0005, 1.000 , 1.000 ,Not Auth - ASN,2008/04/28,2008/04/28,YES, , ,1 en stock ,Allison.Novosad@pwc.ca
+3071252-01 ,0001,3500005527,00030,K,0001, 2.000 , 2.000 ,Not Auth - ASN,2008/12/01,2008/12/01,YES, , , ,Audrey.Rousseau@pwc.ca
+3071252-01 ,0001,3500005527,00030,K,0003, 3.000 , 3.000 ,Not Auth - ASN,2009/01/15,2009/01/15,YES, , , ,Audrey.Rousseau@pwc.ca
+3071252-01 ,0001,3500005527,00030,K,0004, 2.000 , 2.000 ,Not Auth - ASN,2009/02/10,2009/02/10,YES, , , ,Audrey.Rousseau@pwc.ca
+3071252-01 ,0001,3500005527,00030,K,0002, 3.000 , 3.000 ,Not Auth - ASN,2009/02/12,2009/02/12,YES, , , ,Audrey.Rousseau@pwc.ca
+3071252-01 ,0001,4500904790,00030,K,0002, 3.000 , 3.000 ,Not Auth - ASN,2008/10/08,2008/10/08,YES,2008/10/08, , ,Audrey.Rousseau@pwc.ca
+3071253-01 ,0001,4500926412,00010,K,0003, 9.000 , 9.000 ,Not Auth - ASN,2008/10/30,2008/10/30,YES, , ,9 en stock ,Allison.Novosad@pwc.ca
+3071253-01 ,0001,4500926412,00010,K,0002, 8.000 , 8.000 ,Not Auth - ASN,2009/03/17,2009/03/17,YES, , ,7 en stock sur 8 ,Allison.Novosad@pwc.ca
+3071268-01 ,0001,4500952732,00010, ,0001, 27.000 , 27.000 ,Not Auth - ASN,2008/09/15,2008/09/15,YES, , ,27 en stock ,Allison.Novosad@pwc.ca
+3071550-01 ,0001,4501054574,00010, ,0001, 8.000 , 8.000 ,Not Auth - ASN,2008/12/22,2008/12/22,YES, , ,8 castings en main ,Allison.Novosad@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0009, 12.000 , 12.000 ,Not Auth - ASN,2008/06/10,2008/06/10,YES, , ,12 en stock ,Allison.Novosad@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0016, 3.000 , 3.000 ,Not Auth - ASN,2008/06/10,2008/06/10,YES, , ,3 en stock ,Allison.Novosad@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0011, 6.000 , 6.000 ,Not Auth - ASN,2008/06/26,2008/06/26,YES, , ,6 en stock ,Allison.Novosad@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0013, 6.000 , 6.000 ,Not Auth - ASN,2008/07/04,2008/07/04,YES, , , ,Allison.Novosad@pwc.ca
+3071842-01 ,0001,5500039726,00010,K,0014, 6.000 , 6.000 ,Not Auth - ASN,2008/07/10,2008/07/10,YES, , , ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,3500006136,00010, ,0001, 15.000 , 15.000 ,<== Ship ,2007/12/14,2011/12/31,NO , , ,15; en attente de directives ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,3500006136,00030, ,0001, 3.000 , 3.000 ,<== Ship ,2007/12/14,2011/12/31,NO , , ,2 livrés; 02X3071981-01 ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,3500006848,00010, ,0001, 2.000 , 2.000 ,<== Ship ,2008/03/27,2008/04/30,YES, , ,2 rework; à planifier ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,4500976965,00020, ,0003, 8.000 , 8.000 ,<== Ship ,2007/11/30,2011/12/31,NO , , ,P.O. annulé par Karina ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,4500976965,00030, ,0001, 6.000 , 6.000 ,<== Ship ,2007/11/30,2011/12/31,NO , , ,P.O. annulé par Karina ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,4501021589,00060, ,0001, 46.000 , 46.000 ,<== Ship ,2008/04/01,2008/04/24,YES,2008/04/04, ,3 en stk +28+26+2 en wip; maho ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,4501106433,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2008/05/13, ,NO , , ,25 + 23 chez tnm ,Allison.Novosad@pwc.ca
+3071981-01 ,0001,4501129864,00010, ,0001, 40.000 , 40.000 ,Not Auth - ASN,2008/07/16, ,NO , , , ,Allison.Novosad@pwc.ca
+3072019-01 ,0001,4500986239,00010, ,0002, 1.000 , 1.000 ,Not Auth - ASN,2008/07/18, ,NO ,2008/07/18, ,1 rebut ,Allison.Novosad@pwc.ca
+3072019-01 ,0001,4501002794,00010, ,0001, 47.000 , 47.000 ,Not Auth - ASN,2008/05/28, ,NO , , ,47 en stock ,Allison.Novosad@pwc.ca
+3072019-01 ,0001,4501010169,00010, ,0001, 48.000 , 48.000 ,Not Auth - ASN,2008/07/22, ,NO ,2008/07/22, ,48 en stock ,Allison.Novosad@pwc.ca
+3072019-01 ,0001,4501010169,00020, ,0001, 48.000 , 48.000 ,Not Auth - ASN,2008/07/29, ,NO , , ,48 castings en main ,Allison.Novosad@pwc.ca
+3072614-01 ,0102,4501109008,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/05/04,2008/07/08,N/A,2007/11/27, ,48 castings en main ,Audrey.Rousseau@pwc.ca
+3072615-01 ,0102,4501109006,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/05/04,2008/07/08,N/A,2007/11/27, ,48 castings en main ,Audrey.Rousseau@pwc.ca
+3074183-01 ,0102,4501105167,00010, ,0001, 4.000 , 4.000 ,Auth-ASN N/A ,2008/01/16,2008/04/19,N/A, , ,48 castings en main ,Audrey.Rousseau@pwc.ca
+3074404-01 ,0102,4501109001,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/05/09,2008/05/09,N/A,2008/04/30, ,48 castings en main ,Audrey.Rousseau@pwc.ca
+3074718-01 ,0102,4501119817,00010, ,0001, 4.000 , 4.000 ,Not Authorized,2008/06/12,2008/06/12,N/A,2008/05/14, ,48 castings en main ,Audrey.Rousseau@pwc.ca
+3074718-01 ,0102,4501119817,00020, ,0001, 4.000 , 4.000 ,Not Authorized,2008/06/12,2008/06/12,N/A,2008/06/11, ,48 castings en main ,Audrey.Rousseau@pwc.ca
+3074718-01 ,0102,4501119817,00040, ,0001, 2.000 , 2.000 ,Not Authorized,2008/05/13,2008/06/12,N/A, , ,48 castings en main ,Audrey.Rousseau@pwc.ca
+3074718-01 ,0102,4501119817,00050, ,0001, 2.000 , 2.000 ,Not Authorized,2008/06/11,2008/06/12,N/A, , ,48 castings en main ,Audrey.Rousseau@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1636, 2.000 , 2.000 ,Not Auth - ASN,2008/05/08, ,NO , , ,2 en stock ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1639, 8.000 , 8.000 ,Not Auth - ASN,2008/05/08, ,NO , , ,8 en stock ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1640, 8.000 , 8.000 ,Not Auth - ASN,2008/05/15, ,NO , , ,8 en stock ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1647, 4.000 , 4.000 ,Not Auth - ASN,2008/05/22, ,NO , , ,4 en stock ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1641, 6.000 , 6.000 ,Not Auth - ASN,2008/05/26, ,NO , , ,6 en stock ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1642, 4.000 , 4.000 ,Not Auth - ASN,2008/06/03, ,NO , , ,4 en stock ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1644, 12.000 , 12.000 ,Not Auth - ASN,2008/06/05, ,NO , , , 6 sur 12 en stock ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1646, 4.000 , 4.000 ,Not Auth - ASN,2008/06/13, ,NO , , ,40 en wip ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1648, 8.000 , 8.000 ,Not Auth - ASN,2008/06/20, ,NO , , , ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1649, 8.000 , 8.000 ,Not Auth - ASN,2008/06/30, ,NO , , , ,Allison.Novosad@pwc.ca
+30C4721-01 ,0001,5500033916,00010,K,1651, 12.000 , 12.000 ,Not Auth - ASN,2008/07/09, ,NO , , , ,Allison.Novosad@pwc.ca
+30C5136-01 ,0001,4501092774,00010, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2008/05/23, ,NO , , ,15 chez tnm ,Allison.Novosad@pwc.ca
+30C5136-01 ,0001,4501092774,00020, ,0001, 14.000 , 14.000 ,Not Auth - ASN,2008/08/21, ,NO , , ,14 chez tnm ,Allison.Novosad@pwc.ca
+30C5417-01 ,0001,4501023337,00010, ,0005, 10.000 , 10.000 ,Authorized ,2008/04/16,2008/04/22,YES, , ,14 chez optimus_1 ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501023337,00010, ,0001, 10.000 , 10.000 ,Not Authorized,2008/05/15, ,NO , , ,14 + 1 au mlutus ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501023337,00010, ,0006, 10.000 , 10.000 ,Not Authorized,2008/06/19, ,NO , , ,55 au 1F; en attente mori. 3000 ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501023337,00010, ,0002, 10.000 , 10.000 ,Not Authorized,2008/07/09, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501023337,00010, ,0007, 15.000 , 15.000 ,Not Authorized,2008/07/24, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501023337,00010, ,0003, 10.000 , 10.000 ,Not Authorized,2008/08/21, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501023337,00010, ,0004, 10.000 , 10.000 ,Not Authorized,2008/09/11, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501038520,00020, ,0006, 5.000 , 5.000 ,<== Ship ,2008/03/18,2008/04/17,NO ,2008/02/28, ,11 + 1 chez vacae ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501038520,00020, ,0007, 2.000 , 2.000 ,<== Ship ,2008/04/02,2008/04/17,NO , , ,1 chez optimus + ass. ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501038520,00020, ,0009, 4.000 , 4.000 ,<== Ship ,2008/04/03,2008/04/17,YES, , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501038520,00020, ,0010, 3.000 , 3.000 ,Not Auth - ASN,2008/05/09, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501038520,00020, ,0008, 7.000 , 7.000 ,Not Auth - ASN,2008/06/09, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/09/29, ,NO , , ,mat. en commande 40 ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0003, 5.000 , 5.000 ,Not Authorized,2008/10/02, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0002, 5.000 , 5.000 ,Not Authorized,2008/10/09, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0005, 5.000 , 5.000 ,Not Authorized,2008/10/22, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0004, 5.000 , 5.000 ,Not Authorized,2008/10/29, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0006, 5.000 , 5.000 ,Not Authorized,2008/10/30, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0007, 5.000 , 5.000 ,Not Authorized,2008/11/13, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0008, 5.000 , 5.000 ,Not Authorized,2008/11/20, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0009, 5.000 , 5.000 ,Not Authorized,2008/12/01, ,NO , , ,mat en commande 38 ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0010, 5.000 , 5.000 ,Not Authorized,2008/12/09, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0011, 5.000 , 5.000 ,Not Authorized,2008/12/17, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0012, 5.000 , 5.000 ,Not Authorized,2008/12/23, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0013, 5.000 , 5.000 ,Not Authorized,2009/01/13, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0014, 5.000 , 5.000 ,Not Authorized,2009/01/21, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5417-01 ,0001,4501121810,00010, ,0015, 5.000 , 5.000 ,Not Authorized,2009/01/29, ,NO , , , ,Audrey.Rousseau@pwc.ca
+30C5605-01 ,0102,4501092845,00010, ,0001, 10.000 , 10.000 ,Auth-ASN N/A ,2008/03/11,2008/04/17,N/A,2008/03/12, , ,Audrey.Rousseau@pwc.ca
+30J3253-01 ,0102,4501105177,00010, ,0001, 4.000 , 4.000 ,Auth-ASN N/A ,2008/01/16,2008/04/19,N/A, , , ,Audrey.Rousseau@pwc.ca
+30J3253-01 ,0102,4501105177,00040, ,0001, 4.000 , 4.000 ,Not Authorized,2008/04/25,2008/06/02,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L0923-01 ,0102,4501009048,00090, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L0925-01 ,0102,4501009053,00060, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L0936-01 ,0102,4501009055,00060, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L0936-01 ,0102,4501009055,00090, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L0938-01 ,0102,4501009057,00060, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L0938-01 ,0102,4501009057,00090, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L1011-01 ,0102,4501009060,00060, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L1011-01 ,0102,4501009060,00090, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L1073-01 ,0102,4501009062,00060, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30L1073-01 ,0102,4501009062,00090, ,0001, 1.000 , 1.000 ,Not Authorized,2008/06/25,2008/06/25,N/A, , , ,Audrey.Rousseau@pwc.ca
+30P1003-01 ,0001,4501001351,00010, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2008/07/23, ,NO , , ,16 castings en main ,Allison.Novosad@pwc.ca
+30P1013-01 ,0001,4501106990,00010, ,0001, 48.000 , 48.000 ,Not Auth - ASN,2008/06/12, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1015-01 ,0001,4501051723,00010, ,0004, 35.000 , 35.000 ,Not Auth - ASN,2008/04/06,2008/05/06,NO ,2008/05/22, ,bracket en commande; 35 à l'ass. ,Allison.Novosad@pwc.ca
+30P1015-01 ,0001,4501110229,00010, ,0001, 43.000 , 43.000 ,Not Auth - ASN,2008/07/03, ,NO , , ,0 casting en main ,Allison.Novosad@pwc.ca
+30P1336-01 ,0001,4501106399,00010, ,0001, 32.000 , 32.000 ,Not Auth - ASN,2008/05/20, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1353-01 ,0001,4501054600,00010, ,0002, 7.000 , 7.000 ,Not Auth - ASN,2008/04/05,2008/04/15,NO ,2008/05/02, ,8 chez tnm ,Allison.Novosad@pwc.ca
+30P1353-01 ,0001,4501085303,00010, ,0001, 25.000 , 25.000 ,Not Auth - ASN,2008/05/01, ,NO ,2008/05/22, ,25 au multus ,Allison.Novosad@pwc.ca
+30P1353-01 ,0001,4501085303,00010, ,0004, 12.000 , 12.000 ,Not Auth - ASN,2008/07/28, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1353-01 ,0001,4501085303,00010, ,0002, 40.000 , 40.000 ,Not Auth - ASN,2008/09/08, ,NO ,2008/09/08, ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1353-01 ,0001,4501085303,00010, ,0003, 40.000 , 40.000 ,Not Auth - ASN,2008/12/03, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1361-01 ,0001,4500992111,00010, ,0004, 1.000 , 1.000 ,<== Ship ,2008/04/10, ,NO , , ,1 rebut ,Allison.Novosad@pwc.ca
+30P1361-01 ,0001,4501026372,00010, ,0002, 3.000 , 3.000 ,Not Auth - ASN,2007/12/18,2008/04/11,NO ,2008/05/02, ,3 rebuts ,Allison.Novosad@pwc.ca
+30P1361-01 ,0001,4501079154,00010, ,0004, 2.000 , 2.000 ,Not Auth - ASN,2008/04/03,2008/04/17,NO ,2008/05/06, ,sson #134692008-008 ,Allison.Novosad@pwc.ca
+30P1361-01 ,0001,4501079154,00010, ,0002, 24.000 , 24.000 ,Not Auth - ASN,2008/04/17,2008/05/08,YES, , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1361-01 ,0001,4501079154,00010, ,0003, 24.000 , 24.000 ,Not Auth - ASN,2008/07/17, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1427-01 ,0001,4501106455,00010, ,0001, 47.000 , 47.000 ,Not Auth - ASN,2008/06/12, ,NO , , ,47 à l'ins. (hold) ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0172, 6.000 , 6.000 ,<== Ship ,2008/02/25,2008/04/17,YES,2006/10/11, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0173, 6.000 , 6.000 ,<== Ship ,2008/03/13,2008/04/17,YES,2007/12/12, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0174, 6.000 , 6.000 ,<== Ship ,2008/03/03,2008/04/17,YES,2007/12/21, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0175, 6.000 , 6.000 ,<== Ship ,2008/01/22,2008/04/17,YES,2008/01/14, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0176, 12.000 , 12.000 ,<== Ship ,2008/01/22,2008/04/17,YES,2008/01/24, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0177, 12.000 , 12.000 ,<== Ship ,2008/01/22,2008/04/17,YES,2008/02/19, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0178, 6.000 , 6.000 ,<== Ship ,2008/02/18,2008/04/17,NO ,2008/04/15, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0179, 6.000 , 6.000 ,<== Ship ,2008/03/13,2008/04/17,YES, , ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0184, 6.000 , 6.000 ,Not Auth - ASN,2008/03/03,2008/04/17,NO ,2008/05/02, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0185, 6.000 , 6.000 ,Not Auth - ASN,2008/04/02,2008/04/17,NO ,2008/05/14, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0186, 6.000 , 6.000 ,Not Auth - ASN,2008/03/17,2008/04/17,NO ,2008/05/22, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0189, 12.000 , 12.000 ,<== Ship ,2008/04/16,2008/04/24,YES,2008/06/02, ,problème de coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0187, 6.000 , 6.000 ,Not Auth - ASN,2008/05/27, ,NO ,2008/06/12, ,nouvelle sleeve au coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0193, 5.000 , 5.000 ,Not Auth - ASN,2008/06/05, ,NO ,2008/06/20, ,nouvelle sleeve au coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0183, 6.000 , 6.000 ,Not Auth - ASN,2008/07/02, ,NO ,2008/07/02, ,nouvelle sleeve au coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0190, 6.000 , 6.000 ,Not Auth - ASN,2008/07/03, ,NO , , ,nouvelle sleeve au coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0188, 6.000 , 6.000 ,Not Auth - ASN,2008/07/10, ,NO ,2008/07/10, ,nouvelle sleeve au coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0191, 6.000 , 6.000 ,Not Auth - ASN,2008/07/29, ,NO ,2008/07/29, ,nouvelle sleeve au coating ,Allison.Novosad@pwc.ca
+30P1460-01 ,0001,5500035341,00010,K,0192, 6.000 , 6.000 ,Not Auth - ASN,2008/08/06, ,NO ,2008/08/06, ,nouvelle sleeve au coating ,Allison.Novosad@pwc.ca
+30P1516-01 ,0001,4501085327,00010, ,0002, 48.000 , 48.000 ,Not Auth - ASN,2008/07/10, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1516-01 ,0001,4501085327,00010, ,0003, 48.000 , 48.000 ,Not Auth - ASN,2008/09/17, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1516-01 ,0001,4501085327,00010, ,0004, 48.000 , 48.000 ,Not Auth - ASN,2008/11/05, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+30P1777-01 ,0001,4501037094,00010, ,0003, 12.000 , 12.000 ,Not Auth - ASN,2008/04/21, ,NO , , ,29 chez tnm ,Allison.Novosad@pwc.ca
+30P1944-01 ,0001,5500038850,00010,K,0015, 2.000 , 2.000 ,Not Auth - ASN,2008/06/19, ,NO ,2008/06/19, ,2 en stock ,Allison.Novosad@pwc.ca
+30P1944-01 ,0001,5500038850,00010,K,0009, 6.000 , 6.000 ,Not Auth - ASN,2008/06/27, ,NO ,2008/06/27, ,6 en stock ,Allison.Novosad@pwc.ca
+30P1944-01 ,0001,5500038850,00010,K,0016, 5.000 , 5.000 ,Not Auth - ASN,2008/07/17, ,NO ,2008/07/17, ,5 en stock ,Allison.Novosad@pwc.ca
+30P1944-01 ,0001,5500038850,00010,K,0017, 4.000 , 4.000 ,Not Auth - ASN,2008/07/29, ,NO ,2008/07/29, ,4 en stock ,Allison.Novosad@pwc.ca
+30P1944-01 ,0001,5500038850,00010,K,0014, 2.000 , 2.000 ,Not Auth - ASN,2008/08/12, ,NO ,2008/08/12, ,2 en stock ,Allison.Novosad@pwc.ca
+30P2090-01 ,0001,4501059486,00010, ,0001, 24.000 , 24.000 ,181131510 ,2008/02/07,2008/04/14,YES, , ,26 chez tnm ,Allison.Novosad@pwc.ca
+30P2364-01 ,0001,3500007077,00010, ,0001, 1.000 , 1.000 ,<== Ship ,2008/03/31,2008/06/20,YES, , ,1 rework ,Allison.Novosad@pwc.ca
+30P2364-01 ,0001,4501059477,00010, ,0001, 22.000 , 22.000 ,Not Auth - ASN,2008/05/20, ,NO , , ,21 en stock + 1 défault de casting ,Allison.Novosad@pwc.ca
+30P2364-01 ,0001,4501113464,00010, ,0001, 24.000 , 24.000 ,Not Auth - ASN,2008/07/11, ,NO ,2008/07/11, ,0 casting en main ,Allison.Novosad@pwc.ca
+3101207-03 ,0001,4501116261,00010, ,0001, 2.000 , 2.000 ,Not Authorized,2008/05/15,2009/01/05,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3102135-03 ,0001,4501115867,00010, ,0001, 40.000 , 40.000 ,Not Authorized,2008/07/15,2008/12/19,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3102135-03 ,0001,4501115867,00020, ,0001, 40.000 , 40.000 ,Not Authorized,2008/09/10,2008/12/30,NO , , ,magnésium ,Allison.Novosad@pwc.ca
+3105735-01 ,0001,4501116216,00010, ,0001, 60.000 , 60.000 ,Not Authorized,2008/08/10,2008/10/17,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3105735-01 ,0001,4501116216,00020, ,0001, 85.000 , 85.000 ,Not Authorized,2008/10/10,2008/10/31,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3107909-01 ,0001,4501092782,00010, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2008/05/29, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+3107909-01 ,0001,4501092782,00020, ,0001, 10.000 , 10.000 ,Not Auth - ASN,2008/09/25, ,NO , , ,0 castings en main ,Allison.Novosad@pwc.ca
+3110870-01 ,0001,5500020644,00010,K,0112, 2.000 , 2.000 ,<== Ship ,2008/04/16, ,NO ,2008/04/14, ,2 en stock ,Allison.Novosad@pwc.ca
+3110870-01 ,0001,5500020644,00010,K,0113, 2.000 , 2.000 ,<== Ship ,2008/04/16, ,NO ,2008/04/14, ,2 en stock ,Allison.Novosad@pwc.ca
+3110870-01 ,0001,5500020644,00010,K,0114, 2.000 , 2.000 ,<== Ship ,2008/04/16, ,NO ,2008/04/14, ,2 en stock ,Allison.Novosad@pwc.ca
+3110870-01 ,0001,5500020644,00010,K,0115, 2.000 , 2.000 ,Not Auth - ASN,2008/04/28, ,NO , , ,2 en stock ,Allison.Novosad@pwc.ca
+3110870-01 ,0001,5500020644,00010,K,0116, 2.000 , 2.000 ,Not Auth - ASN,2008/05/14, ,NO , , ,2 en stock ,Allison.Novosad@pwc.ca
+3110870-01 ,0001,5500020644,00010,K,0117, 2.000 , 2.000 ,Not Auth - ASN,2008/06/18, ,NO , , ,2 en stock ,Allison.Novosad@pwc.ca
+3111913-01 ,0001,4501115223,00010, ,0001, 30.000 , 30.000 ,Not Authorized,2008/08/18, ,NO , , ,magnésium ,Allison.Novosad@pwc.ca
+3111913-01 ,0001,4501115223,00020, ,0001, 85.000 , 85.000 ,Not Authorized,2008/10/15, ,NO , , ,magnésium ,Allison.Novosad@pwc.ca
+3113636-01 ,0001,5500021191,00010,K,0170, 11.000 , 11.000 ,Not Auth - ASN,2008/06/04, ,NO , , ,8 en stock + 30 au 1F ,Allison.Novosad@pwc.ca
+3113636-01 ,0001,5500021191,00010,K,0171, 9.000 , 9.000 ,Not Auth - ASN,2008/06/18, ,NO , , , ,Allison.Novosad@pwc.ca
+3113636-01 ,0001,5500021191,00010,K,0172, 9.000 , 9.000 ,Not Auth - ASN,2008/06/26, ,NO ,2008/06/26, , ,Allison.Novosad@pwc.ca
+3113636-01 ,0001,5500021191,00010,K,0173, 9.000 , 9.000 ,Not Auth - ASN,2008/07/09, ,NO ,2008/07/09, , ,Allison.Novosad@pwc.ca
+3114916-01 ,0001,4500962712,00010, ,0003, 1.000 , 1.000 ,<== Ship ,2008/04/16, ,NO , , ,1 rebut; scrap FPI ,Allison.Novosad@pwc.ca
+3114916-01 ,0001,4501002204,00010, ,0002, 1.000 , 1.000 ,<== Ship ,2008/04/16, ,NO , , ,1 rebut; scrap FPI ,Allison.Novosad@pwc.ca
+3114916-01 ,0001,4501061778,00010, ,0003, 4.000 , 4.000 ,Not Auth - ASN,2008/04/23, ,NO , , ,4 en stock; sson accept ,Allison.Novosad@pwc.ca
+3114916-01 ,0001,4501113471,00010, ,0001, 15.000 , 15.000 ,Not Auth - ASN,2008/05/23, ,NO , , ,19 à la dmg ,Allison.Novosad@pwc.ca
+3119124-01 ,0001,4501115134,00010, ,0001, 5.000 , 5.000 ,Not Authorized,2008/11/03,2008/12/04,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3120987-01 ,0001,4501115028,00010, ,0001, 18.000 , 18.000 ,Not Authorized,2008/05/26,2009/01/15,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+3120987-01 ,0001,4501115028,00020, ,0001, 85.000 , 85.000 ,Not Authorized,2008/06/27,2009/01/30,NO , , ,magnésium ,Allison.Novosad@pwc.ca
+3120987-01 ,0001,4501115034,00010, ,0001, 48.000 , 48.000 ,Not Authorized,2009/01/30, ,NO , , ,magnésium ,Allison.Novosad@pwc.ca
+31B1445-01 ,0001,4501116400,00010, ,0001, 60.000 , 60.000 ,Not Authorized,2008/08/19,2008/09/17,YES, , ,magnésium ,Allison.Novosad@pwc.ca
+31B1445-01 ,0001,4501116400,00020, ,0001, 85.000 , 85.000 ,Not Authorized,2008/09/10, ,NO , , ,magnésium ,Allison.Novosad@pwc.ca
+CG221879 ,0100,4501121847,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/04/21, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+EFD119362 ,0100,4501126023,00010, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2008/04/11, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+ESK28373CL10 ,0102,4501058121,00070, ,0001, 5.000 , 5.000 ,Not Authorized,2008/05/12,2008/05/15,N/A,2008/05/12, ,tooling ,Audrey.Rousseau@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0413, 8.000 , 8.000 ,Not Auth - ASN,2008/05/02, ,NO ,2008/05/20, ,8 en stock ,Allison.Novosad@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0415, 8.000 , 8.000 ,Not Auth - ASN,2008/05/27, ,NO ,2008/06/13, ,6 en stock + 50 au mori. 3000 ,Allison.Novosad@pwc.ca
+MD3063163 ,0001,5500023132,00010,K,0418, 8.000 , 8.000 ,Not Auth - ASN,2008/06/25, ,NO , , , ,Allison.Novosad@pwc.ca
+MD3065443 ,0102,4501042130,00450, ,0001, 4.000 , 4.000 ,Auth-ASN N/A ,2008/02/12,2008/05/14,N/A,2008/02/12, , ,Audrey.Rousseau@pwc.ca
+NESK28673-101 ,0100,4501116508,00070, ,0001, 7.000 , 7.000 ,Auth-ASN N/A ,2008/04/04, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-102 ,0100,4501116508,00140, ,0001, 7.000 , 7.000 ,Auth-ASN N/A ,2008/04/04, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-103 ,0100,4501116508,00150, ,0001, 7.000 , 7.000 ,Auth-ASN N/A ,2008/04/04, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-104 ,0100,4501116508,00080, ,0001, 7.000 , 7.000 ,Auth-ASN N/A ,2008/04/10, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-105 ,0100,4501116508,00090, ,0001, 7.000 , 7.000 ,Auth-ASN N/A ,2008/04/10, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-106 ,0100,4501116508,00100, ,0001, 7.000 , 7.000 ,Auth-ASN N/A ,2008/04/10, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-107 ,0100,4501116508,00110, ,0001, 7.000 , 7.000 ,Not Authorized,2008/04/17, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-108 ,0100,4501116508,00120, ,0001, 7.000 , 7.000 ,Not Authorized,2008/04/17, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NESK28673-109 ,0100,4501116508,00130, ,0001, 7.000 , 7.000 ,Not Authorized,2008/04/17, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NTSD122548-01 ,0100,4501116508,00160, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2008/04/15, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NTSD122548-01 ,0100,4501116508,00170, ,0001, 5.000 , 5.000 ,Not Authorized,2008/04/17, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NTSD122548-02 ,0100,4501116508,00180, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2008/04/15, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+NTSD122548-02 ,0100,4501116508,00190, ,0001, 5.000 , 5.000 ,Not Authorized,2008/04/17, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PF503145 ,0100,4501129822,00010, ,0001, 2.000 , 2.000 ,Not Authorized,2008/05/27, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PF641448 ,0100,4501129822,00020, ,0001, 2.000 , 2.000 ,Not Authorized,2008/05/27, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PF914926 ,0100,4501128097,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/20, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PF914926 ,0100,4501127453,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/20, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PF916950 ,0100,4501129382,00010, ,0001, 2.000 , 2.000 ,Not Authorized,2008/05/26, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PT678093 ,0100,4501114857,00010, ,0001, 3.000 , 3.000 ,Not Authorized,2008/04/24, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC30331 ,0100,4501095486,00010, ,0001, 2.000 , 2.000 ,Auth-ASN N/A ,2008/03/17,2008/04/08,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PWC37825 ,0100,4501125600,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/15, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC40107 ,0100,4501118424,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/01, ,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC40193 ,0100,4501128097,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/13, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PWC40193 ,0100,4501127453,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/13, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC40609 ,0100,4501094503,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/03/13, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PWC50229 ,0100,4501123981,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/04/19, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC50229 ,0100,4501123981,00050, ,0001, 1.000 , 1.000 ,Not Authorized,2008/04/24, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC59071 ,0100,4501125600,00020, ,0001, 2.000 , 2.000 ,Not Authorized,2008/05/05, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC60738 ,0100,4501063568,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/02/14,2008/03/25,NO , , ,tooling ,Kimberley.Reid@pwc.ca
+PWC60786 ,0100,4501115489,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/04/16, ,NO , , ,tooling ,Lynda.Vallieres@pwc.ca
+PWC61881 ,0100,4501110507,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/04/15, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC63138 ,0100,4501110507,00020, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/04/15, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC64148 ,0100,4501128643,00020, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/23, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PWC64148 ,0100,4501128643,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/23, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+PWC71110 ,0100,4501123981,00020, ,0001, 2.000 , 2.000 ,Not Authorized,2008/04/29, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC71561 ,0100,4501120527,00010, ,0001, 2.000 , 2.000 ,Not Authorized,2008/05/15, ,NO , , ,tooling ,Lynda.Vallieres@pwc.ca
+PWC71568 ,0100,4501111540,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/04/29, ,NO , , ,tooling ,Lynda.Vallieres@pwc.ca
+PWC71579 ,0100,4501127453,00030, ,0001, 3.000 , 3.000 ,Not Authorized,2008/05/05, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+PWC71579 ,0100,4501128097,00030, ,0001, 3.000 , 3.000 ,Not Authorized,2008/05/05, ,NO , , , ,Michael.Cianci-Contractor@pwc.ca
+SPC1901166 ,0100,4501123981,00040, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/06, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+SPC1901166 ,0100,4501123981,00030, ,0001, 1.000 , 1.000 ,Not Authorized,2008/05/06, ,NO , , ,tooling ,Michael.Cianci-Contractor@pwc.ca
+ST6121-01 ,0001,4500872825,00010,K,0009, 56.000 , 56.000 ,Not Auth - ASN,2008/07/11, ,NO ,2008/07/11, ,56 en stock ,Allison.Novosad@pwc.ca
+ST6121-01 ,0001,4500872825,00010,K,0010, 36.000 , 36.000 ,Not Auth - ASN,2008/08/07, ,NO ,2008/08/07, ,36 en stock ,Allison.Novosad@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0002, 49.000 , 49.000 ,Not Auth - ASN,2008/06/26, ,NO ,2008/06/26, ,49 en stock ,Allison.Novosad@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0003, 36.000 , 36.000 ,Not Auth - ASN,2008/07/31, ,NO ,2008/07/31, ,36 en stock ,Allison.Novosad@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0004, 36.000 , 36.000 ,Not Auth - ASN,2008/08/18, ,NO ,2008/08/18, ,36 en stock ,Allison.Novosad@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0001, 36.000 , 36.000 ,Not Auth - ASN,2008/08/21, ,NO ,2008/08/21, ,36 en stock ,Allison.Novosad@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0006, 36.000 , 36.000 ,Not Auth - ASN,2008/09/10, ,NO ,2008/09/10, ,36 en stock ,Allison.Novosad@pwc.ca
+ST6121-01 ,0001,4501078614,00010,K,0005, 36.000 , 36.000 ,Not Auth - ASN,2008/09/12, ,NO ,2008/09/12, ,36 en stock ,Allison.Novosad@pwc.ca
+TSD119756 ,0100,4501069442,00010, ,0001, 1.000 , 1.000 ,Auth-ASN N/A ,2008/04/13, ,NO , , ,tooling ,Louis.Desruisseaux@pwc.ca
+TSD123042 ,0102,4501121665,00010, ,0001, 1.000 , 1.000 ,Not Authorized,2008/04/24,2008/04/24,N/A, , ,tooling ,Michel.Provost@pwc.ca
