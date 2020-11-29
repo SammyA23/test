@@ -642,6 +642,10 @@ namespace EDI
                 }
             }
 
+            conn.Dispose();
+
+            RemoveEmptyPackListDetails();
+
             var completeproc = new CompleteEngineProcess(OnComplete_Event);
             completeproc();
         }

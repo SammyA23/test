@@ -27,6 +27,7 @@ namespace EDIAPP
         private string M_DBSERVER;
         private string M_SO_CREATION;
         private string M_SO_CREATION_STATUS;
+        private string M_SO_CREATION_STATUS2;
         private string M_EXECUTION;
         private string M_ENGINE;
         private string M_WRITE_SCHEDULE_LINE_TO_NOTE;
@@ -79,7 +80,20 @@ namespace EDIAPP
         {
             InitializeComponent();
 
+            SetCulture();
+
             Init();
+
+            NbRowsLabel.Text = "0 lignes";
+        }
+
+        private void SetCulture()
+        {
+            var culture = CultureInfo.CreateSpecificCulture("en-CA");
+            culture.NumberFormat.CurrencyDecimalSeparator = ".";
+            culture.NumberFormat.NumberDecimalSeparator = ".";
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
         }
 
         private void AddToHistory(string[] arrValues)
@@ -237,6 +251,7 @@ namespace EDIAPP
             M_DBSERVER = settings[(int)EdiDbInterface.Settings.jbDbServer].ToString().ToUpper();
             M_SO_CREATION = settings[(int)EdiDbInterface.Settings.soCreation].ToString();
             M_SO_CREATION_STATUS = settings[(int)EdiDbInterface.Settings.soCreationStatus].ToString();
+            M_SO_CREATION_STATUS2 = settings[(int)EdiDbInterface.Settings.soCreationStatus2].ToString();
             M_EXECUTION = settings[(int)EdiDbInterface.Settings.executionType].ToString();
             M_WRITE_SCHEDULE_LINE_TO_NOTE = settings[(int)EdiDbInterface.Settings.writeScheduleLineToNote].ToString();
 
@@ -255,6 +270,11 @@ namespace EDIAPP
                 bOneTemplateExecution = true;
             }
             else if (M_EXECUTION == "double")
+            {
+                m_sTemplateFilePathForecast = m_sTemplates[1];
+                bOneTemplateExecution = false;
+            }
+            else //complex
             {
                 m_sTemplateFilePathForecast = m_sTemplates[1];
                 bOneTemplateExecution = false;
@@ -278,7 +298,7 @@ namespace EDIAPP
 
         private void Completed850Exec(in string message)
         {
-            MessageBox.Show("850 - Crï¿½ation terminï¿½e");
+            MessageBox.Show("850 - Cr�ation termin�e");
             EnableAllTimers();
         }
 
@@ -289,7 +309,7 @@ namespace EDIAPP
 
         private void Completed860Exec(in string message)
         {
-            MessageBox.Show("860 - Modification terminï¿½e");
+            MessageBox.Show("860 - Modification termin�e");
             EnableAllTimers();
         }
 
@@ -671,6 +691,7 @@ namespace EDIAPP
             this.toolStrip1.Width = this.Width;
             this.dataGridViewMain.Height = this.Height - 142;
             this.dataGridViewMain.Width = this.Width - 16;
+            this.progressBar1.Width = this.Width;
         }
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
@@ -764,7 +785,7 @@ namespace EDIAPP
                     toolStrip_cboBox_Customer.Enabled = false;
                     toolStrip_cboBox_Customer.Visible = false;
                     toolStripButton2.Enabled = false;
-                    toolStripButton1.Text = "Delivery";
+                    //toolStripButton1.Text = "Delivery";
                 }
                 else if (M_ENGINE == "GENERIC" || M_ENGINE == "G�N�RIQUE")
                 {
@@ -806,7 +827,7 @@ namespace EDIAPP
                     }
                 }
 
-                if (!IsNullOrEmpty(in engineExtraFeatures) && !String.IsNullOrEmpty(engineExtraFeatures[0].ToString()) )
+                if (!IsNullOrEmpty(in engineExtraFeatures) && !String.IsNullOrEmpty(engineExtraFeatures[0].ToString()))
                 {
                     EnableExtraFeatures(in engineExtraFeatures);
                 }
@@ -832,7 +853,7 @@ namespace EDIAPP
             }
             catch (DatabaseNotFoundException e)
             {
-                MessageBox.Show("La base de donnï¿½es de MFG n'existe pas.\n" + e.Message);
+                MessageBox.Show("La base de donn�es de MFG n'existe pas.\n" + e.Message);
                 ExitApplication();
 
             }
@@ -880,12 +901,12 @@ namespace EDIAPP
                 engine_for_app = new EDI.EDI_Engine_Bombardier("ExtraFeatures",
                   engine850file, M_DBNAME, M_DBSERVER, m_sCustomers,
                   Application.ExecutablePath, cBoxDeliveryDateFormat.SelectedIndex,
-                  M_SO_CREATION, M_SO_CREATION_STATUS);
+                  M_SO_CREATION, M_SO_CREATION_STATUS2);
             }
             else
             {
-                MessageBox.Show("Prï¿½sentement l'engin actuel ne supporte pas "
-                  + "les opï¿½ration de types 850.");
+                MessageBox.Show("Pr�sentement l'engin actuel ne supporte pas "
+                  + "les op�ration de types 850.");
                 return;
             }
 
@@ -908,12 +929,12 @@ namespace EDIAPP
                 engine_for_app = new EDI.EDI_Engine_Bombardier("ExtraFeatures",
                   engine860file, M_DBNAME, M_DBSERVER, m_sCustomers,
                   Application.ExecutablePath, cBoxDeliveryDateFormat.SelectedIndex,
-                  M_SO_CREATION, M_SO_CREATION_STATUS);
+                  M_SO_CREATION, M_SO_CREATION_STATUS2);
             }
             else
             {
-                MessageBox.Show("Prï¿½sentement l'engin actuel ne supporte pas "
-                  + "les opï¿½ration de types 860.");
+                MessageBox.Show("Pr�sentement l'engin actuel ne supporte pas "
+                  + "les op�ration de types 860.");
                 return;
             }
 
@@ -935,11 +956,22 @@ namespace EDIAPP
             // TODO Find out and implement what needs to be done about or in relation to the filesForRead array.
             if (m_bCombineFiles == true)
             {
-                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+
+                string sSelectedFolder = string.Empty;
+                if (System.Diagnostics.Debugger.IsAttached)
                 {
-                    var sSelectedFolder = this.folderBrowserDialog.SelectedPath;
+                    sSelectedFolder = @"D:\code\MfgTech\EDI\examples\2020-11-23";
                     this.filesForRead = System.IO.Directory.GetFiles(sSelectedFolder, "*.csv");
                 }
+                else
+                {
+                    if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        sSelectedFolder = this.folderBrowserDialog.SelectedPath;
+                        this.filesForRead = System.IO.Directory.GetFiles(sSelectedFolder, "*.csv");
+                    }
+                }
+
             }
             else if (this.openFileDialog_CsvFile.ShowDialog() == DialogResult.OK)
             {
@@ -955,6 +987,9 @@ namespace EDIAPP
             }
 
             this.VerifyReadiness();
+
+            if (m_IsReady)
+                toolStripButton_Read_Click(null, EventArgs.Empty);
         }
 
         private void OpenForecastFile()
@@ -973,6 +1008,7 @@ namespace EDIAPP
 
         private void Process()
         {
+            engine_for_app.OnCompleteWithMessage += ThreadChildCompleteWithMessage;
             engine_for_app.OnComplete += ThreadChildWriteComplete;
             engine_for_app.OnProgressInit += ThreadChildProgressInit;
             engine_for_app.OnProgressReport += ThreadChildProgressReport;
@@ -1030,6 +1066,8 @@ namespace EDIAPP
             lblThreadCurrentValue.Text = "";
             progressBar2.Value = 0;
             toolStripButton_Read.Enabled = true;
+
+            NbRowsLabel.Text = dataGridViewMain.Rows.Count.ToString() + " lignes";
         }
 
         private void ReadThreadProgressInit(int iMaxValue, string sOperation)
@@ -1131,11 +1169,22 @@ namespace EDIAPP
             }
             else
             {
+                if (InvokeRequired)
+                {
+                    ControlPropertyModifyCallback d = new ControlPropertyModifyCallback(ThreadChildWriteCompleteThread2);
+                    Invoke(d);
+                }
+                else
+                {
+                    ThreadChildWriteCompleteThread2();
+                }
+
                 MessageBox.Show(message);
             }
 
             EnableAllTimers();
         }
+
 
         public void ThreadChildProgressInit(int iMaxValue, string sOperation)
         {
@@ -1164,7 +1213,39 @@ namespace EDIAPP
 
         public void ThreadChildWriteComplete()
         {
+            if (InvokeRequired)
+            {
+                ControlPropertyModifyCallback d = new ControlPropertyModifyCallback(ThreadChildWriteCompleteThread);
+                Invoke(d);
+            }
+            else
+            {
+                ThreadChildWriteCompleteThread();
+            }
+        }
+
+        private void ThreadChildWriteCompleteThread()
+        {
+            if (dataGridViewMain.Rows.Count > 0)
+            {
+                dataGridViewMain.Rows.Clear();
+            }
+
+            NbRowsLabel.Text = dataGridViewMain.Rows.Count.ToString() + " lignes";
+
             MessageBox.Show("�criture termin�e");
+        }
+
+        private void ThreadChildWriteCompleteThread2()
+        {
+            if (dataGridViewMain.Rows.Count > 0)
+            {
+                dataGridViewMain.Rows.Clear();
+            }
+
+            ProcessThreadCompleted();
+
+            NbRowsLabel.Text = dataGridViewMain.Rows.Count.ToString() + " lignes";
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -1176,9 +1257,9 @@ namespace EDIAPP
         {
             if (M_ENGINE == "PRATT")
             {
-                engine_for_app = (EDI_Engine_Base)(new EDI_Engine_Pratt(m_sTemplateFilePathForecast, 
-                    m_sForecastFilePath, m_sTemplateFilePathDelivery, m_sDeliveryFilePath, M_DBNAME, 
-                    M_DBSERVER, M_CUSTOMER_ID, Application.ExecutablePath, 
+                engine_for_app = (EDI_Engine_Base)(new EDI_Engine_Pratt(m_sTemplateFilePathForecast,
+                    m_sForecastFilePath, m_sTemplateFilePathDelivery, m_sDeliveryFilePath, M_DBNAME,
+                    M_DBSERVER, M_CUSTOMER_ID, Application.ExecutablePath,
                     cBoxDeliveryDateFormat.SelectedIndex, cBoxForecastDateFormat.SelectedIndex,
                     M_SO_CREATION, M_SO_CREATION_STATUS, M_WRITE_SCHEDULE_LINE_TO_NOTE, useShippedLines));
             }
@@ -1193,8 +1274,8 @@ namespace EDIAPP
                         typesAndTemplates[index][0] = m_sFileTypes[index];
                         typesAndTemplates[index][1] = m_sTemplates[index];
                     }
-                    engine_for_app = (EDI_Engine_Base)(new EDI_Engine_Bombardier(typesAndTemplates, 
-                        filesForRead, M_DBNAME, M_DBSERVER, m_sCustomers, Application.ExecutablePath, 
+                    engine_for_app = (EDI_Engine_Base)(new EDI_Engine_Bombardier(typesAndTemplates,
+                        filesForRead, M_DBNAME, M_DBSERVER, m_sCustomers, Application.ExecutablePath,
                         cBoxDeliveryDateFormat.SelectedIndex, M_SO_CREATION, M_SO_CREATION_STATUS));
                 }
                 else
@@ -1205,8 +1286,8 @@ namespace EDIAPP
             }
             else if (M_ENGINE == "GENERIC" || M_ENGINE == "G�N�RIQUE")
             {
-                engine_for_app = (EDI_Engine_Base)(new EDI_Engine_Generic(m_sTemplateFilePathDelivery, 
-                    m_sDeliveryFilePath, M_DBNAME, M_DBSERVER, M_CUSTOMER_ID, Application.ExecutablePath, 
+                engine_for_app = (EDI_Engine_Base)(new EDI_Engine_Generic(m_sTemplateFilePathDelivery,
+                    m_sDeliveryFilePath, M_DBNAME, M_DBSERVER, M_CUSTOMER_ID, Application.ExecutablePath,
                     cBoxDeliveryDateFormat.SelectedIndex, M_SO_CREATION, M_SO_CREATION_STATUS));
             }
             else
@@ -1280,7 +1361,7 @@ namespace EDIAPP
                 m_ForecastFileTemplate = new MFG.MFG_File_Template();
                 m_ForecastFileTemplate.SetFile(m_sTemplateFilePathForecast);
                 m_ForecastFileTemplate.Process();
-                m_ForecastFileReader = new MFG.Files.CSV.CCsvReader(m_sForecastFilePath, m_ForecastFileTemplate);
+                //m_ForecastFileReader = new MFG.Files.CSV.CCsvReader(m_sForecastFilePath, m_ForecastFileTemplate);
             }
             else
             {
@@ -1407,7 +1488,7 @@ namespace EDIAPP
         {
             if (M_ENGINE != "BOMBARDIER")
             {
-                MessageBox.Show("Prï¿½sentement l'engin actuel ne supporte pas les opï¿½ration de types 855.");
+                MessageBox.Show("Pr�sentement l'engin actuel ne supporte pas les op�ration de types 855.");
                 return;
             }
 
@@ -1417,7 +1498,8 @@ namespace EDIAPP
             EDI_Engine_Base engine;
             string fileName;
             var saveCsvDialog = new System.Windows.Forms.SaveFileDialog();
-            saveCsvDialog.InitialDirectory = "%USERPROFILE%";
+            //saveCsvDialog.InitialDirectory = "%USERPROFILE%";
+            saveCsvDialog.FileName = this.openFileDialog_CsvFile.FileName.Replace("850_", "855_");
             saveCsvDialog.DefaultExt = "csv";
             saveCsvDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
             saveCsvDialog.FilterIndex = 1;
@@ -1430,13 +1512,13 @@ namespace EDIAPP
                       "ExtraFeaturesWrite", fileName, M_DBNAME, M_DBSERVER,
                       m_sCustomers, Application.ExecutablePath,
                       cBoxDeliveryDateFormat.SelectedIndex, M_SO_CREATION,
-                      M_SO_CREATION_STATUS);
+                      M_SO_CREATION_STATUS2);
                 }
                 else { return; }
             }
             else
             {
-                MessageBox.Show("Vous n'avez pas sï¿½lectionner de fichier pour sauvegarder. Nous ne pouvons procï¿½der.");
+                MessageBox.Show("Vous n'avez pas s�lectionne� de fichier pour sauvegarder. Nous ne pouvons proc�der.");
                 EnableAllTimers();
                 return;
             }
@@ -1453,7 +1535,7 @@ namespace EDIAPP
         {
             if (M_ENGINE != "BOMBARDIER")
             {
-                MessageBox.Show("Prï¿½sentement l'engin actuel ne supporte pas les opï¿½ration de types 865.");
+                MessageBox.Show("Pr�sentement l'engin actuel ne supporte pas les op�ration de types 865.");
                 return;
             }
 
@@ -1463,7 +1545,8 @@ namespace EDIAPP
             EDI_Engine_Base engine;
             string fileName;
             var saveCsvDialog = new System.Windows.Forms.SaveFileDialog();
-            saveCsvDialog.InitialDirectory = "%USERPROFILE%";
+            //saveCsvDialog.InitialDirectory = "%USERPROFILE%";
+            saveCsvDialog.FileName = this.openFileDialog_CsvFile.FileName.Replace("860_", "865_");
             saveCsvDialog.DefaultExt = "csv";
             saveCsvDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
             saveCsvDialog.FilterIndex = 1;
@@ -1476,13 +1559,13 @@ namespace EDIAPP
                       "ExtraFeaturesWrite", fileName, M_DBNAME, M_DBSERVER,
                       m_sCustomers, Application.ExecutablePath,
                       cBoxDeliveryDateFormat.SelectedIndex, M_SO_CREATION,
-                      M_SO_CREATION_STATUS);
+                      M_SO_CREATION_STATUS2);
                 }
                 else { return; }
             }
             else
             {
-                MessageBox.Show("Vous n'avez pas sï¿½lectionner de fichier pour sauvegarder. Nous ne pouvons procï¿½der.");
+                MessageBox.Show("Vous n'avez pas s�lectionner de fichier pour sauvegarder. Nous ne pouvons proc�der.");
                 EnableAllTimers();
                 return;
             }
@@ -1524,13 +1607,15 @@ namespace EDIAPP
             finally
             {
             }
-
-
         }
 
         private void LookForEightFiftySalesOrdersOnStandbyEvent(object sender, EventArgs e)
         {
-            LookForEightFiftySalesOrdersOnStandby();
+            try
+            {
+                LookForEightFiftySalesOrdersOnStandby();
+            }
+            catch { }
         }
 
         private void LookForEightSixtySalesOrdersOnStandby()
@@ -1568,7 +1653,11 @@ namespace EDIAPP
 
         private void LookForEightSixtySalesOrdersOnStandbyEvent(object sender, EventArgs e)
         {
-            LookForEightSixtySalesOrdersOnStandby();
+            try
+            {
+                LookForEightSixtySalesOrdersOnStandby();
+            }
+            catch { }
         }
 
         private static void RealStart(ref EDI_Engine_Base engine, string str, string[] args)

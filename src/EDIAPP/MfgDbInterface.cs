@@ -33,7 +33,8 @@ namespace EDIAPP
             jbDbServer,
             active,
             title,
-            useShippedLines
+            useShippedLines,
+            soCreationStatus2
         };
 
 
@@ -77,7 +78,7 @@ namespace EDIAPP
                 var query = "SELECT id, userName, workstation, engine, soCreation, "
                   + "soCreationStatus, executionType, template, clients, filetype, "
                   + "extras, writeScheduleLineToNote, jbDbName, jbDbServer, active, "
-                  + "title, useShippedLines "
+                  + "title, useShippedLines, soCreationStatus2 "
                   + "FROM Edi_Config WHERE userName = @userName AND workstation = @machineName";
 
                 var command = new System.Data.SqlClient.SqlCommand(query, connection);
@@ -175,7 +176,7 @@ namespace EDIAPP
                 var query = "SELECT id, userName, workstation, engine, soCreation, "
                   + "soCreationStatus, executionType, template, clients, filetype, "
                   + "extras, writeScheduleLineToNote, jbDbName, jbDbServer, active, "
-                  + "title, useShippedLines "
+                  + "title, useShippedLines, soCreationStatus2 "
                   + "FROM Edi_Config WHERE userName = @userName AND workstation = @machineName";
 
                 var command = new System.Data.SqlClient.SqlCommand(query, connection);
@@ -341,7 +342,7 @@ namespace EDIAPP
                   + "clients = @clients, filetype = @filetypes, extras = @extras, "
                   + "writeScheduleLineToNote = @writeScheduleLineToNote, "
                   + "jbDbName = @dbName, jbDbServer = @dbServer, active = @active, "
-                  + "title = @title , useShippedLines = @useShippedLines WHERE id = @id";
+                  + "title = @title , useShippedLines = @useShippedLines, soCreationStatus2 = @soCreationStatus2 WHERE id = @id";
 
                 var command = new System.Data.SqlClient.SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@id", settingsToWrite[(int)Settings.id]);
@@ -369,6 +370,8 @@ namespace EDIAPP
                 command.Parameters.AddWithValue("@title", settingsToWrite[(int)Settings.title]);
                 command.Parameters.AddWithValue("@useShippedLines",
                     settingsToWrite[(int)Settings.useShippedLines]);
+                command.Parameters.AddWithValue("@soCreationStatus2",
+                  settingsToWrite[(int)Settings.soCreationStatus2]);
 
                 command.ExecuteNonQuery();
 
@@ -389,10 +392,10 @@ namespace EDIAPP
                 var query = "INSERT INTO Edi_Config(userName, workstation, engine, "
                   + "soCreation, soCreationStatus, executionType, template, clients, "
                   + "filetype, extras, writeScheduleLineToNote, jbDbName, jbDbServer, "
-                  + "active, title, useShippedLines) "
+                  + "active, title, useShippedLines, soCreationStatus2) "
                   + "VALUES(@user, @station, @engine, @soCreation, @soCreationStatus, "
                   + "@execution, @template, @clients, @fileTypes, @extras, "
-                  + "@writeScheduleLineToNote, @dbName, @dbServer, @active, @title, @useShippedLines)";
+                  + "@writeScheduleLineToNote, @dbName, @dbServer, @active, @title, @useShippedLines, @soCreationStatus2)";
 
                 var command = new System.Data.SqlClient.SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@user", settingsToWrite[(int)Settings.userName]);
@@ -420,6 +423,8 @@ namespace EDIAPP
                   settingsToWrite[(int)Settings.jbDbServer]);
                 command.Parameters.AddWithValue("@active", settingsToWrite[(int)Settings.active]);
                 command.Parameters.AddWithValue("@title", settingsToWrite[(int)Settings.title]);
+                command.Parameters.AddWithValue("@soCreationStatus2",
+                  settingsToWrite[(int)Settings.soCreationStatus2]);
 
                 if (settingsToWrite[(int)Settings.active] == "1")
                 {

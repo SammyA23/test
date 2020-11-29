@@ -82,6 +82,8 @@
             this.checkBoxConfActive = new System.Windows.Forms.CheckBox();
             this.labelConfId = new System.Windows.Forms.Label();
             this.checkBoxUseShippedSoDetailLines = new System.Windows.Forms.CheckBox();
+            this.labelSoCreationStatus2 = new System.Windows.Forms.Label();
+            this.comboBoxSoCreationStatus2 = new System.Windows.Forms.ComboBox();
             this.groupBoxExecutionType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,7 +137,7 @@
             "Open",
             "Hold",
             "Closed"});
-            this.comboBoxSoCreationStatus.Location = new System.Drawing.Point(427, 178);
+            this.comboBoxSoCreationStatus.Location = new System.Drawing.Point(469, 178);
             this.comboBoxSoCreationStatus.Name = "comboBoxSoCreationStatus";
             this.comboBoxSoCreationStatus.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSoCreationStatus.TabIndex = 6;
@@ -144,14 +146,14 @@
             // listBoxTemplates
             // 
             this.listBoxTemplates.FormattingEnabled = true;
-            this.listBoxTemplates.Location = new System.Drawing.Point(165, 277);
+            this.listBoxTemplates.Location = new System.Drawing.Point(165, 295);
             this.listBoxTemplates.Name = "listBoxTemplates";
             this.listBoxTemplates.Size = new System.Drawing.Size(443, 95);
             this.listBoxTemplates.TabIndex = 9;
             // 
             // buttonTemplateNew
             // 
-            this.buttonTemplateNew.Location = new System.Drawing.Point(614, 277);
+            this.buttonTemplateNew.Location = new System.Drawing.Point(614, 295);
             this.buttonTemplateNew.Name = "buttonTemplateNew";
             this.buttonTemplateNew.Size = new System.Drawing.Size(75, 23);
             this.buttonTemplateNew.TabIndex = 8;
@@ -161,7 +163,7 @@
             // 
             // buttonTemplateModify
             // 
-            this.buttonTemplateModify.Location = new System.Drawing.Point(614, 313);
+            this.buttonTemplateModify.Location = new System.Drawing.Point(614, 331);
             this.buttonTemplateModify.Name = "buttonTemplateModify";
             this.buttonTemplateModify.Size = new System.Drawing.Size(75, 23);
             this.buttonTemplateModify.TabIndex = 10;
@@ -171,7 +173,7 @@
             // 
             // buttonTemplateDelete
             // 
-            this.buttonTemplateDelete.Location = new System.Drawing.Point(614, 349);
+            this.buttonTemplateDelete.Location = new System.Drawing.Point(614, 367);
             this.buttonTemplateDelete.Name = "buttonTemplateDelete";
             this.buttonTemplateDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonTemplateDelete.TabIndex = 11;
@@ -181,7 +183,7 @@
             // 
             // buttonClientDelete
             // 
-            this.buttonClientDelete.Location = new System.Drawing.Point(317, 465);
+            this.buttonClientDelete.Location = new System.Drawing.Point(317, 483);
             this.buttonClientDelete.Name = "buttonClientDelete";
             this.buttonClientDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonClientDelete.TabIndex = 15;
@@ -191,7 +193,7 @@
             // 
             // buttonClientModify
             // 
-            this.buttonClientModify.Location = new System.Drawing.Point(317, 429);
+            this.buttonClientModify.Location = new System.Drawing.Point(317, 447);
             this.buttonClientModify.Name = "buttonClientModify";
             this.buttonClientModify.Size = new System.Drawing.Size(75, 23);
             this.buttonClientModify.TabIndex = 14;
@@ -201,7 +203,7 @@
             // 
             // buttonClientNew
             // 
-            this.buttonClientNew.Location = new System.Drawing.Point(317, 393);
+            this.buttonClientNew.Location = new System.Drawing.Point(317, 411);
             this.buttonClientNew.Name = "buttonClientNew";
             this.buttonClientNew.Size = new System.Drawing.Size(75, 23);
             this.buttonClientNew.TabIndex = 12;
@@ -212,14 +214,14 @@
             // listBoxClients
             // 
             this.listBoxClients.FormattingEnabled = true;
-            this.listBoxClients.Location = new System.Drawing.Point(165, 393);
+            this.listBoxClients.Location = new System.Drawing.Point(165, 411);
             this.listBoxClients.Name = "listBoxClients";
             this.listBoxClients.Size = new System.Drawing.Size(146, 95);
             this.listBoxClients.TabIndex = 13;
             // 
             // buttonFiletypesDelete
             // 
-            this.buttonFiletypesDelete.Location = new System.Drawing.Point(316, 578);
+            this.buttonFiletypesDelete.Location = new System.Drawing.Point(316, 596);
             this.buttonFiletypesDelete.Name = "buttonFiletypesDelete";
             this.buttonFiletypesDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonFiletypesDelete.TabIndex = 19;
@@ -229,7 +231,7 @@
             // 
             // buttonFiletypesModify
             // 
-            this.buttonFiletypesModify.Location = new System.Drawing.Point(316, 542);
+            this.buttonFiletypesModify.Location = new System.Drawing.Point(316, 560);
             this.buttonFiletypesModify.Name = "buttonFiletypesModify";
             this.buttonFiletypesModify.Size = new System.Drawing.Size(75, 23);
             this.buttonFiletypesModify.TabIndex = 18;
@@ -239,7 +241,7 @@
             // 
             // buttonFiletypesNew
             // 
-            this.buttonFiletypesNew.Location = new System.Drawing.Point(316, 506);
+            this.buttonFiletypesNew.Location = new System.Drawing.Point(316, 524);
             this.buttonFiletypesNew.Name = "buttonFiletypesNew";
             this.buttonFiletypesNew.Size = new System.Drawing.Size(75, 23);
             this.buttonFiletypesNew.TabIndex = 16;
@@ -250,14 +252,14 @@
             // listBoxFiletypes
             // 
             this.listBoxFiletypes.FormattingEnabled = true;
-            this.listBoxFiletypes.Location = new System.Drawing.Point(164, 506);
+            this.listBoxFiletypes.Location = new System.Drawing.Point(164, 524);
             this.listBoxFiletypes.Name = "listBoxFiletypes";
             this.listBoxFiletypes.Size = new System.Drawing.Size(146, 95);
             this.listBoxFiletypes.TabIndex = 17;
             // 
             // buttonExtrasDelete
             // 
-            this.buttonExtrasDelete.Location = new System.Drawing.Point(614, 578);
+            this.buttonExtrasDelete.Location = new System.Drawing.Point(614, 596);
             this.buttonExtrasDelete.Name = "buttonExtrasDelete";
             this.buttonExtrasDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonExtrasDelete.TabIndex = 23;
@@ -267,7 +269,7 @@
             // 
             // buttonExtrasModify
             // 
-            this.buttonExtrasModify.Location = new System.Drawing.Point(614, 542);
+            this.buttonExtrasModify.Location = new System.Drawing.Point(614, 560);
             this.buttonExtrasModify.Name = "buttonExtrasModify";
             this.buttonExtrasModify.Size = new System.Drawing.Size(75, 23);
             this.buttonExtrasModify.TabIndex = 22;
@@ -277,7 +279,7 @@
             // 
             // buttonExtrasNew
             // 
-            this.buttonExtrasNew.Location = new System.Drawing.Point(614, 506);
+            this.buttonExtrasNew.Location = new System.Drawing.Point(614, 524);
             this.buttonExtrasNew.Name = "buttonExtrasNew";
             this.buttonExtrasNew.Size = new System.Drawing.Size(75, 23);
             this.buttonExtrasNew.TabIndex = 20;
@@ -288,7 +290,7 @@
             // listBoxExtras
             // 
             this.listBoxExtras.FormattingEnabled = true;
-            this.listBoxExtras.Location = new System.Drawing.Point(462, 506);
+            this.listBoxExtras.Location = new System.Drawing.Point(462, 524);
             this.listBoxExtras.Name = "listBoxExtras";
             this.listBoxExtras.Size = new System.Drawing.Size(146, 95);
             this.listBoxExtras.TabIndex = 21;
@@ -296,7 +298,7 @@
             // checkBoxWriteSchedulineToNote
             // 
             this.checkBoxWriteSchedulineToNote.AutoSize = true;
-            this.checkBoxWriteSchedulineToNote.Location = new System.Drawing.Point(50, 615);
+            this.checkBoxWriteSchedulineToNote.Location = new System.Drawing.Point(50, 633);
             this.checkBoxWriteSchedulineToNote.Name = "checkBoxWriteSchedulineToNote";
             this.checkBoxWriteSchedulineToNote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxWriteSchedulineToNote.Size = new System.Drawing.Size(129, 17);
@@ -337,14 +339,14 @@
             this.labelSoCreationStatus.AutoSize = true;
             this.labelSoCreationStatus.Location = new System.Drawing.Point(242, 182);
             this.labelSoCreationStatus.Name = "labelSoCreationStatus";
-            this.labelSoCreationStatus.Size = new System.Drawing.Size(179, 13);
+            this.labelSoCreationStatus.Size = new System.Drawing.Size(221, 13);
             this.labelSoCreationStatus.TabIndex = 33;
-            this.labelSoCreationStatus.Text = "Status de création des Bon d\'Achats";
+            this.labelSoCreationStatus.Text = "Status de création des Bon d\'Achats 830-862";
             // 
             // labelExecutionType
             // 
             this.labelExecutionType.AutoSize = true;
-            this.labelExecutionType.Location = new System.Drawing.Point(50, 209);
+            this.labelExecutionType.Location = new System.Drawing.Point(50, 227);
             this.labelExecutionType.Name = "labelExecutionType";
             this.labelExecutionType.Size = new System.Drawing.Size(88, 13);
             this.labelExecutionType.TabIndex = 34;
@@ -356,7 +358,7 @@
             this.groupBoxExecutionType.Controls.Add(this.radioButtonExecutionDouble);
             this.groupBoxExecutionType.Controls.Add(this.radioButtonExecutionSimple);
             this.groupBoxExecutionType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxExecutionType.Location = new System.Drawing.Point(167, 209);
+            this.groupBoxExecutionType.Location = new System.Drawing.Point(167, 227);
             this.groupBoxExecutionType.Name = "groupBoxExecutionType";
             this.groupBoxExecutionType.Size = new System.Drawing.Size(315, 54);
             this.groupBoxExecutionType.TabIndex = 7;
@@ -401,7 +403,7 @@
             // labelTemplates
             // 
             this.labelTemplates.AutoSize = true;
-            this.labelTemplates.Location = new System.Drawing.Point(50, 277);
+            this.labelTemplates.Location = new System.Drawing.Point(50, 295);
             this.labelTemplates.Name = "labelTemplates";
             this.labelTemplates.Size = new System.Drawing.Size(52, 13);
             this.labelTemplates.TabIndex = 36;
@@ -410,7 +412,7 @@
             // labelClients
             // 
             this.labelClients.AutoSize = true;
-            this.labelClients.Location = new System.Drawing.Point(50, 393);
+            this.labelClients.Location = new System.Drawing.Point(50, 411);
             this.labelClients.Name = "labelClients";
             this.labelClients.Size = new System.Drawing.Size(44, 13);
             this.labelClients.TabIndex = 37;
@@ -419,7 +421,7 @@
             // labelFiletypes
             // 
             this.labelFiletypes.AutoSize = true;
-            this.labelFiletypes.Location = new System.Drawing.Point(50, 506);
+            this.labelFiletypes.Location = new System.Drawing.Point(50, 524);
             this.labelFiletypes.Name = "labelFiletypes";
             this.labelFiletypes.Size = new System.Drawing.Size(82, 13);
             this.labelFiletypes.TabIndex = 38;
@@ -428,7 +430,7 @@
             // labelExtras
             // 
             this.labelExtras.AutoSize = true;
-            this.labelExtras.Location = new System.Drawing.Point(417, 506);
+            this.labelExtras.Location = new System.Drawing.Point(417, 524);
             this.labelExtras.Name = "labelExtras";
             this.labelExtras.Size = new System.Drawing.Size(36, 13);
             this.labelExtras.TabIndex = 39;
@@ -437,7 +439,7 @@
             // buttonSave
             // 
             this.buttonSave.Enabled = false;
-            this.buttonSave.Location = new System.Drawing.Point(12, 640);
+            this.buttonSave.Location = new System.Drawing.Point(12, 658);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(703, 52);
             this.buttonSave.TabIndex = 25;
@@ -448,7 +450,7 @@
             // buttonOk
             // 
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(12, 704);
+            this.buttonOk.Location = new System.Drawing.Point(12, 722);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(264, 52);
             this.buttonOk.TabIndex = 26;
@@ -459,7 +461,7 @@
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(451, 704);
+            this.buttonCancel.Location = new System.Drawing.Point(451, 722);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(264, 52);
             this.buttonCancel.TabIndex = 27;
@@ -473,7 +475,7 @@
             // textBoxClientInput
             // 
             this.textBoxClientInput.AcceptsReturn = true;
-            this.textBoxClientInput.Location = new System.Drawing.Point(165, 468);
+            this.textBoxClientInput.Location = new System.Drawing.Point(165, 486);
             this.textBoxClientInput.Name = "textBoxClientInput";
             this.textBoxClientInput.Size = new System.Drawing.Size(146, 20);
             this.textBoxClientInput.TabIndex = 43;
@@ -484,7 +486,7 @@
             // textBoxFiletypesInput
             // 
             this.textBoxFiletypesInput.AcceptsReturn = true;
-            this.textBoxFiletypesInput.Location = new System.Drawing.Point(164, 581);
+            this.textBoxFiletypesInput.Location = new System.Drawing.Point(164, 599);
             this.textBoxFiletypesInput.Name = "textBoxFiletypesInput";
             this.textBoxFiletypesInput.Size = new System.Drawing.Size(146, 20);
             this.textBoxFiletypesInput.TabIndex = 44;
@@ -530,7 +532,7 @@
             // textBoxExtrasInput
             // 
             this.textBoxExtrasInput.AcceptsReturn = true;
-            this.textBoxExtrasInput.Location = new System.Drawing.Point(462, 581);
+            this.textBoxExtrasInput.Location = new System.Drawing.Point(462, 599);
             this.textBoxExtrasInput.Name = "textBoxExtrasInput";
             this.textBoxExtrasInput.Size = new System.Drawing.Size(146, 20);
             this.textBoxExtrasInput.TabIndex = 49;
@@ -616,7 +618,7 @@
             // checkBoxUseShippedSoDetailLines
             // 
             this.checkBoxUseShippedSoDetailLines.AutoSize = true;
-            this.checkBoxUseShippedSoDetailLines.Location = new System.Drawing.Point(517, 230);
+            this.checkBoxUseShippedSoDetailLines.Location = new System.Drawing.Point(517, 248);
             this.checkBoxUseShippedSoDetailLines.Name = "checkBoxUseShippedSoDetailLines";
             this.checkBoxUseShippedSoDetailLines.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxUseShippedSoDetailLines.Size = new System.Drawing.Size(133, 17);
@@ -625,12 +627,36 @@
             this.checkBoxUseShippedSoDetailLines.UseVisualStyleBackColor = true;
             this.checkBoxUseShippedSoDetailLines.CheckStateChanged += new System.EventHandler(this.checkBoxUseShippedSoDetailLines_CheckStateChanged);
             // 
+            // labelSoCreationStatus2
+            // 
+            this.labelSoCreationStatus2.AutoSize = true;
+            this.labelSoCreationStatus2.Location = new System.Drawing.Point(242, 209);
+            this.labelSoCreationStatus2.Name = "labelSoCreationStatus2";
+            this.labelSoCreationStatus2.Size = new System.Drawing.Size(221, 13);
+            this.labelSoCreationStatus2.TabIndex = 59;
+            this.labelSoCreationStatus2.Text = "Status de création des Bon d\'Achats 850-860";
+            // 
+            // comboBoxSoCreationStatus2
+            // 
+            this.comboBoxSoCreationStatus2.FormattingEnabled = true;
+            this.comboBoxSoCreationStatus2.Items.AddRange(new object[] {
+            "Open",
+            "Hold",
+            "Closed"});
+            this.comboBoxSoCreationStatus2.Location = new System.Drawing.Point(469, 205);
+            this.comboBoxSoCreationStatus2.Name = "comboBoxSoCreationStatus2";
+            this.comboBoxSoCreationStatus2.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSoCreationStatus2.TabIndex = 58;
+            this.comboBoxSoCreationStatus2.SelectedIndexChanged += new System.EventHandler(this.comboBoxSoCreationStatus2_SelectedIndexChanged);
+            // 
             // FormConfigs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(727, 768);
+            this.ClientSize = new System.Drawing.Size(727, 792);
+            this.Controls.Add(this.labelSoCreationStatus2);
+            this.Controls.Add(this.comboBoxSoCreationStatus2);
             this.Controls.Add(this.checkBoxUseShippedSoDetailLines);
             this.Controls.Add(this.labelConfId);
             this.Controls.Add(this.checkBoxConfActive);
@@ -748,5 +774,7 @@
         private System.Windows.Forms.CheckBox checkBoxConfActive;
         private System.Windows.Forms.Label labelConfId;
         private System.Windows.Forms.CheckBox checkBoxUseShippedSoDetailLines;
+        private System.Windows.Forms.Label labelSoCreationStatus2;
+        private System.Windows.Forms.ComboBox comboBoxSoCreationStatus2;
     }
 }

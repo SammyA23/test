@@ -41,9 +41,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Application EDI v6.1.2.4180";
+            this.label1.Text = "Application EDI v8.0.0.0";
             // 
             // label2
             // 

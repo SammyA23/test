@@ -1,0 +1,28 @@
+[ENGINE]
+GENERIC
+[DBSERVER]
+W10DEV\SQLEXPRESS
+[DB]
+TRAINING
+[SO_Creation]
+ON
+[SO_Creation_Status]
+Hold
+[execution]
+simple
+[Template]
+F:\Users\Dominic\Documents\dev\EDI_VS2017\data\Usimet\usimet.xml
+[Client]
+USIMETCUS
+[Quantite]
+Trop gros changement
+Trop de pertes
+Valeur monétaire trop basse
+Quantité partiellement envoyé
+[Date]
+Trop Vite
+Trop Lent
+Délai trop court
+Valeur monétaire trop fluctuente
+[filetype]
+delivery

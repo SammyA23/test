@@ -280,13 +280,6 @@ namespace EDI
                 {
                     iTry = iCurrentLine;
                     var sCurrentMaterial = m_DataTable.Rows[iCurrentLine][0].ToString();
-                    var bHasStringWithSingleQuote = false;
-
-                    if (sCurrentMaterial.Contains("'"))
-                    {
-                        bHasStringWithSingleQuote = true;
-                    }
-
                     var sCurrentPO = m_DataTable.Rows[iCurrentLine][2].ToString();
                     var iMaterialStartLine = iCurrentLine;
                     var bSameMat = true;
@@ -308,23 +301,10 @@ namespace EDI
                         }
                     }
 
-                    string sSelectJBLines;
-
-                    if (bHasStringWithSingleQuote)
-                    {
-                        var sFixedMat = sCurrentMaterial.Replace("'", "''");
-                        sSelectJBLines = "SELECT Distinct(SO_Detail.Sales_Order) "
+                    string sSelectJBLines = "SELECT Distinct(SO_Detail.Sales_Order) "
                         + "FROM SO_Detail LEFT JOIN SO_Header ON SO_Detail.Sales_Order = SO_Header.Sales_Order "
-                        + "WHERE Material LIKE '" + sFixedMat + "' AND SO_Header.Status IN ('Open', 'Hold') AND "
-                        + "SO_Header.Customer LIKE '" + M_CUSTOMER_ID + "' AND SO_Header.Customer_PO = '" + sCurrentPO + "' ";
-                    }
-                    else
-                    {
-                        sSelectJBLines = "SELECT Distinct(SO_Detail.Sales_Order) "
-                        + "FROM SO_Detail LEFT JOIN SO_Header ON SO_Detail.Sales_Order = SO_Header.Sales_Order "
-                        + "WHERE Material LIKE '" + sCurrentMaterial + "' AND SO_Header.Status IN ('Open', 'Hold') AND "
-                        + "SO_Header.Customer LIKE '" + M_CUSTOMER_ID + "' AND SO_Header.Customer_PO = '" + sCurrentPO + "' ";
-                    }
+                        + "WHERE Material LIKE '" + EscapeSQLString(sCurrentMaterial) + "' AND SO_Header.Status IN ('Open', 'Hold') AND "
+                        + "SO_Header.Customer LIKE '" + EscapeSQLString(M_CUSTOMER_ID) + "' AND SO_Header.Customer_PO = '" + EscapeSQLString(sCurrentPO) + "' ";
 
                     var jbSO = conn.GetData(sSelectJBLines);
 
@@ -341,9 +321,9 @@ namespace EDI
                         sSelectJBLines = "SELECT SO_Detail.Sales_Order, SO_Detail.SO_Line, SO_Detail.Order_Qty, "
                         + "SO_Detail.Promised_Date, Address.Ship_To_ID, SO_Detail.Unit_Price, SO_Detail.SO_Detail, "
                         + "SO_Detail.Status FROM SO_Detail LEFT JOIN Address ON SO_Detail.Ship_To = Address.Address "
-                        + "WHERE SO_Detail.Sales_Order = '" + jbSO.Rows[0][0] + "'";
+                        + "WHERE SO_Detail.Sales_Order = '" + EscapeSQLString(jbSO.Rows[0][0]?.ToString()) + "'";
 
-                        if(useShippedLines)
+                        if (useShippedLines)
                         {
                             sSelectJBLines += " AND (SO_Detail.Status NOT IN ('Closed'))";
                         }
@@ -351,8 +331,8 @@ namespace EDI
                         {
                             sSelectJBLines += " AND (SO_Detail.Status NOT IN ('Shipped', 'Closed'))";
                         }
-                        
-                        sSelectJBLines += " AND (SO_Detail.Material LIKE '" + sCurrentMaterial + "')"
+
+                        sSelectJBLines += " AND (SO_Detail.Material LIKE '" + EscapeSQLString(sCurrentMaterial) + "')"
                         + "ORDER BY SO_Detail.SO_Detail";
                     }
 
@@ -383,17 +363,7 @@ namespace EDI
                             m_DataTable.Rows[iCurrentLine + iCurrentJBLine][15] = "0";
                             m_DataTable.Rows[iCurrentLine + iCurrentJBLine][16] = "0";
 
-                            string s;
-
-                            if (bHasStringWithSingleQuote)
-                            {
-                                var sFixedMat = sCurrentMaterial.Replace("'", "''");
-                                s = "SELECT Material, Selling_Price FROM Material WHERE Material LIKE '" + sFixedMat + "'";
-                            }
-                            else
-                            {
-                                s = "SELECT Material, Selling_Price FROM Material WHERE Material LIKE '" + sCurrentMaterial + "'";
-                            }
+                            string s = "SELECT Material, Selling_Price FROM Material WHERE Material LIKE '" + EscapeSQLString(sCurrentMaterial) + "'";
 
                             var dtMaterialInfo = conn.GetData(s);
                             m_DataTable.Rows[iCurrentLine + iCurrentJBLine][18] = dtMaterialInfo.Rows[0][1].ToString();
@@ -1144,8 +1114,8 @@ namespace EDI
             {
                 if (this.m_MergedTable.Rows[iCurrentLine][4].ToString() == "0")
                 {
-                    conn.SetData("DELETE FROM Delivery WHERE Delivery.SO_Detail = " + this.m_MergedTable.Rows[iCurrentLine][16].ToString());
-                    conn.SetData("DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + this.m_MergedTable.Rows[iCurrentLine][16].ToString());
+                    conn.SetData("DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(this.m_MergedTable.Rows[iCurrentLine][16].ToString()));
+                    conn.SetData("DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(this.m_MergedTable.Rows[iCurrentLine][16].ToString()));
                     this.m_MergedTable.Rows[iCurrentLine].Delete();
                 }
                 else
@@ -1180,7 +1150,7 @@ namespace EDI
                     + "SO_Detail.Promised_Date, Address.Ship_To_ID, SO_Detail.Unit_Price, "
                     + "SO_Detail.SO_Detail, SO_Detail.Status "
                     + "FROM SO_Detail LEFT JOIN Address ON SO_Detail.Ship_To = Address.Address "
-                    + "WHERE SO_Detail.Sales_Order = '" + sSO + "' AND (SO_Detail.Material LIKE '"
+                    + "WHERE SO_Detail.Sales_Order = '" + EscapeSQLString(sSO) + "' AND (SO_Detail.Material LIKE '"
                     + sCurrentPart + "') ";
 
                     if (useShippedLines)
@@ -1208,7 +1178,7 @@ namespace EDI
 
                                 string sUpdateDelivery;
                                 var bDeliveryUpdate = false;
-                                sQuery = "SELECT SO_Detail FROM Delivery WHERE SO_Detail = " + jbTable.Rows[i][6].ToString();
+                                sQuery = "SELECT SO_Detail FROM Delivery WHERE SO_Detail = " + EscapeSQLString(jbTable.Rows[i][6].ToString());
                                 var existingDeliveryTable = conn.GetData(sQuery);
                                 if (existingDeliveryTable.Rows.Count > 0)
                                 {
@@ -1226,14 +1196,14 @@ namespace EDI
                                     sLine = "00010";
                                 }
 
-                                sUpdate += "Promised_Date = '" + sDate + "'";
-                                sUpdateDelivery += "Promised_Date = '" + sDate + "' , Requested_Date = '" + sDate + "' ";
+                                sUpdate += "Promised_Date = '" + EscapeSQLString(sDate) + "'";
+                                sUpdateDelivery += "Promised_Date = '" + EscapeSQLString(sDate) + "' , Requested_Date = '" + EscapeSQLString(sDate) + "' ";
 
 
-                                sUpdate += ", Order_Qty = " + sQty + ", Deferred_Qty = " + sQty;
-                                sUpdateDelivery += ", Promised_Quantity = " + sQty + ", Remaining_Quantity = " + sQty + " ";
+                                sUpdate += ", Order_Qty = " + EscapeSQLString(sQty) + ", Deferred_Qty = " + EscapeSQLString(sQty);
+                                sUpdateDelivery += ", Promised_Quantity = " + EscapeSQLString(sQty) + ", Remaining_Quantity = " + EscapeSQLString(sQty) + " ";
 
-                                var sSelect = "SELECT Unit_Price FROM SO_Detail WHERE SO_Detail.SO_Detail = " + jbTable.Rows[i][6].ToString();
+                                var sSelect = "SELECT Unit_Price FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(jbTable.Rows[i][6].ToString());
                                 var dTUnitPrice = conn.GetData(sSelect);
 
                                 object oPrice = dTUnitPrice.Rows[0][0];
@@ -1246,22 +1216,22 @@ namespace EDI
 
                                 sUpdate += ", SO_Line = " + sLine;
 
-                                sSelect = "SELECT Sales_Code FROM Material WHERE Material LIKE '" + sCurrentPart + "'";
+                                sSelect = "SELECT Sales_Code FROM Material WHERE Material LIKE '" + EscapeSQLString(sCurrentPart) + "'";
                                 var dTSalesCode = conn.GetData(sSelect);
                                 object oSalesCode = dTSalesCode.Rows[0][0];
 
                                 if (oSalesCode != System.DBNull.Value)
                                 {
-                                    sUpdate += ", Sales_Code = '" + oSalesCode.ToString() + "' ";
+                                    sUpdate += ", Sales_Code = '" + EscapeSQLString(oSalesCode.ToString()) + "' ";
                                 }
 
                                 if (!String.IsNullOrWhiteSpace(taxCode))
                                 {
-                                    sUpdate += ", Tax_Code = '" + taxCode + "' ";
+                                    sUpdate += ", Tax_Code = '" + EscapeSQLString(taxCode) + "' ";
                                 }
 
-                                sUpdate += " WHERE SO_Detail = " + jbTable.Rows[i][6].ToString();
-                                sUpdateDelivery += "WHERE SO_Detail = " + jbTable.Rows[i][6].ToString();
+                                sUpdate += " WHERE SO_Detail = " + EscapeSQLString(jbTable.Rows[i][6].ToString());
+                                sUpdateDelivery += "WHERE SO_Detail = " + EscapeSQLString(jbTable.Rows[i][6].ToString());
 
                                 conn.SetData(sUpdate);
 
@@ -1269,8 +1239,8 @@ namespace EDI
                                 {
                                     sUpdateDelivery = "INSERT INTO Delivery (SO_Detail, Requested_Date, Promised_Date, Promised_Quantity, Remaining_Quantity, ObjectID) VALUES";
 
-                                    sUpdateDelivery += " (" + jbTable.Rows[i][6].ToString() + ", '" + sDate + "' , '" + sDate + "' ," + sQty + ", " + sQty +
-                                    ", '" + System.Guid.NewGuid() + "')";
+                                    sUpdateDelivery += " (" + EscapeSQLString(jbTable.Rows[i][6].ToString()) + ", '" + EscapeSQLString(sDate) + "' , '" + EscapeSQLString(sDate) + "' ," + EscapeSQLString(sQty) + ", " + EscapeSQLString(sQty) +
+                                    ", '" + EscapeSQLString(System.Guid.NewGuid().ToString()) + "')";
                                 }
 
                                 if (jbTable.Rows[i][7].ToString() != "Shipped")
@@ -1280,8 +1250,8 @@ namespace EDI
                             }//If newQty end
                             else //Get rid of extra JB lines
                             {
-                                conn.SetData("DELETE FROM Delivery WHERE Delivery.SO_Detail = " + jbTable.Rows[jbTable.Rows.Count - 1][6].ToString());
-                                conn.SetData("DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + jbTable.Rows[jbTable.Rows.Count - 1][6].ToString());
+                                conn.SetData("DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(jbTable.Rows[jbTable.Rows.Count - 1][6].ToString()));
+                                conn.SetData("DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(jbTable.Rows[jbTable.Rows.Count - 1][6].ToString()));
                                 jbTable.Rows.Remove(jbTable.Rows[jbTable.Rows.Count - 1]);
                             }
                         }
@@ -1312,8 +1282,8 @@ namespace EDI
                     {
                         sQuery = "SELECT Distinct(SO_Detail.Sales_Order) "
                         + "FROM SO_Detail LEFT JOIN SO_Header ON SO_Detail.Sales_Order = SO_Header.Sales_Order "
-                        + "WHERE Material LIKE '" + sCurrentPart + "' AND SO_Header.Status LIKE 'Closed' AND "
-                        + "SO_Header.Customer LIKE '" + M_CUSTOMER_ID + "' AND SO_Header.Customer_PO = '" + sCurrentPO + "' ";
+                        + "WHERE Material LIKE '" + EscapeSQLString(sCurrentPart) + "' AND SO_Header.Status LIKE 'Closed' AND "
+                        + "SO_Header.Customer LIKE '" + EscapeSQLString(M_CUSTOMER_ID) + "' AND SO_Header.Customer_PO = '" + EscapeSQLString(sCurrentPO) + "' ";
 
                         var jbClosedSOs = conn.GetData(sQuery);
 

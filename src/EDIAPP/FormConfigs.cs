@@ -39,6 +39,7 @@ namespace EDIAPP
                 textBoxJbDbServer.Text = settings[(int)EdiDbInterface.Settings.jbDbServer].ToString();
                 checkBoxSoCreation.Checked = (bool)settings[(int)EdiDbInterface.Settings.soCreation];
                 comboBoxSoCreationStatus.SelectedItem = settings[(int)EdiDbInterface.Settings.soCreationStatus].ToString();
+                comboBoxSoCreationStatus2.SelectedItem = settings[(int)EdiDbInterface.Settings.soCreationStatus2].ToString();
 
                 var execution = settings[(int)EdiDbInterface.Settings.executionType].ToString();
                 if (execution == "simple") { radioButtonExecutionSimple.Checked = true; }
@@ -184,7 +185,7 @@ namespace EDIAPP
         private bool DoWeHaveFullSettings()
         {
             if (comboBoxEngine.SelectedIndex == -1 || comboBoxJbDbName.SelectedIndex == -1
-              || String.IsNullOrWhiteSpace(textBoxJbDbServer.Text) || comboBoxSoCreationStatus.SelectedIndex == -1
+              || String.IsNullOrWhiteSpace(textBoxJbDbServer.Text) || comboBoxSoCreationStatus.SelectedIndex == -1 || comboBoxSoCreationStatus2.SelectedIndex == -1
               || (!radioButtonExecutionComplex.Checked && !radioButtonExecutionDouble.Checked && !radioButtonExecutionSimple.Checked)
               || listBoxTemplates.Items.Count == 0 || listBoxClients.Items.Count == 0
               || listBoxFiletypes.Items.Count == 0) { return false; }
@@ -243,6 +244,7 @@ namespace EDIAPP
             comboBoxJbDbName.SelectedIndex = 0;
             checkBoxSoCreation.Checked = false;
             comboBoxSoCreationStatus.SelectedIndex = 0;
+            comboBoxSoCreationStatus2.SelectedIndex = 0;
             radioButtonExecutionSimple.Checked = true;
             listBoxTemplates.Items.Clear();
             listBoxClients.Items.Clear();
@@ -326,6 +328,7 @@ namespace EDIAPP
                 settings.Add(checkBoxConfActive.Checked?1.ToString():0.ToString());
                 settings.Add(textBoxConfigName.Text);
                 settings.Add(checkBoxUseShippedSoDetailLines.Checked ? 1.ToString() : 0.ToString());
+                settings.Add(comboBoxSoCreationStatus2.SelectedItem.ToString());
 
 
                 if (mustInsertSettings) { ediDbInterface.WriteBasicSettings(in settings); }
@@ -510,6 +513,11 @@ namespace EDIAPP
         }
 
         private void checkBoxUseShippedSoDetailLines_CheckStateChanged(object sender, EventArgs e)
+        {
+            EnableButtonSave();
+        }
+
+        private void comboBoxSoCreationStatus2_SelectedIndexChanged(object sender, EventArgs e)
         {
             EnableButtonSave();
         }

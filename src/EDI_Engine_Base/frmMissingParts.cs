@@ -83,5 +83,27 @@ namespace EDI
                 }
             }
         }
+
+        private void CocherTout_Button_Click(object sender, System.EventArgs e)
+        {
+            if (this.dataGridView1.Rows != null && this.dataGridView1.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow dgvr in this.dataGridView1.Rows)
+                {
+                    dgvr.Cells[5].Value = true;
+                }
+            }
+        }
+
+        private void CocherAucun_Button_Click(object sender, System.EventArgs e)
+        {
+            if (this.dataGridView1.Rows != null && this.dataGridView1.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow dgvr in this.dataGridView1.Rows)
+                {
+                    dgvr.Cells[5].Value = false;
+                }
+            }
+        }
     }
 }
