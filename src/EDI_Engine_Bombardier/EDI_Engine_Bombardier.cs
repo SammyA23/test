@@ -750,9 +750,9 @@ namespace EDI
 
                             soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
 
-                            updateSoDetailQuery = "DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(soDetail) + ";" + "DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(soDetail) + ";";
+                            updateSoDetailQuery = "if exists(select 1 from SO_Detail where SO_Detail = " + EscapeSQLString(soDetail) + " and status <> 'Shipped') begin DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(soDetail) + ";" + "DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(soDetail) + "; end";
 
-                            tempRowToInsert["Sales_Order"] = "SOD a supprimer - " + so;
+                            tempRowToInsert["Sales_Order"] = "SOD à supprimer - " + so;
                             tempRowToInsert["SO_Detail"] = soDetail;
                             tempRowToInsert["JB_Client"] = trans.customer;
                             tempRowToInsert["Customer_PO"] = po;
@@ -1594,7 +1594,7 @@ namespace EDI
                     + "(@modifiedSO, '860', @releaseNumber)";
                     var command = new System.Data.SqlClient.SqlCommand(
                       insertBrpModifiedSoQuery, connEdi);
-                    command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString()));
+                    command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")));
                     command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
                     command.ExecuteNonQuery();
                 }
@@ -2085,14 +2085,13 @@ namespace EDI
             else
             {
                 //take the date of the last row of the 862 array
-                //TODOPLB
-                //var lastDateOfEightSixtyTwoLine = Convert.ToDateTime(eightSixtyTwoRowsArray[eightSixtyTwoRowsArray.Length - 1][9]);
-                //var dtRelativeMonday = GetRelativeMondayForDate(lastDateOfEightSixtyTwoLine);
+                var lastDateOfEightSixtyTwoLine = Convert.ToDateTime(eightSixtyTwoRowsArray[eightSixtyTwoRowsArray.Length - 1][9]);
+                var dtRelativeMonday = GetRelativeMondayForDate(lastDateOfEightSixtyTwoLine);
 
                 //adjuste the eightThirtyRowsArrray accordingly by removing all lines with dates prior to
                 //dtRelateMonday and subtract quantities for dates prior to lastDateOfEightSixtyTwoLine
-                //TODOPLB: validate this, not sure we have to keep it
-                //RemoveDatesFromArrayPriorTo(ref eightThirtyRowsArray, dtRelativeMonday);
+                //TODOPLB: removed
+                RemoveDatesFromArrayPriorTo(ref eightThirtyRowsArray, dtRelativeMonday);
 
                 //if we still have two lines in the 830 array for the week of dtRelativeMonday we must abort and
                 //get rid of all 862 and 830 lines. We simply do not handle this situation. BRP promised only one
@@ -2452,7 +2451,7 @@ namespace EDI
 
             var sQuery = "SELECT Distinct(SO_Detail.Sales_Order) "
             + "FROM SO_Detail LEFT JOIN SO_Header ON SO_Detail.Sales_Order = SO_Header.Sales_Order "
-            + "WHERE Material LIKE '" + EscapeSQLString(sCurrentPart) + "' AND SO_Header.Status IN ('Open', 'Hold') AND "
+            + "WHERE Material LIKE '" + EscapeSQLString(sCurrentPart) + "' AND SO_Header.Status IN ('Open', 'Hold', 'Backorder') AND "
             + "SO_Header.Customer LIKE '" + EscapeSQLString(M_CUSTOMER_ID) + "' AND SO_Header.Customer_PO = '" + EscapeSQLString(sCurrentPo) + "' ";
 
             var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
@@ -2483,7 +2482,7 @@ namespace EDI
                     + "LEFT JOIN Customer_Part ON SO_Header.Customer = Customer_Part.Customer AND SO_Detail.Material = Customer_Part.Material "
                     + "WHERE case when isnumeric(SO_Detail.Sales_Order) = 1 then convert(varchar(max), cast(SO_Detail.Sales_Order as int)) else SO_Detail.Sales_Order end = "
                     + "case when isnumeric('" + EscapeSQLString(sJbSo) + "') = 1 then convert(varchar(max), cast('" + EscapeSQLString(sJbSo) + "' as int)) else '" + EscapeSQLString(sJbSo) + "' end  AND (SO_Detail.Material LIKE '" + EscapeSQLString(sCurrentPart) + "') "
-                    + "AND (SO_Detail.Status IN ('Open', 'Hold') OR (SO_Detail.Status LIKE 'Shipped' AND SO_Detail.Promised_Date >= getdate()))"
+                    + "AND (SO_Detail.Status IN ('Open', 'Hold', 'Backorder') OR (SO_Detail.Status LIKE 'Shipped' AND SO_Detail.Promised_Date >= getdate()))"
                     + "ORDER BY SO_Detail.Promised_Date ASC";
 
                     var jbTable = conn.GetData(sQuery);
@@ -2596,33 +2595,32 @@ namespace EDI
                     }
 
                     //Must check for jb lines still unmatched and add those to flag them for re-use or removal
-                    //TODOPLB: comment this, we don't want all SOs / SO lines
-                    //var unmatchedRow = jbTable.Select("AlreadyMerged <> True");
-                    //foreach (var row in unmatchedRow)
-                    //{
-                    //    var newRow = mDataTable.NewRow();
+                    var unmatchedRow = jbTable.Select("AlreadyMerged <> True");
+                    foreach (var row in unmatchedRow)
+                    {
+                        var newRow = mDataTable.NewRow();
 
-                    //    newRow[0] = sCurrentPart;
-                    //    newRow[1] = sJbSo;
-                    //    newRow[2] = sCurrentPo;
-                    //    newRow[3] = row["Order_Qty"];
-                    //    newRow[4] = "0";
-                    //    newRow[8] = row["Promised_Date"];
-                    //    newRow[9] = new DateTime(1, 1, 1);
-                    //    newRow[15] = row["SO_Line"];
-                    //    newRow[16] = row["SO_Detail"];
-                    //    newRow[17] = row["Status"];
+                        newRow[0] = sCurrentPart;
+                        newRow[1] = sJbSo;
+                        newRow[2] = sCurrentPo;
+                        newRow[3] = row["Order_Qty"];
+                        newRow[4] = "0";
+                        newRow[8] = row["Promised_Date"];
+                        newRow[9] = new DateTime(1, 1, 1);
+                        newRow[15] = row["SO_Line"];
+                        newRow[16] = row["SO_Detail"];
+                        newRow[17] = row["Status"];
 
-                    //    newRow[18] = row["CustomerPartPrice"] != DBNull.Value ? row["CustomerPartPrice"] : row["Unit_Price"];
+                        newRow[18] = row["CustomerPartPrice"] != DBNull.Value ? row["CustomerPartPrice"] : row["Unit_Price"];
 
-                    //    newRow[21] = "JB";
-                    //    newRow[22] = M_CUSTOMER_ID;
+                        newRow[21] = "JB";
+                        newRow[22] = M_CUSTOMER_ID;
 
-                    //    mDataTable.Rows.Add(newRow);
-                    //    PerformCalculationsForRow(ref newRow);
+                        mDataTable.Rows.Add(newRow);
+                        PerformCalculationsForRow(ref newRow);
 
-                    //    row["AlreadyMerged"] = true;
-                    //}
+                        row["AlreadyMerged"] = true;
+                    }
                 }
             }
 
@@ -2837,6 +2835,11 @@ namespace EDI
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
 
+                        //if (m_MergedTable.Rows[i][0].ToString() != "706202572")
+                        //{
+                        //    m_MergedTable.Rows.RemoveAt(i);
+                        //}
+
                         //if (m_MergedTable.Rows[i]["Qty_Diff"].ToString() == "0" && m_MergedTable.Rows[i]["Date_Diff"].ToString() == "0")
                         //{
                         //    m_MergedTable.Rows.RemoveAt(i);
@@ -3007,24 +3010,32 @@ namespace EDI
 
                             string sodetail = poRows[i][16]?.ToString();
 
-                            if (poRows[i]["Qty New"].ToString() == "0")
+                            if (poRows[i]["SO Detail Status"].ToString() == "Backorder")
                             {
-                                if (!string.IsNullOrWhiteSpace(sodetail))
-                                {
-                                    conn.SetData("DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(sodetail));
-                                    conn.SetData("DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(sodetail));
-                                    //conn.SetData("delete from h from SO_Header h left join SO_Detail d on d.Sales_Order = h.Sales_Order where d.SO_Detail is null and h.Sales_Order = '" + EscapeSQLString(sSo) + "'");
-                                }
+                                //Close existing SO Detail
+                                conn.SetData("UPDATE SO_Detail set Status = 'Closed' WHERE SO_Detail.SO_Detail = " + EscapeSQLString(sodetail));
                             }
                             else
                             {
-                                if (string.IsNullOrWhiteSpace(sodetail))
+                                if (poRows[i]["Qty New"].ToString() == "0")
                                 {
-                                    //Create SO Detail
-                                    AddSODetailLine(gridTable.Rows[i], sSo, gridTable.Rows[i][14].ToString());
+                                    if (!string.IsNullOrWhiteSpace(sodetail))
+                                    {
+                                        conn.SetData("DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(sodetail));
+                                        conn.SetData("DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(sodetail));
+                                        //conn.SetData("delete from h from SO_Header h left join SO_Detail d on d.Sales_Order = h.Sales_Order where d.SO_Detail is null and h.Sales_Order = '" + EscapeSQLString(sSo) + "'");
+                                    }
                                 }
-                                else //Update existing SO + SO detail
-                                    UpdateRow(ref poRows[i]);
+                                else
+                                {
+                                    if (string.IsNullOrWhiteSpace(sodetail))
+                                    {
+                                        //Create SO Detail
+                                        AddSODetailLine(gridTable.Rows[i], sSo, gridTable.Rows[i][14].ToString());
+                                    }
+                                    else //Update existing SO + SO detail
+                                        UpdateRow(ref poRows[i]);
+                                }
                             }
                         }
                     }

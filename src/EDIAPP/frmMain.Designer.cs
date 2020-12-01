@@ -33,6 +33,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sales_Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty_Old = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty_New = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty_Diff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefuseNewQty = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Qty_Diff_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_Old = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_New = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_Diff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefuseNewDate = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Date_Diff_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewDeliveryLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewLineNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDetailLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SO_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SO_Detail_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FileOrigin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtyCum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveryComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip_frmMain = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ouvrirDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,31 +102,6 @@
             this.saveFileDialogCSV = new System.Windows.Forms.SaveFileDialog();
             this.dataGridView_ExtraFeatures = new System.Windows.Forms.DataGridView();
             this.NbRowsLabel = new System.Windows.Forms.Label();
-            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sales_Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty_Old = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty_New = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty_Diff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RefuseNewQty = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Qty_Diff_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_Old = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_New = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_Diff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RefuseNewDate = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Date_Diff_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NewDeliveryLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NewLineNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDetailLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SO_Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SO_Detail_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FileOrigin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QtyCum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeliveryComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.menuStrip_frmMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -176,6 +176,144 @@
             this.dataGridViewMain.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView1_CurrentCellDirtyStateChanged);
             this.dataGridViewMain.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
+            // Material
+            // 
+            this.Material.HeaderText = "Material";
+            this.Material.Name = "Material";
+            // 
+            // Sales_Order
+            // 
+            this.Sales_Order.HeaderText = "Sales Order";
+            this.Sales_Order.Name = "Sales_Order";
+            // 
+            // PO
+            // 
+            this.PO.HeaderText = "PO";
+            this.PO.Name = "PO";
+            // 
+            // Qty_Old
+            // 
+            this.Qty_Old.HeaderText = "Qty Old";
+            this.Qty_Old.Name = "Qty_Old";
+            // 
+            // Qty_New
+            // 
+            this.Qty_New.HeaderText = "Qty New";
+            this.Qty_New.Name = "Qty_New";
+            // 
+            // Qty_Diff
+            // 
+            this.Qty_Diff.HeaderText = "Qty Diff";
+            this.Qty_Diff.Name = "Qty_Diff";
+            // 
+            // RefuseNewQty
+            // 
+            this.RefuseNewQty.HeaderText = "Refuse New Qty";
+            this.RefuseNewQty.Name = "RefuseNewQty";
+            this.RefuseNewQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.RefuseNewQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.RefuseNewQty.Width = 200;
+            // 
+            // Qty_Diff_Value
+            // 
+            this.Qty_Diff_Value.HeaderText = "Qty Diff Value";
+            this.Qty_Diff_Value.Name = "Qty_Diff_Value";
+            // 
+            // Date_Old
+            // 
+            this.Date_Old.HeaderText = "Date Old";
+            this.Date_Old.Name = "Date_Old";
+            // 
+            // Date_New
+            // 
+            this.Date_New.HeaderText = "Date New";
+            this.Date_New.Name = "Date_New";
+            // 
+            // Date_Diff
+            // 
+            this.Date_Diff.HeaderText = "Date Diff";
+            this.Date_Diff.Name = "Date_Diff";
+            // 
+            // RefuseNewDate
+            // 
+            this.RefuseNewDate.HeaderText = "Refuse New Date";
+            this.RefuseNewDate.Name = "RefuseNewDate";
+            this.RefuseNewDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.RefuseNewDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.RefuseNewDate.Width = 200;
+            // 
+            // Date_Diff_Value
+            // 
+            this.Date_Diff_Value.HeaderText = "Date Diff Value";
+            this.Date_Diff_Value.Name = "Date_Diff_Value";
+            this.Date_Diff_Value.Width = 110;
+            // 
+            // NewDeliveryLocation
+            // 
+            this.NewDeliveryLocation.HeaderText = "Plant de livraison";
+            this.NewDeliveryLocation.Name = "NewDeliveryLocation";
+            // 
+            // NewLineNumber
+            // 
+            this.NewLineNumber.HeaderText = "# de ligne du fichier";
+            this.NewLineNumber.Name = "NewLineNumber";
+            // 
+            // SoDetailLine
+            // 
+            this.SoDetailLine.HeaderText = "# de ligne SO";
+            this.SoDetailLine.Name = "SoDetailLine";
+            // 
+            // SO_Detail
+            // 
+            this.SO_Detail.HeaderText = "SO Detail";
+            this.SO_Detail.Name = "SO_Detail";
+            // 
+            // SO_Detail_Status
+            // 
+            this.SO_Detail_Status.HeaderText = "SO Detail Status";
+            this.SO_Detail_Status.Name = "SO_Detail_Status";
+            this.SO_Detail_Status.ReadOnly = true;
+            // 
+            // Unit_Price
+            // 
+            this.Unit_Price.HeaderText = "Prix Unitaire";
+            this.Unit_Price.Name = "Unit_Price";
+            // 
+            // FileOrigin
+            // 
+            this.FileOrigin.HeaderText = "Delivery || Forecast";
+            this.FileOrigin.Name = "FileOrigin";
+            // 
+            // QtyCum
+            // 
+            this.QtyCum.HeaderText = "Qté cum reçue";
+            this.QtyCum.Name = "QtyCum";
+            this.QtyCum.ReadOnly = true;
+            // 
+            // Source
+            // 
+            this.Source.HeaderText = "Source";
+            this.Source.Name = "Source";
+            this.Source.ReadOnly = true;
+            this.Source.Visible = false;
+            // 
+            // Client
+            // 
+            this.Client.HeaderText = "Client";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            // 
+            // DeliveryComment
+            // 
+            this.DeliveryComment.HeaderText = "Commentaire de livraison";
+            this.DeliveryComment.Name = "DeliveryComment";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
             // menuStrip_frmMain
             // 
             this.menuStrip_frmMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -209,7 +347,7 @@
             // ouvrirForecastToolStripMenuItem
             // 
             this.ouvrirForecastToolStripMenuItem.Name = "ouvrirForecastToolStripMenuItem";
-            this.ouvrirForecastToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ouvrirForecastToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.ouvrirForecastToolStripMenuItem.Text = "Ouvrir forecast";
             this.ouvrirForecastToolStripMenuItem.Visible = false;
             this.ouvrirForecastToolStripMenuItem.Click += new System.EventHandler(this.ouvrirForecastToolStripMenuItem_Click);
@@ -217,14 +355,14 @@
             // préférencesToolStripMenuItem
             // 
             this.préférencesToolStripMenuItem.Name = "préférencesToolStripMenuItem";
-            this.préférencesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.préférencesToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.préférencesToolStripMenuItem.Text = "Préférences (Ctrl+P)";
             this.préférencesToolStripMenuItem.Click += new System.EventHandler(this.préférencesToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -578,144 +716,6 @@
             this.NbRowsLabel.Size = new System.Drawing.Size(48, 13);
             this.NbRowsLabel.TabIndex = 26;
             this.NbRowsLabel.Text = "NbRows";
-            // 
-            // Material
-            // 
-            this.Material.HeaderText = "Material";
-            this.Material.Name = "Material";
-            // 
-            // Sales_Order
-            // 
-            this.Sales_Order.HeaderText = "Sales Order";
-            this.Sales_Order.Name = "Sales_Order";
-            // 
-            // PO
-            // 
-            this.PO.HeaderText = "PO";
-            this.PO.Name = "PO";
-            // 
-            // Qty_Old
-            // 
-            this.Qty_Old.HeaderText = "Qty Old";
-            this.Qty_Old.Name = "Qty_Old";
-            // 
-            // Qty_New
-            // 
-            this.Qty_New.HeaderText = "Qty New";
-            this.Qty_New.Name = "Qty_New";
-            // 
-            // Qty_Diff
-            // 
-            this.Qty_Diff.HeaderText = "Qty Diff";
-            this.Qty_Diff.Name = "Qty_Diff";
-            // 
-            // RefuseNewQty
-            // 
-            this.RefuseNewQty.HeaderText = "Refuse New Qty";
-            this.RefuseNewQty.Name = "RefuseNewQty";
-            this.RefuseNewQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.RefuseNewQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.RefuseNewQty.Width = 200;
-            // 
-            // Qty_Diff_Value
-            // 
-            this.Qty_Diff_Value.HeaderText = "Qty Diff Value";
-            this.Qty_Diff_Value.Name = "Qty_Diff_Value";
-            // 
-            // Date_Old
-            // 
-            this.Date_Old.HeaderText = "Date Old";
-            this.Date_Old.Name = "Date_Old";
-            // 
-            // Date_New
-            // 
-            this.Date_New.HeaderText = "Date New";
-            this.Date_New.Name = "Date_New";
-            // 
-            // Date_Diff
-            // 
-            this.Date_Diff.HeaderText = "Date Diff";
-            this.Date_Diff.Name = "Date_Diff";
-            // 
-            // RefuseNewDate
-            // 
-            this.RefuseNewDate.HeaderText = "Refuse New Date";
-            this.RefuseNewDate.Name = "RefuseNewDate";
-            this.RefuseNewDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.RefuseNewDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.RefuseNewDate.Width = 200;
-            // 
-            // Date_Diff_Value
-            // 
-            this.Date_Diff_Value.HeaderText = "Date Diff Value";
-            this.Date_Diff_Value.Name = "Date_Diff_Value";
-            this.Date_Diff_Value.Width = 110;
-            // 
-            // NewDeliveryLocation
-            // 
-            this.NewDeliveryLocation.HeaderText = "Plant de livraison";
-            this.NewDeliveryLocation.Name = "NewDeliveryLocation";
-            // 
-            // NewLineNumber
-            // 
-            this.NewLineNumber.HeaderText = "# de ligne du fichier";
-            this.NewLineNumber.Name = "NewLineNumber";
-            // 
-            // SoDetailLine
-            // 
-            this.SoDetailLine.HeaderText = "# de ligne SO";
-            this.SoDetailLine.Name = "SoDetailLine";
-            // 
-            // SO_Detail
-            // 
-            this.SO_Detail.HeaderText = "SO Detail";
-            this.SO_Detail.Name = "SO_Detail";
-            // 
-            // SO_Detail_Status
-            // 
-            this.SO_Detail_Status.HeaderText = "SO Detail Status";
-            this.SO_Detail_Status.Name = "SO_Detail_Status";
-            this.SO_Detail_Status.ReadOnly = true;
-            // 
-            // Unit_Price
-            // 
-            this.Unit_Price.HeaderText = "Prix Unitaire";
-            this.Unit_Price.Name = "Unit_Price";
-            // 
-            // FileOrigin
-            // 
-            this.FileOrigin.HeaderText = "Delivery || Forecast";
-            this.FileOrigin.Name = "FileOrigin";
-            // 
-            // QtyCum
-            // 
-            this.QtyCum.HeaderText = "Qté cum reçue";
-            this.QtyCum.Name = "QtyCum";
-            this.QtyCum.ReadOnly = true;
-            // 
-            // Source
-            // 
-            this.Source.HeaderText = "Source";
-            this.Source.Name = "Source";
-            this.Source.ReadOnly = true;
-            this.Source.Visible = false;
-            // 
-            // Client
-            // 
-            this.Client.HeaderText = "Client";
-            this.Client.Name = "Client";
-            this.Client.ReadOnly = true;
-            // 
-            // DeliveryComment
-            // 
-            this.DeliveryComment.HeaderText = "Commentaire de livraison";
-            this.DeliveryComment.Name = "DeliveryComment";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
             // 
             // frmMain
             // 
