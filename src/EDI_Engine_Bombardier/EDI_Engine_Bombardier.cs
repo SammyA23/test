@@ -547,12 +547,13 @@ namespace EDI
 
                     if (!PoIs550(po) && qty290.Count > 1)
                     {
+                        string promisedDateNotInString = "";
+                        string poSo = this.GetSalesOrderForPartAndPoAndLine(partNumber, po, sCustomer, line);
                         for (int i = 0; i < qty290.Count; i++)
                         {
-                            string customLine = ((i + 1) * Convert.ToInt32(line290[i])).ToString().PadLeft(3, '0');
                             Transaction trans = new Transaction
                             {
-                                line = customLine,
+                                line = line,
                                 qty = qty290[i],
                                 unit = unit,
                                 unitPrice = unitPrice,
@@ -563,16 +564,56 @@ namespace EDI
                                 customer = sCustomer,
                                 buyer = buyer,
                                 po = po,
-                                salesOrder = this.GetSalesOrderForPartAndPoAndLine(partNumber, po, sCustomer, customLine),
+                                salesOrder = "440|" + poSo,
                                 description = description,
                                 extendedDescription = extendedDescription,
                                 freeFormMessage = freeFormMessage,
                                 promisedDate = date290[i]
                             };
                             transactions.Add(trans);
+
+                            if (!string.IsNullOrWhiteSpace(promisedDateNotInString))
+                                promisedDateNotInString = promisedDateNotInString + ",";
+
+                            promisedDateNotInString = promisedDateNotInString + "'" + date290[i] + "'";
                         }
                         transactionCount++;
                         hasItems = true;
+
+                        if (!string.IsNullOrWhiteSpace(poSo) && !string.IsNullOrWhiteSpace(promisedDateNotInString))
+                        {
+                            var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
+                            var sodToExclude = conn.GetData("select * from so_detail where sales_order = '" + EscapeSQLString(poSo) + "' and replace(convert(varchar(10), Promised_Date, 120), '-', '') not in (" + promisedDateNotInString + ")");
+
+                            if (sodToExclude != null && sodToExclude.Rows != null && sodToExclude.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < sodToExclude.Rows.Count; i++)
+                                {
+                                    Transaction trans = new Transaction
+                                    {
+                                        line = line,
+                                        qty = sodToExclude.Rows[i]["Order_Qty"].ToString(),
+                                        unit = unit,
+                                        unitPrice = unitPrice,
+                                        partNumber = partNumber,
+                                        rev = rev,
+                                        dr = dr,
+                                        shipTo = shipTo,
+                                        customer = sCustomer,
+                                        buyer = buyer,
+                                        po = po,
+                                        salesOrder = "440Delete|" + poSo,
+                                        description = description,
+                                        extendedDescription = extendedDescription,
+                                        freeFormMessage = freeFormMessage,
+                                        promisedDate = sodToExclude.Rows[i]["Promised_Date"].ToString().Replace("-", "").Substring(0, 8)
+                                    };
+                                    transactions.Add(trans);
+                                }
+                            }
+
+                            conn.Dispose();
+                        }
                     }
                     else
                     {
@@ -699,47 +740,109 @@ namespace EDI
                         var updateSoDetailQuery = "";
                         var soDetail = "";
                         var address = GetAddressForShipToId(trans.customer, trans.shipTo);
+                        string so = trans.salesOrder;
 
-                        if (trans.salesOrder.Equals("Sales_Order Closed"))
+                        if (trans.salesOrder.StartsWith("440Delete|"))
                         {
-                            //Empty query, on ne fait rien
+                            so = trans.salesOrder.Replace("440Delete|", "");
+
+                            updateSoQuery = "";
+
+                            soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
+
+                            updateSoDetailQuery = "DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(soDetail) + ";" + "DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(soDetail) + ";";
+
+                            tempRowToInsert["Sales_Order"] = "SOD a supprimer - " + so;
+                            tempRowToInsert["SO_Detail"] = soDetail;
+                            tempRowToInsert["JB_Client"] = trans.customer;
+                            tempRowToInsert["Customer_PO"] = po;
+                            tempRowToInsert["Part"] = trans.partNumber;
+                            tempRowToInsert["Promised_Date"] = trans.promisedDate;
+                            tempRowToInsert["Qty"] = trans.qty;
+                            tempRowToInsert["Plant"] = trans.shipTo;
+                            tempRowToInsert["ReleaseNumber"] = releaseNumber;
+                            tempRowToInsert["SO_HeaderInsert"] = updateSoQuery;
+                            tempRowToInsert["SO_DetailInsert"] = updateSoDetailQuery;
                         }
-                        else if (!trans.salesOrder.Equals("Nouveau Sales_Order"))
+                        else if (trans.salesOrder.StartsWith("440|"))
                         {
+                            string promisedDate2 = trans.promisedDate;
+                            so = trans.salesOrder.Replace("440|", "");
+
                             updateSoQuery = Create850And860UpdateSalesOrderQuery(trans, ref terms,
-                              ref promisedDate, ref address);
+                              ref promisedDate2, ref address);
 
-                            soDetail = GetSingleSoDetailForSalesOrder(trans.salesOrder);
+                            soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
+                            if (string.IsNullOrWhiteSpace(soDetail))
+                            {
+                                soDetail = "Nouveau SOD";
+                                updateSoDetailQuery = Create850And860NewSalesOrderDetailQuery(trans,
+                                      ref promisedDate2, ref address);
 
-                            updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans,
-                              ref soDetail, ref promisedDate, ref address);
+                                updateSoDetailQuery = updateSoDetailQuery.Replace("@so", EscapeSQLString(so));
+                            }
+                            else
+                            {
+                                updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans,
+                                  ref soDetail, ref promisedDate2, ref address);
+                            }
+
+                            tempRowToInsert["Sales_Order"] = so;
+                            tempRowToInsert["SO_Detail"] = soDetail;
+                            tempRowToInsert["JB_Client"] = trans.customer;
+                            tempRowToInsert["Customer_PO"] = po;
+                            tempRowToInsert["Part"] = trans.partNumber;
+                            tempRowToInsert["Promised_Date"] = trans.promisedDate;
+                            tempRowToInsert["Qty"] = trans.qty;
+                            tempRowToInsert["Plant"] = trans.shipTo;
+                            tempRowToInsert["ReleaseNumber"] = releaseNumber;
+                            tempRowToInsert["SO_HeaderInsert"] = updateSoQuery;
+                            tempRowToInsert["SO_DetailInsert"] = updateSoDetailQuery;
                         }
                         else
                         {
-                            try
+                            string promisedDate2 = trans.promisedDate;
+                            if (trans.salesOrder.Equals("Sales_Order Closed"))
                             {
-                                updateSoQuery = Create850And860NewSalesOrderQuery(trans, ref po, ref terms,
-                                  ref orderDate, ref promisedDate, ref address);
-                                updateSoDetailQuery = Create850And860NewSalesOrderDetailQuery(trans,
-                                  ref promisedDate, ref address);
+                                //Empty query, on ne fait rien
                             }
-                            catch (MissingContactFieldException e)
+                            else if (!trans.salesOrder.Equals("Nouveau Sales_Order"))
                             {
-                                throw;
-                            }
-                        }
+                                updateSoQuery = Create850And860UpdateSalesOrderQuery(trans, ref terms,
+                                  ref promisedDate2, ref address);
 
-                        tempRowToInsert["Sales_Order"] = trans.salesOrder;
-                        tempRowToInsert["SO_Detail"] = soDetail;
-                        tempRowToInsert["JB_Client"] = trans.customer;
-                        tempRowToInsert["Customer_PO"] = po;
-                        tempRowToInsert["Part"] = trans.partNumber;
-                        tempRowToInsert["Promised_Date"] = promisedDate;
-                        tempRowToInsert["Qty"] = trans.qty;
-                        tempRowToInsert["Plant"] = trans.shipTo;
-                        tempRowToInsert["ReleaseNumber"] = releaseNumber;
-                        tempRowToInsert["SO_HeaderInsert"] = updateSoQuery;
-                        tempRowToInsert["SO_DetailInsert"] = updateSoDetailQuery;
+                                soDetail = GetSingleSoDetailForSalesOrder(trans.salesOrder);
+
+                                updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans,
+                                  ref soDetail, ref promisedDate2, ref address);
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    updateSoQuery = Create850And860NewSalesOrderQuery(trans, ref po, ref terms,
+                                      ref orderDate, ref promisedDate, ref address);
+                                    updateSoDetailQuery = Create850And860NewSalesOrderDetailQuery(trans,
+                                      ref promisedDate2, ref address);
+                                }
+                                catch (MissingContactFieldException e)
+                                {
+                                    throw;
+                                }
+                            }
+
+                            tempRowToInsert["Sales_Order"] = so;
+                            tempRowToInsert["SO_Detail"] = soDetail;
+                            tempRowToInsert["JB_Client"] = trans.customer;
+                            tempRowToInsert["Customer_PO"] = po;
+                            tempRowToInsert["Part"] = trans.partNumber;
+                            tempRowToInsert["Promised_Date"] = promisedDate2;
+                            tempRowToInsert["Qty"] = trans.qty;
+                            tempRowToInsert["Plant"] = trans.shipTo;
+                            tempRowToInsert["ReleaseNumber"] = releaseNumber;
+                            tempRowToInsert["SO_HeaderInsert"] = updateSoQuery;
+                            tempRowToInsert["SO_DetailInsert"] = updateSoDetailQuery;
+                        }
 
                         extraFeaturesTable.Rows.Add(tempRowToInsert);
                     }
@@ -873,7 +976,7 @@ namespace EDI
             + "Status='@status', Note_Text=@noteText "
             + "WHERE Sales_Order = '@salesOrder'";
 
-            updateSoQuery = updateSoQuery.Replace("@salesOrder", EscapeSQLString(trans.salesOrder));
+            updateSoQuery = updateSoQuery.Replace("@salesOrder", EscapeSQLString(trans.salesOrder.Replace("440|", "")));
             updateSoQuery = updateSoQuery.Replace("@shipTo", EscapeSQLString(address));
             updateSoQuery = updateSoQuery.Replace("@terms", EscapeSQLString(terms));
             if (String.IsNullOrWhiteSpace(promisedDate))
@@ -1479,10 +1582,12 @@ namespace EDI
                     {
                         row["SO_Detail"] = GetSingleSoDetailForSalesOrder(row["Sales_Order"].ToString());
                     }
-
-                    InsertOrUpdateDeliveryForSoDetail(row["SO_Detail"].ToString(),
-                      row["Promised_Date"].ToString(), row["Qty"].ToString(),
-                      !PoIs550(row["Customer_PO"].ToString()) ? "PPAP" : "");
+                    if (!updateSoDetailQuery.StartsWith("DELETE "))
+                    {
+                        InsertOrUpdateDeliveryForSoDetail(row["SO_Detail"].ToString(),
+                          row["Promised_Date"].ToString(), row["Qty"].ToString(),
+                          !PoIs550(row["Customer_PO"].ToString()) ? "PPAP" : "");
+                    }
 
                     var insertBrpModifiedSoQuery = "INSERT INTO brpModifiedSalesOrders "
                     + "(modifiedSO, tempStatus, releaseNumber) VALUES "
@@ -1837,6 +1942,30 @@ namespace EDI
             + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end";
 
             query = query.Replace("@so", EscapeSQLString(so));
+
+            var dt = conn.GetData(query);
+            conn.Dispose();
+
+            if (dt.Rows.Count >= 1)
+            {
+                return dt.Rows[0]["SO_Detail"].ToString();
+            }
+
+            return "";
+        }
+
+        private string GetSingleSoDetailForSalesOrder(in string so, string promisedDate)
+        {
+            var conn = new jbConnection(
+              this.M_DBNAME, this.M_DBSERVER);
+
+            var query = "SELECT SO_Detail.SO_Detail FROM SO_Detail "
+            + "WHERE SO_Detail.Status IN('Hold', 'Open', 'Shipped') AND "
+            + "case when isnumeric(SO_Detail.Sales_Order) = 1 then convert(varchar(max), cast(SO_Detail.Sales_Order as int)) else SO_Detail.Sales_Order end = "
+            + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end and replace(convert(varchar(10), Promised_Date, 120), '-', '') = @promisedDate";
+
+            query = query.Replace("@so", EscapeSQLString(so));
+            query = query.Replace("@promisedDate", EscapeSQLString(promisedDate));
 
             var dt = conn.GetData(query);
             conn.Dispose();
