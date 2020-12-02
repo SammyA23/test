@@ -583,7 +583,7 @@ namespace EDI
                         if (!string.IsNullOrWhiteSpace(poSo) && !string.IsNullOrWhiteSpace(promisedDateNotInString))
                         {
                             var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
-                            var sodToExclude = conn.GetData("select * from so_detail where sales_order = '" + EscapeSQLString(poSo) + "' and replace(convert(varchar(10), Promised_Date, 120), '-', '') not in (" + promisedDateNotInString + ")");
+                            var sodToExclude = conn.GetData("select * from so_detail where sales_order = '" + EscapeSQLString(poSo) + "' and replace(convert(varchar(10), Promised_Date, 120), '-', '') not in (" + promisedDateNotInString + ") and status in ('open', 'hold')");
 
                             if (sodToExclude != null && sodToExclude.Rows != null && sodToExclude.Rows.Count > 0)
                             {
@@ -750,7 +750,7 @@ namespace EDI
 
                             soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
 
-                            updateSoDetailQuery = "if exists(select 1 from SO_Detail where SO_Detail = " + EscapeSQLString(soDetail) + " and status <> 'Shipped') begin DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(soDetail) + ";" + "DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(soDetail) + "; end";
+                            updateSoDetailQuery = "if exists(select 1 from SO_Detail where SO_Detail = " + EscapeSQLString(soDetail) + " and status <> 'Shipped') begin delete from Packlist_Detail where SO_Detail = " + EscapeSQLString(soDetail) + "; DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(soDetail) + ";" + "DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(soDetail) + "; end";
 
                             tempRowToInsert["Sales_Order"] = "SOD à supprimer - " + so;
                             tempRowToInsert["SO_Detail"] = soDetail;
@@ -3021,6 +3021,7 @@ namespace EDI
                                 {
                                     if (!string.IsNullOrWhiteSpace(sodetail))
                                     {
+                                        conn.SetData("DELETE FROM Packlist_Detail WHERE SO_Detail = " + EscapeSQLString(sodetail));
                                         conn.SetData("DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(sodetail));
                                         conn.SetData("DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(sodetail));
                                         //conn.SetData("delete from h from SO_Header h left join SO_Detail d on d.Sales_Order = h.Sales_Order where d.SO_Detail is null and h.Sales_Order = '" + EscapeSQLString(sSo) + "'");
