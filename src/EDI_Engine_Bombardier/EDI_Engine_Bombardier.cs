@@ -583,7 +583,7 @@ namespace EDI
                         if (!string.IsNullOrWhiteSpace(poSo) && !string.IsNullOrWhiteSpace(promisedDateNotInString))
                         {
                             var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
-                            var sodToExclude = conn.GetData("select * from so_detail where sales_order = '" + EscapeSQLString(poSo) + "' and replace(convert(varchar(10), Promised_Date, 120), '-', '') not in (" + promisedDateNotInString + ") and status in ('open', 'hold')");
+                            var sodToExclude = conn.GetData("select Order_Qty, convert(varchar(10), Promised_Date, 120) as Promised_Date from so_detail where sales_order = '" + EscapeSQLString(poSo) + "' and replace(convert(varchar(10), Promised_Date, 120), '-', '') not in (" + promisedDateNotInString + ") and status in ('open', 'hold')");
 
                             if (sodToExclude != null && sodToExclude.Rows != null && sodToExclude.Rows.Count > 0)
                             {
@@ -750,7 +750,12 @@ namespace EDI
 
                             soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
 
-                            updateSoDetailQuery = "if exists(select 1 from SO_Detail where SO_Detail = " + EscapeSQLString(soDetail) + " and status <> 'Shipped') begin delete from Packlist_Detail where SO_Detail = " + EscapeSQLString(soDetail) + "; DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(soDetail) + ";" + "DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(soDetail) + "; end";
+                            updateSoDetailQuery = "";
+
+                            if (!string.IsNullOrWhiteSpace(soDetail))
+                            {
+                                updateSoDetailQuery = "if exists(select 1 from SO_Detail where SO_Detail = " + EscapeSQLString(soDetail) + " and status <> 'Shipped') begin delete from Packlist_Detail where SO_Detail = " + EscapeSQLString(soDetail) + "; DELETE FROM Delivery WHERE Delivery.SO_Detail = " + EscapeSQLString(soDetail) + ";" + "DELETE FROM SO_Detail WHERE SO_Detail.SO_Detail = " + EscapeSQLString(soDetail) + "; end";
+                            }
 
                             tempRowToInsert["Sales_Order"] = "SOD à supprimer - " + so;
                             tempRowToInsert["SO_Detail"] = soDetail;
