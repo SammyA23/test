@@ -545,7 +545,7 @@ namespace EDI
                         Environment.Exit(0);
                     }
 
-                    if (!PoIs550(po) && qty290.Count > 1)
+                    if (!PoIs550(po))
                     {
                         string promisedDateNotInString = "";
                         string poSo = this.GetSalesOrderForPartAndPoAndLine(partNumber, po, sCustomer, line);
@@ -2098,40 +2098,42 @@ namespace EDI
                 //TODOPLB: removed
                 RemoveDatesFromArrayPriorTo(ref eightThirtyRowsArray, dtRelativeMonday);
 
+                if(eightThirtyRowsArray.Length == 0)
+                {
+                    return eightSixtyTwoRowsArray;
+                }
+
                 //if we still have two lines in the 830 array for the week of dtRelativeMonday we must abort and
                 //get rid of all 862 and 830 lines. We simply do not handle this situation. BRP promised only one
                 //line in the 830 per week.
-                //TODOPLB: validate this, not sure we have to keep it
-                //if (eightThirtyRowsArray.Length > 1 &&
-                //  (DateTime)eightThirtyRowsArray[0]["Date_New"] >= dtRelativeMonday &&
-                //  (DateTime)eightThirtyRowsArray[0]["Date_New"] <= dtRelativeMonday.AddDays(5) &&
-                //  (DateTime)eightThirtyRowsArray[1]["Date_New"] >= dtRelativeMonday &&
-                //  (DateTime)eightThirtyRowsArray[1]["Date_New"] <= dtRelativeMonday.AddDays(5))
-                //{
-                //    var except = new ConstraintException("TooMany830Lines");
-                //    except.Data.Add("PoLines", eightSixtyTwoRowsArray.Length + eightThirtyRowsArray.Length);
-                //    except.Data.Add("WeekOf", dtRelativeMonday);
-                //    throw except;
-                //}
+                if (eightThirtyRowsArray.Length > 1 &&
+                  (DateTime)eightThirtyRowsArray[0]["Date_New"] >= dtRelativeMonday &&
+                  (DateTime)eightThirtyRowsArray[0]["Date_New"] <= dtRelativeMonday.AddDays(5) &&
+                  (DateTime)eightThirtyRowsArray[1]["Date_New"] >= dtRelativeMonday &&
+                  (DateTime)eightThirtyRowsArray[1]["Date_New"] <= dtRelativeMonday.AddDays(5))
+                {
+                    var except = new ConstraintException("TooMany830Lines");
+                    except.Data.Add("PoLines", eightSixtyTwoRowsArray.Length + eightThirtyRowsArray.Length);
+                    except.Data.Add("WeekOf", dtRelativeMonday);
+                    throw except;
+                }
 
-                //TODOPLB: validate this, not sure we have to keep it
                 //if ((DateTime)eightThirtyRowsArray[0]["Date_New"] >= dtRelativeMonday &&
                 //  (DateTime)eightThirtyRowsArray[0]["Date_New"] <= dtRelativeMonday.AddDays(5))
                 //{
-                foreach (var row in eightSixtyTwoRowsArray)
-                {
-                    //TODOPLB: date validation?
-                    //if ((DateTime)row["Date_New"] >= dtRelativeMonday && (DateTime)row["Date_New"] <= dtRelativeMonday.AddDays(5))
-                    //{
-                    eightThirtyRowsArray[0]["NewQty"] = (double)eightThirtyRowsArray[0]["NewQty"] - (double)row["NewQty"];
-                    //}
-
-                    if ((double)eightThirtyRowsArray[0]["NewQty"] < 0.0d)
+                    foreach (var row in eightSixtyTwoRowsArray)
                     {
-                        RemoveAt(ref eightThirtyRowsArray, 0);
-                        break;
+                        if ((DateTime)row["Date_New"] >= dtRelativeMonday && (DateTime)row["Date_New"] <= dtRelativeMonday.AddDays(5))
+                        {
+                            eightThirtyRowsArray[0]["NewQty"] = (double)eightThirtyRowsArray[0]["NewQty"] - (double)row["NewQty"];
+                        }
+
+                        //if ((double)eightThirtyRowsArray[0]["NewQty"] < 0.0d)
+                        //{
+                        //    RemoveAt(ref eightThirtyRowsArray, 0);
+                        //    break;
+                        //}
                     }
-                }
                 //}
 
                 //find how many rows are remaining in the 830 array
@@ -2465,6 +2467,10 @@ namespace EDI
             if (dtJbSo == null || dtJbSo.Rows.Count == 0) //No sales order in JB, fill placeholder data to set creation for write operation
             {
                 InsertNewFileRowsWithoutMatchingJBSalesOrder(ref poRows, ref mDataTable, ref currentRowIndex);
+
+                conn.Dispose();
+
+                return currentRowIndex;
             }
             else
             {
@@ -2536,7 +2542,7 @@ namespace EDI
 
                                 mDataTable.Rows.Add(newRow);
                                 PerformCalculationsForRow(ref newRow);
-                                currentRowIndex++;
+                                //currentRowIndex++;
 
                                 row["AlreadyMerged"] = true;
                             }
@@ -2570,7 +2576,7 @@ namespace EDI
                             mDataTable.Rows.Add(newRow);
                             PerformCalculationsForRow(ref newRow);
 
-                            currentRowIndex++;
+                            //currentRowIndex++;
 
                             matchedRow[0]["AlreadyMerged"] = true;
                         }
@@ -2595,7 +2601,7 @@ namespace EDI
                             mDataTable.Rows.Add(newRow);
                             PerformCalculationsForRow(ref newRow);
 
-                            currentRowIndex++;
+                            //currentRowIndex++;
                         }
                     }
 
@@ -2631,7 +2637,7 @@ namespace EDI
 
             conn.Dispose();
 
-            return currentRowIndex;
+            return currentRowIndex + iPoLines;
         }
 
         protected override void PerformCalculationsForRow(ref DataTable mDataTable, int iCurrentRow)
@@ -2840,7 +2846,7 @@ namespace EDI
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
 
-                        //if (m_MergedTable.Rows[i][0].ToString() != "706202572")
+                        //if (m_MergedTable.Rows[i][0].ToString() != "705202560")
                         //{
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
