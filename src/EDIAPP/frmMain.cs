@@ -1662,7 +1662,14 @@ namespace EDIAPP
 
         private static void RealStart(ref EDI_Engine_Base engine, string str, string[] args)
         {
-            engine.ExecuteExtraFeature(str, args);
+            try
+            {
+                engine.ExecuteExtraFeature(str, args);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
