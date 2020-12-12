@@ -2588,30 +2588,59 @@ namespace EDI
                         //Then we process the matched row from step 1
                         if (matchedRow.Length > 0)
                         {
-                            var newRow = mDataTable.NewRow();
+                            {
+                                var newRow = mDataTable.NewRow();
 
-                            newRow[0] = sCurrentPart;
-                            newRow[1] = sJbSo;
-                            newRow[2] = sCurrentPo;
-                            newRow[3] = matchedRow[0]["Order_Qty"];
-                            newRow[4] = poRows[x][4].ToString();
-                            newRow[8] = matchedRow[0]["Promised_Date"];
-                            newRow[9] = poRows[x][9];
-                            newRow[13] = poRows[x][13];
-                            newRow[14] = poRows[x][14];
-                            newRow[15] = matchedRow[0]["SO_Line"];
-                            newRow[16] = matchedRow[0]["SO_Detail"];
-                            newRow[17] = matchedRow[0]["Status"];
+                                newRow[0] = sCurrentPart;
+                                newRow[1] = sJbSo;
+                                newRow[2] = sCurrentPo;
+                                newRow[3] = matchedRow[0]["Order_Qty"];
+                                newRow[4] = poRows[x][4].ToString();
+                                newRow[8] = matchedRow[0]["Promised_Date"];
+                                newRow[9] = poRows[x][9];
+                                newRow[13] = poRows[x][13];
+                                newRow[14] = poRows[x][14];
+                                newRow[15] = matchedRow[0]["SO_Line"];
+                                newRow[16] = matchedRow[0]["SO_Detail"];
+                                newRow[17] = matchedRow[0]["Status"];
 
-                            newRow[18] = matchedRow[0]["CustomerPartPrice"] != DBNull.Value ? matchedRow[0]["CustomerPartPrice"] : matchedRow[0]["Unit_Price"];
+                                newRow[18] = matchedRow[0]["CustomerPartPrice"] != DBNull.Value ? matchedRow[0]["CustomerPartPrice"] : matchedRow[0]["Unit_Price"];
 
-                            newRow[19] = poRows[x][19];
-                            newRow[20] = poRows[x][20];
-                            newRow[21] = "JB+CSV";
-                            newRow[22] = M_CUSTOMER_ID;
+                                newRow[19] = poRows[x][19];
+                                newRow[20] = poRows[x][20];
+                                newRow[21] = "JB+CSV";
+                                newRow[22] = M_CUSTOMER_ID;
 
-                            mDataTable.Rows.Add(newRow);
-                            PerformCalculationsForRow(ref newRow);
+                                mDataTable.Rows.Add(newRow);
+                                PerformCalculationsForRow(ref newRow);
+                            }
+
+                            if(matchedRow[0]["Status"].ToString() == "Backorder")
+                            {
+                                var newRow = mDataTable.NewRow();
+
+                                newRow[0] = sCurrentPart;
+                                newRow[1] = sJbSo;
+                                newRow[2] = sCurrentPo;
+                                newRow[3] = matchedRow[0]["Order_Qty"];
+                                newRow[4] = poRows[x][4].ToString();
+                                newRow[8] = matchedRow[0]["Promised_Date"];
+                                newRow[9] = poRows[x][9];
+                                newRow[13] = poRows[x][13];
+                                newRow[14] = poRows[x][14];
+                                newRow[15] = matchedRow[0]["SO_Line"];
+
+                                newRow[18] = matchedRow[0]["CustomerPartPrice"] != DBNull.Value ? matchedRow[0]["CustomerPartPrice"] : matchedRow[0]["Unit_Price"];
+
+                                newRow[19] = poRows[x][19];
+                                newRow[20] = poRows[x][20];
+
+                                newRow[21] = "JB";
+                                newRow[22] = M_CUSTOMER_ID;
+
+                                mDataTable.Rows.Add(newRow);
+                                PerformCalculationsForRow(ref newRow);
+                            }
 
                             //currentRowIndex++;
 
