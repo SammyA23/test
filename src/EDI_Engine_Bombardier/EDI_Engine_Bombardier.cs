@@ -434,7 +434,7 @@ namespace EDI
             var extendedDescription = "";
             var rev = "";
             var dr = "";
-            var shipTo = "";
+            var shipTo = "MAIN";
             var fileTransactionCount = "";
             var freeFormMessage = "";
 
@@ -649,7 +649,7 @@ namespace EDI
                     dr = "";
                     description = "";
                     extendedDescription = "";
-                    shipTo = "";
+                    shipTo = "MAIN";
                     qty290 = new List<string>();
                     date290 = new List<string>();
                     line290 = new List<string>();
@@ -1923,12 +1923,28 @@ namespace EDI
             CreateTheDataTable(out mDataTable);
 
             bool has830 = false;
-            for (int i = 0; i < tempTable.Rows.Count; i++)
+            for (int i = tempTable.Rows.Count - 1; i >= 0; i--)
             {
                 if (tempTable.Rows[i][19].ToString() == "830")
                 {
                     has830 = true;
-                    break;
+                }
+
+                if (!string.IsNullOrWhiteSpace(tempTable.Rows[i]["SO_Detail"].ToString())) continue;
+
+                for (int i2 = 0; i2 < tempTable.Rows.Count; i2++)
+                {
+                    if (i == i2) continue;
+
+                    if (tempTable.Rows[i]["Material"].ToString() == tempTable.Rows[i2]["Material"].ToString() &&
+                       tempTable.Rows[i]["Sales_Order"].ToString() == tempTable.Rows[i2]["Sales_Order"].ToString() &&
+                       tempTable.Rows[i]["Customer_PO"].ToString() == tempTable.Rows[i2]["Customer_PO"].ToString() &&
+                       tempTable.Rows[i]["Promised_Date"].ToString() == tempTable.Rows[i2]["Promised_Date"].ToString() &&
+                       tempTable.Rows[i]["Date_New"].ToString() == tempTable.Rows[i2]["Date_New"].ToString())
+                    {
+                        tempTable.Rows.RemoveAt(i2);
+                        break;
+                    }
                 }
             }
 
@@ -1983,6 +1999,30 @@ namespace EDI
             + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end order by 1 desc";
 
             query = query.Replace("@so", EscapeSQLString(so));
+
+            var dt = conn.GetData(query);
+            conn.Dispose();
+
+            if (dt.Rows.Count >= 1)
+            {
+                return dt.Rows[0]["SO_Detail"].ToString();
+            }
+
+            return "";
+        }
+
+        private string GetSingleSoDetailForSalesOrderNotShipped(in string so, string promisedDate)
+        {
+            var conn = new jbConnection(
+              this.M_DBNAME, this.M_DBSERVER);
+
+            var query = "SELECT SO_Detail.SO_Detail FROM SO_Detail "
+            + "WHERE SO_Detail.Status IN('Hold', 'Open') AND "
+            + "case when isnumeric(SO_Detail.Sales_Order) = 1 then convert(varchar(max), cast(SO_Detail.Sales_Order as int)) else SO_Detail.Sales_Order end = "
+            + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end and replace(convert(varchar(10), Promised_Date, 120), '-', '') = @promisedDate";
+
+            query = query.Replace("@so", EscapeSQLString(so));
+            query = query.Replace("@promisedDate", EscapeSQLString(promisedDate?.Replace("-", "")));
 
             var dt = conn.GetData(query);
             conn.Dispose();
@@ -2615,7 +2655,7 @@ namespace EDI
                                 PerformCalculationsForRow(ref newRow);
                             }
 
-                            if(matchedRow[0]["Status"].ToString() == "Backorder")
+                            if (matchedRow[0]["Status"].ToString() == "Backorder")
                             {
                                 var newRow = mDataTable.NewRow();
 
@@ -2666,7 +2706,6 @@ namespace EDI
 
                             mDataTable.Rows.Add(newRow);
                             PerformCalculationsForRow(ref newRow);
-
                             //currentRowIndex++;
                         }
                     }
@@ -2832,7 +2871,7 @@ namespace EDI
 
             var sUpdateDelivery = "UPDATE Delivery SET ";
 
-            sUpdate += "Promised_Date = '" + EscapeSQLString(date) + "'";
+            sUpdate += "Promised_Date = '" + EscapeSQLString(date) + "', Last_Updated = getdate()";
             sUpdateDelivery += "Promised_Date = '" + EscapeSQLString(date) + "' , Requested_Date = '" + EscapeSQLString(date) + "' ";
 
             sUpdate += ", Order_Qty = " + EscapeSQLString(qty) + ", Deferred_Qty = " + EscapeSQLString(qty);
@@ -3027,6 +3066,8 @@ namespace EDI
         {
             try
             {
+                //var dateFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
+                //var timePattern = CultureInfo.CurrentCulture.DateTimeFormat.LongTimePattern;
                 var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
                 var datagrid = (DataGridView)obj;
                 var gridTable = new DataTable();
@@ -3105,13 +3146,19 @@ namespace EDI
                                 }
                                 else
                                 {
+                                    //var newPromisedDate = DateTime.ParseExact(gridTable.Rows[i][9].ToString(), dateFormat + " " + timePattern, CultureInfo.InvariantCulture);
+                                    //var sDate = newPromisedDate.ToString("yyyy-MM-dd");
+                                    //sodetail = GetSingleSoDetailForSalesOrderNotShipped(sSo, sDate);
                                     if (string.IsNullOrWhiteSpace(sodetail))
                                     {
                                         //Create SO Detail
                                         AddSODetailLine(gridTable.Rows[i], sSo, gridTable.Rows[i][14].ToString());
                                     }
                                     else //Update existing SO + SO detail
+                                    {
+                                        //poRows[i][16] = sodetail;
                                         UpdateRow(ref poRows[i]);
+                                    }
                                 }
                             }
                         }
@@ -3122,7 +3169,20 @@ namespace EDI
 
                         for (var i = 1; i < poRows.Length; i++)
                         {
+                            //var newPromisedDate = DateTime.ParseExact(gridTable.Rows[0 + i][9].ToString(), dateFormat + " " + timePattern, CultureInfo.InvariantCulture);
+                            //var sDate = newPromisedDate.ToString("yyyy-MM-dd");
+                            //string sodetail = GetSingleSoDetailForSalesOrderNotShipped(sSo, sDate);
+                            //if (string.IsNullOrWhiteSpace(sodetail))
+                            //{
+                            //Create SO Detail
                             AddSODetailLine(gridTable.Rows[0 + i], newSo, gridTable.Rows[0 + i][14].ToString());
+                            //}
+                            //else //Update existing SO + SO detail
+                            //{
+                            //    poRows[i][1] = newSo;
+                            //    poRows[i][16] = sodetail;
+                            //    UpdateRow(ref poRows[i]);
+                            //}
                         }
                     }
 
