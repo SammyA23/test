@@ -686,11 +686,22 @@ namespace EDI
           in string customer, in string line)
         {
             var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
+
+            if (part == "SUPPLIER_SETUP")
+            {
+                string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(po) + "' and h.Customer = '" + EscapeSQLString(customer) + "' and d.Material = 'SUPPLIER_SETUP'";
+                var dtSS = conn.GetData(sql);
+                if (dtSS != null && dtSS.Rows != null && dtSS.Rows.Count > 0)
+                {
+                    return dtSS.Rows[0][0].ToString();
+                }
+            }
+
             var query = "SELECT TOP 1 SOD.Sales_Order FROM SO_Detail AS SOD LEFT "
-            + "JOIN SO_Header SOH ON SOD.Sales_Order = SOH.Sales_Order WHERE "
-            + "SOD.Material LIKE '@part' AND SOH.Customer_PO LIKE '@po' AND "
-            + "SOH.Customer LIKE '@customer' AND SOH.Status NOT LIKE 'Closed' "
-            + " AND case when isnumeric(SOD.SO_Line) = 1 then convert(varchar(max), cast(SOD.SO_Line as int)) else SOD.SO_Line end = case when isnumeric('@soline') = 1 then convert(varchar(max), cast('@soline' as int)) else '@soline' end ";
+                        + "JOIN SO_Header SOH ON SOD.Sales_Order = SOH.Sales_Order WHERE "
+                        + "SOD.Material LIKE '@part' AND SOH.Customer_PO LIKE '@po' AND "
+                        + "SOH.Customer LIKE '@customer' AND SOH.Status NOT LIKE 'Closed' "
+                        + " AND case when isnumeric(SOD.SO_Line) = 1 then convert(varchar(max), cast(SOD.SO_Line as int)) else SOD.SO_Line end = case when isnumeric('@soline') = 1 then convert(varchar(max), cast('@soline' as int)) else '@soline' end ";
 
             query = query.Replace("@po", EscapeSQLString(po));
             query = query.Replace("@part", EscapeSQLString(part));

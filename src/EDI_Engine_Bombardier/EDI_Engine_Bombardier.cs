@@ -354,6 +354,28 @@ namespace EDI
                     if (DoesCustomerExistInJbDb(trans.customer) &&
                       DoesCustomerHaveAddressInJbDb(trans.customer, trans.shipTo))
                     {
+                        if(trans.partNumber == "SUPPLIER_SETUP")
+                        {
+                            string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and h.Customer = '" + EscapeSQLString(trans.customer) + "' and d.Material = 'SUPPLIER_SETUP'";
+                            var dt = conn.GetData(sql);
+                            if(dt != null && dt.Rows != null && dt.Rows.Count > 0)
+                            {
+                                tempRowToInsert["Sales_Order"] = dt.Rows[0][0];
+                                tempRowToInsert["JB_Client"] = trans.customer;
+                                tempRowToInsert["Customer_PO"] = po;
+                                tempRowToInsert["Part"] = trans.partNumber;
+                                tempRowToInsert["Promised_Date"] = promisedDate;
+                                tempRowToInsert["Qty"] = trans.qty;
+                                tempRowToInsert["Plant"] = trans.shipTo;
+                                tempRowToInsert["ReleaseNumber"] = releaseNumber;
+                                tempRowToInsert["SO_HeaderInsert"] = "";
+                                tempRowToInsert["SO_DetailInsert"] = "";
+
+                                extraFeaturesTable.Rows.Add(tempRowToInsert);
+                                continue;
+                            }
+                        }
+
                         var address = GetAddressForShipToId(trans.customer, trans.shipTo);
 
                         var insertSoQuery = Create850And860NewSalesOrderQuery(
@@ -564,7 +586,7 @@ namespace EDI
                                 customer = sCustomer,
                                 buyer = buyer,
                                 po = po,
-                                salesOrder = "440|" + poSo,
+                                salesOrder = (partNumber == "SUPPLIER_SETUP" ? "" : "440|") + poSo,
                                 description = description,
                                 extendedDescription = extendedDescription,
                                 freeFormMessage = freeFormMessage,
@@ -832,13 +854,16 @@ namespace EDI
                             }
                             else if (!trans.salesOrder.Equals("Nouveau Sales_Order"))
                             {
-                                updateSoQuery = Create850And860UpdateSalesOrderQuery(trans, ref terms,
-                                  ref promisedDate2, ref address, trans.salesOrder);
+                                if (trans.partNumber != "SUPPLIER_SETUP")
+                                {
+                                    updateSoQuery = Create850And860UpdateSalesOrderQuery(trans, ref terms,
+                                      ref promisedDate2, ref address, trans.salesOrder);
 
-                                soDetail = GetSingleSoDetailForSalesOrder(trans.salesOrder);
+                                    soDetail = GetSingleSoDetailForSalesOrder(trans.salesOrder);
 
-                                updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans,
-                                  ref soDetail, ref promisedDate2, ref address);
+                                    updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans,
+                                      ref soDetail, ref promisedDate2, ref address);
+                                }
                             }
                             else
                             {
@@ -1391,28 +1416,31 @@ namespace EDI
                 var insertSoQuery = row["SO_HeaderInsert"].ToString();
                 var insertSoDetailQuery = row["SO_DetailInsert"].ToString();
 
-                int soNumber = AcquireNextSalesOrderNumberAndIncrementAutoNumber();
+                if (!string.IsNullOrWhiteSpace(insertSoQuery) && !string.IsNullOrWhiteSpace(insertSoDetailQuery))
+                {
+                    int soNumber = AcquireNextSalesOrderNumberAndIncrementAutoNumber();
 
-                insertSoQuery = insertSoQuery.Replace("@so", soNumber.ToString());
-                insertSoDetailQuery = insertSoDetailQuery.Replace("@so", soNumber.ToString());
+                    insertSoQuery = insertSoQuery.Replace("@so", soNumber.ToString());
+                    insertSoDetailQuery = insertSoDetailQuery.Replace("@so", soNumber.ToString());
 
-                conn.SetData(insertSoQuery);
-                conn.SetData(insertSoDetailQuery);
+                    conn.SetData(insertSoQuery);
+                    conn.SetData(insertSoDetailQuery);
 
-                string sod = GetSingleSoDetailForSalesOrder(soNumber.ToString());
+                    string sod = GetSingleSoDetailForSalesOrder(soNumber.ToString());
 
-                InsertOrUpdateDeliveryForSoDetail(sod,
-                      row["Promised_Date"].ToString(), row["Qty"].ToString(),
-                      !PoIs550(row["Customer_PO"].ToString()) ? "PPAP" : "");
+                    InsertOrUpdateDeliveryForSoDetail(sod,
+                          row["Promised_Date"].ToString(), row["Qty"].ToString(),
+                          !PoIs550(row["Customer_PO"].ToString()) ? "PPAP" : "");
 
-                var insertBrpCreatedSoQuery = "INSERT INTO brpCreatedSalesOrders "
-                + "(createdSO, tempStatus, releaseNumber) VALUES "
-                + "(@createdSO, '850', @releaseNumber)";
-                var command = new System.Data.SqlClient.SqlCommand(
-                  insertBrpCreatedSoQuery, connEdi);
-                command.Parameters.AddWithValue("@createdSO", EscapeSQLString(soNumber.ToString()));
-                command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
-                command.ExecuteNonQuery();
+                    var insertBrpCreatedSoQuery = "INSERT INTO brpCreatedSalesOrders "
+                    + "(createdSO, tempStatus, releaseNumber) VALUES "
+                    + "(@createdSO, '850', @releaseNumber)";
+                    var command = new System.Data.SqlClient.SqlCommand(
+                      insertBrpCreatedSoQuery, connEdi);
+                    command.Parameters.AddWithValue("@createdSO", EscapeSQLString(soNumber.ToString()));
+                    command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
+                    command.ExecuteNonQuery();
+                }
 
                 progressreport(1);
             }
@@ -2569,7 +2597,7 @@ namespace EDI
                     + "LEFT JOIN Customer_Part ON SO_Header.Customer = Customer_Part.Customer AND SO_Detail.Material = Customer_Part.Material "
                     + "WHERE case when isnumeric(SO_Detail.Sales_Order) = 1 then convert(varchar(max), cast(SO_Detail.Sales_Order as int)) else SO_Detail.Sales_Order end = "
                     + "case when isnumeric('" + EscapeSQLString(sJbSo) + "') = 1 then convert(varchar(max), cast('" + EscapeSQLString(sJbSo) + "' as int)) else '" + EscapeSQLString(sJbSo) + "' end  AND (SO_Detail.Material LIKE '" + EscapeSQLString(sCurrentPart) + "') "
-                    + "AND (SO_Detail.Status IN ('Open', 'Hold', 'Backorder') OR (SO_Detail.Status LIKE 'Shipped' AND SO_Detail.Promised_Date >= getdate()))"
+                    + "AND (SO_Detail.Status IN ('Open', 'Hold', 'Backorder', 'Shipped') OR (SO_Detail.Status LIKE 'Shipped' AND SO_Detail.Promised_Date >= getdate()))"
                     + (has830 ? "" : " and SO_Detail.SO_Line <> '830' ")
                     + "ORDER BY SO_Detail.Promised_Date ASC";
 
@@ -2599,6 +2627,7 @@ namespace EDI
                         {
                             foreach (var row in priorUnmatchedRows)
                             {
+                                if (row["Status"].ToString() == "Shipped") continue;
                                 var newRow = mDataTable.NewRow();
 
                                 newRow[0] = sCurrentPart;
@@ -2714,6 +2743,7 @@ namespace EDI
                     var unmatchedRow = jbTable.Select("AlreadyMerged <> True");
                     foreach (var row in unmatchedRow)
                     {
+                        if (row["Status"].ToString() == "Shipped") continue;
                         var newRow = mDataTable.NewRow();
 
                         newRow[0] = sCurrentPart;
