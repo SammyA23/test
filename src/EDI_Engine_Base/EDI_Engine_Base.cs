@@ -689,7 +689,7 @@ namespace EDI
 
             if (part == "SUPPLIER_SETUP")
             {
-                string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(po) + "' and h.Customer = '" + EscapeSQLString(customer) + "' and d.Material = 'SUPPLIER_SETUP'";
+                string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Status = 'Open' and d.Status = 'Open' and h.Customer_PO = '" + EscapeSQLString(po) + "' and h.Customer = '" + EscapeSQLString(customer) + "' and d.Material = 'SUPPLIER_SETUP'";
                 var dtSS = conn.GetData(sql);
                 if (dtSS != null && dtSS.Rows != null && dtSS.Rows.Count > 0)
                 {
@@ -714,7 +714,7 @@ namespace EDI
             {
                 return dt.Rows[0]["Sales_Order"].ToString();
             }
-            else
+            else if (part != "SUPPLIER_SETUP")
             {
                 query = "SELECT TOP 1 SOD.Sales_Order FROM SO_Detail AS SOD LEFT "
                  + "JOIN SO_Header SOH ON SOD.Sales_Order = SOH.Sales_Order WHERE "
@@ -735,9 +735,8 @@ namespace EDI
                     //return dt.Rows[0]["Sales_Order"].ToString();
                     return "Sales_Order Closed";
                 }
-
-                return "Nouveau Sales_Order";
             }
+            return "Nouveau Sales_Order";
         }
 
         protected string GetTaxCodeFromSO(string so)

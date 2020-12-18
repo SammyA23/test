@@ -356,7 +356,7 @@ namespace EDI
                     {
                         if(trans.partNumber == "SUPPLIER_SETUP")
                         {
-                            string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and h.Customer = '" + EscapeSQLString(trans.customer) + "' and d.Material = 'SUPPLIER_SETUP'";
+                            string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Status = 'Open' and d.Status = 'Open' and h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and h.Customer = '" + EscapeSQLString(trans.customer) + "' and d.Material = 'SUPPLIER_SETUP'";
                             var dt = conn.GetData(sql);
                             if(dt != null && dt.Rows != null && dt.Rows.Count > 0)
                             {
