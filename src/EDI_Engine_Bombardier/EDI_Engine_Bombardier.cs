@@ -354,11 +354,16 @@ namespace EDI
                     if (DoesCustomerExistInJbDb(trans.customer) &&
                       DoesCustomerHaveAddressInJbDb(trans.customer, trans.shipTo))
                     {
-                        if(trans.partNumber == "SUPPLIER_SETUP")
+                        var address = GetAddressForShipToId(trans.customer, trans.shipTo);
+
+                        var insertSoDetailQuery = Create850And860NewSalesOrderDetailQuery(trans,
+                          ref promisedDate, ref address);
+
+                        if (trans.partNumber == "SUPPLIER_SETUP")
                         {
-                            string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Status = 'Open' and d.Status = 'Open' and h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and h.Customer = '" + EscapeSQLString(trans.customer) + "' and d.Material = 'SUPPLIER_SETUP'";
+                            string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Status = 'Open' and d.Status = 'Open' and h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and h.Customer = '" + EscapeSQLString(trans.customer) + "' and d.Material = 'SUPPLIER_SETUP' ";
                             var dt = conn.GetData(sql);
-                            if(dt != null && dt.Rows != null && dt.Rows.Count > 0)
+                            if (dt != null && dt.Rows != null && dt.Rows.Count > 0)
                             {
                                 tempRowToInsert["Sales_Order"] = dt.Rows[0][0];
                                 tempRowToInsert["JB_Client"] = trans.customer;
@@ -371,18 +376,20 @@ namespace EDI
                                 tempRowToInsert["SO_HeaderInsert"] = "";
                                 tempRowToInsert["SO_DetailInsert"] = "";
 
+                                sql = "select d.SO_Detail from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Status = 'Open' and d.Status = 'Open' and h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and h.Customer = '" + EscapeSQLString(trans.customer) + "' and d.Material = 'SUPPLIER_SETUP' and case when isnumeric(d.SO_Line) = 1 then convert(varchar(max), cast(d.SO_Line as int)) else d.SO_Line end = case when isnumeric('@soline') = 1 then convert(varchar(max), cast('@soline' as int)) else '@soline' end ";
+                                sql = sql.Replace("@soline", EscapeSQLString(trans.line));
+                                dt = conn.GetData(sql);
+
+                                if (dt != null && dt.Rows != null && dt.Rows.Count > 0)
+                                    tempRowToInsert["SO_DetailInsert"] = insertSoDetailQuery;
+
                                 extraFeaturesTable.Rows.Add(tempRowToInsert);
                                 continue;
                             }
                         }
 
-                        var address = GetAddressForShipToId(trans.customer, trans.shipTo);
-
                         var insertSoQuery = Create850And860NewSalesOrderQuery(
                           trans, ref po, ref terms, ref orderDate, ref promisedDate, ref address);
-
-                        var insertSoDetailQuery = Create850And860NewSalesOrderDetailQuery(trans,
-                          ref promisedDate, ref address);
 
                         tempRowToInsert["Sales_Order"] = "Nouveau Sales_Order";
                         tempRowToInsert["JB_Client"] = trans.customer;
@@ -656,6 +663,7 @@ namespace EDI
                             description = description,
                             extendedDescription = extendedDescription,
                             freeFormMessage = freeFormMessage,
+                            promisedDate = promisedDate
                         };
                         transactions.Add(trans);
                         transactionCount++;
@@ -856,13 +864,20 @@ namespace EDI
                             {
                                 if (trans.partNumber != "SUPPLIER_SETUP")
                                 {
-                                    updateSoQuery = Create850And860UpdateSalesOrderQuery(trans, ref terms,
-                                      ref promisedDate2, ref address, trans.salesOrder);
+                                    updateSoQuery = Create850And860UpdateSalesOrderQuery(trans, ref terms, ref promisedDate2, ref address, trans.salesOrder);
 
                                     soDetail = GetSingleSoDetailForSalesOrder(trans.salesOrder);
 
-                                    updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans,
-                                      ref soDetail, ref promisedDate2, ref address);
+                                    updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans, ref soDetail, ref promisedDate2, ref address);
+                                }
+                                else
+                                {
+                                    soDetail = GetSingleSoDetailForSalesOrderNotShipped(trans.salesOrder, trans.promisedDate, trans.line);
+
+                                    if (!string.IsNullOrWhiteSpace(soDetail))
+                                        updateSoDetailQuery = Create850And860UpdateSalesOrderDetailQuery(trans, ref soDetail, ref promisedDate2, ref address);
+                                    else
+                                        updateSoDetailQuery = Create850And860NewSalesOrderDetailQuery(trans, ref promisedDate2, ref address);
                                 }
                             }
                             else
@@ -1970,7 +1985,14 @@ namespace EDI
                        tempTable.Rows[i]["Promised_Date"].ToString() == tempTable.Rows[i2]["Promised_Date"].ToString() &&
                        tempTable.Rows[i]["Date_New"].ToString() == tempTable.Rows[i2]["Date_New"].ToString())
                     {
-                        tempTable.Rows.RemoveAt(i2);
+                        if (tempTable.Rows[i][19].ToString() == "830" && tempTable.Rows[i2][19].ToString() == "862")
+                        {
+                            tempTable.Rows.RemoveAt(i);
+                        }
+                        else
+                        {
+                            tempTable.Rows.RemoveAt(i2);
+                        }
                         break;
                     }
                 }
@@ -2049,6 +2071,32 @@ namespace EDI
             + "case when isnumeric(SO_Detail.Sales_Order) = 1 then convert(varchar(max), cast(SO_Detail.Sales_Order as int)) else SO_Detail.Sales_Order end = "
             + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end and replace(convert(varchar(10), Promised_Date, 120), '-', '') = @promisedDate";
 
+            query = query.Replace("@so", EscapeSQLString(so));
+            query = query.Replace("@promisedDate", EscapeSQLString(promisedDate?.Replace("-", "")));
+
+            var dt = conn.GetData(query);
+            conn.Dispose();
+
+            if (dt.Rows.Count >= 1)
+            {
+                return dt.Rows[0]["SO_Detail"].ToString();
+            }
+
+            return "";
+        }
+
+        private string GetSingleSoDetailForSalesOrderNotShipped(in string so, string promisedDate, string line)
+        {
+            var conn = new jbConnection(
+              this.M_DBNAME, this.M_DBSERVER);
+
+            var query = "SELECT SO_Detail.SO_Detail FROM SO_Detail "
+            + "WHERE SO_Detail.Status IN('Hold', 'Open') AND "
+            + "case when isnumeric(SO_Detail.Sales_Order) = 1 then convert(varchar(max), cast(SO_Detail.Sales_Order as int)) else SO_Detail.Sales_Order end = "
+            + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end and replace(convert(varchar(10), Promised_Date, 120), '-', '') = @promisedDate "
+            + "and case when isnumeric(SO_Detail.SO_Line) = 1 then convert(varchar(max), cast(SO_Detail.SO_Line as int)) else SO_Detail.SO_Line end = case when isnumeric('@soline') = 1 then convert(varchar(max), cast('@soline' as int)) else '@soline' end";
+
+            query = query.Replace("@soline", EscapeSQLString(line));
             query = query.Replace("@so", EscapeSQLString(so));
             query = query.Replace("@promisedDate", EscapeSQLString(promisedDate?.Replace("-", "")));
 
@@ -2981,7 +3029,7 @@ namespace EDI
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
 
-                        //if (m_MergedTable.Rows[i][0].ToString() != "705202560")
+                        //if (m_MergedTable.Rows[i][1].ToString() != "69483")
                         //{
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}

@@ -689,7 +689,7 @@ namespace EDI
 
             if (part == "SUPPLIER_SETUP")
             {
-                string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Status = 'Open' and d.Status = 'Open' and h.Customer_PO = '" + EscapeSQLString(po) + "' and h.Customer = '" + EscapeSQLString(customer) + "' and d.Material = 'SUPPLIER_SETUP'";
+                string sql = "select h.Sales_Order from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Status = 'Open' and d.Status = 'Open' and h.Customer_PO = '" + EscapeSQLString(po) + "' and h.Customer = '" + EscapeSQLString(customer) + "' and d.Material = 'SUPPLIER_SETUP' ";
                 var dtSS = conn.GetData(sql);
                 if (dtSS != null && dtSS.Rows != null && dtSS.Rows.Count > 0)
                 {
@@ -857,7 +857,7 @@ namespace EDI
 
             if (requiredAction.Rows.Count == 0)
             {
-                this.m_MaterialsToBeIgnored = new string[0][]; ;
+                this.m_MaterialsToBeIgnored = new string[0][];
             }
             else
             {
