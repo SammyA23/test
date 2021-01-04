@@ -1499,9 +1499,7 @@ namespace EDI
                     var headerHasBeenCreated = false;
                     var eightFiftyIds = "";
 
-                    var todayDate = DateTime.Now.Year.ToString()
-                    + DateTime.Now.ToString("MM")
-                    + DateTime.Now.ToString("dd");
+                    var todayDate = DateTime.Now.ToString("yyyy-MM-dd");
 
                     var tableEightFiftySalesOrders = new System.Data.DataTable();
                     tableEightFiftySalesOrders.Load(readerForEightFiftySalesOrders);
@@ -1717,9 +1715,7 @@ namespace EDI
                     var headerHasBeenCreated = false;
                     var eightSixtyIds = "";
 
-                    var todayDate = DateTime.Now.Year.ToString()
-                    + DateTime.Now.ToString("MM")
-                    + DateTime.Now.Day.ToString();
+                    var todayDate = DateTime.Now.ToString("yyyy-MM-dd");
 
                     var tableEightSixtySalesOrders = new System.Data.DataTable();
                     tableEightSixtySalesOrders.Load(readerForEightSixtySalesOrders);
