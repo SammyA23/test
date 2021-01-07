@@ -960,7 +960,7 @@ namespace EDIAPP
                 string sSelectedFolder = string.Empty;
                 if (System.Diagnostics.Debugger.IsAttached)
                 {
-                    sSelectedFolder = @"D:\Code\MfgTech\EDI\examples\2020-12-21\fichiers 830-862 21 décembre 2020";
+                    sSelectedFolder = @"D:\code\MfgTech\EDI\examples\2021-01-07";
                     this.filesForRead = System.IO.Directory.GetFiles(sSelectedFolder, "*.csv");
                 }
                 else

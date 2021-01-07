@@ -1938,15 +1938,7 @@ namespace EDI
             }
             conn.Dispose();
         }
-
-        //private void FetchCustomersForPlant(out DataTable dtCustomer, string sPartialQuery, string sPlant)
-        //{
-        //    var sFullQuery = sPartialQuery + " Address.Ship_To_ID = '" + EscapeSQLString(sPlant) + "'";
-        //    var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
-        //    dtCustomer = conn.GetData(sFullQuery);
-        //    conn.Dispose();
-        //}
-
+        
         private void FillDataTable(ref DataTable mDataTable)
         {
             PreemptiveVerification(ref mDataTable);
@@ -2269,19 +2261,19 @@ namespace EDI
                 //if ((DateTime)eightThirtyRowsArray[0]["Date_New"] >= dtRelativeMonday &&
                 //  (DateTime)eightThirtyRowsArray[0]["Date_New"] <= dtRelativeMonday.AddDays(5))
                 //{
-                foreach (var row in eightSixtyTwoRowsArray)
-                {
-                    if ((DateTime)row["Date_New"] >= dtRelativeMonday && (DateTime)row["Date_New"] <= dtRelativeMonday.AddDays(5))
-                    {
-                        eightThirtyRowsArray[0]["NewQty"] = (double)eightThirtyRowsArray[0]["NewQty"] - (double)row["NewQty"];
-                    }
+                //foreach (var row in eightSixtyTwoRowsArray)
+                //{
+                //    if ((DateTime)row["Date_New"] >= dtRelativeMonday && (DateTime)row["Date_New"] <= dtRelativeMonday.AddDays(5))
+                //    {
+                //        eightThirtyRowsArray[0]["NewQty"] = (double)eightThirtyRowsArray[0]["NewQty"] - (double)row["NewQty"];
+                //    }
 
                     //if ((double)eightThirtyRowsArray[0]["NewQty"] < 0.0d)
                     //{
                     //    RemoveAt(ref eightThirtyRowsArray, 0);
                     //    break;
                     //}
-                }
+                //}
                 //}
 
                 //find how many rows are remaining in the 830 array
@@ -3025,7 +3017,7 @@ namespace EDI
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
 
-                        //if (m_MergedTable.Rows[i][1].ToString() != "69483")
+                        //if (m_MergedTable.Rows[i][1].ToString() != "69177" && m_MergedTable.Rows[i][1].ToString() != "69178")
                         //{
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
