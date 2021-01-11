@@ -1499,7 +1499,9 @@ namespace EDI
                     var headerHasBeenCreated = false;
                     var eightFiftyIds = "";
 
-                    var todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+                    var todayDate = DateTime.Now.Year.ToString()
+                    + DateTime.Now.ToString("MM")
+                    + DateTime.Now.ToString("dd");
 
                     var tableEightFiftySalesOrders = new System.Data.DataTable();
                     tableEightFiftySalesOrders.Load(readerForEightFiftySalesOrders);
@@ -1715,7 +1717,9 @@ namespace EDI
                     var headerHasBeenCreated = false;
                     var eightSixtyIds = "";
 
-                    var todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+                    var todayDate = DateTime.Now.Year.ToString()
+                    + DateTime.Now.ToString("MM")
+                    + DateTime.Now.ToString("dd");
 
                     var tableEightSixtySalesOrders = new System.Data.DataTable();
                     tableEightSixtySalesOrders.Load(readerForEightSixtySalesOrders);
@@ -1954,10 +1958,22 @@ namespace EDI
             CreateTheDataTable(out mDataTable);
 
             bool has830 = false;
+            var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
             for (int i = tempTable.Rows.Count - 1; i >= 0; i--)
             {
                 if (tempTable.Rows[i][19].ToString() == "830")
                 {
+                    string sql = "select 1 from SO_Detail d join SO_Header h on h.Sales_Order = d.Sales_Order where d.SO_Line <> '830'  and d.Material = '@material' and h.Customer_PO = '@po' and DATEDIFF(day, '@date', d.Promised_Date) in (1,2,3,4,5,6) and d.Status in ('Open', 'Hold')";
+                    sql = sql.Replace("@material", EscapeSQLString(tempTable.Rows[i]["Material"].ToString()));
+                    sql = sql.Replace("@po", EscapeSQLString(tempTable.Rows[i]["Customer_PO"].ToString()));
+                    sql = sql.Replace("@date", EscapeSQLString(((DateTime)tempTable.Rows[i]["Date_New"]).ToString("yyyy-MM-dd")));
+                    var data = conn.GetData(sql);
+                    if (data != null && data.Rows != null && data.Rows.Count > 0)
+                    {
+                        tempTable.Rows.RemoveAt(i);
+                        continue;
+                    }
+
                     has830 = true;
                 }
 
@@ -1985,6 +2001,8 @@ namespace EDI
                     }
                 }
             }
+
+            conn.Dispose();
 
             var currentRowIndex = 0;
             while (currentRowIndex < tempTable.Rows.Count)
