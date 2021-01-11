@@ -1942,7 +1942,7 @@ namespace EDI
             }
             conn.Dispose();
         }
-        
+
         private void FillDataTable(ref DataTable mDataTable)
         {
             PreemptiveVerification(ref mDataTable);
@@ -1963,20 +1963,24 @@ namespace EDI
             {
                 if (tempTable.Rows[i][19].ToString() == "830")
                 {
-                    string sql = "select 1 from SO_Detail d join SO_Header h on h.Sales_Order = d.Sales_Order where d.SO_Line <> '830'  and d.Material = '@material' and h.Customer_PO = '@po' and DATEDIFF(day, '@date', d.Promised_Date) in (1,2,3,4,5,6) and d.Status in ('Open', 'Hold')";
-                    sql = sql.Replace("@material", EscapeSQLString(tempTable.Rows[i]["Material"].ToString()));
-                    sql = sql.Replace("@po", EscapeSQLString(tempTable.Rows[i]["Customer_PO"].ToString()));
-                    sql = sql.Replace("@date", EscapeSQLString(((DateTime)tempTable.Rows[i]["Date_New"]).ToString("yyyy-MM-dd")));
-                    var data = conn.GetData(sql);
-                    if (data != null && data.Rows != null && data.Rows.Count > 0)
+                    if (tempTable.Rows[i][4].ToString() != "0")
                     {
-                        tempTable.Rows.RemoveAt(i);
-                        continue;
+                        string sql = "select 1 from SO_Detail d join SO_Header h on h.Sales_Order = d.Sales_Order where d.SO_Line <> '830'  and d.Material = '@material' and h.Customer_PO = '@po' and DATEDIFF(day, '@date', d.Promised_Date) in (1,2,3,4,5,6) and d.Status in ('Open', 'Hold')";
+                        sql = sql.Replace("@material", EscapeSQLString(tempTable.Rows[i]["Material"].ToString()));
+                        sql = sql.Replace("@po", EscapeSQLString(tempTable.Rows[i]["Customer_PO"].ToString()));
+                        sql = sql.Replace("@date", EscapeSQLString(((DateTime)tempTable.Rows[i]["Date_New"]).ToString("yyyy-MM-dd")));
+                        var data = conn.GetData(sql);
+                        if (data != null && data.Rows != null && data.Rows.Count > 0)
+                        {
+                            tempTable.Rows.RemoveAt(i);
+                            continue;
+                        }
                     }
 
                     has830 = true;
                 }
 
+                if (tempTable.Rows[i][4].ToString() == "0") continue;
                 if (!string.IsNullOrWhiteSpace(tempTable.Rows[i]["SO_Detail"].ToString())) continue;
 
                 for (int i2 = 0; i2 < tempTable.Rows.Count; i2++)
@@ -2187,10 +2191,10 @@ namespace EDI
                         dataRow[22] = currentRow[8];
                     }
 
-                    if (Convert.ToDouble(dataRow[4]) > 0)
-                    {
-                        mDataTable.Rows.Add(dataRow);
-                    }
+                    //if (Convert.ToDouble(dataRow[4]) > 0)
+                    //{
+                    mDataTable.Rows.Add(dataRow);
+                    //}
                 }
             }
             catch (ArgumentOutOfRangeException e)
@@ -2286,11 +2290,11 @@ namespace EDI
                 //        eightThirtyRowsArray[0]["NewQty"] = (double)eightThirtyRowsArray[0]["NewQty"] - (double)row["NewQty"];
                 //    }
 
-                    //if ((double)eightThirtyRowsArray[0]["NewQty"] < 0.0d)
-                    //{
-                    //    RemoveAt(ref eightThirtyRowsArray, 0);
-                    //    break;
-                    //}
+                //if ((double)eightThirtyRowsArray[0]["NewQty"] < 0.0d)
+                //{
+                //    RemoveAt(ref eightThirtyRowsArray, 0);
+                //    break;
+                //}
                 //}
                 //}
 
@@ -3035,7 +3039,7 @@ namespace EDI
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
 
-                        //if (m_MergedTable.Rows[i][1].ToString() != "69177" && m_MergedTable.Rows[i][1].ToString() != "69178")
+                        //if (m_MergedTable.Rows[i][1].ToString() != "69489")
                         //{
                         //    m_MergedTable.Rows.RemoveAt(i);
                         //}
