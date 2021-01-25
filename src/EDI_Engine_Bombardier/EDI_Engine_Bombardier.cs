@@ -2176,8 +2176,7 @@ namespace EDI
                     dataRow[9] = excelDate.ToString("d");
 
                     //delivery plant
-                    dataRow[13] = currentRow[1].Length > 6 ?
-                    currentRow[1].Substring(currentRow[1].Length - 6) : currentRow[1];
+                    dataRow[13] = currentRow[1].Length > 6 ? currentRow[1].Substring(currentRow[1].Length - 6) : currentRow[1];
 
                     //detail line
                     dataRow[14] = currentRow[9] == "830" ? "830" : currentRow[3];
@@ -3219,7 +3218,7 @@ namespace EDI
                             if (poRows[i]["SO Detail Status"].ToString() == "Backorder")
                             {
                                 //Close existing SO Detail
-                                conn.SetData("UPDATE SO_Detail set Status = 'Closed' WHERE SO_Detail.SO_Detail = " + EscapeSQLString(sodetail));
+                                conn.SetData("UPDATE SO_Detail set Status = 'Closed', Last_Updated = getdate() WHERE SO_Detail.SO_Detail = " + EscapeSQLString(sodetail));
                             }
                             else
                             {
