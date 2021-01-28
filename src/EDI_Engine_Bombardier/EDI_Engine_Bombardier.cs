@@ -699,25 +699,53 @@ namespace EDI
                 var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
                 var dt = conn.GetData("select Customer, Sales_Order from SO_Header where Customer_PO = '" + EscapeSQLString(po) + "'");
 
-                Transaction trans = new Transaction
+                if (dt != null && dt.Rows.Count > 0)
                 {
-                    line = line,
-                    qty = qty,
-                    unit = unit,
-                    unitPrice = unitPrice,
-                    partNumber = partNumber,
-                    rev = rev,
-                    dr = dr,
-                    shipTo = shipTo,
-                    customer = dt.Rows.Count > 0 ? dt.Rows[0][0].ToString() : "",
-                    buyer = buyer,
-                    po = po,
-                    salesOrder = dt.Rows.Count > 0 ? dt.Rows[0][1].ToString() : "",
-                    description = description,
-                    extendedDescription = extendedDescription,
-                    freeFormMessage = freeFormMessage,
-                };
-                transactions.Add(trans);
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Transaction trans = new Transaction
+                        {
+                            line = line,
+                            qty = qty,
+                            unit = unit,
+                            unitPrice = unitPrice,
+                            partNumber = partNumber,
+                            rev = rev,
+                            dr = dr,
+                            shipTo = shipTo,
+                            customer = dt.Rows[i][0].ToString() ?? "",
+                            buyer = buyer,
+                            po = po,
+                            salesOrder = dt.Rows[i][1].ToString() ?? "",
+                            description = description,
+                            extendedDescription = extendedDescription,
+                            freeFormMessage = freeFormMessage,
+                        };
+                        transactions.Add(trans);
+                    }
+                }
+                else
+                {
+                    Transaction trans = new Transaction
+                    {
+                        line = line,
+                        qty = qty,
+                        unit = unit,
+                        unitPrice = unitPrice,
+                        partNumber = partNumber,
+                        rev = rev,
+                        dr = dr,
+                        shipTo = shipTo,
+                        customer = "",
+                        buyer = buyer,
+                        po = po,
+                        salesOrder = "",
+                        description = description,
+                        extendedDescription = extendedDescription,
+                        freeFormMessage = freeFormMessage,
+                    };
+                    transactions.Add(trans);
+                }
 
                 conn.Dispose();
             }
@@ -744,7 +772,7 @@ namespace EDI
 
                         if (!String.IsNullOrWhiteSpace(orderDate))
                             updateSoQuery = updateSoQuery + ", Order_Date = '" + EscapeSQLString(orderDate.Substring(0, 4) + "-" + orderDate.Substring(4, 2) + "-" + orderDate.Substring(6)) + "' ";
-                        updateSoQuery = updateSoQuery + " WHERE Customer_PO = '@po'";
+                        updateSoQuery = updateSoQuery + ", last_updated = getdate() WHERE Customer_PO = '@po'";
 
                         updateSoQuery = updateSoQuery.Replace("@po", EscapeSQLString(po));
                         updateSoQuery = updateSoQuery.Replace("@terms", EscapeSQLString(terms));
@@ -1814,9 +1842,7 @@ namespace EDI
                     writeQueue.Enqueue(line300);
                     WriteQueueToFile(writeQueue);
 
-                    var changeStatusOfWrittenEightSixtySalesOrdersQuery =
-                    String.Format("UPDATE brpModifiedSalesOrders SET "
-                      + "tempStatus = '865' WHERE id in ({0})", EscapeSQLString(eightSixtyIds));
+                    var changeStatusOfWrittenEightSixtySalesOrdersQuery = "UPDATE brpModifiedSalesOrders SET tempStatus = '865' where tempStatus = '860'";
 
                     var updateCommand = new System.Data.SqlClient.SqlCommand(
                       changeStatusOfWrittenEightSixtySalesOrdersQuery, connEdi);

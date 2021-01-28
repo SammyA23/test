@@ -1080,7 +1080,7 @@ namespace EDI
             var query2 = "delete from h from SO_Header h left join SO_Detail d on d.Sales_Order = h.Sales_Order where d.SO_Detail is null and h.Last_Updated > dateadd(MINUTE, -10, getdate())";
             conn.SetData(query2);
 
-            var query3 = "delete from s1 from so_detail s1 join SO_Detail s2 on s1.Sales_Order = s2.Sales_Order and s1.Material = s2.Material and s1.SO_Line = '830' and s2.SO_Line <> '830' and DATEDIFF(day, s1.Promised_Date, s2.Promised_Date) in (1,2,3,4,5,6) where s1.Status in ('Open', 'Hold') and s2.Status in ('Open', 'Hold')";
+            var query3 = "delete from s1 from so_detail s1 join SO_Detail s2 on s1.Sales_Order = s2.Sales_Order and s1.Material = s2.Material and s1.SO_Line = '830' and s2.SO_Line <> '830' and DATEDIFF(day, s1.Promised_Date, s2.Promised_Date) in (1,2,3,4,5,6) where s1.Status in ('Open', 'Hold')";
             conn.SetData(query3);
 
             conn.Dispose();
