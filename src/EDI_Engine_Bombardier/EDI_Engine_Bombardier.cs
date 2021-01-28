@@ -1690,16 +1690,16 @@ namespace EDI
                           row["Promised_Date"].ToString(), row["Qty"].ToString(),
                           !PoIs550(row["Customer_PO"].ToString()) ? "PPAP" : "");
                     }
+                }
 
-                    var insertBrpModifiedSoQuery = "INSERT INTO brpModifiedSalesOrders "
+                var insertBrpModifiedSoQuery = "INSERT INTO brpModifiedSalesOrders "
                     + "(modifiedSO, tempStatus, releaseNumber) VALUES "
                     + "(@modifiedSO, '860', @releaseNumber)";
-                    var command = new System.Data.SqlClient.SqlCommand(
-                      insertBrpModifiedSoQuery, connEdi);
-                    command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")));
-                    command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
-                    command.ExecuteNonQuery();
-                }
+                var command = new System.Data.SqlClient.SqlCommand(
+                  insertBrpModifiedSoQuery, connEdi);
+                command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")));
+                command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
+                command.ExecuteNonQuery();
 
                 progressreport(1);
             }

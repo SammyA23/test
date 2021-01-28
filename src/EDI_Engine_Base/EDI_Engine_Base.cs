@@ -1045,10 +1045,14 @@ namespace EDI
             else
             {
                 string insertQuery = "declare @AddressId int; " +
+                                     "\n select @AddressId = Address from Address where Customer = '@cust' and Ship_To_ID = '@shipto';" +
+                                     "\n if isnull(@AddressId, 0) <= 0" +
+                                     "\n begin" +
                                      "\n exec [dbo].[p_GetNextKey] 'Address', 'Address', @AddressId output; " +
                                      "\n insert into Address(Address, Customer, Vendor, Status, Type, Ship_Via, Ship_To_ID, Line1, Line2, City, State, Zip, Name, Country, Phone, Fax, Lead_Days, Last_Updated, Billable, Shippable, Cell_Phone) " +
                                      "\n select top 1 @AddressId, Customer, Vendor, Status, Type, Ship_Via, Ship_To_ID, Line1, Line2, City, State, Zip, Name, Country, Phone, Fax, Lead_Days, getdate(), Billable, Shippable, Cell_Phone " +
                                      "\n from Address where Customer = '@cust' and Ship_To_ID = '@shipto'; " +
+                                     "\n end" +
                                      "\n declare @ContactId int; " +
                                      "\n exec [dbo].[p_GetNextKey] 'Contact', 'Contact', @ContactId output; " +
                                      "\n insert into Contact(Contact, Customer, Vendor, Address, Contact_Name, Title, Phone, Phone_Ext, Fax, Email_Address, Last_Updated, Cell_Phone, NET1_Contact_ID, Status, Default_Invoice_Contact) " +
