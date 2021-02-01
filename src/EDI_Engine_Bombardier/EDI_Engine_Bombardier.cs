@@ -467,6 +467,8 @@ namespace EDI
             var fileTransactionCount = "";
             var freeFormMessage = "";
 
+            string state200 = "";
+
             List<string> qty290 = new List<string>();
             List<string> date290 = new List<string>();
             List<string> line290 = new List<string>();
@@ -517,6 +519,7 @@ namespace EDI
                 else if (fileline[0] == "200")
                 {
                     line = fileline[1].TrimStart('0');
+                    state200 = fileline[2];
                     unit = fileline[4];
                     unitPrice = fileline[5];
                     partNumber = String.IsNullOrEmpty(fileline[7]) ? "FRAIS DE SET-UP" : fileline[7];
@@ -649,7 +652,7 @@ namespace EDI
                         Transaction trans = new Transaction
                         {
                             line = line,
-                            qty = qty,
+                            qty = state200 == "DI" ? "0" : qty,
                             unit = unit,
                             unitPrice = unitPrice,
                             partNumber = partNumber,
@@ -887,6 +890,25 @@ namespace EDI
                             if (trans.salesOrder.Equals("Sales_Order Closed"))
                             {
                                 //Empty query, on ne fait rien
+                            }
+                            else if (trans.qty == "0")
+                            {
+                                updateSoQuery = "";
+
+                                soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
+
+                                updateSoDetailQuery = "";
+
+                                if (!string.IsNullOrWhiteSpace(soDetail) && IsNumber(soDetail))
+                                {
+                                    updateSoDetailQuery = "update SO_Detail SET Status = 'Closed', Last_Updated = getdate() where SO_Detail = " + soDetail + ";";
+                                    so = "SOD à supprimer - " + so;
+                                }
+                                else
+                                {
+                                    updateSoDetailQuery = "INSERT INTO MFG_EDI.dbo.brpModifiedSalesOrders (modifiedSO, tempStatus, releaseNumber) select d.Sales_Order, '860', " + EscapeSQLString(releaseNumber) + " from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and d.Status IN('Hold', 'Open') and DATEDIFF(day, '" + EscapeSQLString(trans.promisedDate.Insert(4, "-").Insert(7, "-")) + "', d.Promised_Date) in (-2, -1, 0, 1,2,3,4,5,6) and d.Material = '" + trans.partNumber + "'; update d SET Status = 'Closed', Last_Updated = getdate() from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and d.Status IN('Hold', 'Open') and DATEDIFF(day, '" + EscapeSQLString(trans.promisedDate.Insert(4, "-").Insert(7, "-")) + "', d.Promised_Date) in (-2, -1, 0, 1,2,3,4,5,6) and d.Material = '" + trans.partNumber + "';";
+                                    so = "SOD à supprimer";
+                                }
                             }
                             else if (!trans.salesOrder.Equals("Nouveau Sales_Order"))
                             {
@@ -1692,14 +1714,17 @@ namespace EDI
                     }
                 }
 
-                var insertBrpModifiedSoQuery = "INSERT INTO brpModifiedSalesOrders "
-                    + "(modifiedSO, tempStatus, releaseNumber) VALUES "
-                    + "(@modifiedSO, '860', @releaseNumber)";
-                var command = new System.Data.SqlClient.SqlCommand(
-                  insertBrpModifiedSoQuery, connEdi);
-                command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")));
-                command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
-                command.ExecuteNonQuery();
+                if (IsNumber(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")))
+                {
+                    var insertBrpModifiedSoQuery = "INSERT INTO brpModifiedSalesOrders "
+                        + "(modifiedSO, tempStatus, releaseNumber) VALUES "
+                        + "(@modifiedSO, '860', @releaseNumber)";
+                    var command = new System.Data.SqlClient.SqlCommand(
+                      insertBrpModifiedSoQuery, connEdi);
+                    command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")));
+                    command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
+                    command.ExecuteNonQuery();
+                }
 
                 progressreport(1);
             }
@@ -1882,6 +1907,8 @@ namespace EDI
         private void InsertOrUpdateDeliveryForSoDetail(string sod, string date,
           string qty, string shippingInstructions = "")
         {
+            if (string.IsNullOrWhiteSpace(sod)) return;
+
             var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
 
             var sQuery = "if not exists(select 1 from Delivery where SO_Detail = " + EscapeSQLString(sod) + ") \n begin \n ";
@@ -2158,6 +2185,31 @@ namespace EDI
             + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end and replace(convert(varchar(10), Promised_Date, 120), '-', '') = @promisedDate";
 
             query = query.Replace("@so", EscapeSQLString(so));
+            query = query.Replace("@promisedDate", EscapeSQLString(promisedDate));
+
+            var dt = conn.GetData(query);
+            conn.Dispose();
+
+            if (dt.Rows.Count >= 1)
+            {
+                return dt.Rows[0]["SO_Detail"].ToString();
+            }
+
+            return "";
+        }
+
+        private string GetSingleSoDetailForSalesOrderCanBe830(in string so, string promisedDate)
+        {
+            var conn = new jbConnection(
+              this.M_DBNAME, this.M_DBSERVER);
+
+            var query = "SELECT SO_Detail.SO_Detail FROM SO_Detail "
+            + "WHERE SO_Detail.Status IN('Hold', 'Open', 'Shipped') AND "
+            + "case when isnumeric(SO_Detail.Sales_Order) = 1 then convert(varchar(max), cast(SO_Detail.Sales_Order as int)) else SO_Detail.Sales_Order end = "
+            + "case when isnumeric('@so') = 1 then convert(varchar(max), cast('@so' as int)) else '@so' end and (replace(convert(varchar(10), Promised_Date, 120), '-', '') = @promisedDate or (SO_Line = '830' and DATEDIFF(day, Promised_Date, '@promisedDate2') in (1,2,3,4,5,6)))";
+
+            query = query.Replace("@so", EscapeSQLString(so));
+            query = query.Replace("@promisedDate2", EscapeSQLString(promisedDate.Insert(4, "-").Insert(7, "-")));
             query = query.Replace("@promisedDate", EscapeSQLString(promisedDate));
 
             var dt = conn.GetData(query);
