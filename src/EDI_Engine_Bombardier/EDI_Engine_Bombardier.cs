@@ -901,7 +901,7 @@ namespace EDI
 
                                 if (!string.IsNullOrWhiteSpace(so) && IsNumber(so))
                                 {
-                                    updateSoQuery = "Update SO_Header SET Status = 'Closed', Last_Updated = getdate() where Sales_Order = " + so + ";";
+                                    updateSoQuery = "Update SO_Header SET Status = 'Closed', Last_Updated = getdate() where Sales_Order = '" + so + "';";
                                 }
 
                                 soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
