@@ -683,7 +683,7 @@ namespace EDI
         }
 
         protected string GetSalesOrderForPartAndPoAndLine(in string part, in string po,
-          in string customer, in string line)
+          in string customer, in string line, in string promisedDate)
         {
             var conn = new jbConnection(this.M_DBNAME, this.M_DBSERVER);
 
@@ -736,6 +736,27 @@ namespace EDI
                     return "Sales_Order Closed";
                 }
             }
+
+            if (!string.IsNullOrWhiteSpace(promisedDate) && promisedDate.Length == 8) {
+                query = "SELECT TOP 1 SOD.Sales_Order FROM SO_Detail AS SOD LEFT "
+                        + "JOIN SO_Header SOH ON SOD.Sales_Order = SOH.Sales_Order WHERE "
+                        + "SOD.Material LIKE '@part' AND SOH.Customer_PO LIKE '@po' AND "
+                        + "SOH.Customer LIKE '@customer' AND SOH.Status NOT LIKE 'Closed' "
+                        + " AND DATEDIFF(day, '" + EscapeSQLString(promisedDate.Insert(4, "-").Insert(7, "-")) + "', SOD.Promised_Date) in (-2, -1, 0, 1,2,3,4,5,6)";
+
+                query = query.Replace("@po", EscapeSQLString(po));
+                query = query.Replace("@part", EscapeSQLString(part));
+                query = query.Replace("@customer", EscapeSQLString(customer));
+
+                dt = conn.GetData(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0]["Sales_Order"].ToString();
+                }
+            }
+
+
             return "Nouveau Sales_Order";
         }
 

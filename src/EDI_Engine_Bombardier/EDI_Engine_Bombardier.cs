@@ -580,9 +580,13 @@ namespace EDI
                     if (!PoIs550(po))
                     {
                         string promisedDateNotInString = "";
-                        string poSo = this.GetSalesOrderForPartAndPoAndLine(partNumber, po, sCustomer, line);
+                        string poSo = string.Empty;
                         for (int i = 0; i < qty290.Count; i++)
                         {
+                            string soe = this.GetSalesOrderForPartAndPoAndLine(partNumber, po, sCustomer, line, date290[i]);
+                            if (!string.IsNullOrWhiteSpace(soe) && IsNumber(soe))
+                                poSo = soe;
+
                             Transaction trans = new Transaction
                             {
                                 line = line,
@@ -652,7 +656,7 @@ namespace EDI
                         Transaction trans = new Transaction
                         {
                             line = line,
-                            qty = state200 == "DI" ? "0" : qty,
+                            qty = qty,
                             unit = unit,
                             unitPrice = unitPrice,
                             partNumber = partNumber,
@@ -662,7 +666,7 @@ namespace EDI
                             customer = sCustomer,
                             buyer = buyer,
                             po = po,
-                            salesOrder = this.GetSalesOrderForPartAndPoAndLine(partNumber, po, sCustomer, line),
+                            salesOrder = this.GetSalesOrderForPartAndPoAndLine(partNumber, po, sCustomer, line, promisedDate),
                             description = description,
                             extendedDescription = extendedDescription,
                             freeFormMessage = freeFormMessage,
@@ -891,9 +895,14 @@ namespace EDI
                             {
                                 //Empty query, on ne fait rien
                             }
-                            else if (trans.qty == "0")
+                            else if (state200 == "DI")
                             {
                                 updateSoQuery = "";
+
+                                if (!string.IsNullOrWhiteSpace(so) && IsNumber(so))
+                                {
+                                    updateSoQuery = "Update SO_Header SET Status = 'Closed', Last_Updated = getdate() where Sales_Order = " + so + ";";
+                                }
 
                                 soDetail = GetSingleSoDetailForSalesOrder(so, trans.promisedDate);
 
