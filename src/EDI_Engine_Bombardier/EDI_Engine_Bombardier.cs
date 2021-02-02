@@ -587,6 +587,9 @@ namespace EDI
                             if (!string.IsNullOrWhiteSpace(soe) && IsNumber(soe))
                                 poSo = soe;
 
+                            if (string.IsNullOrWhiteSpace(poSo))
+                                poSo = soe;
+
                             Transaction trans = new Transaction
                             {
                                 line = line,
@@ -840,7 +843,14 @@ namespace EDI
                             so = trans.salesOrder.Replace("440|", "");
 
 
-                            if (!so.Equals("Nouveau Sales_Order"))
+                            if (so.StartsWith("Sales_Order Closed"))
+                            {
+                                //Empty query, on ne fait rien
+                                updateSoQuery = "";
+                                updateSoDetailQuery = "";
+                                soDetail = "SO Closed";
+                            }
+                            else if (!so.Equals("Nouveau Sales_Order"))
                             {
                                 updateSoQuery = Create850And860UpdateSalesOrderQuery(trans, ref terms, ref promisedDate2, ref address, trans.salesOrder);
 
@@ -891,9 +901,12 @@ namespace EDI
                         else
                         {
                             string promisedDate2 = trans.promisedDate;
-                            if (trans.salesOrder.Equals("Sales_Order Closed"))
+                            if (trans.salesOrder.StartsWith("Sales_Order Closed"))
                             {
                                 //Empty query, on ne fait rien
+                                updateSoQuery = "";
+                                updateSoDetailQuery = "";
+                                soDetail = "SO Closed";
                             }
                             else if (state200 == "DI")
                             {
@@ -1723,14 +1736,14 @@ namespace EDI
                     }
                 }
 
-                if (IsNumber(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")))
+                if (IsNumber(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "").Replace("Sales_Order Closed - ", "")))
                 {
                     var insertBrpModifiedSoQuery = "INSERT INTO brpModifiedSalesOrders "
                         + "(modifiedSO, tempStatus, releaseNumber) VALUES "
                         + "(@modifiedSO, '860', @releaseNumber)";
                     var command = new System.Data.SqlClient.SqlCommand(
                       insertBrpModifiedSoQuery, connEdi);
-                    command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "")));
+                    command.Parameters.AddWithValue("@modifiedSO", EscapeSQLString(row["Sales_Order"]?.ToString().Replace("SOD à supprimer - ", "").Replace("Sales_Order Closed - ", "")));
                     command.Parameters.AddWithValue("@releaseNumber", EscapeSQLString(row["ReleaseNumber"].ToString()));
                     command.ExecuteNonQuery();
                 }
