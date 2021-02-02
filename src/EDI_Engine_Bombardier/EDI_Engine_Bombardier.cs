@@ -908,16 +908,16 @@ namespace EDI
 
                                 updateSoDetailQuery = "";
 
-                                if (!string.IsNullOrWhiteSpace(soDetail) && IsNumber(soDetail))
-                                {
-                                    updateSoDetailQuery = "update SO_Detail SET Status = 'Closed', Last_Updated = getdate() where SO_Detail = " + soDetail + ";";
-                                    so = "SOD à supprimer - " + so;
-                                }
-                                else
-                                {
-                                    updateSoDetailQuery = "INSERT INTO MFG_EDI.dbo.brpModifiedSalesOrders (modifiedSO, tempStatus, releaseNumber) select d.Sales_Order, '860', " + EscapeSQLString(releaseNumber) + " from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and d.Status IN('Hold', 'Open') and DATEDIFF(day, '" + EscapeSQLString(trans.promisedDate.Insert(4, "-").Insert(7, "-")) + "', d.Promised_Date) in (-2, -1, 0, 1,2,3,4,5,6) and d.Material = '" + trans.partNumber + "'; update d SET Status = 'Closed', Last_Updated = getdate() from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where h.Customer_PO = '" + EscapeSQLString(trans.po) + "' and d.Status IN('Hold', 'Open') and DATEDIFF(day, '" + EscapeSQLString(trans.promisedDate.Insert(4, "-").Insert(7, "-")) + "', d.Promised_Date) in (-2, -1, 0, 1,2,3,4,5,6) and d.Material = '" + trans.partNumber + "';";
-                                    so = "SOD à supprimer";
-                                }
+                                //if (!string.IsNullOrWhiteSpace(soDetail) && IsNumber(soDetail))
+                                //{
+                                //    updateSoDetailQuery = "update SO_Detail SET Status = 'Closed', Last_Updated = getdate() where SO_Detail = " + soDetail + ";";
+                                //    so = "SOD à supprimer - " + so;
+                                //}
+                                //else
+                                //{
+                                updateSoDetailQuery = "INSERT INTO MFG_EDI.dbo.brpModifiedSalesOrders (modifiedSO, tempStatus, releaseNumber) select d.Sales_Order, '860', " + EscapeSQLString(releaseNumber) + " from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where d.Sales_Order = '" + so + "' and d.Status IN('Hold', 'Open'); update d SET Status = 'Closed', Last_Updated = getdate() from SO_Header h join SO_Detail d on d.Sales_Order = h.Sales_Order where d.Sales_Order = '" + so + "' and d.Status IN('Hold', 'Open') ;";
+                                so = "SO à supprimer";
+                                //}
                             }
                             else if (!trans.salesOrder.Equals("Nouveau Sales_Order"))
                             {
