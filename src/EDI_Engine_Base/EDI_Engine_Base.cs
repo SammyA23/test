@@ -808,6 +808,7 @@ namespace EDI
             matsAndPOs.Columns.Add("Plant");
             matsAndPOs.Columns.Add("Client");
             matsAndPOs.Columns.Add("Source Manquante");
+            matsAndPOs.Columns.Add("Qty");
             foreach (DataRow dr in dt.Rows)
             {
                 sCurrentMat = dr[0].ToString();
@@ -819,9 +820,12 @@ namespace EDI
 
                 if (foundRows.Length == 0)
                 {
-                    matsAndPOs.Rows.Add(new string[] { sCurrentMat, dr[2].ToString(), dr[13].ToString(), dr[22].ToString() });
+                    matsAndPOs.Rows.Add(new string[] { sCurrentMat, dr[2].ToString(), dr[13].ToString(), dr[22].ToString(), null, dr[4].ToString() });
                 }
-
+                else
+                {
+                    foundRows[0][5] = decimal.TryParse(foundRows[0][5].ToString(), out decimal i1) && decimal.TryParse(dr[4].ToString(), out decimal i2) ? (i1 + i2).ToString() : foundRows[0][5];
+                }
             }
 
             var progressinit = new ProgressInitEngine(OnProgressInit_Event);
@@ -883,16 +887,48 @@ namespace EDI
             }
             else
             {
-                frmMissingParts missingMatsForm = new frmMissingParts(requiredAction);
-                DialogResult ret = STAShowDialog(missingMatsForm);
-
-                if (ret.ToString() == "OK")
+                bool hasRow = false;
+                foreach (DataRow dr in requiredAction.Rows)
                 {
-                    this.m_MaterialsToBeIgnored = missingMatsForm.MaterialsToIgnore();
+                    if (dr[5].ToString() != "0")
+                    {
+                        hasRow = true;
+                        break;
+                    }
+                }
+
+                if (hasRow)
+                {
+                    frmMissingParts missingMatsForm = new frmMissingParts(requiredAction);
+                    DialogResult ret = STAShowDialog(missingMatsForm);
+
+                    if (ret.ToString() == "OK")
+                    {
+                        this.m_MaterialsToBeIgnored = missingMatsForm.MaterialsToIgnore();
+                    }
+                    else
+                    {
+                        throw new Exception("Nous devons arrêter l'exécution.");
+                    }
                 }
                 else
                 {
-                    throw new Exception("Nous devons arrêter l'exécution.");
+                    int iRowsToIgnoreCount = requiredAction.Rows.Count;
+                    int iInsertPosition = 0;
+                    var arrReturn = new string[iRowsToIgnoreCount][];
+
+                    foreach (DataRow dr in requiredAction.Rows)
+                    {
+                        arrReturn[iInsertPosition] = new string[5];
+                        arrReturn[iInsertPosition][0] = dr[0].ToString();
+                        arrReturn[iInsertPosition][1] = dr[1].ToString();
+                        arrReturn[iInsertPosition][2] = dr[2].ToString();
+                        arrReturn[iInsertPosition][3] = dr[3].ToString();
+                        arrReturn[iInsertPosition][4] = dr[4].ToString();
+                        iInsertPosition++;
+                    }
+
+                    this.m_MaterialsToBeIgnored = arrReturn;
                 }
             }
         }
