@@ -1126,7 +1126,7 @@ namespace EDI
             updateSoQuery = updateSoQuery.Replace("@status", EscapeSQLString(M_SO_CREATION_STATUS));
             if (!String.IsNullOrWhiteSpace(trans.freeFormMessage))
             {
-                updateSoQuery = updateSoQuery.Replace("@noteText", "CONCAT(Note_Text, CHAR(13)+CHAR(10)+CHAR(13)+CHAR(10) + '" + EscapeSQLString(trans.freeFormMessage) + "'");
+                updateSoQuery = updateSoQuery.Replace("@noteText", "CONCAT(Note_Text, CHAR(13)+CHAR(10)+CHAR(13)+CHAR(10)) + '" + EscapeSQLString(trans.freeFormMessage) + "'");
             }
             else
             {
