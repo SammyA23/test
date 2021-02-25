@@ -754,6 +754,24 @@ namespace EDI
                     {
                         return dt.Rows[0]["Sales_Order"].ToString();
                     }
+                    else
+                    {
+                        query = "SELECT TOP 1 SOD.Sales_Order FROM SO_Detail AS SOD LEFT "
+                            + "JOIN SO_Header SOH ON SOD.Sales_Order = SOH.Sales_Order WHERE "
+                            + "SOD.Material LIKE '@part' AND SOH.Customer_PO LIKE '@po' AND "
+                            + "SOH.Customer LIKE '@customer' AND SOH.Status NOT LIKE 'Closed' ";
+
+                        query = query.Replace("@po", EscapeSQLString(po));
+                        query = query.Replace("@part", EscapeSQLString(part));
+                        query = query.Replace("@customer", EscapeSQLString(customer));
+
+                        dt = conn.GetData(query);
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            return dt.Rows[0]["Sales_Order"].ToString();
+                        }
+                    }
                 }
             }
 
